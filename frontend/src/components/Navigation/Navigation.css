@@ -1,3 +1,7 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap'); 
+
 .links{
     display: flex;
     justify-content: space-between;
@@ -24,22 +28,25 @@
     text-decoration: none;
     border: 1px solid #2c5601;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: bold;
     padding: 10px;
     border-radius: 9999px;
-    width: 68.08px;
+    width: 70px;
+    height: 12px;
+    margin-right: 9px;
 }
 .log-in {
     background-color: #f0f0ec;
     color: #2b381f;
     font-family: Manrope, Arial, sans-serif;
     text-decoration: none;
-    border: 1px solid #f0f0ec;
+    border: 1px soli12d #f0f0ec;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: bold;
     padding: 10px;
     border-radius: 9999px;
-    width: 68.08px;
+    width: 70px;
+    height: 12px;
 }
 
 .log-in:hover{
