@@ -7,9 +7,45 @@
 
 .innerLinks {
     display: flex;
-    align-items: right;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
 }
 
 .inner {
     padding: 5px;
+    text-align: center;
+}
+
+.sign-up{
+    background-color: #2c5601;
+    color: white;
+    font-family: Manrope, Arial, sans-serif;
+    text-decoration: none;
+    border: 1px solid #2c5601;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 9999px;
+    width: 68.08px;
+}
+.log-in {
+    background-color: #f0f0ec;
+    color: #2b381f;
+    font-family: Manrope, Arial, sans-serif;
+    text-decoration: none;
+    border: 1px solid #f0f0ec;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 9999px;
+    width: 68.08px;
+}
+
+.log-in:hover{
+    background-color: #d7d7d4;
+}
+
+.sign-up:hover{
+    background-color: #1b3501
 }

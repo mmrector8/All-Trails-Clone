@@ -16,12 +16,3 @@ label {
     justify-content: center;
     flex-direction: column;
 }
-
-button {
-    cursor: pointer;
-    background-color: yellow;
-}
-
-button:hover {
-    background-color: rgb(158, 227, 246);
-}

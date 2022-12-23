@@ -8,13 +8,12 @@ function App() {
   return (
     <>
     <div className="app">
-    <h1 className='title-text'>AllTrails</h1>
         <Navigation />
-        < Route path='/login'>
-          <LoginFormPage />
-        </Route>
         < Route path='/signup'>
           <SignUpForm />
+        </Route>
+        < Route path='/login'>
+          <LoginFormPage />
         </Route>
       </div>
     </>

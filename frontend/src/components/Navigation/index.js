@@ -9,26 +9,25 @@ const Navigation = () =>{
 
     let sessionLinks;
     if(sessionUser){
-        console.log(sessionUser, 'just added this')
         sessionLinks = (<ProfileButton user={sessionUser}/>)
     }else{
         sessionLinks =(
             <>
                 <div className='innerLinks'>
-                <NavLink to="/login" className='inner'>Log In</NavLink>  
-                <NavLink to="/signup" className='inner'>Sign Up</NavLink>
+                <NavLink to="/signup" className='inner sign-up'>Sign Up</NavLink>
+                <NavLink to="/login" className='inner log-in'>Log In</NavLink> 
                 </div>
             </>
         )
     }
     return (
         <>
-            <ul> 
+            <nav> 
                 <div className="links">
                 <NavLink to="/">Homepage</NavLink>
                 {sessionLinks}
                 </div>
-            </ul>
+            </nav>
         </>
     )
 
