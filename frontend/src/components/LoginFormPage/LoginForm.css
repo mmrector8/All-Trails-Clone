@@ -1,0 +1,27 @@
+.formTitle {
+    color: rgb(27, 114, 228);
+    font-size: 25px;
+}
+
+.errors{
+    color: red;
+}
+label {
+    padding: 5px;
+    font-weight: bold;
+}
+.formElements {
+    display: flex;
+    align-items: right;
+    justify-content: center;
+    flex-direction: column;
+}
+
+button {
+    cursor: pointer;
+    background-color: yellow;
+}
+
+button:hover {
+    background-color: rgb(158, 227, 246);
+}

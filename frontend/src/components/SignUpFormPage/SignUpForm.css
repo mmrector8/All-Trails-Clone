@@ -1,0 +1,16 @@
+label {
+    padding: 5px;
+    font-weight: bold;
+}
+
+.formElements {
+    display: flex;
+    align-items: right;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.formTitle {
+    color: rgb(27, 114, 228);
+    font-size: 25px;
+}

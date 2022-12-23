@@ -1,0 +1,15 @@
+.links{
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    padding: 5px;
+}
+
+.innerLinks {
+    display: flex;
+    align-items: right;
+}
+
+.inner {
+    padding: 5px;
+}
