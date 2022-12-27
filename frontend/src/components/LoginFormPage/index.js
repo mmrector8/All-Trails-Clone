@@ -54,9 +54,11 @@ const LoginFormPage = ()=>{
                 </div>
                 <div className='login-body'>
                         <form onSubmit={handleSubmit}>
-                            <ul>
-                                {errors.map(error => <li key={error}>{error}</li>)}
-                            </ul>
+                        <ul>
+                            {errors.map((error) => (
+                                <li key={error}>{error}</li>
+                            ))}
+                        </ul>
                             <div className='form-elements'>
                                 <input type ='text' value={credential} onChange={((e)=> setCredential(e.target.value))} placeholder="Username or email"></input>
                                 <input type='password' value={password} onChange={((e) => setPassword(e.target.value))} placeholder="Password"></input>

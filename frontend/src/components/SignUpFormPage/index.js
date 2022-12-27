@@ -77,7 +77,6 @@ const SignUpForm = () => {
                                 {errors.map((error) => (
                                     <li key={error}>{error}</li>
                                 ))}
-                                {/* {errors.map(error => <li key={error}>{error}</li>)} */}
                             </ul>
                             <input type="text" className='input-value' value={username} onChange={((e)=> setUsername(e.target.value))} placeholder='Username' required/>
                             <input type="text" className='input-value' value={email} onChange={((e) => setEmail(e.target.value))} placeholder="Email" required/>
