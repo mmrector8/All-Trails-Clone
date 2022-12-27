@@ -4,7 +4,8 @@ import React, { useState } from 'react'
 import * as sessionActions from '../../store/session'
 import { Redirect, useHistory } from 'react-router-dom'
 import './SignUpForm.css'
-import goldengate from "../../images/goldengate.jpg"
+import marinocean from "../../images/marinocean.jpg"
+import marinhike from "../../images/marinhike.jpg"
 
 const SignUpForm = () => {
     const [username, setUsername] = useState("")
@@ -26,10 +27,9 @@ const SignUpForm = () => {
                 .catch(async (res) => {
                     let data;
                     try {
-                        // .clone() essentially allows you to read the response body twice
                         data = await res.clone().json();
                     } catch {
-                        data = await res.text(); // Will hit this case if the server is down
+                        data = await res.text();
                     }
                     if (data?.errors) setErrors(data.errors);
                     else if (data) setErrors([data]);
@@ -61,13 +61,14 @@ const SignUpForm = () => {
                             <input type="password" className='input-value' value={password} onChange={((e) => setPassword(e.target.value))} placeholder="Password" required/>
                             <input type="password" className='input-value' value={confirmPassword} onChange={((e) => setConfirmPassword(e.target.value))} placeholder="Confirm Password" required/>
                         <button type="submit" id='sign-up-button'>Sign Up!</button>
-                        {/* <p id='link-to-login-form'>Already have an account? <Link to="/login">Login</Link></p> */}
+                        <p id='link-to-login-form'>Already have an account? <Link to="/login" className="login-link">Login</Link></p>
                         </div>
                     </form>
                 </div>
             </div>
             <div id='background-image-container'>
-                <img src={goldengate} className='background-image'></img>
+                <img src={marinocean} className='background-image aerial'></img>
+                <img src={marinhike} className='background-image'></img>
             </div>
         </>
     )

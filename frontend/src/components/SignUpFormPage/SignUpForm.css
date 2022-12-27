@@ -15,7 +15,7 @@
     width: 500px;
     max-width: 80%;
     height: 570px;
-    max-height: 80%;
+    /* max-height: 90%; */
     z-index: 10;
     border-radius: 25px;
     margin-top: 5%;
@@ -81,7 +81,21 @@
     background-color: green;
 }
 
-.background-image {
-    height: 100%;
-    width: 100%;
+.background-image-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
 }
+
+.background-image {
+    width: 50%;
+    height: 50%
+}
+
+.login-link {
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+}
+

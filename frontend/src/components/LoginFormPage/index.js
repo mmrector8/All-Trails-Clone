@@ -13,7 +13,6 @@ const LoginFormPage = ()=>{
     const [errors, setErrors] = useState([])
     const history = useHistory()
     const sessionUser = useSelector(state => state.session.user)
-    console.log(sessionUser, 'sessionUser')
 
     if (sessionUser) return <Redirect to ="/" />
 
@@ -50,7 +49,7 @@ const LoginFormPage = ()=>{
                     <i className="fa-solid fa-mountain-city" id='logo'></i>
                 </div>
                 <div className='login-title'>
-                    <h1 className='formTitle'>Login</h1>
+                    <h1 className='formTitle'>Welcome back. <br></br>Log in and start exploring.</h1>
                 </div>
                 <div className='login-body'>
                         <form onSubmit={handleSubmit}>
@@ -60,15 +59,14 @@ const LoginFormPage = ()=>{
                                     <li key={error}>{error}</li>
                                 ))}
                             </ul>
-                                <input type ='text' value={credential} onChange={((e)=> setCredential(e.target.value))} placeholder="Username or email"></input>
-                                <input type='password' value={password} onChange={((e) => setPassword(e.target.value))} placeholder="Password"></input>
-                            
-                            <button type='submit'>Submit</button>
+                                <input type ='text' value={credential} onChange={((e)=> setCredential(e.target.value))} placeholder="Username or email" className='input-value'></input>
+                            <input type='password' value={password} onChange={((e) => setPassword(e.target.value))} placeholder="Password" className='input-value'></input>
+                            <button type='submit' className='login-form-buttons'>Log in</button>
                             </div>
                         </form>
                             <div className ='form-elements'>
-                                 <button onClick={demoUser}>Demo Login</button>
-                                <p id='link-to-sign-up-form'>Don't have an account? <Link to="/login">Sign up for free</Link></p>
+                                 <button onClick={demoUser} className ='login-form-buttons'>Demo Login</button>
+                                <p id='link-to-sign-up-form'>Don't have an account? <Link to="/login" className='signup-link'>Sign up for free</Link></p>
                             </div>
                 </div>
             </div>
