@@ -24,7 +24,7 @@ const Navigation = () =>{
         <>
             <nav> 
                 <div className="links">
-                    <NavLink to="/" id='logo-text'><i class="fa-solid fa-mountain-city" id='logo'></i>SFTrails</NavLink>
+                    <NavLink to="/" id='logo-text'><i className="fa-solid fa-mountain-city" id='logo'></i>SFTrails</NavLink>
                 {sessionLinks}
                 </div>
             </nav>

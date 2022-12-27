@@ -1,18 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap');
+ /* *, *:before, *:after {
+    box-sizing: border-box;
+ } */
+
 .sign-up-form {
-    background-color: rgba(46, 245, 255, 0.438);
+    background-color: white;
     box-sizing: border-box;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid black;
-    padding: 40px;
+    border: 2px solid rgba(0, 0, 0, 0.165);
+    padding: 24px;
     width: 500px;
     max-width: 80%;
-    height: 550px;
+    height: 570px;
+    max-height: 80%;
     z-index: 10;
     border-radius: 25px;
+    margin-top: 5%;
 }
 
 .sign-up-header {
@@ -35,6 +41,7 @@
 .formTitle {
     font-size: 28px;
     font-family: Percent, Arial, sans-serif;
+    text-align: center;
 }
 
 
@@ -46,7 +53,7 @@
     font-size: 20px;
 }
 
-#sign-up-button{
+#sign-up-button {
     width: 90%;
     cursor: pointer;
     background-color: #2c5601;
@@ -54,6 +61,7 @@
     font-family: Manrope, Arial, sans-serif;
     border-radius: 50px;
     margin: 20px;
+    padding: 8px;
 } 
 
 #sign-up-button:hover {
@@ -63,5 +71,15 @@
 .input-value{
     width: 90%;
     margin: 10px;
-    font-size: 20px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.pageElements {
+    background-color: green;
+}
+
+.background-image {
+    height: 100%;
+    width: 100%;
 }

@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import * as sessionActions from '../../store/session'
 import { Redirect, useHistory } from 'react-router-dom'
 import './SignUpForm.css'
+import goldengate from "../../images/goldengate.jpg"
 
 const SignUpForm = () => {
     const [username, setUsername] = useState("")
@@ -44,7 +45,7 @@ const SignUpForm = () => {
         <>
             <div className='sign-up-form'>
                 <div className='sign-up-header'>
-                    <i class="fa-solid fa-mountain-city" id='logo'></i>
+                    <i className="fa-solid fa-mountain-city" id='logo'></i>
                 </div>
                 <div className='sign-up-title'>
                     <h1 className='formTitle'>Sign up today to start planning your next adventure</h1>
@@ -52,16 +53,19 @@ const SignUpForm = () => {
                 <div className='sign-up-body'>
                     <form onSubmit={handleSubmit}>
                         <div className="form-elements">
-                            <input type="text" class='input-value' value={username} onChange={((e)=> setUsername(e.target.value))} placeholder='Username'></input>
-                            <input type="text" class='input-value' value={email} onChange={((e) => setEmail(e.target.value))} placeholder="Email"></input>
-                            <input type="password" class='input-value' value={password} onChange={((e) => setPassword(e.target.value))} placeholder="Password"></input>
-                            <input type="password" class='input-value' value={confirmPassword} onChange={((e) => setConfirmPassword(e.target.value))} placeholder="Confirm Password"></input>
+                            <input type="text" className='input-value' value={username} onChange={((e)=> setUsername(e.target.value))} placeholder='Username'></input>
+                            <input type="text" className='input-value' value={email} onChange={((e) => setEmail(e.target.value))} placeholder="Email"></input>
+                            <input type="password" className='input-value' value={password} onChange={((e) => setPassword(e.target.value))} placeholder="Password"></input>
+                            <input type="password" className='input-value' value={confirmPassword} onChange={((e) => setConfirmPassword(e.target.value))} placeholder="Confirm Password"></input>
                         <p >{errors}</p>
                         <button id='sign-up-button'>Sign Up!</button>
                         <p id='link-to-login-form'>Already have an account? <Link to="/login">Login</Link></p>
                         </div>
                     </form>
                 </div>
+            </div>
+            <div id='background-image-container'>
+                <img src={goldengate} class='background-image'></img>
             </div>
         </>
     )
