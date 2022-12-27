@@ -43,32 +43,24 @@ const SignUpForm = () => {
     return (
         <>
             <div className='sign-up-form'>
-            <div className='sign-up-header'>
-                <i class="fa-solid fa-mountain-city" id='logo'></i>
-            </div>
-            <div className='sign-up-title'>
-                <h1 className='formTitle'>Create your free account</h1>
-            </div>
-            <div className='sign-up-body'>
-                <form onSubmit={handleSubmit}>
-                    <div className="formElements">
-                    <label>Username: 
-                        <input type="text" value={username} onChange={((e)=> setUsername(e.target.value))}></input>
-                    </label>
-                    <label>Email:
-                        <input type="text" value={email} onChange={((e) => setEmail(e.target.value))}></input>
-                    </label>
-                    <label>Password:
-                        <input type="password" value={password} onChange={((e) => setPassword(e.target.value))}></input>
-                    </label>
-                    <label>Confirm Password:
-                            <input type="password" value={confirmPassword} onChange={((e) => setConfirmPassword(e.target.value))}></input>
-                    </label>
-                    <p>{errors}</p>
-                    </div>
-                    <button>Sign Up!</button>
-                </form>
-                 <p id='link-to-login-form'>Already have an account? <Link to="/login">Login</Link></p>
+                <div className='sign-up-header'>
+                    <i class="fa-solid fa-mountain-city" id='logo'></i>
+                </div>
+                <div className='sign-up-title'>
+                    <h1 className='formTitle'>Sign up today to start planning your next adventure</h1>
+                </div>
+                <div className='sign-up-body'>
+                    <form onSubmit={handleSubmit}>
+                        <div className="form-elements">
+                            <input type="text" class='input-value' value={username} onChange={((e)=> setUsername(e.target.value))} placeholder='Username'></input>
+                            <input type="text" class='input-value' value={email} onChange={((e) => setEmail(e.target.value))} placeholder="Email"></input>
+                            <input type="password" class='input-value' value={password} onChange={((e) => setPassword(e.target.value))} placeholder="Password"></input>
+                            <input type="password" class='input-value' value={confirmPassword} onChange={((e) => setConfirmPassword(e.target.value))} placeholder="Confirm Password"></input>
+                        <p >{errors}</p>
+                        <button id='sign-up-button'>Sign Up!</button>
+                        <p id='link-to-login-form'>Already have an account? <Link to="/login">Login</Link></p>
+                        </div>
+                    </form>
                 </div>
             </div>
         </>
