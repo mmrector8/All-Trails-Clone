@@ -74,7 +74,9 @@ const SignUpForm = () => {
                     <form onSubmit={handleSubmit}>
                         <div className="form-elements">
                             <ul>
-                                {errors.map(error=>console.log(error.message))}
+                                {errors.map((error) => (
+                                    <li key={error}>{error}</li>
+                                ))}
                                 {/* {errors.map(error => <li key={error}>{error}</li>)} */}
                             </ul>
                             <input type="text" className='input-value' value={username} onChange={((e)=> setUsername(e.target.value))} placeholder='Username' required/>
