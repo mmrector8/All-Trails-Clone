@@ -39,7 +39,7 @@ const LoginFormPage = ()=>{
 
     const demoUser = (e)=> {
         e.preventDefault()
-        return dispatch(sessionActions.login({credential:'demo@gmail.com', password:'demopassword'}))
+        return dispatch(sessionActions.login({ credential:'demo-user@demo.com', password:'demopassword'}))
             .then(()=> history.push('/'))
     }
 
@@ -54,12 +54,12 @@ const LoginFormPage = ()=>{
                 </div>
                 <div className='login-body'>
                         <form onSubmit={handleSubmit}>
-                        <ul>
-                            {errors.map((error) => (
-                                <li key={error}>{error}</li>
-                            ))}
-                        </ul>
                             <div className='form-elements'>
+                            <ul>
+                                {errors.map((error) => (
+                                    <li key={error}>{error}</li>
+                                ))}
+                            </ul>
                                 <input type ='text' value={credential} onChange={((e)=> setCredential(e.target.value))} placeholder="Username or email"></input>
                                 <input type='password' value={password} onChange={((e) => setPassword(e.target.value))} placeholder="Password"></input>
                             

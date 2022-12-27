@@ -18,28 +18,6 @@ const SignUpForm = () => {
     
      if (sessionUser) return <Redirect to="/" />
 
-    // const handleSubmit = async (e)=>{
-        
-    //     e.preventDefault();
-
-    //     if (password === confirmPassword){
-    //         setErrors([])
-    //         return dispatch(sessionActions.signUp({email, username, password}))
-    //         .catch(async (res)=>{
-    //             let data;
-    //             try {
-    //                 data = res.clone().json()
-    //             } catch{
-    //                 data = await res.text()
-    //             }
-                
-    //             if(data?.errors) setErrors(data.errors)
-    //             else if(data) setErrors([data])
-    //             else setErrors([res.statusText])
-    //         })
-    //     }
-    //     return setErrors(["passwords must match"])
-    // }
     const handleSubmit = (e) => {
         e.preventDefault();
         if (password === confirmPassword) {
