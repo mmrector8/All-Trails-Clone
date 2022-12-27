@@ -34,6 +34,12 @@ const LoginFormPage = ()=>{
             });
     }
 
+    const demoUser = (e)=> {
+        e.preventDefault()
+        return dispatch(sessionActions.login({credential:'demo@gmail.com', password:'demopassword'}))
+            .then(()=> history.push('/'))
+    }
+
     return (
         <> 
             <h1 className='formTitle'>Login Form</h1> 
@@ -51,9 +57,8 @@ const LoginFormPage = ()=>{
                 </label>
                 </div>
                 <button type='submit'>Submit</button>
-
             </form>
-        
+            <button onClick={demoUser}>Demo Login</button>
         </>
     )
 }
