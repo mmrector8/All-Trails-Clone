@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap'); 
+/* @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap');  */
 
 .links{
     display: flex;
@@ -22,7 +22,7 @@
 .sign-up{
     background-color: #2c5601;
     color: white;
-    font-family: Manrope, Arial, sans-serif;
+    font-family: 'Manrope', sans-serif;
     text-decoration: none;
     border: 1px solid #2c5601;
     font-size: 13px;
@@ -36,9 +36,9 @@
 .log-in {
     background-color: #f0f0ec;
     color: #2b381f;
-    font-family: Manrope, Arial, sans-serif;
+    font-family: "Manrope", Arial, sans-serif;
     text-decoration: none;
-    border: 1px soli12d #f0f0ec;
+    border: 1px solid #f0f0ec;
     font-size: 13px;
     font-weight: bold;
     padding: 10px;

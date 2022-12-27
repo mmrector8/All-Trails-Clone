@@ -18,28 +18,48 @@ const SignUpForm = () => {
     
      if (sessionUser) return <Redirect to="/" />
 
-    const handleSubmit = async (e)=>{
+    // const handleSubmit = async (e)=>{
         
-        e.preventDefault();
+    //     e.preventDefault();
 
-        if (password === confirmPassword){
-            return dispatch(sessionActions.signUp({email, username, password}))
-            .catch(async (res)=>{
-                console.log(res.statusText)
-                let data;
-                try {
-                    data = res.clone().json()
-                } catch{
-                    data = await res.text()
-                }
+    //     if (password === confirmPassword){
+    //         setErrors([])
+    //         return dispatch(sessionActions.signUp({email, username, password}))
+    //         .catch(async (res)=>{
+    //             let data;
+    //             try {
+    //                 data = res.clone().json()
+    //             } catch{
+    //                 data = await res.text()
+    //             }
                 
-                if(data?.errors) setErrors(data.errors)
-                else if(data) setErrors([])
-                else setErrors([res.statusText])
-            })
+    //             if(data?.errors) setErrors(data.errors)
+    //             else if(data) setErrors([data])
+    //             else setErrors([res.statusText])
+    //         })
+    //     }
+    //     return setErrors(["passwords must match"])
+    // }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (password === confirmPassword) {
+            setErrors([]);
+            return dispatch(sessionActions.signUp({ email, username, password }))
+                .catch(async (res) => {
+                    let data;
+                    try {
+                        // .clone() essentially allows you to read the response body twice
+                        data = await res.clone().json();
+                    } catch {
+                        data = await res.text(); // Will hit this case if the server is down
+                    }
+                    if (data?.errors) setErrors(data.errors);
+                    else if (data) setErrors([data]);
+                    else setErrors([res.statusText]);
+                });
         }
-        return setErrors(["passwords must match"])
-    }
+        return setErrors(['Passwords must match']);
+    };
 
     return (
         <>
@@ -53,19 +73,22 @@ const SignUpForm = () => {
                 <div className='sign-up-body'>
                     <form onSubmit={handleSubmit}>
                         <div className="form-elements">
-                            <input type="text" className='input-value' value={username} onChange={((e)=> setUsername(e.target.value))} placeholder='Username'></input>
-                            <input type="text" className='input-value' value={email} onChange={((e) => setEmail(e.target.value))} placeholder="Email"></input>
-                            <input type="password" className='input-value' value={password} onChange={((e) => setPassword(e.target.value))} placeholder="Password"></input>
-                            <input type="password" className='input-value' value={confirmPassword} onChange={((e) => setConfirmPassword(e.target.value))} placeholder="Confirm Password"></input>
-                        <p >{errors}</p>
-                        <button id='sign-up-button'>Sign Up!</button>
-                        <p id='link-to-login-form'>Already have an account? <Link to="/login">Login</Link></p>
+                            <ul>
+                                {errors.map(error=>console.log(error.message))}
+                                {/* {errors.map(error => <li key={error}>{error}</li>)} */}
+                            </ul>
+                            <input type="text" className='input-value' value={username} onChange={((e)=> setUsername(e.target.value))} placeholder='Username' required/>
+                            <input type="text" className='input-value' value={email} onChange={((e) => setEmail(e.target.value))} placeholder="Email" required/>
+                            <input type="password" className='input-value' value={password} onChange={((e) => setPassword(e.target.value))} placeholder="Password" required/>
+                            <input type="password" className='input-value' value={confirmPassword} onChange={((e) => setConfirmPassword(e.target.value))} placeholder="Confirm Password" required/>
+                        <button type="submit" id='sign-up-button'>Sign Up!</button>
+                        {/* <p id='link-to-login-form'>Already have an account? <Link to="/login">Login</Link></p> */}
                         </div>
                     </form>
                 </div>
             </div>
             <div id='background-image-container'>
-                <img src={goldengate} class='background-image'></img>
+                <img src={goldengate} className='background-image'></img>
             </div>
         </>
     )

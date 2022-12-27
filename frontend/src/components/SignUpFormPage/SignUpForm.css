@@ -58,14 +58,16 @@
     cursor: pointer;
     background-color: #2c5601;
     color: white;
-    font-family: Manrope, Arial, sans-serif;
+    font-family: "Manrope", Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
     border-radius: 50px;
     margin: 20px;
     padding: 8px;
 } 
 
 #sign-up-button:hover {
-    background-color: #1b3501
+    background-color: #1e3a01
 }
 
 .input-value{

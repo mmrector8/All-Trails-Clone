@@ -16,7 +16,6 @@ export const logoutUser = () => ({
 
 //THUNK ACTION CREATOR
 export const login = (user) => async dispatch => {
-    console.log(user, 'userobject')
     const { credential, password } = user;
     const res = await csrfFetch('/api/session', {
         method: 'POST',
@@ -29,7 +28,6 @@ export const login = (user) => async dispatch => {
     })
     if(res.ok){
         let data = await res.json();
-        console.log(data.user, 'data returned')
         storeCurrentUser(data.user)
         dispatch(loginUser(data.user));
         return res;
@@ -52,7 +50,6 @@ export const signUp = (user)=> async dispatch => {
     })
     if (res.ok){
         const newUserData = await res.json();
-        debugger
         storeCurrentUser(newUserData.user)
         dispatch(loginUser(newUserData.user))
     }

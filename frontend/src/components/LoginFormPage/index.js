@@ -2,7 +2,9 @@ import {useDispatch, useSelector} from 'react-redux'
 import React, { useState } from 'react'
 import * as sessionActions from '../../store/session'
 import { Redirect, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './LoginForm.css'
+import goldengate from "../../images/goldengate.jpg"
 
 const LoginFormPage = ()=>{
     const dispatch = useDispatch()
@@ -32,6 +34,7 @@ const LoginFormPage = ()=>{
                 else if (data) setErrors([data]);
                 else setErrors([res.statusText]);
             });
+            
     }
 
     const demoUser = (e)=> {
@@ -42,23 +45,34 @@ const LoginFormPage = ()=>{
 
     return (
         <> 
-            <h1 className='formTitle'>Login Form</h1> 
-            <form onSubmit={handleSubmit}>
-                <ul>
-                    {errors.map(error => <li key={error}>{error}</li>)}
-                </ul>
-                <div className='formElements'>
-                
-                <label className='label'>Username or Email <br></br>
-                    <input type ='text' value={credential} onChange={((e)=> setCredential(e.target.value))}></input>
-                </label>
-                <label className='label'>Password<br></br>
-                    <input type='password' value={password} onChange={((e) => setPassword(e.target.value))}></input>
-                </label>
+            <div className='login-form'>
+                <div className='login-header'>
+                    <i className="fa-solid fa-mountain-city" id='logo'></i>
                 </div>
-                <button type='submit'>Submit</button>
-            </form>
-            <button onClick={demoUser}>Demo Login</button>
+                <div className='login-title'>
+                    <h1 className='formTitle'>Login</h1>
+                </div>
+                <div className='login-body'>
+                        <form onSubmit={handleSubmit}>
+                            <ul>
+                                {errors.map(error => <li key={error}>{error}</li>)}
+                            </ul>
+                            <div className='form-elements'>
+                                <input type ='text' value={credential} onChange={((e)=> setCredential(e.target.value))} placeholder="Username or email"></input>
+                                <input type='password' value={password} onChange={((e) => setPassword(e.target.value))} placeholder="Password"></input>
+                            
+                            <button type='submit'>Submit</button>
+                            </div>
+                        </form>
+                            <div className ='form-elements'>
+                                 <button onClick={demoUser}>Demo Login</button>
+                                <p id='link-to-sign-up-form'>Don't have an account? <Link to="/login">Sign up for free</Link></p>
+                            </div>
+                </div>
+            </div>
+            <div id='background-image-container'>
+                <img src={goldengate} className='background-image'></img>
+            </div>
         </>
     )
 }
