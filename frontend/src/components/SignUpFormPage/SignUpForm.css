@@ -80,11 +80,11 @@
     background: url("../../images/sign-up-background.jpg") no-repeat;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     height: 900px;
     width: 100%;
     resize: both;
     overflow: scroll;
-    background-repeat: no-repeat;
     /* display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-columns: 50% 50%;
