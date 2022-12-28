@@ -81,9 +81,12 @@
 }
 
 .background-image-container {
-    background-image: url("../../images/goldengate.jpg");
-    background-size: cover;
+    background: url("../../images/sign-up-background.jpg") no-repeat;
+    background-size: contain;
     height: 900px;
+    width: auto;
+    resize: both;
+    overflow: scroll;
     /* display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-columns: 50% 50%;
