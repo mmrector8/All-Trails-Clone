@@ -9,15 +9,17 @@
 }
 
 .dropdown-button {
-    margin-right: 0;
+    position: absolute;
+    right: 20px;
     color: green;
-    border: 3px solid green;
+    border: 2px solid green;
     border-radius: 30px;
     background: white;
     font-size: 30px;
 
 }
 .dropdown {
+    top: 50px;
     padding-top: 5px;
     padding-bottom: 5px;
     position: relative;
