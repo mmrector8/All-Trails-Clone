@@ -2,7 +2,6 @@
 
 
 .sign-up-form {
-
     background-color: white;
     box-sizing: border-box;
     position: absolute;
@@ -76,13 +75,10 @@
     padding: 10px;
 }
 
-.pageElements {
-    background-color: green;
-}
 
 .background-image-container {
     background: url("../../images/sign-up-background.jpg") no-repeat;
-    background-size: contain;
+    background-size: cover;
     height: 900px;
     width: auto;
     resize: both;
@@ -107,7 +103,7 @@
 
 @media(max-width: 700px){
     .sign-up-form{
-        width: 80%;
+        width: 70%;
         height: 65%;
     }
 
@@ -118,6 +114,14 @@
     }
 
     .formTitle {
-        font-size: 22px;
+        font-size: 20px;
+    }
+
+    .input-value{
+        font-size: 12px;
+    }
+
+    .form-elements {
+        font-size: 14px;
     }
 }
