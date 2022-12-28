@@ -81,15 +81,20 @@
 }
 
 .background-image-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
+    background-image: url("../../images/goldengate.jpg");
+    background-size: cover;
+    height: 900px;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
+    align-items: center; */
+    /* flex-direction: column; */
+} 
 
-.background-image-signup {
-    width: 50%;
-    height: auto;
-}
+/* .background-image-signup { */
+    /* width: 100%;
+    height: auto; */
+/* } */
 
 .login-link {
     font-weight: bold;
@@ -104,17 +109,9 @@
     }
 
     .background-image-container {
-        height: 100%;
-        width: auto;
-    }
-
-    .first-image{
-        width: 100%;
-        height: 100%;
-    } 
-
-    .second-image {
-        display: none;
+        background-image: url("../../images/marinocean.jpg");
+        background-size: cover;
+        height: 900px;
     }
 
     .formTitle {

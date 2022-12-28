@@ -42,11 +42,10 @@ const SignUpForm = () => {
 
     return (
         <>
-            <div id='background-image-container'>
+            <div class='background-image-container'>
                 {/* <img src={goldengate} className='background-image-signup'></img> */}
-                <img src={marinocean} className='background-image-signup first-image'></img>
-                <img src={marinhike} className='background-image-signup second-image'></img>
-            </div>
+                {/* <img src={marinocean} className='background-image-signup first-image'></img>
+                <img src={marinhike} className='background-image-signup second-image'></img> */}
             <div className='sign-up-form'>
                 <div className='sign-up-header'>
                     <i className="fa-solid fa-mountain-city" id='logo'></i>
@@ -66,12 +65,13 @@ const SignUpForm = () => {
                             <input type="text" className='input-value' value={email} onChange={((e) => setEmail(e.target.value))} placeholder="Email" required/>
                             <input type="password" className='input-value' value={password} onChange={((e) => setPassword(e.target.value))} placeholder="Password" required/>
                             <input type="password" className='input-value' value={confirmPassword} onChange={((e) => setConfirmPassword(e.target.value))} placeholder="Confirm Password" required/>
-                        <button type="submit" id='sign-up-button'>Sign Up!</button>
-                        <p id='link-to-login-form'>Already have an account? <Link to="/login" className="login-link">Login</Link></p>
+                            <button type="submit" id='sign-up-button'>Sign Up!</button>
+                            <p id='link-to-login-form'>Already have an account? <Link to="/login" className="login-link">Login</Link></p>
                         </div>
                     </form>
                 </div>
             </div>
+        </div>
         </>
     )
 }
