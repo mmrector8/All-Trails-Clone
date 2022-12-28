@@ -79,6 +79,7 @@
 .background-image-container {
     background: url("../../images/sign-up-background.jpg") no-repeat;
     background-size: cover;
+    background-position: center;
     height: 900px;
     width: 100%;
     resize: both;
