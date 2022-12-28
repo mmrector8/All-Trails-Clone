@@ -42,6 +42,11 @@ const SignUpForm = () => {
 
     return (
         <>
+            <div id='background-image-container'>
+                {/* <img src={goldengate} className='background-image-signup'></img> */}
+                <img src={marinocean} className='background-image-signup first-image'></img>
+                <img src={marinhike} className='background-image-signup second-image'></img>
+            </div>
             <div className='sign-up-form'>
                 <div className='sign-up-header'>
                     <i className="fa-solid fa-mountain-city" id='logo'></i>
@@ -66,11 +71,6 @@ const SignUpForm = () => {
                         </div>
                     </form>
                 </div>
-            </div>
-            <div id='background-image-container'>
-                <img src={marinocean} className='background-image-signup first-image'></img>
-                <img src={marinhike} className='background-image-signup second-image'></img>
-                {/* <img src={goldengate} className='background-image-signup'></img> */}
             </div>
         </>
     )
