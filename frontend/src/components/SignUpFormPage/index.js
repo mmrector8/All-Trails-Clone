@@ -6,6 +6,7 @@ import { Redirect, useHistory } from 'react-router-dom'
 import './SignUpForm.css'
 import marinocean from "../../images/marinocean.jpg"
 import marinhike from "../../images/marinhike.jpg"
+import goldengate from "../../images/goldengate.jpg"
 
 const SignUpForm = () => {
     const [username, setUsername] = useState("")
@@ -67,8 +68,9 @@ const SignUpForm = () => {
                 </div>
             </div>
             <div id='background-image-container'>
-                <img src={marinocean} className='background-image-signup aerial'></img>
-                <img src={marinhike} className='background-image-signup'></img>
+                <img src={marinocean} className='background-image-signup first-image'></img>
+                <img src={marinhike} className='background-image-signup second-image'></img>
+                {/* <img src={goldengate} className='background-image-signup'></img> */}
             </div>
         </>
     )
