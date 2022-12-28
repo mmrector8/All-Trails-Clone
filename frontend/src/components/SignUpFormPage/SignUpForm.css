@@ -80,9 +80,10 @@
     background: url("../../images/sign-up-background.jpg") no-repeat;
     background-size: cover;
     height: 900px;
-    width: auto;
+    width: 100%;
     resize: both;
     overflow: scroll;
+    background-repeat: no-repeat;
     /* display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-columns: 50% 50%;
@@ -98,6 +99,9 @@
 .login-link {
     font-weight: bold;
     color: black;
+    font-size: 18px;
+}
+#link-to-login-form{
     font-size: 18px;
 }
 
