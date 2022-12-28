@@ -18,8 +18,8 @@ const ProfileButton = ({user}) => {
         const closeMenu = () =>{
             setShowMenu(false)
         }
-        document.addEventListener('click', closeMenu)
-        return ()=> document.removeEventListener('click', closeMenu)
+        // document.addEventListener('mouseout', closeMenu)
+        // return ()=> document.removeEventListener('mouseout', closeMenu)
     }, [showMenu])
     
     const logout = (e)=> {
@@ -29,12 +29,12 @@ const ProfileButton = ({user}) => {
 
     return (
         <>
-            <div class='dropdown-menu'>
-                <button onMouseOver={openMenu} className='dropdown-button'>
-                    <i className="fa-solid fa-tree dropdown-icon" onClick={((e) => setShowMenu(true))}></i>
+            <div class='dropdown-menu' onMouseOver={openMenu} onMouseLeave={(e) => setShowMenu(false)}>
+                <button className='dropdown-button'>
+                    <i className="fa-solid fa-tree dropdown-icon" onMouseOver={((e) => setShowMenu(true))}></i>
                 </button>
                 {showMenu && (
-                    <ul className='dropdown'>
+                    <ul className='dropdown' onMouseOver={openMenu}>
                         <li className='nav-item'>{user.username}'s Profile</li>
                         <li className='nav-item'>Reviews</li>
                         <li><button onClick={logout} className=' nav-item logout-button'>Logout</button></li>
