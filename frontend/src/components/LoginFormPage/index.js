@@ -53,7 +53,7 @@ const LoginFormPage = ()=>{
                         <i className="fa-solid fa-mountain-city" id='logo'></i>
                     </div>
                     <div className='login-title'>
-                        <h1 className='formTitle'>Welcome back. <br></br>Log in and start exploring.</h1>
+                        <h1 className='login-form-title'>Welcome back. <br></br>Log in and start exploring.</h1>
                     </div>
                     <div className='login-body'>
                             <form onSubmit={handleSubmit}>

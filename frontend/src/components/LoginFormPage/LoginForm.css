@@ -38,12 +38,12 @@
     align-items: center;
 }
 
-.formTitle {
+.login-form-title {
     font-size: 28px;
-    font-family: Percent, Arial, sans-serif;
+    /* font-family: Percent, Arial, sans-serif; */
+    font-family: 'Manrope', sans-serif;
     text-align: center;
 }
-
 
 .form-elements {
     display: flex;
@@ -58,7 +58,7 @@
     cursor: pointer;
     background-color: #2c5601;
     color: white;
-    font-family: "Manrope", Arial, sans-serif;
+    font-family: "Manrope", sans-serif;
     font-weight: bold;
     font-size: 14px;
     border-radius: 50px;
@@ -76,6 +76,7 @@
     font-size: 16px;
     padding: 10px;
     border-radius: 5px;
+    font-family: 'Manrope', sans-serif
 }
 
 .pageElements {
@@ -83,6 +84,8 @@
 }
 
 #link-to-sign-up-form{
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
     margin-top: 20px;
 }
 
@@ -100,6 +103,8 @@
     resize: both;
     overflow: scroll;
 }
+
+
 
 @media(max-width: 700px){
     .background-image-container-login {
