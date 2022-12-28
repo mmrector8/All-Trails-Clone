@@ -67,8 +67,8 @@ const SignUpForm = () => {
                 </div>
             </div>
             <div id='background-image-container'>
-                <img src={marinocean} className='background-image aerial'></img>
-                <img src={marinhike} className='background-image'></img>
+                <img src={marinocean} className='background-image-signup aerial'></img>
+                <img src={marinhike} className='background-image-signup'></img>
             </div>
         </>
     )

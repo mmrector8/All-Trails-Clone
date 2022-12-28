@@ -95,3 +95,14 @@
     font-weight: bold;
     color: black;
 }
+.background-image-container-login {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.background-image-login {
+    width: 50%;
+    height: 50%
+}

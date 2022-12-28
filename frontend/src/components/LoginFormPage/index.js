@@ -4,7 +4,10 @@ import * as sessionActions from '../../store/session'
 import { Redirect, useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import './LoginForm.css'
-import goldengate from "../../images/goldengate.jpg"
+// import goldengate from "../../images/goldengate.jpg"
+import aerialgg  from "../../images/aerialgg.jpg"
+import ggbridge2 from "../../images/ggbridge2.jpg"
+// import pacifica from "../../images/pacifica.jpg"
 
 const LoginFormPage = ()=>{
     const dispatch = useDispatch()
@@ -70,8 +73,9 @@ const LoginFormPage = ()=>{
                             </div>
                 </div>
             </div>
-            <div id='background-image-container'>
-                <img src={goldengate} className='background-image'></img>
+            <div id='background-image-container-login'>
+                <img src={aerialgg} className='background-image-login'></img>
+                <img src={ggbridge2} className='background-image-login'></img>
             </div>
         </>
     )
