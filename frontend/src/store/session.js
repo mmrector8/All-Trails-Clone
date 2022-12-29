@@ -1,3 +1,4 @@
+import LoginFormPage from "../components/LoginFormPage";
 import csrfFetch, { storeCSRFToken } from "./csrf";
 
 //ACTION TYPES
@@ -44,11 +45,13 @@ export const restoreSession = ()=> async dispatch =>{
 }
 
 export const signUp = (user)=> async dispatch => {
-    const {email, username, password} = user
+    const {email, username, fname, lname,  password} = user
     const res = await csrfFetch(`/api/users`, {
         method: "POST",
         body: JSON.stringify({
             email,
+            fname, 
+            lname, 
             username,
             password
         })

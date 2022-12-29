@@ -35,7 +35,7 @@ const ProfileButton = ({user}) => {
                 </button>
                 {showMenu && (
                     <ul className='dropdown' onMouseOver={openMenu}>
-                        <li className='nav-item'>{user.username}'s Profile</li>
+                        <li className='nav-item'>{user.fname}'s Profile</li>
                         <li className='nav-item'>Reviews</li>
                         <li><button onClick={logout} className=' nav-item logout-button'>Logout</button></li>
                     </ul>

@@ -12,11 +12,11 @@
     padding: 24px;
     width: 500px;
     max-width: 80%;
-    height: 570px;
+    height: 720px;
     /* max-height: 90%; */
     z-index: 10;
     border-radius: 25px;
-    margin-top: 5%;
+    margin-top: 50px;
 }
 
 .sign-up-header {
@@ -109,8 +109,10 @@
 
 @media(max-width: 700px){
     .sign-up-form{
+        position: relative;
+        margin-top: 0px;
         width: 70%;
-        height: 65%;
+        /* height: 65%; */
     }
 
     .background-image-container {
@@ -130,4 +132,13 @@
     .form-elements {
         font-size: 14px;
     }
+}
+
+@media (max-height: 780px){
+    .sign-up-form {
+            position: relative;
+            margin-top: 0px;
+            width: 600px;
+            /* height: 65%; */
+        }
 }

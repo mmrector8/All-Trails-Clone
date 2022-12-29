@@ -19,6 +19,8 @@ ApplicationRecord.transaction do
   # Create one user with an easy to remember username, email, and password:
   User.create!(
     username: 'DemoUser', 
+    fname: 'Demo',
+    lname: 'User',
     email: 'demo-user@demo.com', 
     password: 'demopassword'
   )

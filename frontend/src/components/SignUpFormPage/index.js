@@ -10,6 +10,8 @@ import goldengate from "../../images/goldengate.jpg"
 
 const SignUpForm = () => {
     const [username, setUsername] = useState("")
+    const [fname, setFname] = useState("");
+    const [lname, setLname] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [errors, setErrors] = useState([])
@@ -24,7 +26,7 @@ const SignUpForm = () => {
         e.preventDefault();
         if (password === confirmPassword) {
             setErrors([]);
-            return dispatch(sessionActions.signUp({ email, username, password }))
+            return dispatch(sessionActions.signUp({ email, fname, lname, username, password }))
                 .catch(async (res) => {
                     let data;
                     try {
@@ -61,6 +63,8 @@ const SignUpForm = () => {
                                     <li key={error}>{error}</li>
                                 ))}
                             </ul>
+                            <input type="text" className='input-value' value={fname} onChange={((e) => setFname(e.target.value))} placeholder='First Name' required />
+                            <input type="text" className='input-value' value={lname} onChange={((e) => setLname(e.target.value))} placeholder='Last Name' required />
                             <input type="text" className='input-value' value={username} onChange={((e)=> setUsername(e.target.value))} placeholder='Username' required/>
                             <input type="text" className='input-value' value={email} onChange={((e) => setEmail(e.target.value))} placeholder="Email" required/>
                             <input type="password" className='input-value' value={password} onChange={((e) => setPassword(e.target.value))} placeholder="Password" required/>
