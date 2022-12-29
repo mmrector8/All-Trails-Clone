@@ -10,9 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_29_205827) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_29_211819) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hikes", force: :cascade do |t|
+    t.bigint "park_id", null: false
+    t.string "name", null: false
+    t.string "city", null: false
+    t.float "latitude", null: false
+    t.float "longitude", null: false
+    t.integer "zipcode", null: false
+    t.string "difficulty", null: false
+    t.integer "est_time", null: false
+    t.text "description"
+    t.integer "elevation_gain", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "duration", null: false
+    t.index ["name"], name: "index_hikes_on_name", unique: true
+    t.index ["park_id"], name: "index_hikes_on_park_id"
+  end
 
   create_table "parks", force: :cascade do |t|
     t.string "name", null: false
@@ -40,4 +58,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_29_205827) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "hikes", "parks"
 end
