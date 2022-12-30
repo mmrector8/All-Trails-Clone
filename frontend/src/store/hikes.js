@@ -5,7 +5,7 @@ const RECEIVE_HIKES = 'hikes/RECEIVE_HIKES';
 
 export const receiveHike = hike =>({
     type: RECEIVE_HIKE,
-    payload: hike
+    hike
 })
 
 export const receiveHikes = (hikes)=>({
@@ -22,12 +22,19 @@ export const fetchHikes = () => async dispatch =>{
     }
 }
 
+export const fetchHike = (hikeId) => async dispatch => {
+    const res = await csrfFetch(`/api/hikes/${hikeId}`)
+    if (res.ok){
+        const hike = await res.json();
+        dispatch(receiveHike(hike))
+    }
+}
+
 const hikesReducer = (state={}, action) => {
     const newState ={...state}
     switch(action.type){
-        // case RECEIVE_HIKE:
-        //     newState[action.payload.hike.id] = action.payload.hike
-        //     return newState;
+        case RECEIVE_HIKE:
+           return {...newState, ...action.hike}
         case RECEIVE_HIKES:
             return {...newState, ...action.payload}
         default:
