@@ -7,6 +7,7 @@ import App from './App';
 import configureStore from './store';
 import csrfFetch from './store/csrf'
 import * as sessionActions from './store/session';
+import * as hikeActions from './store/hikes'
 // import restoreSession from './store/session'
 
 const renderApplication = async () => {
@@ -15,7 +16,8 @@ const renderApplication = async () => {
   if (process.env.NODE_ENV !== 'production') {
     window.store = store;
     window.csrfFetch = csrfFetch;
-    window.sessionActions = sessionActions;
+    // window.sessionActions = sessionActions;
+    window.hikeActions = hikeActions;
   }
 
     function Root() {
