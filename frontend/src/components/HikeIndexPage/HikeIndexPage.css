@@ -1,0 +1,41 @@
+.title {
+    padding-left: 150px;
+    padding-bottom: 30px;
+    font-weight: bold;
+    font-size: 28px;
+    font-family: "Manrope", sans-serif;
+}
+
+.description {
+    padding-right: 300px;
+    padding-left: 300px;
+}
+.title-and-description{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.SF-hike-images{
+    height: 300px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.SF-photos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.hike-list-items{
+    display: flex;
+    align-items: right;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.hike-name {
+    font-weight: bold;
+}

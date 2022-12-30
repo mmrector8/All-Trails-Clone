@@ -4,15 +4,15 @@ const HikeListItem = ({hike}) =>{
     return (
         <>
         <ul>
-            {console.log(hike)}
-            <li>{hike.name}</li>
-            <li>{hike.difficulty}</li>
-            <li>{hike.city}</li>
-            <li>{hike.length}</li>
-            <li>{hike.duration}</li>
-            <li>{hike.description}</li>
-            <li>{hike.estimatedTime}</li>
-            <br></br>
+        <div className="hike-list-items">
+            <li className="hike-list-item hike-name">{hike.name}</li>
+            <li className="hike-list-item hike-difficulty">{hike.difficulty}</li>
+            <li className="hike-list-item hike-city">{hike.city}</li>
+            <li className="hike-list-item hike-elevation">{hike.elevationGain} ft. elevation gain</li>
+            <li className="hike-list-item hike-duration" >{hike.duration}</li>
+            <li className="hike-list-item hike-description">{hike.description}</li>
+            <li className="hike-list-item hike-estimatedTime">{hike.estimatedTime}</li>
+        </div>
         </ul>
         </>
     )
