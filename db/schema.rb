@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_30_164400) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_30_210500) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,13 +22,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_30_164400) do
     t.float "longitude", null: false
     t.integer "zipcode", null: false
     t.string "difficulty", null: false
-    t.integer "est_time", null: false
     t.text "description"
     t.integer "elevation_gain", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "duration", null: false
     t.string "route_type", null: false
+    t.string "estimated_time", null: false
     t.index ["name"], name: "index_hikes_on_name", unique: true
     t.index ["park_id"], name: "index_hikes_on_park_id"
   end

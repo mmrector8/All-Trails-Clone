@@ -10,7 +10,6 @@
 #  longitude      :float            not null
 #  zipcode        :integer          not null
 #  difficulty     :string           not null
-#  est_time       :integer          not null
 #  description    :text
 #  elevation_gain :integer          not null
 #  created_at     :datetime         not null
@@ -20,7 +19,7 @@
 #
 class Hike < ApplicationRecord
     belongs_to :park, optional: true
-    validates :name, :city, :latitude, :longitude, :zipcode, :difficulty, :est_time, :elevation_gain, :duration, :route_type, presence: true
+    validates :name, :city, :latitude, :longitude, :zipcode, :difficulty, :estimated_time, :elevation_gain, :duration, :route_type, presence: true
     validates :route_type, inclusion: {in: ['loop', 'Out & back']}
     validates :duration, length: {in: 1...100 }
     validates :name, uniqueness: true

@@ -25,6 +25,6 @@ class Api::HikesController < ApplicationController
 
     private
     def hike_params
-        params.require(:hike).permit(:park_id, :name, :city, :latitude, :longitude, :zipcode, :difficulty, :est_time, :description, :elevation_gain, :duration, :route_type)
+        params.require(:hike).permit(:park_id, :name, :city, :latitude, :longitude, :zipcode, :difficulty, :estimated_time, :description, :elevation_gain, :duration, :route_type)
     end 
 end

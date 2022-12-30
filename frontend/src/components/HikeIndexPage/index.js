@@ -15,6 +15,7 @@ const HikeIndexPage = ()=>{
     return (
         <>
             <h1>San Francisco Hikes</h1>
+            {console.log(hikes)}
             {hikes.map((hike, i) =><HikeListItem key={i} hike={hike}/>)}
         </>
         
