@@ -1,25 +1,42 @@
-.title {
-    padding-left: 150px;
-    padding-bottom: 30px;
+
+.trail-list {
+    padding-top: 50px;
+    padding-left: 10%;
     font-weight: bold;
     font-size: 28px;
     font-family: "Manrope", sans-serif;
 }
-
-.description {
-    padding-right: 300px;
-    padding-left: 300px;
-}
-.title-and-description{
+.trails {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    
+}
+.description {
+    padding-right: 10%;
+    padding-left: 11%;
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+    margin: 0px 0px 24px;
+}
+.title-and-description {
+    display: flex;
+    align-items: right;
     justify-content: center;
     flex-direction: column;
+    margin-top: 20px;
+}
+.title {
+    padding-left: 11%;
+    padding-bottom: 30px;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: "Manrope", sans-serif;
 }
 .SF-hike-images{
-    height: 300px;
+    height: 270px;
     border-radius: 20px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .SF-photos{
@@ -30,12 +47,25 @@
 }
 .hike-list-items{
     display: flex;
-    align-items: right;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.369);
+    padding: 50px;
 }
 
+.hike-list-item{
+    text-align: center;
+}
 
 .hike-name {
     font-weight: bold;
+}
+.hike-description{
+    width: 40%;
+}
+
+.map {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.369);
+    padding-bottom: 300px;
 }
