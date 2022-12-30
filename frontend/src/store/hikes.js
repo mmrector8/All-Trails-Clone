@@ -1,4 +1,4 @@
-import csrfFetch from "./csrf";
+import csrfFetch, { storeCSRFToken } from "./csrf";
 
 const RECEIVE_HIKE = 'hikes/RECEIVE_HIKE';
 const RECEIVE_HIKES = 'hikes/RECEIVE_HIKES';
@@ -12,6 +12,21 @@ export const receiveHikes = (hikes)=>({
     type: RECEIVE_HIKES,
     payload: hikes.hikes
 })
+
+export const getHike = (hikeId)=>(store={})=>{
+    if(storeCSRFToken.hikes){
+        return store.hikes[hikeId]
+    }
+    return null
+}
+
+export const getHikes = (store={})=>{
+    if (store.hikes){
+        console.log(Object.values(store.hikes), "storehikes")
+        return Object.values(store.hikes)
+    }
+    return []
+}
 
 export const fetchHikes = () => async dispatch =>{
     const res = await csrfFetch(`/api/hikes`)

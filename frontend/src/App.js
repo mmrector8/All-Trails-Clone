@@ -9,13 +9,13 @@ function App() {
   return (
     <>
         <Navigation />
-        <Route exact path="/">
+        <Route exact path="/hikes">
           <HikeIndexPage />
         </Route>
-        < Route path='/signup'>
+        < Route exact path='/signup'>
           <SignUpForm />
         </Route>
-        < Route path='/login'>
+        < Route exact path='/login'>
           <LoginFormPage />
         </Route>
     </>

@@ -1,8 +1,23 @@
+import { getHikes, fetchHikes } from "../../store/hikes"
+import { useSelector } from "react-redux"
+import { useEffect } from "react"
+import { useDispatch } from "react-redux"
+import HikeListItem from "./Hike_List_Item"
 
-const BenchIndexPage = ()=>{
+const HikeIndexPage = ()=>{
+    const dispatch = useDispatch()
+    const hikes = useSelector(getHikes)
+    
+    useEffect(()=>{
+        dispatch(fetchHikes())
+    }, [dispatch])
 
     return (
-        <h1>This is the bench index page</h1>
+        <>
+            <h1>San Francisco Hikes</h1>
+            {hikes.map((hike, i) =><HikeListItem key={i} hike={hike}/>)}
+        </>
+        
     )
 }
-export default BenchIndexPage
+export default HikeIndexPage;
