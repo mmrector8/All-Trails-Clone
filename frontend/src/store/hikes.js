@@ -1,4 +1,4 @@
-import csrfFetch, { storeCSRFToken } from "./csrf";
+import csrfFetch from "./csrf";
 
 const RECEIVE_HIKE = 'hikes/RECEIVE_HIKE';
 const RECEIVE_HIKES = 'hikes/RECEIVE_HIKES';
@@ -13,9 +13,10 @@ export const receiveHikes = (hikes)=>({
     payload: hikes.hikes
 })
 
-export const getHike = (hikeId)=>(store={})=>{
-    if(storeCSRFToken.hikes){
-        return store.hikes[hikeId]
+export const getHike = (hikeId)=>(state)=>{
+    if(state.hikes){
+        console.log(state.hikes[hikeId], 'store hike')
+        return state.hikes[hikeId]
     }
     return null
 }
@@ -41,7 +42,8 @@ export const fetchHike = (hikeId) => async dispatch => {
     const res = await csrfFetch(`/api/hikes/${hikeId}`)
     if (res.ok){
         const hike = await res.json();
-        dispatch(receiveHike(hike))
+        console.log(hike[hikeId], 'hike in fetchhike')
+        dispatch(receiveHike(hike[hikeId]))
     }
 }
 
@@ -49,7 +51,10 @@ const hikesReducer = (state={}, action) => {
     const newState ={...state}
     switch(action.type){
         case RECEIVE_HIKE:
-           return {...newState, ...action.hike}
+            // return { [action.hike.id]: action.hike }
+            newState[action.hike.id] = action.hike;
+            return newState;
+        //    return {...newState, ...action.hike}
         case RECEIVE_HIKES:
             return {...newState, ...action.payload}
         default:
