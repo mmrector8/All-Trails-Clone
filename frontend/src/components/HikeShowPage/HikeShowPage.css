@@ -48,3 +48,60 @@
     padding-top: 10px;
     padding-bottom: 70px;
 }
+.sidebar-map{
+    padding: 20px;
+    height: 200px;
+}
+
+.grid-elements {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: rgba(0, 234, 255, 0.331);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    grid-template-areas: 
+        "descriptors sidebar"
+        "description sidebar"
+        "tags sidebar"
+        "conditions sidebar"
+        "weather sidebar"
+        "reviews sidebar";
+        
+}
+
+.body-descriptors {
+    grid-area: descriptors;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: pink;
+}
+
+.long-description {
+    background-color: orange;
+    grid-area: description;
+    padding: 40px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.sidebar{
+    grid-area: sidebar;
+    background-color: green;
+}
+
+.tags {
+    grid-area: tags;
+}
+
+.conditions {
+    grid-area: conditions;
+}
+
+.weather {
+    grid-area: weather;
+}
+
+.reviews {
+    grid-area: reviews;
+}

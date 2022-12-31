@@ -28,41 +28,47 @@ const HikeShowPage = ()=>{
                 <p className="main-descriptors hike-difficulty">{hike.difficulty}</p>
                 <p className="main-descriptors park-name">Park Name: {hike.parkId}</p>
             </div>
-            <div className="body-descriptors">
-                <p>Length: {hike.duration}</p>
-                <p>Elevation Gain: {hike.elevationGain}</p>
-                <p>Route Type: {hike.routeType}</p>
-                <p>{hike.description}</p>
-            </div>
-            <div className='sidebar'>
-                <div className='sidebar-map'>
-                    <img src={placeholdermap}></img>
+            <div className="grid-elements">
+                <div className="body-descriptors">
+                    <p>Length: {hike.duration}</p>
+                    <p>Elevation Gain: {hike.elevationGain}</p>
+                    <p>Route Type: {hike.routeType}</p>
                 </div>
-                <div className="other-hikes">
-                    <li>hike1</li>
-                    <li>hike2</li>
-                    <li>hike3</li>
+                <div className="long-description">
+                    <p>{hike.description}</p>
+                </div>
+                <div className='sidebar'>
+                    <div className='sidebar-map-container'>
+                        <img src={placeholdermap} className="sidebar-map"></img>
+                    </div>
+                    <div className="other-hikes">
+                        <li>hike1</li>
+                        <li>hike2</li>
+                        <li>hike3</li>
+                    </div>
+                </div>
+                
+                <div className="tags">
+                    <ul>
+                        <li> Tag 1</li>
+                        <li> Tag 2</li>
+                    </ul>
+                </div>
+                <div className='conditions'>
+                    <ul>
+                        <li>Conditions from reviews will go here</li>
+                    </ul>
+                </div>
+                <div className='weather'>
+                    <p>Weather modal here</p>
+                </div>
+               
+                <div className="reviews">
+                    <li>Review 1</li>
+                    <li>Review 2</li>
                 </div>
             </div>
-            <div className="tags">
-                <ul>
-                    <li> Tag 1</li>
-                    <li> Tag 2</li>
-                </ul>
             </div>
-            <div className='conditions'>
-                <ul>
-                    <li>Conditions from reviews will go here</li>
-                </ul>
-            </div>
-            <div className='weather'>
-                <p>Weather modal here</p>
-            </div>
-            <div className="reviews">
-                <li>Review 1</li>
-                <li>Review 2</li>
-            </div>
-        </div>
         </div>
         </>
     )
