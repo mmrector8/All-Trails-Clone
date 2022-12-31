@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getHike, fetchHike } from "../../store/hikes";
 import placeholdermap from "../../images/placeholdermap.png"
+import * as HikeShowCss from "./HikeShowPage.css"
 
 const HikeShowPage = ()=>{
     const dispatch = useDispatch();
@@ -20,10 +21,14 @@ const HikeShowPage = ()=>{
 
     return (
         <>
-            <div className="descriptors">
-                <h1>{hike.name}</h1>
-                <p>{hike.difficulty}</p>
-                <p>Park Name: {hike.parkId}</p>
+        <div className="whole-page">
+        <div className="hike-show-page">
+            <div className="descriptors-with-background-image">
+                <h1 className="main-descriptors hike-title">{hike.name}</h1>
+                <p className="main-descriptors hike-difficulty">{hike.difficulty}</p>
+                <p className="main-descriptors park-name">Park Name: {hike.parkId}</p>
+            </div>
+            <div className="body-descriptors">
                 <p>Length: {hike.duration}</p>
                 <p>Elevation Gain: {hike.elevationGain}</p>
                 <p>Route Type: {hike.routeType}</p>
@@ -34,7 +39,9 @@ const HikeShowPage = ()=>{
                     <img src={placeholdermap}></img>
                 </div>
                 <div className="other-hikes">
-                    
+                    <li>hike1</li>
+                    <li>hike2</li>
+                    <li>hike3</li>
                 </div>
             </div>
             <div className="tags">
@@ -51,10 +58,12 @@ const HikeShowPage = ()=>{
             <div className='weather'>
                 <p>Weather modal here</p>
             </div>
-            <div classNam="reviews">
+            <div className="reviews">
                 <li>Review 1</li>
                 <li>Review 2</li>
             </div>
+        </div>
+        </div>
         </>
     )
 }

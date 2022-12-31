@@ -1,0 +1,50 @@
+.whole-page {
+    padding-top: 30px;
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    justify-content: center;
+}
+
+.hike-show-page {
+    width: 72%;
+    /* margin-left: 11%;
+    margin-right: 11%; */
+   background-color: white;
+   border: 1px solid rgb(177, 177, 177);
+   border-radius: 16px;
+}
+
+.descriptors-with-background-image {
+    display: flex;
+    align-items: right;
+    justify-content: flex-end;
+    flex-direction: column;
+    background: url("../../images/hikersrectangle.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+    border-radius: 15px 15px 0px 0px; 
+    margin-bottom: auto;
+}
+.main-descriptors{
+    color: white;
+    padding-left: 30px;
+    font-size: 20px;
+    font-family: "Manrope", sans-serif;
+}
+
+.hike-title{
+    font-size: 40px;  
+}
+
+.hike-difficulty{
+    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.park-name{
+    padding-top: 10px;
+    padding-bottom: 70px;
+}
