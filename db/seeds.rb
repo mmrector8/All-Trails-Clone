@@ -39,6 +39,18 @@ ApplicationRecord.transaction do
     state: 'California',
     description: "The Presidio of San Francisco is a former military post that has now transformed into a hub for recreation. It features a variety of trails and lush forests, located right near the Marina and the Golden Gate Bridge. This park also features restaurants, the Walt Disney Museum, businesses, and a bowling alley."
   )
+   Park.create!(
+    name: "Golden Gate National Recreation Area",
+    county: "San Francisco",
+    city: "San Francisco",
+    latitude: 37.785617,
+    longitude:-122.507028,
+    zipcode: 94129,
+    state: 'California',
+    description: "The Golden Gate National Recreation Area is a U.S. National Recreation Area administered by the National Park Service. This magnificent park surrounds the San Francisco Bay area and attracts millions of visitors each year. It is popular for good reason, it provides a variety of trails, ranging from easy to very difficult. It is not one continuous location, but rather spans accross various areas in the San Francisco Bay Area. "
+  )
+
+  #Hikes in the Presidio
 
   Hike.create!(
     park_id: 1,
@@ -109,6 +121,80 @@ Hike.create!(
     elevation_gain: 793,
     duration: "3.9 miles",
     route_type: "Out & back"
+)
+
+#Hikes in the GGNRA
+Hike.create!(
+    park_id: 2,
+    name: "Lands End Trail",
+    city: "San Francisco",
+    latitude: 37.78059,
+    longitude: -122.51162,
+    zipcode: 94129,
+    difficulty: "Moderate",
+    estimated_time: "1.5 hours",
+    description: "Explore the famous Lands End Trail near San Francisco, California. This trail is moderately challenging and frequently traveled. Bring your pup along, but don't forget a leash! Dogs are only allowed off-leash in certain areas of the trail.",
+    elevation_gain: 538,
+    duration: "3.4 miles",
+    route_type: "loop"
+)
+
+Hike.create!(
+    park_id: 2,
+    name: "Mori Point Loop Trail",
+    city: "Pacifica",
+    latitude: 37.61411,
+    longitude: -122.48811,
+    zipcode: 94044,
+    difficulty: "Moderate",
+    estimated_time: "1.1 hours",
+    description: "The Mori Point Loop is a beautiful trail in Pacifica California. This trail has ocean views, and is frequently visited by people hiking, biking, and walking. Dogs are welcome but they must be on a leash.",
+    elevation_gain: 396,
+    duration: "2.5 miles",
+    route_type: "loop"
+)
+
+Hike.create!(
+    park_id: 2,
+    name: "Tennessee Valley Golden Gate Loop Trail",
+    city: "Mill Valley",
+    latitude: 37.86048,
+    longitude: -122.5362,
+    zipcode: 94965,
+    difficulty: "Moderate",
+    estimated_time: "3 hours",
+    description: "The Tennesee Valley Golden Gate Loop trail is located in Mill Valley, California. It is a popular destination for birding, hiking, and mountain biking. The trail is beautiful and open all year-round. You will need to leave your pups if you head out on this trail, dogs are not allowed.",
+    elevation_gain: 1292,
+    duration: "5.5 miles",
+    route_type: "loop"
+)
+Hike.create!(
+    park_id: 2,
+    name: "Kirby Cove",
+    city: "Sausalito",
+    latitude: 37.83239,
+    longitude: -122.48214,
+    zipcode: 94965,
+    difficulty: "Easy",
+    estimated_time: "1.5 hours",
+    description: "Kirby Cove is a popular route in Sausalito, Caliofnia for hiking, walking, and camping. It is a frequently visited Out & back trail with an ocean view at the end of the trail. You will need to leave pups at home, they are not allowed on this trail.",
+    elevation_gain: 561,
+    duration: "3 miles",
+    route_type: "Out & back"
+)
+Hike.create!(
+    park_id: 2,
+    name: "California Coastal Trail: Lands End to Golden Gate Bridge",
+    city: "San Francisco",
+    latitude: 37.78044,
+    longitude: -122.51165,
+    zipcode: 94121,
+    difficulty: "Moderate",
+    estimated_time: "2 hours",
+    description: "The California Coastal Trail is a popular route in San Francisco, California for hiking, walking, and running. It is a frequently visited point to point trail with a chance to see the Golden Gate Bridge. Pups are welcome on this trail as long as they are on a leash.",
+    elevation_gain: 569,
+    duration: "4.4 miles",
+    route_type: "Point to point"
 )
 
   puts "Done!"

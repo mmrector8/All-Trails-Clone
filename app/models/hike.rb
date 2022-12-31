@@ -20,7 +20,7 @@
 class Hike < ApplicationRecord
     belongs_to :park, optional: true
     validates :name, :city, :latitude, :longitude, :zipcode, :difficulty, :estimated_time, :elevation_gain, :duration, :route_type, presence: true
-    validates :route_type, inclusion: {in: ['loop', 'Out & back']}
+    validates :route_type, inclusion: {in: ['loop', 'Out & back', 'Point to point']}
     validates :duration, length: {in: 1...100 }
     validates :name, uniqueness: true
 end
