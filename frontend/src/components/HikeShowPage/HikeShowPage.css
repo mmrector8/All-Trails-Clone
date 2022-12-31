@@ -54,6 +54,7 @@
 }
 
 .grid-elements {
+    margin-top: 20px;
     display: grid;
     grid-template-columns: 2fr 1fr;
     background-color: rgba(0, 234, 255, 0.331);
@@ -72,15 +73,17 @@
 .body-descriptors {
     grid-area: descriptors;
     display: flex;
-    justify-content: space-between;
-    padding: 40px;
+    justify-content: space-around;
+    padding: 20px;
+    padding-left: 4px;
+    padding-right: 40px;
     background-color: pink;
 }
 
 .long-description {
     background-color: orange;
     grid-area: description;
-    padding: 40px;
+    padding: 20px;
     padding-bottom: 20px;
     padding-top: 20px;
 }
@@ -104,4 +107,8 @@
 
 .reviews {
     grid-area: reviews;
+}
+#duration, #el-gain, #type{
+    font-weight: bold;
+    margin-top: 5px;
 }

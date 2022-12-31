@@ -30,9 +30,9 @@ const HikeShowPage = ()=>{
             </div>
             <div className="grid-elements">
                 <div className="body-descriptors">
-                    <p>Length: {hike.duration}</p>
-                    <p>Elevation Gain: {hike.elevationGain}</p>
-                    <p>Route Type: {hike.routeType}</p>
+                    <p>Length: <p id="duration">{hike.duration}</p></p>
+                    <p>Elevation Gain: <p id="el-gain">{hike.elevationGain}</p></p>
+                    <p>Route Type: <p id="type">{hike.routeType[0].toUpperCase() + hike.routeType.slice(1,hike.routeType.length)}</p></p>
                 </div>
                 <div className="long-description">
                     <p>{hike.description}</p>
