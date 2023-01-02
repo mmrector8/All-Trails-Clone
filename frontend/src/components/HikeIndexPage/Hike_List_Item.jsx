@@ -1,14 +1,11 @@
+import { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 
 const HikeListItem = ({hike}) =>{
 
-    const handleClick = (e)=>{
-    //    return <Redirect to={`/hikes/${hike.id}`} />
-        return <Link to={`/hikes/${hike.id}`}> Redirect</Link>
-    }
     return (
         <>
-        <Link to={`/hikes/${hike.id}`} id="link">
+        <Link to={`/hikes/${hike.id}`} className="link">
             <div className="hike-list-item-container">
             <div className="hike-list-items-photos">
                 <img src="" alt="photo here"></img>
@@ -20,8 +17,11 @@ const HikeListItem = ({hike}) =>{
                     <p className ="hike-list-item park-name-trails">Park Name:{hike.parkId}</p>
                     <p className="hike-list-item hike-duration-and-estimated-time">Length: {hike.duration} {"•"} {hike.estimatedTime}  </p>
                 </div>
-                <p className="hike-list-item hike-description">{hike.description}</p>
-                
+                <div className="description-container">
+                    <p className="hike-list-item hike-description">
+                                {hike.description.slice(0, 170)} ... <Link to={`/hikes/${hike.id}`} className="read-more link">Show more </Link>
+                    </p>
+                </div>
             </div>
             </div>
         </Link>

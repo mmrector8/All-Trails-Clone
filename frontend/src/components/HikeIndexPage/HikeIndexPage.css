@@ -85,7 +85,7 @@
    margin: 20px;
    border-radius: 20px;
 }
-#link {
+.link {
     text-decoration: none;
     color: black;
 }
@@ -135,3 +135,11 @@
     font-family: "Manrope", sans-serif;
 }
 
+.read-more{
+    text-decoration: underline;
+}
+
+.description-container {
+    display: flex;
+    flex-direction: column;
+}
