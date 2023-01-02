@@ -57,7 +57,7 @@
     margin-top: 20px;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    background-color: rgba(0, 234, 255, 0.331);
+    /* background-color: rgba(0, 234, 255, 0.331); */
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     grid-template-areas: 
@@ -73,19 +73,33 @@
 .body-descriptors {
     grid-area: descriptors;
     display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    padding-left: 4px;
-    padding-right: 40px;
-    background-color: pink;
+    justify-content: left;
+    padding: 8px;
+    padding-top: 20px;
+    margin-left: 3%;
+    /* background-color: pink; */
+}
+
+.body-items{
+    text-align: left;
+    margin-right: 100px;
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    color: #2b381F;
 }
 
 .long-description {
-    background-color: orange;
     grid-area: description;
-    padding: 20px;
+    padding: 6px;
+    margin-right: 3%;
+    margin-left: 3%;
     padding-bottom: 20px;
     padding-top: 20px;
+    font-family: "Manrope", sans-serif;
+    color: #2b381F;
+    border-bottom: 1px solid rgb(175, 175, 175);
+    font-size: 16px;
+    line-height: 30px;
 }
 
 .sidebar{
@@ -93,8 +107,22 @@
     background-color: green;
 }
 
-.tags {
+.tag-container {
     grid-area: tags;
+    display: flex;
+    padding: 6px;
+    margin-right: 3%;
+    margin-left: 3%;
+}
+
+.tags{
+    background-color: white;
+    padding: 10px;
+    font-size: 16px;
+    font-family: "Manrope", sans-serif;
+    border: 1px solid rgb(175, 175, 175);
+    margin: 10px;
+    border-radius: 5px;
 }
 
 .conditions {
@@ -111,4 +139,5 @@
 #duration, #el-gain, #type{
     font-weight: bold;
     margin-top: 5px;
+    font-size: 16px;
 }

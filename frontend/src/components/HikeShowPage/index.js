@@ -30,9 +30,9 @@ const HikeShowPage = ()=>{
             </div>
             <div className="grid-elements">
                 <div className="body-descriptors">
-                    <p>Length: <p id="duration">{hike.duration}</p></p>
-                    <p>Elevation Gain: <p id="el-gain">{hike.elevationGain}</p></p>
-                    <p>Route Type: <p id="type">{hike.routeType[0].toUpperCase() + hike.routeType.slice(1,hike.routeType.length)}</p></p>
+                    <p className='body-items'>Length: <p id="duration">{hike.duration}</p></p>
+                    <p className='body-items'>Elevation Gain: <p id="el-gain">{hike.elevationGain}</p></p>
+                    <p className='body-items'>Route Type: <p id="type">{hike.routeType[0].toUpperCase() + hike.routeType.slice(1,hike.routeType.length)}</p></p>
                 </div>
                 <div className="long-description">
                     <p>{hike.description}</p>
@@ -48,22 +48,22 @@ const HikeShowPage = ()=>{
                     </div>
                 </div>
                 
-                <div className="tags">
-                    <ul>
-                        <li> Tag 1</li>
-                        <li> Tag 2</li>
-                    </ul>
+                <div className="tag-container">
+                    {/* <ul> */}
+                        <p className="tags"> Tag 1</p>
+                        <p className="tags"> Tag 2</p>
+                    {/* </ul> */}
                 </div>
-                <div className='conditions'>
+                {/* <div className='conditions'>
                     <ul>
                         <li>Conditions from reviews will go here</li>
                     </ul>
-                </div>
+                </div> */}
                 <div className='weather'>
-                    <p>Weather modal here</p>
+                    <p>Weather Element Here</p>
                 </div>
                
-                <div className="reviews">
+                <div className="reviews">Write a Review
                     <li>Review 1</li>
                     <li>Review 2</li>
                 </div>

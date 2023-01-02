@@ -20,6 +20,14 @@ const HikeIndexPage = ()=>{
 
     return (
         <>
+            <div className="hike-index-page">
+            <div className="location-bar">
+                <p className="Country">United States of America</p>
+                <p className="arrow">{">"}</p>
+                <p className="State">California</p>
+                <p className="arrow">{">"}</p>
+                <p className="State">City</p>
+            </div>
             <div className="SF-photos">
                 <img src={walkinggirl} className="SF-hike-images"></img>
                 <img src={hikersrectangle} className="SF-hike-images"></img>
@@ -35,7 +43,7 @@ const HikeIndexPage = ()=>{
             <div className="trails">
             {hikes.map((hike, i) =><HikeListItem key={i} hike={hike}/>)}
             </div>
-            
+            </div>
         </>
         
     )

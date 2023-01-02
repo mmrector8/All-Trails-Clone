@@ -1,7 +1,23 @@
+.hike-index-page{
+    margin-left: 14%;
+    margin-right: 14%;
+    /* background-color: blue; */
+}
 
+.location-bar{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 30px;
+}
+
+.arrow, .Country, .State {
+    padding-left: 15px;
+}
 .trail-list {
     padding-top: 50px;
-    padding-left: 10%;
+    padding-left: 3%;
     font-weight: bold;
     font-size: 28px;
     font-family: "Manrope", sans-serif;
@@ -12,8 +28,8 @@
     
 }
 .description {
-    padding-right: 10%;
-    padding-left: 11%;
+    width: 750px;
+    padding-left: 3%;
     font-family: 'Manrope', sans-serif;
     font-size: 18px;
     line-height: 30px;
@@ -27,14 +43,14 @@
     margin-top: 20px;
 }
 .title {
-    padding-left: 11%;
+    padding-left: 3%;
     padding-bottom: 30px;
     font-weight: bold;
     font-size: 40px;
     font-family: "Manrope", sans-serif;
 }
 .SF-hike-images{
-    height: 270px;
+    height: 240px;
     border-radius: 20px;
     padding: 10px;
 }
@@ -45,27 +61,43 @@
     justify-content: center;
     
 }
-.hike-list-items{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border-bottom: 0.5px solid rgba(0, 0, 0, 0.369);
-    padding: 50px;
-}
 
-.hike-list-item{
-    text-align: center;
-}
-
-.hike-name {
-    font-weight: bold;
-}
-.hike-description{
-    width: 40%;
-}
 
 .map {
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.369);
     padding-bottom: 300px;
+}
+
+.hike-list-item-container {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.369);
+    display: grid;
+    grid-template-columns: 1fr, 3fr;
+    grid-column-gap: 10px;
+    grid-template-areas:
+        "photo descriptors"
+}
+
+.hike-list-items-photos {
+   grid-area: photo; 
+   width: 300px;
+   background-color: rgba(104, 179, 253, 0.369);
+   margin: 20px;
+   border-radius: 20px;
+}
+
+.hike-list-items {
+    grid-area: descriptors;
+    display: flex;
+    align-items: left;
+    /* justify-content: left; */
+    flex-direction: column;
+    padding-bottom: 70px;
+}
+
+.hike-list-item {
+    text-align: left;
+}
+
+.hike-name {
+    font-weight: bold;
 }
