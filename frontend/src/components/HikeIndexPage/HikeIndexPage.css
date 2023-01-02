@@ -79,10 +79,15 @@
 
 .hike-list-items-photos {
    grid-area: photo; 
+   height: 200px;
    width: 300px;
    background-color: rgba(104, 179, 253, 0.369);
    margin: 20px;
    border-radius: 20px;
+}
+#link {
+    text-decoration: none;
+    color: black;
 }
 
 .hike-list-items {
@@ -91,13 +96,42 @@
     align-items: left;
     /* justify-content: left; */
     flex-direction: column;
-    padding-bottom: 70px;
-}
+    /* margin-bottom: 70px; */
 
+}
+.top-list-items{
+    font-family: "Manrope", sans-serif;
+    margin-bottom: 50px;
+}
 .hike-list-item {
     text-align: left;
 }
 
 .hike-name {
     font-weight: bold;
+    font-family: "Manrope", sans-serif;
+    font-size: 22px;
+    padding-bottom: 15px;
 }
+
+.hike-duration-and-estimated-time{
+    font-family: 14px;
+}
+
+.park-name-trails{
+    font-size: 12px;
+    padding-bottom: 5px;
+}
+
+.hike-difficulty{
+    margin-top: 13px;
+    margin-bottom: 15px;
+    font-family: "Manrope", sans-serif;
+}
+
+.hike-description{
+    font-size: 16px;
+    line-height: 30px;
+    font-family: "Manrope", sans-serif;
+}
+
