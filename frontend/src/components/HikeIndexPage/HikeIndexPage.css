@@ -147,19 +147,16 @@
     flex-direction: column;
 }
 .hike-difficulty-index {
-    margin-top: 13px;
+    margin-top: 23px;
     margin-bottom: 15px;
     font-family: "Manrope", sans-serif;
-    font-size: 2px;
+    font-size: 14px;
 }
 
 @media (max-width: 800px) {
     .all-items{
         width: 95%;
-        background-color: rgba(94, 248, 230, 0.135);
     }
-    
-
 }
 
 @media (max-width: 700px){
@@ -168,8 +165,8 @@
         }
 
     .hike-list-item-container {
-             display: flex;
-             flex-direction: column;
+        display: flex;
+        flex-direction: column;
     }
 
     .hike-list-items-photos{
