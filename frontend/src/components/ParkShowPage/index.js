@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom"
 import walkinggirl from "../../images/walkinggirl.jpg"
 import hikersrectangle from "../../images/hikersrectangle.jpg"
 import treesrectangle from "../../images/treesrectangle.jpg"
-import HikeListItem from "../HikeIndexPage/Hike_List_Item"
+import ParkListItem from "./ParkIndexItem"
 
 const ParkShowPage = () =>{
     const {parkId} = useParams();
@@ -43,7 +43,7 @@ const ParkShowPage = () =>{
                     </div>
                     <h1 className="trail-list">Top Trails ({numOfHikes})</h1>
                     <div className="trails">
-                        {park.hikes.map((hike, i) => <HikeListItem key={i} hike={hike} />)}
+                        {park.hikes.map((hike, i) => <ParkListItem key={i} hike={hike}/>)}
                     </div>
                 </div>
             </div>
