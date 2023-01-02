@@ -11,11 +11,11 @@ const HikeListItem = ({hike}) =>{
                 <img src="" alt="photo here"></img>
             </div>
             <div className="hike-list-items">
-                <p className="hike-list-item hike-difficulty">{hike.difficulty}</p>
+                <p className="hike-list-item hike-difficulty-index">{hike.difficulty}</p>
                 <div className="top-list-items">
                     <p className="hike-list-item hike-name">{hike.name}</p>
                     <p className ="hike-list-item park-name-trails">Park Name:{hike.parkId}</p>
-                    <p className="hike-list-item hike-duration-and-estimated-time">Length: {hike.duration} {"•"} {hike.estimatedTime}  </p>
+                    <p className="hike-list-item hike-duration-and-estimated-time">Length: {hike.duration} {"•"} Est. {hike.estimatedTime}  </p>
                 </div>
                 <div className="description-container">
                     <p className="hike-list-item hike-description">
