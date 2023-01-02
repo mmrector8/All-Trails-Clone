@@ -1,8 +1,7 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap');  */
+
 
 nav{
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.369);
-
 }
 .links{
     display: flex;
@@ -16,6 +15,7 @@ nav{
     align-items: center;
     justify-content: center;
     margin-right: 5px;
+    position: absolute;
 }
 
 .inner {
