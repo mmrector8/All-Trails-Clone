@@ -29,6 +29,7 @@ ApplicationRecord.transaction do
     password: 'demopassword'
   )
 
+  # 1
   Park.create!(
     name: "Presidio of San Francisco",
     county: "San Francisco",
@@ -39,6 +40,7 @@ ApplicationRecord.transaction do
     state: 'California',
     description: "The Presidio of San Francisco is a former military post that has now transformed into a hub for recreation. It features a variety of trails and lush forests, located right near the Marina and the Golden Gate Bridge. This park also features restaurants, the Walt Disney Museum, businesses, and a bowling alley."
   )
+  #2
    Park.create!(
     name: "Golden Gate National Recreation Area",
     county: "San Francisco",
@@ -48,6 +50,30 @@ ApplicationRecord.transaction do
     zipcode: 94129,
     state: 'California',
     description: "The Golden Gate National Recreation Area is a U.S. National Recreation Area administered by the National Park Service. This magnificent park surrounds the San Francisco Bay area and attracts millions of visitors each year. It is popular for good reason, it provides a variety of trails, ranging from easy to very difficult. It is not one continuous location, but rather spans accross various areas in the San Francisco Bay Area. "
+  )
+
+  #3
+  Park.create!(
+    name: "Fort Mason",
+    county: "San Francisco",
+    city: "San Francisco",
+    latitude: 37.804591,
+    longitude: -122.426311,
+    zipcode: 94109,
+    state: "California",
+    description: "Fort Mason was established as a defense site in San Francisco during the Civil War. Nowadays, it is a frequented park with two trails, restaurants, and activities for the whole family."
+  )
+
+  #4
+   Park.create!(
+    name: "Marin Headlands",
+    county: "Marin",
+    city: "Sausalito",
+    latitude: 37.826449,
+    longitude: -122.499749,
+    zipcode: 94965,
+    state: "California",
+    description: "The Marin Headlands is a beautiful park with sweeping views of the Golden Gate bridge and the Pacific Ocean. This park is known for its dramatic cliffs, unique geology, and foggy weather."
   )
 
   #Hikes in the Presidio
@@ -195,6 +221,143 @@ Hike.create!(
     elevation_gain: 569,
     duration: "4.4 miles",
     route_type: "Point to point"
+)
+
+#Hikes in Fort Mason
+Hike.create!(
+    park_id: 3,
+    name: "Upper Fort Mason",
+    city: "San Francisco",
+   latitude: 37.804591,
+    longitude: -122.426311,
+    zipcode: 94109,
+    difficulty: "Easy",
+    estimated_time: "45 minutes",
+    description: "Upper Fort Mason is a popular trail for local San Franciscans and tourists alike. The trail features ocean views, and it is a popular trail for birding and walking. The trail is open all year and pups are welcome. They may be off-leash in some areas of the trail.",
+    elevation_gain: 121,
+    duration: "2.1 miles",
+    route_type: "loop"
+)
+
+Hike.create!(
+    park_id: 3,
+    name: "Fort Mason to Wave Organ",
+    city: "San Francisco",
+   latitude: 37.804286,
+    longitude: -122.429272,
+    zipcode: 94109,
+    difficulty: "Easy",
+    estimated_time: "52 minutes",
+    description: "Fort Mason to Wave Organ is a 3.0 mile trail in San Francisco, California. The area is very popular for walking, running, and birding, so you are likely to encounter other people while exploring this trail. The trail is open year-round and is beautiful to visit any time of the year. Bring your pups- they are welcome, as long as they are on a leash!",
+    elevation_gain: 19,
+    duration: "3.0 miles",
+    route_type: "Out & back"
+)
+
+#Hikes in Marin Headlands
+Hike.create!(
+    park_id: 4,
+    name: "Rodeo Beach, Miwok Trail, and Coastal Trail",
+    city: "Muir Beach",
+    latitude: 37.83202,
+    longitude: -122.53972,
+    zipcode: 94941,
+    difficulty: "Moderate",
+    estimated_time: "2.6 hours",
+    description: "This 5.3 mile loop is located in Muir Beach, California. The trail takes about 2.6 hours on average to complete. It is a popular area for birding, hiking, and horseback riding, so you will likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Pups are welcome as long as they are on a leash.",
+    elevation_gain: 1076,
+    duration: "5.3 miles",
+    route_type: "loop"
+)
+
+Hike.create!(
+    park_id: 4,
+    name: "Tennessee Valley Trail",
+    city: "Sausalito",
+    latitude: 37.860521,
+    longitude: -122.536426,
+    zipcode: 94941,
+    difficulty: "Moderate",
+    estimated_time: "1 hour",
+    description: "This 3.4 mile loop is located in Sausalito, California. The trail takes about 1 hour on average to complete. It is a popular area for horseback riding, hiking, and horseback riding, so you will likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Pups will need to stay home, they are not allowed on this trail.",
+    elevation_gain: 170,
+    duration: "3.4 miles",
+    route_type: "Out & back"
+)
+
+Hike.create!(
+    park_id: 4,
+    name: "Rodeo Beach to Hill 88",
+    city: "Sausalito",
+    latitude: 37.83232,
+    longitude: -122.54018,
+    zipcode: 94941,
+    difficulty: "Moderate",
+    estimated_time: "2 hours",
+    description: "This 3.8 mile out & back trail is located in Sausalito, California. The trail takes about 2 hours on average to complete. It is a popular area for birding, hiking, and running, so you will likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Pups are welcome on this trail as long as they are on a leash.",
+    elevation_gain: 1023,
+    duration: "3.8 miles",
+    route_type: "Out & back"
+)
+
+Hike.create!(
+    park_id: 4,
+    name: "Tennesee Beach via Coastal, Fox, and Middle Green Gulch Loop",
+    city: "Muir Beach",
+    latitude: 37.86123,
+    longitude: -122.57553,
+    zipcode: 94941,
+    difficulty: "Moderate",
+    estimated_time: "2 hours",
+    description: "This 9.1 mile loop is located in Sausalito, California. The trail takes about 4.5 hours on average to complete. It is a popular area for birding, hiking, and running, so you will likely encounter other people while exploring. The best times to visit this trail are April through September. Pups are welcome as long as they are on a leash.",
+    elevation_gain: 1833,
+    duration: "9.1 miles",
+    route_type: "loop"
+)
+
+Hike.create!(
+    park_id: 4,
+    name: "Coastal Trail Loop",
+    city: "Sausalito",
+    latitude: 37.83217,
+    longitude: -122.53974,
+    zipcode: 94965,
+    difficulty: "Easy",
+    estimated_time: "1 hour",
+    description: "This 2.5 mile loop is located in Sausalito, California. The trail takes about 1 hour on average to complete. It is a popular area for birding, hiking, and running, but you can enjoy some solitude during the quieter hours of the day. The trail is open year-round and is beautiful to visit anytime. Pups are welcome as long as they are on a leash.",
+    elevation_gain: 380,
+    duration: "2.5 miles",
+    route_type: "loop"
+)
+
+Hike.create!(
+    park_id: 4,
+    name: "Gerbode Valley Loop",
+    city: "Sausalito",
+    latitude: 37.8326,
+    longitude: -122.51646,
+    zipcode: 94965,
+    difficulty: "Moderate",
+    estimated_time: "2.5 hours",
+    description: "This 5.3 mile loop is located in Sausalito, California. The trail takes about 2.5 hours on average to complete. It is a popular area for birding, hiking, and running, so you will likely encounter other explorers on this trail. The trail is open year-round and is beautiful to visit anytime. You'll need to leave your pups at home, they aren't allowed on this trail.",
+    elevation_gain: 869,
+    duration: "5.3 miles",
+    route_type: "loop"
+)
+
+Hike.create!(
+    park_id: 4,
+    name: "Coastal Trail to Viewpoint Loop",
+    city: "Sausalito",
+    latitude: 37.83248,
+    longitude: -122.53895,
+    zipcode: 94965,
+    difficulty: "Easy",
+    estimated_time: "45 minutes",
+    description: "This 1.7 mile loop is located in Sausalito, California. The trail takes about 45 minutes on average to complete. It is a popular area for birding, hiking, and running, so you will likely encounter other explorers on this trail. The trail is open year-round and is beautiful to visit anytime. Pups are allowed as long as they are on a leash.",
+    elevation_gain: 232,
+    duration: "1.7 miles",
+    route_type: "loop"
 )
 
   puts "Done!"

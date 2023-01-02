@@ -34,7 +34,7 @@
 }
 .description {
     width: 750px;
-    padding-left: 3%;
+    /* padding-left: 1%; */
     font-family: 'Manrope', sans-serif;
     font-size: 18px;
     line-height: 30px;
@@ -48,7 +48,7 @@
     margin-top: 20px;
 }
 .title {
-    padding-left: 3%;
+    /* padding-left: 3%; */
     padding-bottom: 30px;
     font-weight: bold;
     font-size: 40px;
