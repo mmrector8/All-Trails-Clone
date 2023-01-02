@@ -1,23 +1,25 @@
-import { getHikes, fetchHikes } from "../../store/hikes"
-import { useSelector } from "react-redux"
+import {getPark, fetchPark} from "../../store/parks"
+import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from "react"
-import { useDispatch } from "react-redux"
-import HikeListItem from "./Hike_List_Item"
+import { useParams } from "react-router-dom"
 import walkinggirl from "../../images/walkinggirl.jpg"
 import hikersrectangle from "../../images/hikersrectangle.jpg"
 import treesrectangle from "../../images/treesrectangle.jpg"
-import * as HikeIndexCss from "./HikeIndexPage.css"
+import HikeListItem from "../HikeIndexPage/Hike_List_Item"
 
-const HikeIndexPage = ()=>{
-    const dispatch = useDispatch()
-    const hikes = useSelector(getHikes)
-    
+const ParkShowPage = () =>{
+    const {parkId} = useParams();
+    const dispatch = useDispatch();
+    const park = useSelector(getPark(parkId))
+
     useEffect(()=>{
-        dispatch(fetchHikes())
-    }, [dispatch])
+        dispatch(fetchPark(parkId))
+    }, [dispatch, parkId])
 
-    const numOfHikes = hikes.length
-
+    if (!park || !park.hikes){
+        return null;
+    } 
+    const numOfHikes = park.hikes.length
     return (
         <>
             <div className="hike-index-page">
@@ -35,19 +37,17 @@ const HikeIndexPage = ()=>{
                         <img src={treesrectangle} className="SF-hike-images"></img>
                     </div>
                     <div className="title-and-description">
-                        <h1 className="title">San Francisco Hikes</h1>
-                        <p className="description">Looking for the best hiking trails in San Francisco? Whether you're getting ready to hike, bike, trail run, or explore other outdoor activities, BayAreaTrails has scenic trails in the San Francisco area. Enjoy hand-curated trail maps, along with reviews and photos from nature lovers like you. Check out some trails with historic sights or adventure through the nature areas surrounding San Francisco that are perfect for hikers and outdoor enthusiasts at any skill level.</p>
+                        <h1 className="title">{park.name} Hikes</h1>
+                        <p className="description">{park.description}</p>
                         <h1 className="map title">GOOGLE MAP WILL GO HERE</h1>
-                     </div>
-                    
-                <h1 className="trail-list">Top Trails ({numOfHikes})</h1>
+                    </div>
+                    <h1 className="trail-list">Top Trails ({numOfHikes})</h1>
                     <div className="trails">
-                    {hikes.map((hike, i) =><HikeListItem key={i} hike={hike}/>)}
+                        {park.hikes.map((hike, i) => <HikeListItem key={i} hike={hike} />)}
                     </div>
                 </div>
             </div>
         </>
-        
     )
 }
-export default HikeIndexPage;
+export default ParkShowPage;
