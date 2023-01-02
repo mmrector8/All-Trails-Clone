@@ -19,7 +19,7 @@ const HikeListItem = ({hike}) =>{
                 </div>
                 <div className="description-container">
                     <p className="hike-list-item hike-description">
-                                {hike.description.slice(0, 170)} ... <Link to={`/hikes/${hike.id}`} className="read-more link">Show more </Link>
+                                {hike.description.slice(0, 150)}... <Link to={`/hikes/${hike.id}`} className="read-more link">Show more </Link>
                     </p>
                 </div>
             </div>

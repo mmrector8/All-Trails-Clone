@@ -1,7 +1,12 @@
 .hike-index-page{
-    margin-left: 14%;
-    margin-right: 14%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     /* background-color: blue; */
+}
+.all-items{
+    width: 1000px;
 }
 
 .location-bar{
@@ -69,6 +74,7 @@
 }
 
 .hike-list-item-container {
+    padding-bottom: 20px;
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.369);
     display: grid;
     grid-template-columns: 1fr, 3fr;
@@ -123,12 +129,6 @@
     padding-bottom: 5px;
 }
 
-.hike-difficulty{
-    margin-top: 13px;
-    margin-bottom: 15px;
-    font-family: "Manrope", sans-serif;
-}
-
 .hike-description{
     font-size: 16px;
     line-height: 30px;
@@ -137,9 +137,16 @@
 
 .read-more{
     text-decoration: underline;
+    font-weight: bold;
 }
 
 .description-container {
     display: flex;
     flex-direction: column;
+}
+.hike-difficulty {
+    margin-top: 13px;
+    margin-bottom: 15px;
+    font-family: "Manrope", sans-serif;
+    font-size: 2px;
 }

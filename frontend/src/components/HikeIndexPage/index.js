@@ -21,6 +21,7 @@ const HikeIndexPage = ()=>{
     return (
         <>
             <div className="hike-index-page">
+            <div className="all-items">
             <div className="location-bar">
                 <p className="Country">United States of America</p>
                 <p className="arrow">{">"}</p>
@@ -42,6 +43,7 @@ const HikeIndexPage = ()=>{
             <h1 className="trail-list">Top Trails ({numOfHikes})</h1>
             <div className="trails">
             {hikes.map((hike, i) =><HikeListItem key={i} hike={hike}/>)}
+            </div>
             </div>
             </div>
         </>
