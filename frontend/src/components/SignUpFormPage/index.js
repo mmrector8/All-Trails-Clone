@@ -44,7 +44,7 @@ const SignUpForm = () => {
 
     return (
         <>
-            <div class='background-image-container'>
+            <div className='background-image-container'>
                 {/* <img src={goldengate} className='background-image-signup'></img> */}
                 {/* <img src={marinocean} className='background-image-signup first-image'></img>
                 <img src={marinhike} className='background-image-signup second-image'></img> */}
