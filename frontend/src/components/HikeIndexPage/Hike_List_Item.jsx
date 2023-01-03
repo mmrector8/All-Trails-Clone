@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPark, fetchPark } from "../../store/parks"
 
 const HikeListItem = ({hike }) =>{
-    console.log(hike, 'hike on park page')
     const dispatch = useDispatch();
    
     const park = useSelector(getPark(hike.parkId))
@@ -34,7 +33,8 @@ const HikeListItem = ({hike }) =>{
                 </div>
                 <div className="description-container">
                     <p className="hike-list-item hike-description">
-                        {hike.description.slice(0, 150)}... <Link to={`/hikes/${hike.id}`} className="read-more link">Show more </Link>
+                        {hike.description.slice(0, 150)}... <button className="read-more link">Show more </button>
+                        {/* {hike.description.slice(0, 150)}... <Link to={`/hikes/${hike.id}`} className="read-more link">Show more </Link> */}
                     </p>
                 </div>
             </div>

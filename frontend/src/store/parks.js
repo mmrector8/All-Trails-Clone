@@ -10,7 +10,6 @@ export const receivePark = park => ({
 
 export const getPark = (parkId) => (state) => {
     if (state.parks) {
-        console.log(state.parks[parkId], 'store park')
         return state.parks[parkId]
     }
     return null
@@ -21,7 +20,6 @@ export const fetchPark = (parkId) => async dispatch => {
     const res = await csrfFetch(`/api/parks/${parkId}`)
     if (res.ok) {
         const park = await res.json();
-        console.log(park[parkId], 'park in fetchpark')
         dispatch(receivePark(park[parkId]))
     }
 }

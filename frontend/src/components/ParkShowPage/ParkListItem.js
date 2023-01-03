@@ -29,11 +29,11 @@ const ParkListItem = ({ hike }) => {
                         <div className="top-list-items">
                             <p className="hike-list-item hike-name">{hike.name}</p>
                             <p className="hike-list-item park-name-trails">{park.name}</p>
-                            <p className="hike-list-item hike-duration-and-estimated-time">Length: {hike.duration} {"•"} Est. {hike.estimatedTime}  </p>
+                            <p className="hike-list-item hike-duration-and-estimated-time">Length: {hike.duration} {"•"} Est. {hike.estimated_time}</p>
                         </div>
                         <div className="description-container">
                             <p className="hike-list-item hike-description">
-                                {hike.description.slice(0, 150)}... <Link to={`/hikes/${hike.id}`} className="read-more link">Show more </Link>
+                                {hike.description.slice(0, 150)}... <button className="read-more link">Show more </button>
                             </p>
                         </div>
                     </div>

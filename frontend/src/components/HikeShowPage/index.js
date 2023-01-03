@@ -9,7 +9,6 @@ const HikeShowPage = ()=>{
     const dispatch = useDispatch();
     const { hikeId } = useParams();
     let hike = useSelector(getHike(hikeId))
-    console.log(hike, 'hike in useSelector')
 
     useEffect(()=>{
         dispatch(fetchHike(hikeId))

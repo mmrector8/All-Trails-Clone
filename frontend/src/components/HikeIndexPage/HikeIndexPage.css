@@ -85,7 +85,7 @@
 
 .hike-list-items-photos {
    grid-area: photo; 
-   height: 200px;
+   height: 220px;
    width: 300px;
    background-color: rgba(104, 179, 253, 0.369);
    margin: 20px;
@@ -123,13 +123,9 @@
 .hike-duration-and-estimated-time{
     font-family: 14px;
     color: rgb(93, 93, 93);
+    margin-top: 5px;
 }
 
-.park-name-trails{
-    font-size: 12px;
-    padding-bottom: 5px;
-    color: rgb(93, 93, 93);
-}
 
 .hike-description{
     font-size: 16px;
@@ -138,9 +134,15 @@
 }
 
 .read-more{
+    cursor: pointer;
     text-decoration: underline;
     font-weight: bold;
+    font-size: 16px;
+    background-color: white;
+    border: none;
+    font-family: "Manrope", sans-serif;
 }
+
 
 .description-container {
     display: flex;
@@ -151,6 +153,10 @@
     margin-bottom: 15px;
     font-family: "Manrope", sans-serif;
     font-size: 14px;
+}
+.park-name-trails {
+    font-size: 14px;
+    color: rgb(93, 93, 93);
 }
 
 @media (max-width: 800px) {

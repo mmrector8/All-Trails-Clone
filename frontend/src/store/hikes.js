@@ -15,7 +15,6 @@ export const receiveHikes = (hikes)=>({
 
 export const getHike = (hikeId)=>(state)=>{
     if(state.hikes){
-        console.log(state.hikes[hikeId], 'store hike')
         return state.hikes[hikeId]
     }
     return null
@@ -23,7 +22,6 @@ export const getHike = (hikeId)=>(state)=>{
 
 export const getHikes = (store={})=>{
     if (store.hikes){
-        console.log(Object.values(store.hikes), "storehikes")
         return Object.values(store.hikes)
     }
     return []
@@ -32,8 +30,7 @@ export const getHikes = (store={})=>{
 export const fetchHikes = () => async dispatch =>{
     const res = await csrfFetch(`/api/hikes`)
     if (res.ok){
-        const hikes = await res.json();
-        console.log(hikes)
+        const hikes = await res.json()
         dispatch(receiveHikes(hikes))
     }
 }
@@ -42,7 +39,6 @@ export const fetchHike = (hikeId) => async dispatch => {
     const res = await csrfFetch(`/api/hikes/${hikeId}`)
     if (res.ok){
         const hike = await res.json();
-        console.log(hike[hikeId], 'hike in fetchhike')
         dispatch(receiveHike(hike[hikeId]))
     }
 }

@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom"
 import walkinggirl from "../../images/walkinggirl.jpg"
 import hikersrectangle from "../../images/hikersrectangle.jpg"
 import treesrectangle from "../../images/treesrectangle.jpg"
-import ParkListItem from "./ParkIndexItem"
+import ParkListItem from "./ParkListItem"
 
 const ParkShowPage = () =>{
     const {parkId} = useParams();

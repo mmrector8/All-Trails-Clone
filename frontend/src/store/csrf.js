@@ -11,7 +11,6 @@ export const storeCSRFToken = (res) => {
 // }
 
 const csrfFetch = async (url, options = {}) => {
-    console.log('hitting csrf fetch')
     options.headers = options.headers || {};
     options.method = options.method || 'GET';
     if (options.method.toUpperCase() !== 'GET'){
@@ -19,8 +18,6 @@ const csrfFetch = async (url, options = {}) => {
         options.headers['X-CSRF-Token'] = sessionStorage.getItem('X-CSRF-Token');
     }
     const res = await fetch(url, options);
-    console.log('below is res')
-    console.log(res)
     if (res.status >= 400) throw res;
 
     return res;
