@@ -159,6 +159,15 @@
     color: rgb(93, 93, 93);
 }
 
+.hike-show-button{
+    background-color: white;
+    border: none;
+}
+
+.hike-show-button:hover{
+    cursor: pointer;
+}
+
 @media (max-width: 800px) {
     .all-items{
         width: 95%;
