@@ -171,9 +171,11 @@
 }
 
 .side-bar-hikes{
+    cursor: pointer;
    display: flex;
    flex-direction: column;
 }
+
 .hike-show-list-items-photos{
     height: 170px;
     width: 300px;
@@ -217,6 +219,7 @@
     font-weight: bold;
     font-family: 'Manrope', sans-serif;
 }
+
 
 @media (max-width: 700px){
     .grid-elements{
