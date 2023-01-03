@@ -16,6 +16,7 @@ class Api::HikesController < ApplicationController
 
     def show
         @hike = Hike.find_by(id: params[:id])
+        @park = Park.find_by(id: @hike.park_id)
         if @hike
             render :show
         else

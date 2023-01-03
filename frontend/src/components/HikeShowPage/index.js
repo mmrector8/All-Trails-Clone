@@ -11,28 +11,29 @@ const HikeShowPage = ()=>{
     const dispatch = useDispatch();
     const { hikeId } = useParams();
     let hike = useSelector(getHike(hikeId))
-    let allHikes = useSelector(getHikes)
+    
+    // let allHikes = useSelector(getHikes)
 
     useEffect(()=>{
         dispatch(fetchHike(hikeId))
     }, [hikeId])
 
-    useEffect(()=>{
-        dispatch(fetchHikes())
-    }, [dispatch, hikeId])
+    // useEffect(()=>{
+    //     dispatch(fetchHikes())
+    // }, [dispatch, hikeId])
 
     if (!hike){
         return null;
     }
 
-    const getFilteredHikes = ()=>{
-        let filtered = []
-        for(let i=0; i < allHikes.length; i++ ){
-            if (allHikes[i].parkId === hike.parkId && filtered.length < 5 && allHikes[i].id != hikeId) {
-                filtered.push(allHikes[i])
-            }  
+    const getAllRelatedHikes = ()=>{
+       let filtered = []
+        for(let i=0; i <hike.relatedHikes.length; i++){
+            if (hike.relatedHikes[i].id != hike.id){
+                filtered.push(hike.relatedHikes[i])
+            }
         }
-        return filtered;
+       return filtered;
     }
 
     return (
@@ -42,7 +43,7 @@ const HikeShowPage = ()=>{
             <div className="descriptors-with-background-image">
                 <h1 className="main-descriptors hike-title">{hike.name}</h1>
                 <p className="main-descriptors hike-difficulty">{hike.difficulty}</p>
-                <p className="main-descriptors park-name">Park Name: {hike.parkId}</p>
+                <p className="main-descriptors park-name">{hike.parkName}</p>
             </div>
             <div className="grid-elements">
                 <div className="body-descriptors">
@@ -68,7 +69,7 @@ const HikeShowPage = ()=>{
                     </div>
                     <div className="other-hikes">
                             <h1 className='nearby-trails'>Nearby trails</h1>
-                        {getFilteredHikes().map((hike, i)=> <HikeShowListItem key={i} hike={hike}/>)}
+                        {getAllRelatedHikes().map((hike, i)=> <HikeShowListItem key={i} hike={hike}/>)}
                     </div>
                 </div>
                 

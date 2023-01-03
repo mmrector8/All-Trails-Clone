@@ -6,15 +6,15 @@ import { getPark, fetchPark } from "../../store/parks"
 const HikeShowListItem = ({ hike }) => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const park = useSelector(getPark(hike.parkId))
+    // const park = useSelector(getPark(hike.parkId))
 
-    useEffect(() => {
-        dispatch(fetchPark(hike.parkId))
-    }, [dispatch, hike.parkId])
+    // useEffect(() => {
+    //     dispatch(fetchPark(hike.parkId))
+    // }, [dispatch, hike.parkId])
 
-    if (!park) {
-        return null;
-    }
+    // if (!park) {
+    //     return null;
+    // }
 
     const routeChange = () => {
         let path = `/hikes/${hike.id}`
@@ -37,7 +37,7 @@ const HikeShowListItem = ({ hike }) => {
                     <div className="hike-show-list-items">
                         <p className="hike-show-list-item hike-show-difficulty">{hike.difficulty}</p>
                         <p className="hike-show-list-item hike-show-name">{hike.name}</p>
-                        <Link to={`/parks/${hike.parkId}`} onClick={handleParkShowClick}className="hike-show-park-name">{park.name}</Link>
+                        <Link to={`/parks/${hike.parkId}`} onClick={handleParkShowClick}className="hike-show-park-name">{hike.parkName}</Link>
                         <p className="hike-show-duration-and-length">Length: {hike.duration} {"•"} Est. {hike.estimatedTime}  </p>
                     </div>
             {/* </Link> */}
