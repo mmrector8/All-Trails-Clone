@@ -5,6 +5,7 @@ import HikeIndexPage from "./components/HikeIndexPage"
 import HikeShowPage from "./components/HikeShowPage";
 import ParkShowPage from "./components/ParkShowPage"
 import ComponentError from "./components/ComponentError"
+import SplashPage from "./components/SplashPage";
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
@@ -13,6 +14,9 @@ function App() {
     <>
         <Navigation />
         <Switch>
+        <Route exact path="/">
+          <SplashPage />
+        </Route>
         <Route exact path="/hikes">
           <HikeIndexPage />
         </Route>
@@ -28,7 +32,7 @@ function App() {
         < Route exact path='/login'>
           <LoginFormPage />
         </Route>
-        {/* <Route component={ComponentError} /> */}
+        <Route component={ComponentError} />
         </Switch>
     </>
   );
