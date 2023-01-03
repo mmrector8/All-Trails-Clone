@@ -20,7 +20,7 @@ const ParkListItem = ({ hike, parkName}) => {
 
     return (
         <>
-            <Link to={`/hikes/${hike.id}`} className="link">
+            <Link to={`/hikes/${hike.id}`} onClick={() => window.scrollTo({ top: 0, left: 0 })} className="link">
                 <div className="hike-list-item-container">
                     <div className="hike-list-items-photos">
                         <img src="" alt="photo here"></img>
