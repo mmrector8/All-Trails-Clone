@@ -28,9 +28,9 @@ const HikeShowPage = ()=>{
     const getFilteredHikes = ()=>{
         let filtered = []
         for(let i=0; i < allHikes.length; i++ ){
-            if (allHikes[i].parkId === hike.parkId && filtered.length < 5){
+            if (allHikes[i].parkId === hike.parkId && filtered.length < 5 && allHikes[i].id != hikeId) {
                 filtered.push(allHikes[i])
-            }
+            }  
         }
         return filtered;
     }
