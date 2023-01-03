@@ -102,7 +102,7 @@
 
 .sidebar{
     grid-area: sidebar;
-    background-color: green;
+    border-left: 1px solid rgb(175, 175, 175);
 }
 
 .tag-container {
@@ -138,6 +138,54 @@
     font-weight: bold;
     margin-top: 5px;
     font-size: 16px;
+}
+
+.side-bar-hikes{
+   display: flex;
+   flex-direction: column;
+}
+.hike-show-list-items-photos{
+    height: 170px;
+    width: 300px;
+    background-color: rgba(0, 225, 255, 0.34);
+    border-radius: 20px;
+    margin: 15px;
+}
+
+.hike-show-list-items{
+    font-family: "Manrope", sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 4px;
+    line-height: 18px;
+    
+}
+
+.hike-show-difficulty{
+    font-size: 12px;
+    color: rgb(80, 80, 80);
+}
+
+.hike-show-name{
+    font-size: 17px;
+}
+
+.hike-show-park-name{
+    font-size: 13px;
+    color: rgb(80, 80, 80);
+    font-weight: bold;
+}
+
+.hike-show-duration-and-length{
+    font-size: 12px;
+    color: rgb(80, 80, 80);
+}
+
+.nearby-trails{
+    margin-left: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Manrope', sans-serif;
 }
 
 @media (max-width: 700px){

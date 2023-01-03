@@ -1,21 +1,38 @@
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getHike, fetchHike } from "../../store/hikes";
+import { getHike, getHikes, fetchHike, fetchHikes } from "../../store/hikes";
+import { getPark, fetchPark } from "../../store/parks"
 import placeholdermap from "../../images/placeholdermap.png"
 import * as HikeShowCss from "./HikeShowPage.css"
+import HikeShowListItem from "./OtherHikesItem";
 
 const HikeShowPage = ()=>{
     const dispatch = useDispatch();
     const { hikeId } = useParams();
     let hike = useSelector(getHike(hikeId))
+    let allHikes = useSelector(getHikes)
 
     useEffect(()=>{
         dispatch(fetchHike(hikeId))
     }, [hikeId])
 
+    useEffect(()=>{
+        dispatch(fetchHikes())
+    }, [dispatch, hikeId])
+
     if (!hike){
         return null;
+    }
+
+    const getFilteredHikes = ()=>{
+        let filtered = []
+        for(let i=0; i < allHikes.length; i++ ){
+            if (allHikes[i].parkId === hike.parkId && filtered.length < 5){
+                filtered.push(allHikes[i])
+            }
+        }
+        return filtered;
     }
 
     return (
@@ -41,9 +58,8 @@ const HikeShowPage = ()=>{
                         <img src={placeholdermap} className="sidebar-map"></img>
                     </div>
                     <div className="other-hikes">
-                        <li>hike1</li>
-                        <li>hike2</li>
-                        <li>hike3</li>
+                            <h1 className='nearby-trails'>Nearby trails</h1>
+                        {getFilteredHikes().map((hike, i)=> <HikeShowListItem key={i} hike={hike}/>)}
                     </div>
                 </div>
                 
