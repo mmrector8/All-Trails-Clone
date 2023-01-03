@@ -69,13 +69,13 @@ const HikeShowPage = ()=>{
                         <p className="tags"> Tag 2</p>
                     {/* </ul> */}
                 </div>
-                {/* <div className='conditions'>
+                <div className='conditions'>
                     <ul>
                         <li>Conditions from reviews will go here</li>
                     </ul>
-                </div> */}
+                </div>
                 <div className='weather'>
-                    <p>Weather Element Here</p>
+                    <p> Weather modal here</p>
                 </div>
                
                 <div className="reviews">Write a Review

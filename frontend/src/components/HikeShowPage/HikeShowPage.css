@@ -55,27 +55,31 @@
     margin-top: 20px;
     display: grid;
     grid-template-columns: 2fr 1fr;
+    grid-auto-rows: minmax(70px, auto);
     /* background-color: rgba(0, 234, 255, 0.331); */
     grid-column-gap: 10px;
     grid-row-gap: 10px;
-    grid-template-areas: 
+    /* grid-template-areas: 
         "descriptors sidebar"
         "description sidebar"
         "tags sidebar"
         "conditions sidebar"
         "weather sidebar"
-        "reviews sidebar";
+        "reviews sidebar"; */
         
 }
 
-.body-descriptors {
-    grid-area: descriptors;
+.body-descriptors{
+    /* grid-area: descriptors; */
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
     display: flex;
     justify-content: left;
     padding: 8px;
     padding-top: 20px;
     margin-left: 3%;
-    /* background-color: pink; */
 }
 
 .body-items{
@@ -87,12 +91,15 @@
 }
 
 .long-description {
-    grid-area: description;
+    /* grid-area: description; */
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
     padding: 6px;
     margin-right: 3%;
     margin-left: 3%;
     padding-bottom: 20px;
-    padding-top: 20px;
     font-family: "Manrope", sans-serif;
     color: #2b381F;
     border-bottom: 1px solid rgb(175, 175, 175);
@@ -101,12 +108,20 @@
 }
 
 .sidebar{
-    grid-area: sidebar;
+    /* grid-area: sidebar; */
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 9;
     border-left: 1px solid rgb(175, 175, 175);
 }
 
 .tag-container {
-    grid-area: tags;
+    /* grid-area: tags; */
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
     display: flex;
     padding: 6px;
     margin-right: 3%;
@@ -124,15 +139,27 @@
 }
 
 .conditions {
-    grid-area: conditions;
+    /* grid-area: conditions; */
+    grid-row-start: 4;
+     grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
 
 .weather {
-    grid-area: weather;
+    /* grid-area: weather;  */
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
 
 .reviews {
-    grid-area: reviews;
+    /* grid-area: reviews; */
+    grid-row-start: 6;
+    grid-row-end: 7;
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
 #duration, #el-gain, #type{
     font-weight: bold;
