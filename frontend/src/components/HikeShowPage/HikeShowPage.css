@@ -55,7 +55,7 @@
     margin-top: 20px;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-auto-rows: minmax(70px, auto);
+    grid-auto-rows: minmax(0px, auto);
     /* background-color: rgba(0, 234, 255, 0.331); */
     grid-column-gap: 10px;
     grid-row-gap: 10px;
@@ -81,6 +81,8 @@
     padding-top: 20px;
     margin-left: 3%;
 }
+
+
 
 .body-items{
     text-align: left;
@@ -164,7 +166,8 @@
     grid-column-end: 2;
     margin: 10px;
 }
-#duration, #el-gain, #type{
+.duration, .el-gain, .type{
+    font-family: "Manrope", sans-serif;
     font-weight: bold;
     margin-top: 5px;
     font-size: 16px;
