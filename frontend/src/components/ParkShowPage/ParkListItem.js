@@ -3,19 +3,20 @@ import { Link, Redirect, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getPark, fetchPark } from "../../store/parks"
 
-const ParkListItem = ({ hike }) => {
-    const {parkId} = useParams()
-    const dispatch = useDispatch();
+const ParkListItem = ({ hike, parkName}) => {
+    // const {parkId} = useParams()
+    // const dispatch = useDispatch();
 
-    const park = useSelector(getPark(parkId))
+    // const park = useSelector(getPark(parkId))
 
-    useEffect(() => {
-        dispatch(fetchPark(parkId))
-    }, [dispatch, parkId])
+    // useEffect(() => {
+    //     console.log('useeffect')
+    //     dispatch(fetchPark(parkId))
+    // }, [dispatch])
 
-    if (!park) {
-        return null;
-    }
+    // if (!park) {
+    //     return null;
+    // }
 
     return (
         <>
@@ -28,7 +29,7 @@ const ParkListItem = ({ hike }) => {
                         <p className="hike-list-item hike-difficulty-index">{hike.difficulty}</p>
                         <div className="top-list-items">
                             <p className="hike-list-item hike-name">{hike.name}</p>
-                            <p className="hike-list-item park-name-trails">{park.name}</p>
+                            <p className="hike-list-item park-name-trails">{parkName}</p>
                             <p className="hike-list-item hike-duration-and-estimated-time">Length: {hike.duration} {"•"} Est. {hike.estimated_time}</p>
                         </div>
                         <div className="description-container">

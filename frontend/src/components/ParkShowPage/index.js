@@ -43,7 +43,7 @@ const ParkShowPage = () =>{
                     </div>
                     <h1 className="trail-list">Top Trails ({numOfHikes})</h1>
                     <div className="trails">
-                        {park.hikes.map((hike, i) => <ParkListItem key={i} hike={hike}/>)}
+                        {park.hikes.map((hike, i) => <ParkListItem key={i} hike={hike} parkName={park.name}/>)}
                     </div>
                 </div>
             </div>
