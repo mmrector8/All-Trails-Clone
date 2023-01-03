@@ -144,6 +144,7 @@
      grid-row-end: 5;
     grid-column-start: 1;
     grid-column-end: 2;
+    margin: 10px;
 }
 
 .weather {
@@ -152,6 +153,7 @@
     grid-row-end: 6;
     grid-column-start: 1;
     grid-column-end: 2;
+    margin: 10px;
 }
 
 .reviews {
@@ -160,6 +162,7 @@
     grid-row-end: 7;
     grid-column-start: 1;
     grid-column-end: 2;
+    margin: 10px;
 }
 #duration, #el-gain, #type{
     font-weight: bold;
