@@ -16,6 +16,7 @@ export const getPark = (parkId) => (state) => {
 }
 
 
+
 export const fetchPark = (parkId) => async dispatch => {
     const res = await csrfFetch(`/api/parks/${parkId}`)
     if (res.ok) {

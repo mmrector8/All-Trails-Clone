@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, Redirect } from "react-router-dom"; 
 import { useDispatch, useSelector } from "react-redux";
-import { getPark, fetchPark } from "../../store/parks";
+import { getPark, fetchPark} from "../../store/parks";
 import { useHistory } from 'react-router-dom';
 // import {useNavigate} from 'react-router-dom';
 
@@ -9,18 +9,18 @@ const HikeListItem = ({hike }) =>{
     const dispatch = useDispatch();
     // const navigate = useNavigate();
     const history = useHistory();
-    const park = useSelector(getPark(hike.parkId))
+    // const park = useSelector(getPark(hike.parkId))
 
-    useEffect(() => {
-        dispatch(fetchPark(hike.parkId))
-    }, [dispatch, hike.parkId])
 
-    if (!park) {
-            return null;
-    }
-   
+    // useEffect(() => {
+    //     dispatch(fetchPark(hike.parkId))
+    // }, [dispatch, hike.parkId])
+
+    // if (!park) {
+    //         return null;
+    // }
     const routeChange = ()=>{
-        let path = `/hikes/${ hike.id }`
+        let path = `/hikes/${hike.id}`
         history.push(path)
         window.scrollTo({top: 0, left: 0})
     }
@@ -41,7 +41,7 @@ const HikeListItem = ({hike }) =>{
                 <p className="hike-list-item hike-difficulty-index">{hike.difficulty}</p>
                 <div className="top-list-items">
                     <p className="hike-list-item hike-name">{hike.name}</p>
-                    <Link to={`/parks/${hike.parkId}`} onClick={handleParkShowClick} className="hike-list-item park-name-trails">{park.name}</Link>
+                    <Link to={`/parks/${hike.parkId}`} onClick={handleParkShowClick} className="hike-list-item park-name-trails">{hike.parkName}</Link>
                     <p className="hike-list-item hike-duration-and-estimated-time">Length: {hike.duration} {"•"} Est. {hike.estimatedTime}  </p>
                 </div>
                 <div className="description-container">

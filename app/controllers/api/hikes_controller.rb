@@ -2,8 +2,10 @@ class Api::HikesController < ApplicationController
 
     def index 
         @hikes = Hike.all 
+        @parks = Park.all
         render :index
     end
+
 
     def create
         @hike = Hike.new(hike_params)
