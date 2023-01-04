@@ -9,6 +9,7 @@ import splashresized from "../../assets/splashresized.jpg"
 import ReasonsToSignUp from "./reasonssignup.jsx";
 import AdventureAnywhere from "./adventureanywhere";
 
+
 const SplashPage = ()=>{
     const [currentImgIdx, setCurrentImgIdx] = useState(0)
 
