@@ -3,23 +3,29 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; */
-    height: 500px;
+    height: 535px;
     width: 100%;
+    padding-top: 2.65%;
     /* resize: both;
     overflow: scroll; */
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.background-image{
-    height: 500px;
-    width: 100%;
+#background-image{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: auto;
     z-index: -1;
     position: absolute;
 }
 
 .splash-search-bar{
+    /* margin-top: -200px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,7 +66,7 @@
 }
 
 .local-favorites {
-    margin-top: 50px;
+    margin-top: 20px;
     margin-left: 80px;
     margin-right: 80px;
     padding: 20px;
@@ -80,13 +86,14 @@
 
 .bay-hikes{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .local-bay-hike-images{
     text-align: center;
-    width: 280px;
-    height: 200px;
+    margin-right: 20px;
+    width: 220px;
+    height: 150px;
     border: 1px solid black;
     background-color: rgba(255, 192, 203, 0.353);
     border-radius: 20px;

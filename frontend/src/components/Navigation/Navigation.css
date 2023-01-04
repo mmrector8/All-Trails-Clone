@@ -6,7 +6,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: right;
-    padding: 8px;
+    /* padding: 8px; */
 }
 
 .innerLinks {
@@ -60,8 +60,8 @@ nav {
 
 #logo {
     color: black;
-    font-size: 30px;
-    margin-left: 20px;
+    font-size: 24px;
+    margin-left: 16px;
     margin-right: 5px;
     margin-top: 3px;
 }
@@ -75,5 +75,7 @@ nav {
 }
 
 nav {
-    padding: 15px;
+    margin-top: 2px;
+    padding-top: 15px;
+    padding-bottom: 13px;
 }

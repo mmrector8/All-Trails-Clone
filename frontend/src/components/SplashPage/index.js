@@ -4,7 +4,9 @@ import * as Splashcss from "./splashpage.css"
 import walkinggirl from "../../images/walkinggirl.jpg"
 import hikersrectangle from "../../images/hikersrectangle.jpg"
 import treesrectangle from "../../images/treesrectangle.jpg"
-import explore from "../../images/explore.jpg"
+// import alex from "../../images/alex.png"
+import julia from "../../images/julia.jpg"
+import splashresized from "../../images/splashresized.jpg"
 
 const SplashPage = ()=>{
     const [currentImgIdx, setCurrentImgIdx] = useState(0)
@@ -17,11 +19,9 @@ const SplashPage = ()=>{
     }
 
     const images = [
-        explore,
-        treesrectangle,
-        hikersrectangle
+        splashresized,
+        julia
     ]
-
 
     useEffect(()=>{
         const backgroundInterval = setInterval(()=>{
@@ -30,15 +30,15 @@ const SplashPage = ()=>{
             } else {
                 setCurrentImgIdx(0)
             }
-        }, 2000) 
+        }, 5000) 
         return ()=> clearInterval(backgroundInterval)
     }, [currentImgIdx])
     
 
     return (
         <>
-            <div className="searchbar-container">
-                <img src={images[currentImgIdx]} className="background-image"></img>
+            <div className="searchbar-container" >
+                <img src={images[currentImgIdx]} id="background-image"></img>
                 <div className="splash-search-bar">
                     
                     <h1 className='splash-title'>Find your outdoors</h1>
@@ -111,10 +111,10 @@ const SplashPage = ()=>{
                             <p className='park-image'>parkImg</p>
                             <p className='park-image'>parkImg</p>
                             <p className='park-image'>parkImg</p>
+                            {/* <p className='park-image'>parkImg</p>
                             <p className='park-image'>parkImg</p>
                             <p className='park-image'>parkImg</p>
-                            <p className='park-image'>parkImg</p>
-                            <p className='park-image'>parkImg</p>
+                            <p className='park-image'>parkImg</p> */}
                         </div>
                     </div>
                
