@@ -273,3 +273,18 @@
     height: 100px;
     border-radius: 20px;;
 }
+
+@media (min-width: 1420px){
+
+    .searchbar-container{
+        background-image: url("../../images/splash.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    #background-image{
+        display: none;
+    }
+
+}
