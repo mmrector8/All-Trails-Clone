@@ -6,9 +6,9 @@ databases:
 
 services:
   - type: web
-    name: mysite
+    name: all_trails_clone
     plan: free
-    region: ohio
+    region: oregon
     branch: main
     env: ruby
     buildCommand: "./bin/render-build.sh"
