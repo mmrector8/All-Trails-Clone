@@ -39,7 +39,7 @@ const SplashPage = ()=>{
                     <div className='search-bar'>
                         <p className='search-bar-text'>Search by park or trail name</p>
                     </div>
-                    <Link to={'/hikes'} className='explore-link'>Explore trails in the Bay</Link>
+                    <Link to={'/hikes'} onClick={window.scrollTo({ top: 0, left: 0 })}className='explore-link'>Explore trails in the Bay</Link>
                 </div>    
             </div>
             <LocalFavorites />
