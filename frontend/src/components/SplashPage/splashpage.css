@@ -180,3 +180,44 @@
    font-size: 20px;
    width: 100%;
 }
+
+.reasons-to-sign-up{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px;
+}
+
+.curated-trails, .fellow-explorers, .logged-miles{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 600px;
+    color: #2b381f;
+   
+}
+
+.large-reasons, .medium-reasons, .small-reasons{
+    font-family: "Manrope", sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.large-reasons{
+    margin-bottom: 8px;
+}
+
+.medium-reasons{
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+.small-reasons{
+    width: 310px;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+    line-height: 28px;
+}
