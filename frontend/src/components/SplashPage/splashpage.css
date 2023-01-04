@@ -1,15 +1,22 @@
 .searchbar-container {
-    background-image: url("../../images/splash.jpg");
+    /* background-image: url("../../images/splash.jpg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     height: 500px;
     width: 100%;
-    resize: both;
-    overflow: scroll;
+    /* resize: both;
+    overflow: scroll; */
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.background-image{
+    height: 500px;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
 }
 
 .splash-search-bar{

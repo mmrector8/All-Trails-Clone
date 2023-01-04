@@ -1,26 +1,53 @@
 import {Link, useHistory} from "react-router-dom"
+import { useEffect, useState } from "react"
 import * as Splashcss from "./splashpage.css"
 import walkinggirl from "../../images/walkinggirl.jpg"
 import hikersrectangle from "../../images/hikersrectangle.jpg"
 import treesrectangle from "../../images/treesrectangle.jpg"
+import explore from "../../images/explore.jpg"
 
 const SplashPage = ()=>{
+    const [currentImgIdx, setCurrentImgIdx] = useState(0)
     const history = useHistory();
+
     const handleClick =()=>{
         let path = `/signup`
         history.push(path)
         window.scrollTo({ top: 0, left: 0 })
     }
+
+    const images = [
+        explore,
+        treesrectangle,
+        hikersrectangle
+    ]
+
+
+    useEffect(()=>{
+        const backgroundInterval = setInterval(()=>{
+            if (currentImgIdx < images.length - 1) {
+                setCurrentImgIdx(currentImgIdx + 1)
+            } else {
+                setCurrentImgIdx(0)
+            }
+        }, 2000) 
+        return ()=> clearInterval(backgroundInterval)
+    }, [currentImgIdx])
+    
+
     return (
         <>
             <div className="searchbar-container">
+                <img src={images[currentImgIdx]} className="background-image"></img>
                 <div className="splash-search-bar">
+                    
                     <h1 className='splash-title'>Find your outdoors</h1>
                     <div className='search-bar'>
                         <p className='search-bar-text'>Search by park or trail name</p>
                     </div>
                     <Link to={'/hikes'} className='explore-link'>Explore trails in the Bay</Link>
                 </div>
+                
             </div>
             <div className='local-favorites'>
                 <h1 className="local-favorites-links">Local favorites in the <Link to={'/hikes'} className="local-favorites-links local-fave-link">Bay Area</Link></h1>
@@ -70,7 +97,7 @@ const SplashPage = ()=>{
                 </div>
                     <div className='adventure-anywhere-container'>
                         <h1 className="adventure-anywhere">Adventure anywhere</h1>
-                        <p className="parks-worth-look">Parks worth a look</p>
+                        <p className="parks-worth-look">Trending Trails</p>
                         <div className="adventure-parks-list">
                             <p className='park-image'>parkImg</p>
                             <p className='park-image'>parkImg</p>
