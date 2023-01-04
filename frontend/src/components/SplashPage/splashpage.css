@@ -57,7 +57,7 @@
     margin-left: 80px;
     margin-right: 80px;
     padding: 20px;
-    background-color: rgba(0, 174, 255, 0.087);
+    margin-bottom: 60px;
 }
 
 .local-favorites-links{
@@ -220,4 +220,42 @@
     font-size: 16px;
     text-align: center;
     line-height: 28px;
+}
+
+.adventure-anywhere-container{
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.adventure-anywhere, .parks-worth-look{
+    display: flex;
+    flex-direction: column;
+    font-family: "Manrope", sans-serif;
+    font-size: 36px;
+    color: #2b381f;
+    font-weight: bold;
+    padding-bottom: 80px;
+}
+.parks-worth-look{
+    font-size: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(203, 203, 203);
+}
+
+.adventure-parks-list{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    grid-template-rows: repeat(4, 100px);
+    grid-column-gap: 60px;
+    grid-row-gap: 40px;
+}
+
+.park-image{
+    background-color: rgba(0, 255, 221, 0.348);
+    text-align: center;
+    height: 100px;
+    border-radius: 20px;;
 }

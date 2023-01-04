@@ -68,10 +68,18 @@ const SplashPage = ()=>{
                         <p className="small-reasons">Navigate your way and keep a record of all your travels.</p>
                     </div>
                 </div>
-                    <div className='adventure-anywhere'>
-                        <h1>Adventure anywhere</h1>
-                        <p>Parks worth a look</p>
+                    <div className='adventure-anywhere-container'>
+                        <h1 className="adventure-anywhere">Adventure anywhere</h1>
+                        <p className="parks-worth-look">Parks worth a look</p>
                         <div className="adventure-parks-list">
+                            <p className='park-image'>parkImg</p>
+                            <p className='park-image'>parkImg</p>
+                            <p className='park-image'>parkImg</p>
+                            <p className='park-image'>parkImg</p>
+                            <p className='park-image'>parkImg</p>
+                            <p className='park-image'>parkImg</p>
+                            <p className='park-image'>parkImg</p>
+                            <p className='park-image'>parkImg</p>
                             <p className='park-image'>parkImg</p>
                             <p className='park-image'>parkImg</p>
                             <p className='park-image'>parkImg</p>
