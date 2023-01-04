@@ -3,9 +3,9 @@ import { useSelector } from "react-redux"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import HikeListItem from "./Hike_List_Item"
-import walkinggirl from "../../images/walkinggirl.jpg"
-import hikersrectangle from "../../images/hikersrectangle.jpg"
-import treesrectangle from "../../images/treesrectangle.jpg"
+import walkinggirl from "../../assets/walkinggirl.jpg"
+import hikersrectangle from "../../assets/hikersrectangle.jpg"
+import treesrectangle from "../../assets/treesrectangle.jpg"
 import * as HikeIndexCss from "./HikeIndexPage.css"
 
 const HikeIndexPage = ()=>{

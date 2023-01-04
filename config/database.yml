@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: all_trails_clone_production
-  username: all_trails_clone
-  password: <%= ENV["ALL_TRAILS_CLONE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

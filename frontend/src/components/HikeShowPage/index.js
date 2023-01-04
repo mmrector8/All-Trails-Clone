@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getHike, getHikes, fetchHike, fetchHikes } from "../../store/hikes";
 import { getPark, fetchPark } from "../../store/parks"
-import placeholdermap from "../../images/placeholdermap.png"
+import placeholdermap from "../../assets/placeholdermap.png"
 import * as HikeShowCss from "./HikeShowPage.css"
 import HikeShowListItem from "./OtherHikesItem";
 

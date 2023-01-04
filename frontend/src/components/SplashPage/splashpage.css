@@ -1,5 +1,5 @@
 .searchbar-container {
-    /* background-image: url("../../images/splash.jpg");
+    /* background-image: url("../../assets/splash.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; */
@@ -164,7 +164,7 @@
 }
 
 .inspiring-image{
-    background-image: url("../../images/explore.jpg");
+    background-image: url("../../assets/explore.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -276,15 +276,23 @@
 
 @media (min-width: 1420px){
 
-    .searchbar-container{
-        background-image: url("../../images/splash.jpg");
+    /* .searchbar-container{
+        background-image: url("../../assets/splash.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-    }
+    } */
 
-    #background-image{
+.searchbar-container{
+    padding-top: 9.65%;
+}
+
+.splash-search-bar {
+    margin-top: -200px;
+}
+
+    /* #background-image{
         display: none;
-    }
+    } */
 
 }

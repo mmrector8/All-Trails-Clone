@@ -77,7 +77,7 @@
 
 
 .background-image-container {
-    background: url("../../images/sign-up-background.jpg") no-repeat;
+    background: url("../../assets/sign-up-background.jpg") no-repeat;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -116,7 +116,7 @@
     }
 
     .background-image-container {
-        background-image: url("../../images/marinocean.jpg");
+        background-image: url("../../assets/marinocean.jpg");
         background-size: cover;
         height: 900px;
     }

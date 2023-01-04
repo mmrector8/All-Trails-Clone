@@ -4,8 +4,8 @@ import * as Splashcss from "./splashpage.css"
 import LocalFavorites from "./localfavorites";
 import Activities from "./activities";
 import InspiringImage from "./inspiringimage";
-import julia from "../../images/julia.jpg"
-import splashresized from "../../images/splashresized.jpg"
+import julia from "../../assets/julia.jpg"
+import splashresized from "../../assets/splashresized.jpg"
 import ReasonsToSignUp from "./reasonssignup.jsx";
 import AdventureAnywhere from "./adventureanywhere";
 

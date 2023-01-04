@@ -10,4 +10,6 @@ Rails.application.routes.draw do
       resources :parks, only: [:show]
       resource :session, only: [:show, :create, :destroy]
   end
+
+  get '*path', to: 'static_pages#frontend'
 end

@@ -2,9 +2,9 @@ import {getPark, fetchPark} from "../../store/parks"
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from "react"
 import { useParams } from "react-router-dom"
-import walkinggirl from "../../images/walkinggirl.jpg"
-import hikersrectangle from "../../images/hikersrectangle.jpg"
-import treesrectangle from "../../images/treesrectangle.jpg"
+import walkinggirl from "../../assets/walkinggirl.jpg"
+import hikersrectangle from "../../assets/hikersrectangle.jpg"
+import treesrectangle from "../../assets/treesrectangle.jpg"
 import ParkListItem from "./ParkListItem"
 
 const ParkShowPage = () =>{

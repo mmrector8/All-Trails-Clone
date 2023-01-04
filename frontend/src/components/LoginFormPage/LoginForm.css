@@ -94,7 +94,7 @@
     color: black;
 }
 .background-image-container-login {
-    background: url("../../images/sign-in-background.jpg");
+    background: url("../../assets/sign-in-background.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -108,7 +108,7 @@
 
 @media(max-width: 700px){
     .background-image-container-login {
-        background-image: url("../../images/hiker.jpg");
+        background-image: url("../../assets/hiker.jpg");
         background-size: cover;
         height: 900px;
     }

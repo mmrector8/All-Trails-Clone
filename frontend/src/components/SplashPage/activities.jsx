@@ -1,9 +1,9 @@
-import walkinggirl from "../../images/walkinggirl.jpg"
-import hikersrectangle from "../../images/hikersrectangle.jpg"
-import treesrectangle from "../../images/treesrectangle.jpg"
+import walkinggirl from "../../assets/walkinggirl.jpg"
+import hikersrectangle from "../../assets/hikersrectangle.jpg"
+import treesrectangle from "../../assets/treesrectangle.jpg"
 // import alex from "../../images/alex.png"
-import julia from "../../images/julia.jpg"
-import splashresized from "../../images/splashresized.jpg"
+import julia from "../../assets/julia.jpg"
+import splashresized from "../../assets/splashresized.jpg"
 import { useHistory } from "react-router-dom"
 
 const Activities =()=>{
