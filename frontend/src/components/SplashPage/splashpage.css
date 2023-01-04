@@ -1,0 +1,182 @@
+.searchbar-container {
+    background-image: url("../../images/splash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 100%;
+    resize: both;
+    overflow: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash-search-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.splash-title{
+    font-family: 'Manrope', sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 68px;
+    padding: 20px;
+}
+
+.search-bar{
+    background-color: white;
+    border-radius: 40px;
+    height: 65px;
+    width: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-bar-text{
+    font-family: 'Manrope', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.explore-link{
+   margin-top: 20px;
+    color: white;
+    font-family: 'Manrope', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.local-favorites {
+    margin-top: 50px;
+    margin-left: 80px;
+    margin-right: 80px;
+    padding: 20px;
+    background-color: rgba(0, 174, 255, 0.087);
+}
+
+.local-favorites-links{
+    font-family: 'Manrope', sans-serif;
+    font-size: 28px;
+    color: black;
+    padding-bottom: 30px;
+}
+
+.local-fave-link{
+    font-weight: bold;
+}
+
+.bay-hikes{
+    display: flex;
+    justify-content: space-between;
+}
+
+.local-bay-hike-images{
+    text-align: center;
+    width: 280px;
+    height: 200px;
+    border: 1px solid black;
+    background-color: rgba(255, 192, 203, 0.353);
+    border-radius: 20px;
+}
+
+.splash-container-2{
+    height: 350px;
+    background-color: rgba(249, 247, 219, 0.52);
+    padding: 50px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-right: 180px;
+}
+
+.activity-images{
+    display: grid; 
+    grid-template-columns: repeat(3, 130px);
+    grid-template-rows: repeat(3, 130px);
+    grid-column-gap: 60px;
+    grid-row-gap: 40px;
+}
+
+.local-bay-activity-images{
+    margin-top: 70px;
+    height: 150px;
+    width: 170px;
+    background-color: aquamarine;
+    border: 1px solid grey;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.splash-container-2-description{
+    width: 400px;
+    margin-left: 100px;
+}
+
+.trails-that-fit-nature{
+    font-size: 40px;
+    font-family: 'Manrope', sans-serif;
+    padding-bottom: 40px;
+}
+.pushing-limits{
+    font-size: 18px;
+    font-family: 'Manrope', sans-serif;
+    padding-bottom: 40px;
+}
+
+.sign-up-redirect-button{
+    cursor:pointer;
+    background-color: #2c5601;
+    color: white;
+    font-family: 'Manrope', sans-serif;
+    border: 1px solid #2c5601;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 30px;
+    width: 110px;
+    height: 50px;
+    margin-left: 9px;
+}
+.sign-up-redirect-button:hover{
+    background-color: #1b3501   
+}
+
+.inspiring-image{
+    background-image: url("../../images/explore.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 570px;
+    width: 100%;
+    resize: both;
+    overflow: scroll;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+   
+}
+
+.inspiring-image-title, .inspiring-image-description{
+    font-family: "Manrope", sans-serif;
+    color: white;
+    font-size: 66px;
+    padding-top: 30px;
+    padding-left: 100px;
+    width: 420px;
+    line-height: 70px;
+}
+
+.inspiring-image-description{
+    padding-top: 30px;
+   font-size: 20px;
+   width: 100%;
+}

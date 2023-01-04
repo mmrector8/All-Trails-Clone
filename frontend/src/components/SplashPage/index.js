@@ -1,4 +1,8 @@
 import {Link, useHistory} from "react-router-dom"
+import * as Splashcss from "./splashpage.css"
+import walkinggirl from "../../images/walkinggirl.jpg"
+import hikersrectangle from "../../images/hikersrectangle.jpg"
+import treesrectangle from "../../images/treesrectangle.jpg"
 
 const SplashPage = ()=>{
     const history = useHistory();
@@ -11,13 +15,15 @@ const SplashPage = ()=>{
         <>
             <div className="searchbar-container">
                 <div className="splash-search-bar">
-                    <h1>Find your outdoors</h1>
-                    <p>Search by park or trail name</p>
-                    <Link to={'/hikes'}>Explore trails in the Bay</Link>
+                    <h1 className='splash-title'>Find your outdoors</h1>
+                    <div className='search-bar'>
+                        <p className='search-bar-text'>Search by park or trail name</p>
+                    </div>
+                    <Link to={'/hikes'} className='explore-link'>Explore trails in the Bay</Link>
                 </div>
             </div>
             <div className='local-favorites'>
-                <h1>Local favorites in the <Link to={'/hikes'}>Bay Area</Link></h1>
+                <h1 className="local-favorites-links">Local favorites in the <Link to={'/hikes'} className="local-favorites-links local-fave-link">Bay Area</Link></h1>
                 <div className='bay-hikes'>
                     <p className='local-bay-hike-images'>Img here</p>
                     <p className='local-bay-hike-images'>Img here</p>
@@ -27,22 +33,24 @@ const SplashPage = ()=>{
             </div>
             <div className='splash-container-2'>
                 <div className='activity-images'>
-                    <p className='local-bay-hike-images'>Img here</p>
-                    <p className='local-bay-hike-images'>Img here</p>
-                    <p className='local-bay-hike-images'>Img here</p>
-                    <p className='local-bay-hike-images'>Img here</p>
-                    <p className='local-bay-hike-images'>Img here</p>
-                    <p className='local-bay-hike-images'>Img here</p>
+                    <img src={walkinggirl} className="local-bay-activity-images"></img>
+                    <img src={hikersrectangle} className="local-bay-activity-images"></img>
+                    <img src={treesrectangle} className="local-bay-activity-images"></img>
+                    <img src={walkinggirl} className="local-bay-activity-images"></img>
+                    <img src={hikersrectangle} className="local-bay-activity-images"></img>
+                    <img src={treesrectangle} className="local-bay-activity-images"></img>
                 </div>
                 <div className="splash-container-2-description">
-                    <h1>Trails that fit your nature</h1>
-                    <p>Whether you're pushing your limits or pushing a stroller, we've got you covered</p>
-                    <button onClick={handleClick}>Sign Up</button>
+                    <h1 className='trails-that-fit-nature'>Trails that fit your nature</h1>
+                    <p className='pushing-limits'>Whether you're pushing your limits or pushing a stroller, we've got you covered</p>
+                    <button onClick={handleClick} className='sign-up-redirect-button'>Sign Up</button>
                 </div>
+            </div>
                 <div className='inspiring-image'>
-                    <h1>Explore with confidence</h1>
-                    <p>Inspiration and guidance for wherever your trail may lead</p>
+                    <h1 className='inspiring-image-title'>Explore with confidence</h1>
+                    <p className='inspiring-image-description'>Inspiration and guidance for wherever your trail may lead.</p>
                 </div>
+            
                 <div className='reasons-to-sign-up'>
                     <div className='curated-trails'>
                         <h1>350k+</h1>
@@ -74,7 +82,6 @@ const SplashPage = ()=>{
                         </div>
                     </div>
                 </div>
-            </div>
         </>
     )
 }
