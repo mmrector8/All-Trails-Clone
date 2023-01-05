@@ -33,6 +33,7 @@ const HikeListItem = ({hike }) =>{
     return (
         <>
             <div onClick={routeChange} className='hike-show-button'>
+               
             <div className="hike-list-item-container">
             <div className="hike-list-items-photos">
                 <img src="" alt="photo here"></img>

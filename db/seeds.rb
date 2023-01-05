@@ -5,8 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
 
-ApplicationRecord.transaction do 
+#ApplicationRecord.transaction do 
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
   User.destroy_all
@@ -92,7 +93,7 @@ ApplicationRecord.transaction do
     duration: "2.3 miles",
     route_type: "loop"
 )
-Hike.create!(
+plooptrail = Hike.create!(
     park_id: 1,
     name: "Presidio Loop Trail",
     city: "San Francisco",
@@ -106,6 +107,9 @@ Hike.create!(
     duration: "6.1 miles",
     route_type: "loop"
 )
+
+plooptrail.photos.attach(io: URI.open('https://bayareatrails-seeds.s3.us-west-1.amazonaws.com/presidio_loop_trail_small.png'), filename: 'presidio_loop_trail_small.png')
+
 Hike.create!(
     park_id: 1,
     name: "Ecology Trail and Lovers' Lane Loop",
@@ -120,34 +124,34 @@ Hike.create!(
     duration: "2.0 miles",
     route_type: "loop"
 )
-Hike.create!(
-    park_id: 1,
-    name: "Golden Gate Bridge from Baker Beach Trail",
-    city: "San Francisco",
-    latitude: 37.79314,
-    longitude: -122.4831,
-    zipcode: 94129,
-    difficulty: "Moderate",
-    estimated_time: "2.5 hours",
-    description: "This is one of the Presidio's longer trails and it crosses the beautiful Golden Gate Bridge, and it is a popular spot for hiking, birding, and mountain biking. This trail is open year-round, but unfortunately you will need to leave your pups at home, dogs aren't allowed on this trail.",
-    elevation_gain: 685,
-    duration: "5.9 miles",
-    route_type: "Out & back"
-)
-Hike.create!(
-    park_id: 1,
-    name: "Fort Point - Baker Beach Coast Trail",
-    city: "San Francisco",
-    latitude: 37.80863,
-    longitude: -122.4717,
-    zipcode: 94129,
-    difficulty: "Easy",
-    estimated_time: "2 hours",
-    description: "This is a very popular San Francisco trail, which means you'll spot lots of people and their pups along the way! This trail is great for hiking, birding, walking, and more! This trail is open year round, and you are welcome to bring your dogs, as long as they are on a leash!",
-    elevation_gain: 793,
-    duration: "3.9 miles",
-    route_type: "Out & back"
-)
+# Hike.create!(
+#     park_id: 1,
+#     name: "Golden Gate Bridge from Baker Beach Trail",
+#     city: "San Francisco",
+#     latitude: 37.79314,
+#     longitude: -122.4831,
+#     zipcode: 94129,
+#     difficulty: "Moderate",
+#     estimated_time: "2.5 hours",
+#     description: "This is one of the Presidio's longer trails and it crosses the beautiful Golden Gate Bridge, and it is a popular spot for hiking, birding, and mountain biking. This trail is open year-round, but unfortunately you will need to leave your pups at home, dogs aren't allowed on this trail.",
+#     elevation_gain: 685,
+#     duration: "5.9 miles",
+#     route_type: "Out & back"
+# )
+# Hike.create!(
+#     park_id: 1,
+#     name: "Fort Point - Baker Beach Coast Trail",
+#     city: "San Francisco",
+#     latitude: 37.80863,
+#     longitude: -122.4717,
+#     zipcode: 94129,
+#     difficulty: "Easy",
+#     estimated_time: "2 hours",
+#     description: "This is a very popular San Francisco trail, which means you'll spot lots of people and their pups along the way! This trail is great for hiking, birding, walking, and more! This trail is open year round, and you are welcome to bring your dogs, as long as they are on a leash!",
+#     elevation_gain: 793,
+#     duration: "3.9 miles",
+#     route_type: "Out & back"
+# )
 
 #Hikes in the GGNRA
 Hike.create!(
@@ -194,34 +198,34 @@ Hike.create!(
     duration: "5.5 miles",
     route_type: "loop"
 )
-Hike.create!(
-    park_id: 2,
-    name: "Kirby Cove",
-    city: "Sausalito",
-    latitude: 37.83239,
-    longitude: -122.48214,
-    zipcode: 94965,
-    difficulty: "Easy",
-    estimated_time: "1.5 hours",
-    description: "Kirby Cove is a popular route in Sausalito, Caliofnia for hiking, walking, and camping. It is a frequently visited Out & back trail with an ocean view at the end of the trail. You will need to leave pups at home, they are not allowed on this trail.",
-    elevation_gain: 561,
-    duration: "3 miles",
-    route_type: "Out & back"
-)
-Hike.create!(
-    park_id: 2,
-    name: "California Coastal Trail: Lands End to Golden Gate Bridge",
-    city: "San Francisco",
-    latitude: 37.78044,
-    longitude: -122.51165,
-    zipcode: 94121,
-    difficulty: "Moderate",
-    estimated_time: "2 hours",
-    description: "The California Coastal Trail is a popular route in San Francisco, California for hiking, walking, and running. It is a frequently visited point to point trail with a chance to see the Golden Gate Bridge. Pups are welcome on this trail as long as they are on a leash.",
-    elevation_gain: 569,
-    duration: "4.4 miles",
-    route_type: "Point to point"
-)
+# Hike.create!(
+#     park_id: 2,
+#     name: "Kirby Cove",
+#     city: "Sausalito",
+#     latitude: 37.83239,
+#     longitude: -122.48214,
+#     zipcode: 94965,
+#     difficulty: "Easy",
+#     estimated_time: "1.5 hours",
+#     description: "Kirby Cove is a popular route in Sausalito, Caliofnia for hiking, walking, and camping. It is a frequently visited Out & back trail with an ocean view at the end of the trail. You will need to leave pups at home, they are not allowed on this trail.",
+#     elevation_gain: 561,
+#     duration: "3 miles",
+#     route_type: "Out & back"
+# )
+# Hike.create!(
+#     park_id: 2,
+#     name: "California Coastal Trail: Lands End to Golden Gate Bridge",
+#     city: "San Francisco",
+#     latitude: 37.78044,
+#     longitude: -122.51165,
+#     zipcode: 94121,
+#     difficulty: "Moderate",
+#     estimated_time: "2 hours",
+#     description: "The California Coastal Trail is a popular route in San Francisco, California for hiking, walking, and running. It is a frequently visited point to point trail with a chance to see the Golden Gate Bridge. Pups are welcome on this trail as long as they are on a leash.",
+#     elevation_gain: 569,
+#     duration: "4.4 miles",
+#     route_type: "Point to point"
+# )
 
 #Hikes in Fort Mason
 Hike.create!(
@@ -330,35 +334,35 @@ Hike.create!(
     route_type: "loop"
 )
 
-Hike.create!(
-    park_id: 4,
-    name: "Gerbode Valley Loop",
-    city: "Sausalito",
-    latitude: 37.8326,
-    longitude: -122.51646,
-    zipcode: 94965,
-    difficulty: "Moderate",
-    estimated_time: "2.5 hours",
-    description: "This 5.3 mile loop is located in Sausalito, California. The trail takes about 2.5 hours on average to complete. It is a popular area for birding, hiking, and running, so you will likely encounter other explorers on this trail. The trail is open year-round and is beautiful to visit anytime. You'll need to leave your pups at home, they aren't allowed on this trail.",
-    elevation_gain: 869,
-    duration: "5.3 miles",
-    route_type: "loop"
-)
+# Hike.create!(
+#     park_id: 4,
+#     name: "Gerbode Valley Loop",
+#     city: "Sausalito",
+#     latitude: 37.8326,
+#     longitude: -122.51646,
+#     zipcode: 94965,
+#     difficulty: "Moderate",
+#     estimated_time: "2.5 hours",
+#     description: "This 5.3 mile loop is located in Sausalito, California. The trail takes about 2.5 hours on average to complete. It is a popular area for birding, hiking, and running, so you will likely encounter other explorers on this trail. The trail is open year-round and is beautiful to visit anytime. You'll need to leave your pups at home, they aren't allowed on this trail.",
+#     elevation_gain: 869,
+#     duration: "5.3 miles",
+#     route_type: "loop"
+# )
 
-Hike.create!(
-    park_id: 4,
-    name: "Coastal Trail to Viewpoint Loop",
-    city: "Sausalito",
-    latitude: 37.83248,
-    longitude: -122.53895,
-    zipcode: 94965,
-    difficulty: "Easy",
-    estimated_time: "45 minutes",
-    description: "This 1.7 mile loop is located in Sausalito, California. The trail takes about 45 minutes on average to complete. It is a popular area for birding, hiking, and running, so you will likely encounter other explorers on this trail. The trail is open year-round and is beautiful to visit anytime. Pups are allowed as long as they are on a leash.",
-    elevation_gain: 232,
-    duration: "1.7 miles",
-    route_type: "loop"
-)
+# Hike.create!(
+#     park_id: 4,
+#     name: "Coastal Trail to Viewpoint Loop",
+#     city: "Sausalito",
+#     latitude: 37.83248,
+#     longitude: -122.53895,
+#     zipcode: 94965,
+#     difficulty: "Easy",
+#     estimated_time: "45 minutes",
+#     description: "This 1.7 mile loop is located in Sausalito, California. The trail takes about 45 minutes on average to complete. It is a popular area for birding, hiking, and running, so you will likely encounter other explorers on this trail. The trail is open year-round and is beautiful to visit anytime. Pups are allowed as long as they are on a leash.",
+#     elevation_gain: 232,
+#     duration: "1.7 miles",
+#     route_type: "loop"
+# )
 
   puts "Done!"
-end
+#end

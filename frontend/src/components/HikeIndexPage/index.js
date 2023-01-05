@@ -18,6 +18,10 @@ const HikeIndexPage = ()=>{
 
     const numOfHikes = hikes.length
 
+    if (!hikes){
+        return null;
+    }
+
     return (
         <>
             <div className="hike-index-page">
@@ -30,9 +34,9 @@ const HikeIndexPage = ()=>{
                         <p className="State">City</p>
                     </div>
                     <div className="SF-photos">
-                        <img src={walkinggirl} className="SF-hike-images"></img>
-                        <img src={hikersrectangle} className="SF-hike-images"></img>
-                        <img src={treesrectangle} className="SF-hike-images"></img>
+                        <img src={walkinggirl} alt="Person hiking"className="SF-hike-images"></img>
+                        <img src={hikersrectangle} className="SF-hike-images" alt="hikers"></img>
+                        <img src={treesrectangle} className="SF-hike-images" alt="tree-grove"></img>
                     </div>
                     <div className="title-and-description">
                         <h1 className="title">San Francisco Hikes</h1>

@@ -23,4 +23,5 @@ class Hike < ApplicationRecord
     validates :route_type, inclusion: {in: ['loop', 'Out & back', 'Point to point']}
     validates :duration, length: {in: 1...100 }
     validates :name, uniqueness: true
+    has_many_attached :photos
 end

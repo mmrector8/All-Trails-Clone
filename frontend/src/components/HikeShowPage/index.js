@@ -1,8 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getHike, getHikes, fetchHike, fetchHikes } from "../../store/hikes";
-import { getPark, fetchPark } from "../../store/parks"
+import { getHike, fetchHike} from "../../store/hikes";
 import placeholdermap from "../../assets/placeholdermap.png"
 import * as HikeShowCss from "./HikeShowPage.css"
 import HikeShowListItem from "./OtherHikesItem";
@@ -11,17 +10,11 @@ const HikeShowPage = ()=>{
     const dispatch = useDispatch();
     const { hikeId } = useParams();
     let hike = useSelector(getHike(hikeId))
-    console.log(hike)
     
-    // let allHikes = useSelector(getHikes)
-
     useEffect(()=>{
         dispatch(fetchHike(hikeId))
-    }, [hikeId])
+    }, [dispatch, hikeId])
 
-    // useEffect(()=>{
-    //     dispatch(fetchHikes())
-    // }, [dispatch, hikeId])
 
     if (!hike){
         return null;
@@ -39,12 +32,13 @@ const HikeShowPage = ()=>{
 
     return (
         <>
-        <div className="whole-page">
+        <div className="whole-page">   
         <div className="hike-show-page">
             <div className="descriptors-with-background-image">
                 <h1 className="main-descriptors hike-title">{hike.name}</h1>
                 <p className="main-descriptors hike-difficulty">{hike.difficulty}</p>
                 <p className="main-descriptors park-name">{hike.parkName}</p>
+                <img src={hike.photoUrls[0]} alt="hello" className="hike-show-photo" />
             </div>
             <div className="grid-elements">
                 <div className="body-descriptors">
@@ -66,7 +60,7 @@ const HikeShowPage = ()=>{
                 </div>
                 <div className='sidebar'>
                     <div className='sidebar-map-container'>
-                        <img src={placeholdermap} className="sidebar-map"></img>
+                        <img src={placeholdermap} alt="map" className="sidebar-map"></img>
                     </div>
                     <div className="other-hikes">
                             <h1 className='nearby-trails'>Nearby trails</h1>

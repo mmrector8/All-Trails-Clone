@@ -13,19 +13,25 @@
 }
 
 .descriptors-with-background-image {
+    position: relative;
     display: flex;
     align-items: right;
     justify-content: flex-end;
     flex-direction: column;
-    background: url("../../assets/hikersrectangle.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     height: 350px;
     border-radius: 15px 15px 0px 0px; 
     margin-bottom: auto;
+    z-index: 100;
+}
+.hike-show-photo {
+    position: absolute;
+    height: 350px;
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+    object-fit: cover;
 }
 .main-descriptors{
+    z-index: 10;
     color: white;
     padding-left: 30px;
     font-size: 20px;

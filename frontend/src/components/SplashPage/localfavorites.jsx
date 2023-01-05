@@ -20,30 +20,6 @@ const LocalFavorites = () =>{
         return null;
     } 
 
-    const responsive = {
-        XLDesktop: {
-            breakpoint: { max: 4000, min: 3000 },
-            items: 5,
-            slidesToSlide: 5
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 4,
-            slidesToSlide: 4 
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 704 },
-            items: 3,
-            slidesToSlide: 3
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 2,
-            slidesToSlide: 2
-        }
-    };
-
-
     const breakPoints = [
         { width: 1, itemsToShow: 1 },
         { width: 450, itemsToShow: 2},
@@ -58,11 +34,21 @@ const LocalFavorites = () =>{
         window.scrollTo({ top: 0, left: 0 })
     }
 
+    const filteredLocalFavorites = () =>{
+        let filtered = []
+        for(let i=0; i < hikes.length; i++){
+            if(i % 3 === 0){
+                filtered.push(hikes[i])
+            }
+        }
+        return filtered;
+    }
+
     return (
         <div className='local-favorites'>
             <h1 className="local-favorites-links">Local favorites in the <Link to={'/hikes'} onClick={()=>window.scrollTo({ top: 0, left: 0 })} className="local-favorites-links local-fave-link">Bay Area</Link></h1>
             <Carousel breakPoints={breakPoints} enableMouseSwipe={true} itemsToScroll={3} outerSpacing={0}>
-                {hikes.map((hike, i)=> <HikeShowListItem key={i} hike={hike}/>)}
+                {filteredLocalFavorites().map((hike, i)=> <HikeShowListItem key={i} hike={hike}/>)}
                 <div className='local-favorites-show-more' onClick={handleClick}>
                     <p className="carousel-show-more-link">Show more</p>
                 </div>
