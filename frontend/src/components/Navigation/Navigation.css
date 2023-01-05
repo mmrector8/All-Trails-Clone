@@ -1,5 +1,9 @@
 nav {
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.369);
+    margin-top: 2px;
+    padding-top: 15px;
+    padding-bottom: 8px;
+    height: 42px;
 }
 
 .links {
@@ -63,7 +67,7 @@ nav {
     font-size: 24px;
     margin-left: 16px;
     margin-right: 5px;
-    margin-top: 3px;
+    /* margin-bottom: 6px; */
 }
 
 #logo-text {
@@ -74,8 +78,6 @@ nav {
     color: black;
 }
 
-nav {
-    margin-top: 2px;
-    padding-top: 15px;
-    padding-bottom: 13px;
+.logo-area{
+    margin-top: 5px;
 }

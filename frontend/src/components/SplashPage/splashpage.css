@@ -332,26 +332,85 @@
     width: 100%;
 }
 
+
+.for-the-planet-container{
+    padding-left: 20px;
+    background-color: #2c5601;
+    display: flex;
+    height: 450px;
+    align-items: center;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.p-for-planet, .trees, .no-trace{
+    color: white;
+    font-family: "Manrope", sans-serif;
+    padding: 50px;
+    font-size: 20px;
+    line-height: 40px;
+    margin-top: -60px;
+}
+
+.for-planet-section-title{
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+
+.give-back-link-container{
+    position: absolute;
+    top: 75%;
+    margin-left: 70px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.give-back-link{
+    font-weight: bold;
+    cursor: pointer;
+    padding: 12px;
+    padding-left: 17px;
+    padding-right: 17px;
+    font-size: 16px;
+    border-radius: 30px;
+    color: #2b381f;
+    background-color: #5de372;
+    border: none;
+    text-decoration: none;
+    font-family: "Manrope", sans-serif;
+
+}
+
+.give-back-link:hover{
+    background-color: #58c568;
+}
+
+.fa-tree, .fa-seedling, .fa-earth-americas{
+    font-size: 36px;
+    padding-bottom: 20px;
+}
+
+.thanks-for-being-member{
+    font-family: "Manrope", sans-serif;
+    color: #2b381f;
+    background-color: #5de372;
+    font-size: 24px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
 @media (min-width: 1420px){
 
-    /* .searchbar-container{
-        background-image: url("../../assets/splash.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    } */
 
-.searchbar-container{
-    padding-top: 9.65%;
-}
+    .searchbar-container{
+        padding-top: 9.65%;
+    }
 
-.splash-search-bar {
-    margin-top: -200px;
-}
-
-    /* #background-image{
-        display: none;
-    } */
+    .splash-search-bar {
+        margin-top: -200px;
+    }
 
 }
 

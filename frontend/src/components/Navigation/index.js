@@ -14,8 +14,8 @@ const Navigation = () =>{
         sessionLinks =(
             <>
                 <div className='innerLinks'>
-                <NavLink to="/signup" className='inner sign-up'>Sign Up</NavLink>
-                <NavLink to="/login" className='inner log-in'>Log In</NavLink> 
+                    <NavLink to="/signup" className='inner sign-up'>Sign Up</NavLink>
+                    <NavLink to="/login" className='inner log-in'>Log In</NavLink> 
                 </div>
             </>
         )
@@ -24,7 +24,9 @@ const Navigation = () =>{
         <>
             <nav> 
                 <div className="links">
-                    <NavLink to="/" id='logo-text'><i className="fa-solid fa-mountain-city" id='logo'></i>BayAreaTrails</NavLink>
+                    <div className='logo-area'>
+                        <NavLink to="/" id='logo-text'><i className="fa-solid fa-mountain-city" id='logo'></i>BayAreaTrails</NavLink>
+                    </div>
                 {sessionLinks}
                 </div>
             </nav>

@@ -8,6 +8,7 @@ import julia from "../../assets/julia.jpg"
 import splashresized from "../../assets/splashresized.jpg"
 import ReasonsToSignUp from "./reasonssignup.jsx";
 import AdventureAnywhere from "./adventureanywhere";
+import ForPlanet from "./planet";
 
 
 const SplashPage = ()=>{
@@ -48,7 +49,7 @@ const SplashPage = ()=>{
             <InspiringImage /> 
             <ReasonsToSignUp />
             <AdventureAnywhere />
-     
+            <ForPlanet />
         </>
     )
 }

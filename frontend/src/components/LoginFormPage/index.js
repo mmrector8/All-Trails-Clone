@@ -72,8 +72,6 @@ const LoginFormPage = ()=>{
                         </div>
                  </div>
             
-                {/* <img src={aerialgg} className='background-image-login'></img>
-                <img src={ggbridge2} className='background-image-login'></img> */}
             </div>
         </>
     )
