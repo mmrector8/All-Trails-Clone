@@ -1,6 +1,9 @@
-import walkinggirl from "../../assets/walkinggirl.jpg"
-import hikersrectangle from "../../assets/hikersrectangle.jpg"
-import treesrectangle from "../../assets/treesrectangle.jpg"
+import puppy from "../../assets/puppy.jpg"
+import kidhiking from "../../assets/kidhiking.jpg"
+import roadbike from "../../assets/roadbike.jpg"
+import wheelchair from "../../assets/wheelchair.jpg"
+import biking from "../../assets/biking-2.jpg"
+import running from "../../assets/running.jpg"
 import { useHistory } from "react-router-dom"
 
 const Activities =()=>{
@@ -15,12 +18,12 @@ const Activities =()=>{
     return(
         <div className='splash-container-2'>
             <div className='activity-images'>
-                <img src={walkinggirl} className="local-bay-activity-images"></img>
-                <img src={hikersrectangle} className="local-bay-activity-images"></img>
-                <img src={treesrectangle} className="local-bay-activity-images"></img>
-                <img src={walkinggirl} className="local-bay-activity-images"></img>
-                <img src={hikersrectangle} className="local-bay-activity-images"></img>
-                <img src={treesrectangle} className="local-bay-activity-images"></img>
+                <div className='running local-bay-activity-images'><p className='running-text'>Running</p></div>
+                <div className='kid-hiking local-bay-activity-images'><p className='running-text'>Hiking</p></div>
+                <div className='puppy local-bay-activity-images'><p className='running-text'>Dog friendly</p></div>
+                <div className='biking local-bay-activity-images'><p className='running-text'>Biking</p></div>
+                <div className='wheelchair local-bay-activity-images'><p className='running-text'>Wheelchair friendly</p></div>
+                <div className='road-biking local-bay-activity-images'><p className='running-text'>Road biking</p></div>
             </div>
             <div className="splash-container-2-description">
                 <h1 className='trails-that-fit-nature'>Trails that fit your nature</h1>
