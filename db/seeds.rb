@@ -79,7 +79,7 @@ require "open-uri"
 
   #Hikes in the Presidio
 
-  Hike.create!(
+  batteries_to_bluffs = Hike.create!(
     park_id: 1,
     name: "Batteries to Bluffs Trail",
     city: "San Francisco",
@@ -93,6 +93,10 @@ require "open-uri"
     duration: "2.3 miles",
     route_type: "loop"
 )
+
+batteries_to_bluffs.photos.attach(io: URI.open('https://bayareatrails-seeds.s3.us-west-1.amazonaws.com/batteries_to_bluffs.png'), filename: 'batteries_to_bluffs.png')
+
+
 plooptrail = Hike.create!(
     park_id: 1,
     name: "Presidio Loop Trail",
@@ -110,7 +114,7 @@ plooptrail = Hike.create!(
 
 plooptrail.photos.attach(io: URI.open('https://bayareatrails-seeds.s3.us-west-1.amazonaws.com/presidio_loop_trail_small.png'), filename: 'presidio_loop_trail_small.png')
 
-Hike.create!(
+ecology_trail = Hike.create!(
     park_id: 1,
     name: "Ecology Trail and Lovers' Lane Loop",
     city: "San Francisco",
@@ -124,6 +128,8 @@ Hike.create!(
     duration: "2.0 miles",
     route_type: "loop"
 )
+ecology_trail.photos.attach(io: URI.open('https://bayareatrails-seeds.s3.us-west-1.amazonaws.com/ecology-trail.png'), filename: 'ecology-trail.png')
+
 # Hike.create!(
 #     park_id: 1,
 #     name: "Golden Gate Bridge from Baker Beach Trail",
@@ -154,7 +160,7 @@ Hike.create!(
 # )
 
 #Hikes in the GGNRA
-Hike.create!(
+lands_end = Hike.create!(
     park_id: 2,
     name: "Lands End Trail",
     city: "San Francisco",
@@ -169,7 +175,9 @@ Hike.create!(
     route_type: "loop"
 )
 
-Hike.create!(
+lands_end.photos.attach(io: URI.open('https://bayareatrails-seeds.s3.us-west-1.amazonaws.com/lands-end.png'), filename: 'lands-end.png')
+
+mori_point = Hike.create!(
     park_id: 2,
     name: "Mori Point Loop Trail",
     city: "Pacifica",
@@ -183,21 +191,22 @@ Hike.create!(
     duration: "2.5 miles",
     route_type: "loop"
 )
+mori_point.photos.attach(io: URI.open('https://bayareatrails-seeds.s3.us-west-1.amazonaws.com/moori-point.png'), filename: 'moori-point.png')
 
-Hike.create!(
-    park_id: 2,
-    name: "Tennessee Valley Golden Gate Loop Trail",
-    city: "Mill Valley",
-    latitude: 37.86048,
-    longitude: -122.5362,
-    zipcode: 94965,
-    difficulty: "Moderate",
-    estimated_time: "3 hours",
-    description: "The Tennesee Valley Golden Gate Loop trail is located in Mill Valley, California. It is a popular destination for birding, hiking, and mountain biking. The trail is beautiful and open all year-round. You will need to leave your pups if you head out on this trail, dogs are not allowed.",
-    elevation_gain: 1292,
-    duration: "5.5 miles",
-    route_type: "loop"
-)
+# Hike.create!(
+#     park_id: 2,
+#     name: "Tennessee Valley Golden Gate Loop Trail",
+#     city: "Mill Valley",
+#     latitude: 37.86048,
+#     longitude: -122.5362,
+#     zipcode: 94965,
+#     difficulty: "Moderate",
+#     estimated_time: "3 hours",
+#     description: "The Tennesee Valley Golden Gate Loop trail is located in Mill Valley, California. It is a popular destination for birding, hiking, and mountain biking. The trail is beautiful and open all year-round. You will need to leave your pups if you head out on this trail, dogs are not allowed.",
+#     elevation_gain: 1292,
+#     duration: "5.5 miles",
+#     route_type: "loop"
+# )
 # Hike.create!(
 #     park_id: 2,
 #     name: "Kirby Cove",
@@ -228,7 +237,7 @@ Hike.create!(
 # )
 
 #Hikes in Fort Mason
-Hike.create!(
+upper_fort_mason = Hike.create!(
     park_id: 3,
     name: "Upper Fort Mason",
     city: "San Francisco",
@@ -243,7 +252,10 @@ Hike.create!(
     route_type: "loop"
 )
 
-Hike.create!(
+upper_fort_mason.photos.attach(io: URI.open('https://bayareatrails-seeds.s3.us-west-1.amazonaws.com/fort-mason.png'), filename: 'fort-mason.png')
+
+
+wave_organ = Hike.create!(
     park_id: 3,
     name: "Fort Mason to Wave Organ",
     city: "San Francisco",
@@ -257,9 +269,10 @@ Hike.create!(
     duration: "3.0 miles",
     route_type: "Out & back"
 )
+wave_organ.photos.attach(io: URI.open('https://bayareatrails-seeds.s3.us-west-1.amazonaws.com/wave-organ.png'), filename: 'wave-organ.png')
 
 #Hikes in Marin Headlands
-Hike.create!(
+rodeo_beach = Hike.create!(
     park_id: 4,
     name: "Rodeo Beach, Miwok Trail, and Coastal Trail",
     city: "Muir Beach",
@@ -273,8 +286,9 @@ Hike.create!(
     duration: "5.3 miles",
     route_type: "loop"
 )
+rodeo_beach.photos.attach(io: URI.open('https://bayareatrails-seeds.s3.us-west-1.amazonaws.com/rodeo-beach.png'), filename: 'rodeo-beach.png')
 
-Hike.create!(
+tennessee_v = Hike.create!(
     park_id: 4,
     name: "Tennessee Valley Trail",
     city: "Sausalito",
@@ -288,23 +302,23 @@ Hike.create!(
     duration: "3.4 miles",
     route_type: "Out & back"
 )
+tennessee_v.photos.attach(io: URI.open('https://bayareatrails-seeds.s3.us-west-1.amazonaws.com/tennesee.png'), filename: 'tennesee.png')
+# Hike.create!(
+#     park_id: 4,
+#     name: "Rodeo Beach to Hill 88",
+#     city: "Sausalito",
+#     latitude: 37.83232,
+#     longitude: -122.54018,
+#     zipcode: 94941,
+#     difficulty: "Moderate",
+#     estimated_time: "2 hours",
+#     description: "This 3.8 mile out & back trail is located in Sausalito, California. The trail takes about 2 hours on average to complete. It is a popular area for birding, hiking, and running, so you will likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Pups are welcome on this trail as long as they are on a leash.",
+#     elevation_gain: 1023,
+#     duration: "3.8 miles",
+#     route_type: "Out & back"
+# )
 
-Hike.create!(
-    park_id: 4,
-    name: "Rodeo Beach to Hill 88",
-    city: "Sausalito",
-    latitude: 37.83232,
-    longitude: -122.54018,
-    zipcode: 94941,
-    difficulty: "Moderate",
-    estimated_time: "2 hours",
-    description: "This 3.8 mile out & back trail is located in Sausalito, California. The trail takes about 2 hours on average to complete. It is a popular area for birding, hiking, and running, so you will likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime. Pups are welcome on this trail as long as they are on a leash.",
-    elevation_gain: 1023,
-    duration: "3.8 miles",
-    route_type: "Out & back"
-)
-
-Hike.create!(
+costal_tenn = Hike.create!(
     park_id: 4,
     name: "Tennesee Beach via Coastal, Fox, and Middle Green Gulch Loop",
     city: "Muir Beach",
@@ -318,8 +332,8 @@ Hike.create!(
     duration: "9.1 miles",
     route_type: "loop"
 )
-
-Hike.create!(
+coastal_tenn.photos.attach(io: URI.open('https://bayareatrails-seeds.s3.us-west-1.amazonaws.com/coastal_tenn.png'), filename: 'coastal_tenn.png')
+coastal_saus = Hike.create!(
     park_id: 4,
     name: "Coastal Trail Loop",
     city: "Sausalito",
@@ -333,7 +347,7 @@ Hike.create!(
     duration: "2.5 miles",
     route_type: "loop"
 )
-
+coastal_saus.photos.attach(io: URI.open('https://bayareatrails-seeds.s3.us-west-1.amazonaws.com/coastal-saus.png'), filename: 'coastal_saus.png')
 # Hike.create!(
 #     park_id: 4,
 #     name: "Gerbode Valley Loop",

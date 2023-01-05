@@ -6,15 +6,6 @@ import { getPark, fetchPark } from "../../store/parks"
 const HikeShowListItem = ({ hike }) => {
     const dispatch = useDispatch();
     const history = useHistory();
-    // const park = useSelector(getPark(hike.parkId))
-
-    // useEffect(() => {
-    //     dispatch(fetchPark(hike.parkId))
-    // }, [dispatch, hike.parkId])
-
-    // if (!park) {
-    //     return null;
-    // }
 
     const routeChange = () => {
         let path = `/hikes/${hike.id}`
@@ -32,7 +23,7 @@ const HikeShowListItem = ({ hike }) => {
             <div className="side-bar-hikes" onClick={routeChange}>
             {/* <Link to={`/hikes/${hike.id}`} className="link"> */}
                     <div className="hike-show-list-items-photos">
-                        <img src="" alt="photo here"></img>
+                        <img src={hike.photoUrls} alt="hello" className="hike-show-photos" />
                     </div>
                     <div className="hike-show-list-items">
                         <p className="hike-show-list-item hike-show-difficulty">{hike.difficulty}</p>
