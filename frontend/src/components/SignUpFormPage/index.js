@@ -4,9 +4,7 @@ import React, { useState } from 'react'
 import * as sessionActions from '../../store/session'
 import { Redirect, useHistory } from 'react-router-dom'
 import './SignUpForm.css'
-import marinocean from "../../assets/marinocean.jpg"
-import marinhike from "../../assets/marinhike.jpg"
-import goldengate from "../../assets/goldengate.jpg"
+
 
 const SignUpForm = () => {
     const [username, setUsername] = useState("")

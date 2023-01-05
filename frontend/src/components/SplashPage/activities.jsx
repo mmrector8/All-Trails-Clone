@@ -1,9 +1,4 @@
-import puppy from "../../assets/puppy.jpg"
-import kidhiking from "../../assets/kidhiking.jpg"
-import roadbike from "../../assets/roadbike.jpg"
-import wheelchair from "../../assets/wheelchair.jpg"
-import biking from "../../assets/biking-2.jpg"
-import running from "../../assets/running.jpg"
+
 import { useHistory } from "react-router-dom"
 
 const Activities =()=>{

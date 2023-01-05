@@ -4,10 +4,7 @@ import * as sessionActions from '../../store/session'
 import { Redirect, useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import './LoginForm.css'
-import goldengate from "../../assets/sign-in-background.jpg"
-import aerialgg  from "../../assets/aerialgg.jpg"
-import ggbridge2 from "../../assets/ggbridge2.jpg"
-// import pacifica from "../../assets/pacifica.jpg"
+
 
 const LoginFormPage = ()=>{
     const dispatch = useDispatch()
