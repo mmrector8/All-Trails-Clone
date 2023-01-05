@@ -27,6 +27,7 @@ const HikeShowPage = ()=>{
                 filtered.push(hike.relatedHikes[i])
             }
         }
+        console.log(filtered, 'filteredhikes')
        return filtered;
     }
 

@@ -318,7 +318,7 @@ tennessee_v.photos.attach(io: URI.open('https://bayareatrails-seeds.s3.us-west-1
 #     route_type: "Out & back"
 # )
 
-costal_tenn = Hike.create!(
+coastal_tenn = Hike.create!(
     park_id: 4,
     name: "Tennesee Beach via Coastal, Fox, and Middle Green Gulch Loop",
     city: "Muir Beach",

@@ -180,22 +180,33 @@
 }
 
 .side-bar-hikes{
-    cursor: pointer;
+cursor: pointer;
    display: flex;
    flex-direction: column;
    margin: 10px;
+   position: relative;
 }
 
 .hike-show-list-items-photos{
-    height: 150px;
+    height: 80px;
     width: 250px;
     background-color: rgba(0, 225, 255, 0.34);
     border-radius: 20px;
     margin: 15px;
+    background-color: blue;
+}
+
+.hike-show-photos {
+    border-radius: 20px;
+    height: 180px;
+    width: 100%;
+
 }
 
 .hike-show-list-items{
+
     font-family: "Manrope", sans-serif;
+    padding-top: 100px;
     padding-left: 20px;
     padding-right: 20px;
     margin-bottom: 4px;
