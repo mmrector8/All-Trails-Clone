@@ -16,6 +16,7 @@
 #  updated_at     :datetime         not null
 #  duration       :string           not null
 #  route_type     :string           not null
+#  estimated_time :string           not null
 #
 class Hike < ApplicationRecord
     belongs_to :park, optional: true
@@ -24,4 +25,5 @@ class Hike < ApplicationRecord
     validates :duration, length: {in: 1...100 }
     validates :name, uniqueness: true
     has_many_attached :photos
+    has_many :reviews
 end

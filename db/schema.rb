@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_05_171930) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_06_221224) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -75,6 +75,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_05_171930) do
     t.index ["name"], name: "index_parks_on_name", unique: true
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "hike_id", null: false
+    t.text "content", null: false
+    t.integer "stars", null: false
+    t.string "activity_type", null: false
+    t.string "conditions"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hike_id"], name: "index_reviews_on_hike_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "username", null: false
@@ -92,4 +105,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_05_171930) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "hikes", "parks"
+  add_foreign_key "reviews", "hikes"
+  add_foreign_key "reviews", "users"
 end
