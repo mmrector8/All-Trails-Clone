@@ -78,7 +78,7 @@
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.369);
     display: grid;
     grid-template-columns: 1fr, 3fr;
-    grid-column-gap: 10px;
+    grid-column-gap: 30px;
     grid-template-areas:
         "photo descriptors"
 }
@@ -87,10 +87,17 @@
    grid-area: photo; 
    height: 220px;
    width: 300px;
-   background-color: rgba(104, 179, 253, 0.369);
+   /* background-color: rgba(104, 179, 253, 0.369); */
    margin: 20px;
-   border-radius: 20px;
 }
+
+.hike-index-photos-aws{
+    padding: 10px;
+    height: 210px;
+    width: 320px;
+    border-radius: 20px;
+}
+
 .link {
     text-decoration: none;
     color: black;
@@ -186,6 +193,7 @@
 
     .hike-list-items-photos{
         width: 93%;
+        height: 100%;
     }
 
     .top-list-items {

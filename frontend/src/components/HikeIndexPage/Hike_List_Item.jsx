@@ -36,7 +36,7 @@ const HikeListItem = ({hike }) =>{
                
             <div className="hike-list-item-container">
             <div className="hike-list-items-photos">
-                <img src="" alt="photo here"></img>
+                <img src={hike.photoUrls[0]} alt="photo of hike" className="hike-index-photos-aws" />
             </div>
             <div className="hike-list-items">
                 <p className="hike-list-item hike-difficulty-index">{hike.difficulty}</p>
