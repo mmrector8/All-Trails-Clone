@@ -5,6 +5,7 @@ import LocalFavorites from "./localfavorites";
 import Activities from "./activities";
 import InspiringImage from "./inspiringimage";
 import julia from "../../assets/julia.jpg"
+import alexbackground from "../../assets/alexbackground.png"
 import splashresized from "../../assets/splashresized.jpg"
 import ReasonsToSignUp from "./reasonssignup.jsx";
 import AdventureAnywhere from "./adventureanywhere";
@@ -15,8 +16,9 @@ const SplashPage = ()=>{
     const [currentImgIdx, setCurrentImgIdx] = useState(0)
 
     const images = [
+        julia,
         splashresized,
-        julia
+        alexbackground
     ]
 
     useEffect(()=>{
