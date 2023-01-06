@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPark, fetchPark } from "../../store/parks"
 
 const HikeShowListItem = ({ hike }) => {
-     console.log(hike)
+    console.log(hike, 'hike in showlist item')
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -17,6 +17,10 @@ const HikeShowListItem = ({ hike }) => {
     const handleParkShowClick = (e) => {
         e.stopPropagation()
         window.scrollTo({ top: 0, left: 0 })
+    }
+
+    if(!hike.photoUrls){
+        return null;
     }
 
     return (
@@ -37,3 +41,11 @@ const HikeShowListItem = ({ hike }) => {
     )
 }
 export default HikeShowListItem;
+
+// json.id hike.id
+// json.name hike.name
+// json.park_name @park.name
+// json.park_id @park.id
+// json.difficulty hike.difficulty
+// json.duration hike.duration
+// json.estimated_time hike.estimated_time

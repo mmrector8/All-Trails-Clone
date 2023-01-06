@@ -16,7 +16,7 @@ const HikeShowPage = ()=>{
     }, [dispatch, hikeId])
 
 
-    if (!hike){
+    if (!hike || !hike.relatedHikes){
         return null;
     }
 
@@ -30,6 +30,7 @@ const HikeShowPage = ()=>{
        return filtered;
     }
 
+    console.log(hike.relatedHikes, 'related hikes')
     return (
         <>
         <div className="whole-page">   
