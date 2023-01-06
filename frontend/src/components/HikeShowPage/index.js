@@ -6,6 +6,7 @@ import placeholdermap from "../../assets/placeholdermap.png"
 import * as HikeShowCss from "./HikeShowPage.css"
 import HikeShowListItem from "./OtherHikesItem";
 import HikeMapWrapper, {HikeMap} from "../HikeMap";
+import HikeBigMapWrapper from "../HikeBigMap";
 
 const HikeShowPage = ()=>{
     const dispatch = useDispatch();

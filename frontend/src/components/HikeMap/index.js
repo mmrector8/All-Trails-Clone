@@ -35,7 +35,6 @@ export const HikeMap = ({hikes}) =>{
     // const center = useMemo(()=>({lat: latitude, lng: longitude }),[])
     return (
         <>
-        <div className='pop-up'>pop up</div>
         <GoogleMap zoom={10} center={center} mapContainerClassName='map-container'>
             {hikes?.map((hike) => <Marker position={{ lat: hike.latitude, lng: hike.longitude }} icon={image} mapContainerClassName='marker'/>)} 
         </GoogleMap>

@@ -1,5 +1,5 @@
-.map-container{
+.big-map-container {
     width: 75%;
-    height: 35vh;
+    height: 100vh;
     border-radius: 30px;
 }
