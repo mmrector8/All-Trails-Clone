@@ -6,6 +6,7 @@ import HikeShowPage from "./components/HikeShowPage";
 import ParkShowPage from "./components/ParkShowPage"
 import ComponentError from "./components/ComponentError"
 import SplashPage from "./components/SplashPage";
+import Footer from "./components/Footer";
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
         <Navigation />
+       
         <Switch>
         <Route exact path="/">
           <SplashPage />
@@ -34,6 +36,7 @@ function App() {
         </Route>
         <Route component={ComponentError} />
         </Switch>
+        <Footer />
     </>
   );
 }
