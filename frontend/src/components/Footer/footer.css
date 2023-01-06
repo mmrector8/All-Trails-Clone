@@ -1,0 +1,49 @@
+.footer {
+    margin-top: -30px;
+    background-color: #142800;
+    color: white;
+}
+.footer-item-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Manrope", sans-serif;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.footer-sections, .morgan-links-container{
+    padding:40px;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 50px;
+}
+
+.footer-icon{
+    margin-top: 40px;
+    margin-left: 30px;
+    font-size: 40px;
+    color: #5de372;
+}
+
+.footer-logo{
+    padding: 20px;
+   
+    color: white;
+    text-decoration: none;
+    font-family: "Manrope", sans-serif;
+    font-size: 26px;
+}
+.copywright{
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+    padding: 20px;
+    padding-left: 30px;
+}
+
+.morgan-links{
+    color: white;
+    cursor: pointer;
+}
