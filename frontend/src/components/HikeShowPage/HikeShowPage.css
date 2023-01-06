@@ -1,5 +1,6 @@
 .whole-page {
     padding-top: 30px;
+    padding-bottom: 30px;
     background-color: rgb(238, 238, 238);
     display: flex;
     justify-content: center;

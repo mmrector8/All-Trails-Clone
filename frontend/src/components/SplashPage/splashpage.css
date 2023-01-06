@@ -343,7 +343,7 @@
     height: 350px;
     align-items: center;
     position: relative;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
 }
 
 .p-for-planet, .trees, .no-trace{
