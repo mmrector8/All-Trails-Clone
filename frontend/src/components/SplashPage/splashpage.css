@@ -66,6 +66,7 @@
 }
 
 .local-favorites {
+    background-color: pink;
     padding: 10px;
    padding-top: 20px;
    padding-bottom: 20px;
@@ -80,7 +81,9 @@
     margin-left: 30px;
 }
 
+
 .local-fave-link{
+    color: black;
     margin: 0px;
     font-weight: bold;
 }

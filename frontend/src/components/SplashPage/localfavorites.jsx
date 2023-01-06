@@ -22,10 +22,9 @@ const LocalFavorites = () =>{
 
     const breakPoints = [
         { width: 1, itemsToShow: 1 },
-        { width: 450, itemsToShow: 2},
-        { width: 600, itemsToShow: 3 },
-        { width: 900, itemsToShow: 4 },
-        { width: 1200, itemsToShow: 4 },
+        { width: 600, itemsToShow: 2 },
+        { width: 860, itemsToShow: 3 },
+        { width: 1120, itemsToShow: 4 },
     ];
 
     const handleClick = ()=>{
@@ -46,7 +45,7 @@ const LocalFavorites = () =>{
 
     return (
         <div className='local-favorites'>
-            <h1 className="local-favorites-links">Local favorites in the <Link to={'/hikes'} onClick={()=>window.scrollTo({ top: 0, left: 0 })} className="local-favorites-links local-fave-link">Bay Area</Link></h1>
+            <h1 className="local-favorites-links">Local favorites in the <Link to={'/hikes'} onClick={()=>window.scrollTo({ top: 0, left: 0 })} className="local-fave-link">Bay Area</Link></h1>
             <Carousel breakPoints={breakPoints} enableMouseSwipe={true} itemsToScroll={3} outerSpacing={0}>
                 {filteredLocalFavorites().map((hike, i)=> <HikeShowListItem key={i} hike={hike}/>)}
                 <div className='local-favorites-show-more' onClick={handleClick}>
