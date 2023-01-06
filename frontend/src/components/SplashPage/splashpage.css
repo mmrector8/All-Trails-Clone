@@ -336,13 +336,14 @@
 
 
 .for-the-planet-container{
+    padding-top: 100px;
     padding-left: 20px;
     background-color: #2c5601;
     display: flex;
     height: 450px;
     align-items: center;
     position: relative;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 }
 
 .p-for-planet, .trees, .no-trace{
@@ -352,6 +353,7 @@
     font-size: 20px;
     line-height: 40px;
     margin-top: -60px;
+    height: inherit;
 }
 
 .for-planet-section-title{
@@ -416,6 +418,41 @@
 
 }
 
+@media (max-width: 1050px){
+
+    .give-back-link-container{
+        padding-top: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+
+   .for-planet-section-title{
+    font-size: 20px;
+   }
+
+   .para-planet{
+        font-size: 16px;
+        margin-bottom: 40px;
+   }
+
+   .p-for-planet,.trees, .no-trace{
+        padding: 30px;
+   }
+
+}
+
+@media (max-width: 700px){
+    .p-for-planet, .trees, .no-trace {
+        line-height: 30px;
+    }
+    
+     .para-planet {
+        font-size: 16px;
+         margin-bottom: 40px;
+         line-height: 26px;
+    }
+}
 
 .rec.rec-arrow {
     border-radius: 50%;

@@ -35,7 +35,6 @@ const HikeShowListItem = ({ hike }) => {
                         <Link to={`/parks/${hike.parkId}`} onClick={handleParkShowClick}className="hike-show-park-name">{hike.parkName}</Link>
                         <p className="hike-show-duration-and-length">Length: {hike.duration} {"•"} Est. {hike.estimatedTime}  </p>
                     </div>
-            {/* </Link> */}
             </div>
         </>
     )
