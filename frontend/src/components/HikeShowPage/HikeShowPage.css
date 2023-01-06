@@ -193,14 +193,17 @@
     background-color: rgba(0, 225, 255, 0.34);
     border-radius: 20px;
     margin: 15px;
-    background-color: blue;
 }
 
 .hike-show-photos {
     border-radius: 20px;
     height: 180px;
     width: 100%;
+}
 
+.hike-show-photos:hover{
+    height: 183px;
+    width: 102%;
 }
 
 .hike-show-list-items{

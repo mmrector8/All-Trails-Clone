@@ -4,19 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPark, fetchPark } from "../../store/parks"
 
 const ParkListItem = ({ hike, parkName}) => {
-    // const {parkId} = useParams()
-    // const dispatch = useDispatch();
-
-    // const park = useSelector(getPark(parkId))
-
-    // useEffect(() => {
-    //     console.log('useeffect')
-    //     dispatch(fetchPark(parkId))
-    // }, [dispatch])
-
-    // if (!park) {
-    //     return null;
-    // }
 
     return (
         <>
