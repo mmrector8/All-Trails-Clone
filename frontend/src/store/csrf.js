@@ -3,12 +3,12 @@ export const storeCSRFToken = (res) => {
     if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
 }
 
-// export const restoreCSRF = async () =>{
-//     let res = await csrfFetch('/api/session')
-//     // let res2 = await fetch('/api/session')
-//     storeCSRFToken(res)
-//     return res;
-// }
+export const restoreCSRF = async () =>{
+    let res = await csrfFetch('/api/session')
+    // let res2 = await fetch('/api/session')
+    storeCSRFToken(res)
+    return res;
+}
 
 const csrfFetch = async (url, options = {}) => {
     options.headers = options.headers || {};
