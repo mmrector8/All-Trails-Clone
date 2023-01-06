@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       resources :users, only: :create
       resources :hikes, only: [:create, :index, :show]
       resources :parks, only: [:show]
+      resources :hikes do
+        resources :reviews, only: [:create, :edit, :destroy]
+      end
       resource :session, only: [:show, :create, :destroy]
   end
 

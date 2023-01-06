@@ -4,17 +4,18 @@ class Api::ReviewsController < ApplicationController
         @review = Review.new(review_params)
 
         if @review.save!
-            render "views/api/show"
+            render :show
         else
             render json: {errors: @review.errors.full_messages}, status: :unprocessable_entity
         end
     end
 
+
     def update
         @review = Review.find_by(id: params[:id])
 
         if @review.upate(review_params)
-            render json: updated!
+            render :show
         else
             render json: {errors: @review.errors.full_messages}, status: :unprocessable_entity
         end
@@ -23,7 +24,7 @@ class Api::ReviewsController < ApplicationController
     def destroy
         @review = Review.find_by(id: params[:id])
         if @review.destroy
-            render "views/api/show"
+            render json: "deleted!"
         else
             render json: {errors: @review.errors.full_messages}
         end
