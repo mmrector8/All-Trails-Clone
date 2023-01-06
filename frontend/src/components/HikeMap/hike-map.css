@@ -1,0 +1,12 @@
+.map-container{
+    width: 75%;
+    height: 35vh;
+    border-radius: 30px;
+}
+.pop-up{
+    display:none;
+}
+
+.pop-up:hover{
+    font-size: 20px;
+}   

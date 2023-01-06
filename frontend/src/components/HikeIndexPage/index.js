@@ -7,6 +7,7 @@ import walkinggirl from "../../assets/walkinggirl.jpg"
 import hikersrectangle from "../../assets/hikersrectangle.jpg"
 import treesrectangle from "../../assets/treesrectangle.jpg"
 import * as HikeIndexCss from "./HikeIndexPage.css"
+import HikeMapWrapper from "../HikeMap"
 
 const HikeIndexPage = ()=>{
     const dispatch = useDispatch()
@@ -41,7 +42,7 @@ const HikeIndexPage = ()=>{
                     <div className="title-and-description">
                         <h1 className="title">San Francisco Hikes</h1>
                         <p className="description">Looking for the best hiking trails in San Francisco? Whether you're getting ready to hike, bike, trail run, or explore other outdoor activities, BayAreaTrails has scenic trails in the San Francisco area. Enjoy hand-curated trail maps, along with reviews and photos from nature lovers like you. Check out some trails with historic sights or adventure through the nature areas surrounding San Francisco that are perfect for hikers and outdoor enthusiasts at any skill level.</p>
-                        <h1 className="map title">GOOGLE MAP WILL GO HERE</h1>
+                        <HikeMapWrapper hikes={hikes}/>
                      </div>
                     
                 <h1 className="trail-list">Top Trails ({numOfHikes})</h1>

@@ -190,7 +190,6 @@
 .hike-show-list-items-photos{
     height: 180px;
     width: 280px;
-    background-color: rgba(0, 225, 255, 0.34);
     border-radius: 20px;
     margin: 15px;
 }
@@ -247,6 +246,7 @@
 
 
 @media (max-width: 700px){
+
     .grid-elements{
         width: 100%;
         display: flex;

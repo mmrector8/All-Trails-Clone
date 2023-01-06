@@ -6,6 +6,7 @@ import walkinggirl from "../../assets/walkinggirl.jpg"
 import hikersrectangle from "../../assets/hikersrectangle.jpg"
 import treesrectangle from "../../assets/treesrectangle.jpg"
 import ParkListItem from "./ParkListItem"
+import HikeMapWrapper from "../HikeMap"
 
 const ParkShowPage = () =>{
     const {parkId} = useParams();
@@ -39,7 +40,7 @@ const ParkShowPage = () =>{
                     <div className="title-and-description">
                         <h1 className="title">{park.name} Hikes</h1>
                         <p className="description">{park.description}</p>
-                        <h1 className="map title">GOOGLE MAP WILL GO HERE</h1>
+                        <HikeMapWrapper hikes={park.hikes} />
                     </div>
                     <h1 className="trail-list">Top Trails ({numOfHikes})</h1>
                     <div className="trails">
