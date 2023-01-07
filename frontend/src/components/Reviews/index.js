@@ -4,6 +4,7 @@ import {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux' 
 import {getReviews } from "../../store/reviews"
 import { useParams } from "react-router-dom";
+import ReviewModalContainer from "./reviewmodalcontainer";
 
 const ReviewIndex = ({hike}) =>{
     const reviews = useSelector(getReviews)
@@ -37,7 +38,7 @@ const ReviewIndex = ({hike}) =>{
                         <p><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i></p>
                         <p>{reviews.length} reviews</p>
                     </div>
-                    <button className="write-review-button">Write Review</button>
+                    <ReviewModalContainer />
                 </div>
             {reviews?.map((review, i)=><ReviewIndexItem review={review} key={i}/>)}
         </>
