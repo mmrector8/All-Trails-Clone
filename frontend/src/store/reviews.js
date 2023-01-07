@@ -5,6 +5,7 @@ export const RECEIVE_REVIEW = 'reviews/RECEIVE_REVIEW'
 export const REMOVE_REVIEW = 'reviews/REMOVE_REVIEW'
 
 export const receiveReview = (review)=> {
+    console.log('hitting receive review')
     return {
         type: RECEIVE_REVIEW,
         review
@@ -47,15 +48,19 @@ export const fetchReviews = (hikeId)=> async (dispatch) =>{
 }
 
 export const createReview = (review)=> async dispatch => {
-    const res = await csrfFetch(`/api/hikes/${review.hike_id}/reviews`, {
+    console.log('hitting create review')
+    console.log(review.hikeId)
+    const res = await csrfFetch(`/api/hikes/${review.hikeId}/reviews`, {
         method: "POST",
         body: JSON.stringify(review),
         headers: {
             'Content-Type': 'application/json',
+            'Accept': 'application/json'
         }
     })
     if (res.ok){
         const review = await res.json();
+        console.log(review, 'review')
         dispatch(receiveReview(review))
     }
 }

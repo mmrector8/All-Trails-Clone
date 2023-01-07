@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPark, fetchPark } from "../../store/parks"
 
 const HikeShowListItem = ({ hike }) => {
-    console.log(hike, 'hike in showlist item')
     const dispatch = useDispatch();
     const history = useHistory();
 
