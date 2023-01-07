@@ -18,7 +18,7 @@ const ReviewIndex = ({hike}) =>{
         for(let i=0; i < reviews.length; i++){
             count += reviews[i].stars
         }
-        return (count/reviews.length)
+        return (count/reviews.length).toFixed(1)
     }
 
     return (
