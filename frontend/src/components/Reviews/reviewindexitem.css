@@ -16,3 +16,29 @@
     border-top: 1px solid rgb(200, 200, 200);
     padding-bottom: 20px;
 }
+
+.star-rating {
+    direction: rtl;
+    display: inline-block;
+    padding: 20px;
+    cursor: default;
+}
+    input[type="radio"] {
+        display: none;
+    }
+
+    .star-label {
+        color:  #bbb;
+        font-size: 2rem;
+        padding: 0;
+        cursor: pointer;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .star-label:hover,
+     .star-label:hover~label,
+    input[type="radio"]:checked~.star-label {
+        color: #5de372;
+    }
+  

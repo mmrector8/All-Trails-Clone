@@ -86,7 +86,7 @@ const reviewsReducer = (state={}, action)=>{
         case RECEIVE_HIKE:
             return {...newState, ...action.payload.reviews}
         case RECEIVE_REVIEWS:
-            return {...newState, ...action.reviews}
+            return {...action.reviews}
         case RECEIVE_REVIEW:
             newState[action.review.id] = action.review
             return newState;
