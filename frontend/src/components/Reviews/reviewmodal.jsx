@@ -34,11 +34,12 @@ const ReviewModal = ({open, onClose, hike}) =>{
         <>
             <div className="overlay"></div>
             <div className='modal-content'>
-                <button onClick={onClose}>X</button>
-                <h1>{hike.name}</h1>
+                <button onClick={onClose} className="exit-modal">X</button>
+                <h1 className="review-hike-title">{hike.name}</h1>
                 <form onSubmit={handleSubmit}>
+                    <div className="review-form">
                     <div className="star-rating">
-                        <input id="5" type="radio" name="rating" value={5} onChange={(e=> setStars(e.target.value))}/>
+                        <input id="5" type="radio" name="rating" value={5} onChange={(e => setStars(e.target.value))} />
                         <label for="5" title="5 stars" className="star-label">
                             <i class="active fa fa-star" aria-hidden="true"></i>
                         </label>
@@ -59,21 +60,27 @@ const ReviewModal = ({open, onClose, hike}) =>{
                             <i class="active fa fa-star" aria-hidden="true"></i>
                         </label>
                     </div>
-                    <label>Review
-                        <textarea value={content} onChange={(e => setContent(e.target.value))} />
-                    </label>
-                    <label>Activity Type
-                        <select value ={activityType} onChange={(e => setActivityType(e.target.value))}>
-                            <option value="hiking">Hiking</option>
-                            <option value="walking">Walking</option>
-                        </select>
-                    </label>
+                    <div className="review-content">
+                        <label className="review-content-label">Review</label>
+                        <textarea value={content} onChange={(e => setContent(e.target.value))} className='textarea'/> 
+                    
+                    </div>
+                    <div className="activity-type-dropdown">
+                            <p className="activity-type-label">Activity Type</p>
+                            <select value ={activityType} onChange={(e => setActivityType(e.target.value))}>
+                                <option value="hiking">Hiking</option>
+                                <option value="walking">Walking</option>
+                            </select>
+                            
+                    </div>
                     <label>Trail Conditions 
                         <select value={conditions} onChange={(e => setConditions(e.target.value))}>
                             <option value="Great!">Great!</option>
                             <option value="No shade">No shade</option>
                         </select>
                     </label>
+                    
+                    </div>
                     <button type="submit">Post</button>
                 </form> 
             </div>
