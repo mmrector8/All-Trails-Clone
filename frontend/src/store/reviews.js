@@ -18,10 +18,10 @@ export const receiveReviews = (reviews)=>{
     }
 }
 
-export const removeReview = (hikeId) =>{
+export const removeReview = (reviewId) =>{
     return {
         type: REMOVE_REVIEW,
-        hikeId
+        reviewId
     }
 }
 
@@ -33,8 +33,8 @@ export const getReviews = (store={})=>{
 }
 
 export const getReview = (reviewId) => (store={})=>{
-    if(state.reviews){
-        return state.reviews[reviewId]
+    if(store.reviews){
+        return store.reviews[reviewId]
     }
 }
 
@@ -59,3 +59,35 @@ export const createReview = (review)=> async dispatch => {
         dispatch(receiveReview(review))
     }
 }
+
+export const updateReview = (review)=> async dispatch =>{
+    const res = await csrfFetch(`api/hikes/${review.hike_id}/reviews/${review.id}`,{
+        method: 'PATCH',
+        body: JSON.stringify(review),
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    })
+    if(res.ok){
+        const review = await res.json();
+        dispatch(receiveReview(review))
+    }
+}
+
+const reviewsReducer = (state={}, action)=>{
+    const newState = {...state}
+    switch(action.type){
+        case RECEIVE_REVIEWS:
+            return {...newState, ...action.reviews}
+        case RECEIVE_REVIEW:
+            newState[action.review.id] = action.review
+            return newState;
+        case REMOVE_REVIEW:
+            delete newState[action.reviewId]
+                return newState;
+        default:
+            return state;
+    }
+}
+export default reviewsReducer;

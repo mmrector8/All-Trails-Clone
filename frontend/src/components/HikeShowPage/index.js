@@ -7,6 +7,7 @@ import * as HikeShowCss from "./HikeShowPage.css"
 import HikeShowListItem from "./OtherHikesItem";
 import HikeMapWrapper, {HikeMap} from "../HikeMap";
 import HikeBigMapWrapper from "../HikeBigMap";
+import ReviewIndex from "../Reviews";
 
 const HikeShowPage = ()=>{
     const dispatch = useDispatch();
@@ -62,7 +63,6 @@ const HikeShowPage = ()=>{
                 <div className='sidebar'>
                     <div className='sidebar-map-container'>
                         <img src={placeholdermap} alt="map" className="sidebar-map"></img>
-                        {/* <HikeMapWrapper /> */}
                     </div>
                     <div className="other-hikes">
                             <h1 className='nearby-trails'>Nearby trails</h1>
@@ -88,6 +88,7 @@ const HikeShowPage = ()=>{
                 <div className="reviews">Write a Review
                     <li>Review 1</li>
                     <li>Review 2</li>
+                    <ReviewIndex hike={hike}/>
                 </div>
             </div>
             </div>

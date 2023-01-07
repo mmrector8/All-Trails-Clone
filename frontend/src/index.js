@@ -7,7 +7,8 @@ import App from './App';
 import configureStore from './store';
 import csrfFetch from './store/csrf'
 import * as sessionActions from './store/session';
-import * as parkActions from './store/parks'
+import * as reviewActions from './store/reviews'
+import * as parkActions from "./store/parks"
 // import restoreSession from './store/session'
 
 const renderApplication = async () => {
@@ -16,8 +17,7 @@ const renderApplication = async () => {
   if (process.env.NODE_ENV !== 'production') {
     window.store = store;
     window.csrfFetch = csrfFetch;
-    // window.sessionActions = sessionActions;
-    // window.hikeActions = hikeActions;
+    window.reviewActions = reviewActions;
     window.parkActions = parkActions;
   }
 
@@ -40,10 +40,8 @@ const renderApplication = async () => {
     return store;
 }
 
-//renderApplication()
 
 if (sessionStorage.getItem("X-CSRF-Token") === null || sessionStorage.getItem("curentUser") === null) {
-  // restoreSession().then(renderApplication);
   renderApplication()
     .then((store)=>store.dispatch(sessionActions.restoreSession()))
 } else {

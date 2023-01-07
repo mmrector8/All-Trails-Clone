@@ -14,8 +14,8 @@ const Footer = () =>{
                     </div>
                     <div className="morgan-links-container">
                         <p>About the creator</p>
-                        <Link className="morgan-links">Github</Link>
-                        <Link className="morgan-links">LinkedIn</Link>
+                        <Link to="/" className="morgan-links">Github</Link>
+                        <Link to="/" className="morgan-links">LinkedIn</Link>
                     </div>
                 </div>
                 <p className='copywright'>Made by Morgan Rector</p>
