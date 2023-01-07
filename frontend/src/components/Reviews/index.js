@@ -1,4 +1,5 @@
 import * as reviewscss from "./reviews.css"
+import ReviewIndexItem from "./ReviewIndexItem";
 
 const ReviewIndex = ({hike}) =>{
 
@@ -11,7 +12,7 @@ const ReviewIndex = ({hike}) =>{
     return (
         <>
             <h1>Reviews</h1>
-            {reviews?.map((review)=><p>{review.content}</p>)}
+            {reviews?.map((review)=><ReviewIndexItem review={review}/>)}
         </>
     )
 
