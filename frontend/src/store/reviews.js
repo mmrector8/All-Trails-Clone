@@ -27,7 +27,7 @@ export const removeReview = (reviewId) =>{
 
 export const getReviews = (store={})=>{
     if(store.reviews){
-        return Object.values(store.hikes)
+        return Object.values(store.reviews)
     }
     return []
 }
@@ -38,8 +38,8 @@ export const getReview = (reviewId) => (store={})=>{
     }
 }
 
-export const fetchReviews = (hikeId)=> async dispatch =>{
-    const res = await csrfFetch(`api/hikes/${hikeId}/reviews`)
+export const fetchReviews = (hikeId)=> async (dispatch) =>{
+    const res = await csrfFetch(`/api/hikes/${hikeId}/reviews`)
     if(res.ok){
         const reviews = await res.json();
         dispatch(receiveReviews(reviews))
@@ -47,7 +47,7 @@ export const fetchReviews = (hikeId)=> async dispatch =>{
 }
 
 export const createReview = (review)=> async dispatch => {
-    const res = await csrfFetch(`api/hikes/${review.hike_id}/reviews`, {
+    const res = await csrfFetch(`/api/hikes/${review.hike_id}/reviews`, {
         method: "POST",
         body: JSON.stringify(review),
         headers: {

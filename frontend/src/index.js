@@ -18,7 +18,6 @@ const renderApplication = async () => {
     window.store = store;
     window.csrfFetch = csrfFetch;
     window.reviewActions = reviewActions;
-    window.parkActions = parkActions;
   }
 
     function Root() {
