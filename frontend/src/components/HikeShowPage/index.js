@@ -85,9 +85,7 @@ const HikeShowPage = ()=>{
                     <p> Weather modal here</p>
                 </div>
                
-                <div className="reviews">Write a Review
-                    <li>Review 1</li>
-                    <li>Review 2</li>
+                <div className="reviews">
                     <ReviewIndex hike={hike}/>
                 </div>
             </div>
