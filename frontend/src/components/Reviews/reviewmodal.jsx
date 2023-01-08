@@ -73,20 +73,28 @@ const ReviewModal = ({open, onClose, hike}) =>{
                             </select>
                             
                     </div>
-                    <label>Trail Conditions 
-                        {/* <select value={conditions} onChange={(e => setConditions(e.target.value))}>
+                    {/* <label>Trail Conditions 
+                        <select value={conditions} onChange={(e => setConditions(e.target.value))}>
                             <option value="Great!">Great!</option>
                             <option value="No shade">No shade</option>
-                        </select> */}
-                        <input type="radio" name='conditions' value='Great!' id="conditions1" onChange={(e => setConditions(e.target.value))} />
-                        <label htmlFor="conditions1" className="conditions1"> Great!</label>
+                        </select>
+                        <input type="radio"value='Great!' id="conditions1" onChange={(e => setConditions(e.target.value))} />
+                        <label htmlFor="conditions1" className="conditions-label"> Great!</label>
                         
+                        <input type="radio"  value='Bridge out' id="conditions2" onChange={(e => setConditions(e.target.value))} />
+                        <label htmlFor="conditions2" className="conditions-label">Bridge out</label>
+                        
+                        <input type="radio" value='Closed' id="conditions3" onChange={(e => setConditions(e.target.value))} />
+                        <label htmlFor="conditions3" className="conditions-label">Closed</label>
 
-                    </label>
+                    </label> */}
                     
                     </div>
-                    <button type="submit">Post</button>
+                    <div className="button-container">
+                        <button type="submit" className='post-review-button'>Post</button>
+                    </div>
                 </form> 
+
             </div>
         </>
     )

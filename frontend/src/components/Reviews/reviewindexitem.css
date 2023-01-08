@@ -17,15 +17,4 @@
     padding-bottom: 20px;
 }
 
-.star-rating {
-    direction: rtl;
-    display: inline-block;
-    padding: 20px;
-    cursor: default;
-}
-    input[type="radio"] {
-        display: none;
-    }
-
-   
   
