@@ -120,6 +120,11 @@ select {
    justify-content: right;
 }
 
+.review-buttons{
+    display: flex;
+    margin-left: 10px;
+}
+
 .post-review-button{
     cursor: pointer;
     margin: 30px;
@@ -134,8 +139,22 @@ select {
     border: 1px solid #244801;
 }
 
+
 .post-review-button:hover{
     background-color: #1e3c00;
+}
+
+.edit-review-button, .delete-review-button {
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    width: auto;
+    color: #2c5601;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "Manrope", sans-serif;
+    cursor: pointer;
+    text-decoration: underline;
 }
 /* 
 .conditions1{

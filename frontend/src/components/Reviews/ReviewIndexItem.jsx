@@ -50,10 +50,11 @@ const ReviewIndexItem = ({review, currentUser}) =>{
     const checkCurrentUser =() =>{
         if (currentUser && currentUser.id === review.userId){
             return (
-                <>
-                 <button onClick={handleDeleteClick}>Delete Review</button>
+                <div className='review-buttons'>
+                 
                  <ReviewModalContainer hike={hike} isEdit={true} review={review}/>
-                </>
+                <button onClick={handleDeleteClick} className="delete-review-button">Delete Review</button>
+                </div>
             )
         }
         return null

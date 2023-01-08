@@ -66,7 +66,6 @@ export const createReview = (review)=> async dispatch => {
     })
     if (res.ok){
         const review = await res.json();
-        console.log(review, 'review')
         dispatch(receiveReview(review))
     }
 }
@@ -82,7 +81,6 @@ export const updateReview = (review)=> async dispatch =>{
     })
     if(res.ok){
         const review = await res.json();
-        console.log(review)
         dispatch(receiveReview(review.review))
     }
 }
