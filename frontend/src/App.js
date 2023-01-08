@@ -9,6 +9,7 @@ import SplashPage from "./components/SplashPage";
 import Footer from "./components/Footer";
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import ReviewModalContainer from "./components/Reviews/reviewmodalcontainer";
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
         </Route>
         < Route exact path='/signup'>
           <SignUpForm />
+        </Route>
+        <Route exact path="/hikes/:hikeId/reviews/reviewId">
+            <ReviewModalContainer />
         </Route>
         < Route exact path='/login'>
           <LoginFormPage />

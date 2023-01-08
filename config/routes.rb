@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :hikes, only: [:create, :index, :show]
       resources :parks, only: [:show]
       resources :hikes do
-        resources :reviews, only: [:create, :edit, :destroy]
+        resources :reviews, only: [:create, :update, :destroy]
       end
       resource :session, only: [:show, :create, :destroy]
   end

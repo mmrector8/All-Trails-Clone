@@ -47,9 +47,15 @@ export const fetchReviews = (hikeId)=> async (dispatch) =>{
     }
 }
 
+export const fetchReview = (reviewId, hikeId)=> async dispatch=>{
+    const res = await csrfFetch(`/api/hikes/${hikeId}/reviews/${reviewId}`)
+    if(res.ok){
+        const review = await res.json();
+        dispatch(receiveReview(review))
+    }
+}
+
 export const createReview = (review)=> async dispatch => {
-    console.log('hitting create review')
-    console.log(review.hikeId)
     const res = await csrfFetch(`/api/hikes/${review.hikeId}/reviews`, {
         method: "POST",
         body: JSON.stringify(review),
@@ -67,7 +73,7 @@ export const createReview = (review)=> async dispatch => {
 
 export const updateReview = (review)=> async dispatch =>{
     const res = await csrfFetch(`/api/hikes/${review.hike_id}/reviews/${review.id}`,{
-        method: 'PATCH',
+        method: 'PUT',
         body: JSON.stringify(review),
         headers: {
             'Content-Type': 'application/json',
@@ -76,7 +82,8 @@ export const updateReview = (review)=> async dispatch =>{
     })
     if(res.ok){
         const review = await res.json();
-        dispatch(receiveReview(review))
+        console.log(review)
+        dispatch(receiveReview(review.review))
     }
 }
 

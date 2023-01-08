@@ -1,12 +1,16 @@
 
 import * as reviewindexcss from "./reviewindexitem.css"
 import { useDispatch } from "react-redux"
+import { useSelector } from "react-redux";
 import { deleteReview } from "../../store/reviews";
+import ReviewModalContainer from "./reviewmodalcontainer";
+import { getHike } from "../../store/hikes";
 
 const ReviewIndexItem = ({review, currentUser}) =>{
     const dispatch = useDispatch();
+    const hike = useSelector(getHike(review.hikeId))
 
-    if (!review){
+    if (!review || !hike){
         return <div>No reviews yet!</div>
     }
 
@@ -46,7 +50,10 @@ const ReviewIndexItem = ({review, currentUser}) =>{
     const checkCurrentUser =() =>{
         if (currentUser && currentUser.id === review.userId){
             return (
+                <>
                  <button onClick={handleDeleteClick}>Delete Review</button>
+                 <ReviewModalContainer hike={hike} isEdit={true} review={review}/>
+                </>
             )
         }
         return null

@@ -1,15 +1,27 @@
 import * as reviewmodalcss from "./reviewmodal.css"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createReview } from "../../store/reviews";
+import { createReview, getReview, fetchReview, updateReview } from "../../store/reviews";
+import { useParams } from "react-router-dom";
 
-const ReviewModal = ({open, onClose, hike}) =>{
+const ReviewModal = ({open, onClose, hike, review}) =>{
     const user = useSelector((state)=> state.session.user)
     const dispatch = useDispatch();
     const [stars, setStars] = useState(0)
     const [content, setContent] = useState('')
     const [activityType, setActivityType] = useState('hiking')
     const [conditions, setConditions] = useState('Great!') 
+    const [isEdit, setIsEdit] = useState(false);
+
+    useEffect(()=>{
+        if(review){
+            setIsEdit(true)
+            setStars(parseInt(review.stars))
+            setContent(review.content)
+            setActivityType(review.activityType)
+            dispatch(fetchReview(review.id, hike.id))            
+        }
+    }, [dispatch, review])
 
     if (!open){
         return null;
@@ -19,15 +31,30 @@ const ReviewModal = ({open, onClose, hike}) =>{
     }
 
     const handleSubmit = async (e) =>{
-        const data = {
-            user_id: user.id,
-            hike_id: hike.id,
-            stars,
-            content,
-            activity_type: activityType,
-            conditions
+        if(review){
+            console.log('hitting handle submit')
+            const data ={
+                id: review.id,
+                user_id: user.id,
+                hike_id: hike.id,
+                stars: 5,
+                content: "edit worked :)",
+                activity_type: "hiking"
+            }
+            dispatch(updateReview(data))
         }
-        dispatch(createReview(data))
+        else{
+            const data = {
+                user_id: user.id,
+                hike_id: hike.id,
+                stars,
+                content,
+                activity_type: activityType,
+                conditions
+            }
+            dispatch(createReview(data))
+        }
+        
     }
 
     return (
@@ -91,7 +118,7 @@ const ReviewModal = ({open, onClose, hike}) =>{
                     
                     </div>
                     <div className="button-container">
-                        <button type="submit" className='post-review-button'>Post</button>
+                        <button type="submit" className='post-review-button'>{isEdit ? "Edit Post" : "Post"}</button>
                     </div>
                 </form> 
 
