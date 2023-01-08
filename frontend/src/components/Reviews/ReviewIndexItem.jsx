@@ -1,7 +1,11 @@
 
 import * as reviewindexcss from "./reviewindexitem.css"
+import { useDispatch } from "react-redux"
+import { deleteReview } from "../../store/reviews";
 
-const ReviewIndexItem = ({review}) =>{
+const ReviewIndexItem = ({review, currentUser}) =>{
+    const dispatch = useDispatch();
+
     if (!review){
         return <div>No reviews yet!</div>
     }
@@ -35,6 +39,19 @@ const ReviewIndexItem = ({review}) =>{
        return convertedDate;
     }
 
+    const handleDeleteClick = ()=>{
+        dispatch(deleteReview(review))
+    }
+
+    const checkCurrentUser =() =>{
+        if (currentUser && currentUser.id === review.userId){
+            return (
+                 <button onClick={handleDeleteClick}>Delete Review</button>
+            )
+        }
+        return null
+    }
+
     return (
         <>
             <div className= 'review-index-item'>
@@ -51,6 +68,7 @@ const ReviewIndexItem = ({review}) =>{
                     <p>{review.stars}</p>
                     <p>{review.content}</p>
                 </div>
+                {checkCurrentUser()}
             </div>
         </>
         

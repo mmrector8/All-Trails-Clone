@@ -46,7 +46,7 @@ const ReviewIndex = ({hike}) =>{
                      
                     <ReviewModalContainer hike={hike}/>
                 </div>
-            {reviews?.map((review, i)=><ReviewIndexItem review={review} key={i}/>)}
+            {reviews?.map((review, i)=><ReviewIndexItem review={review} key={i} currentUser={currentUser}/>)}
         </>
     )
 

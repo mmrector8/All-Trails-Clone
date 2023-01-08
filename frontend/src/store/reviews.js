@@ -66,7 +66,7 @@ export const createReview = (review)=> async dispatch => {
 }
 
 export const updateReview = (review)=> async dispatch =>{
-    const res = await csrfFetch(`api/hikes/${review.hike_id}/reviews/${review.id}`,{
+    const res = await csrfFetch(`/api/hikes/${review.hike_id}/reviews/${review.id}`,{
         method: 'PATCH',
         body: JSON.stringify(review),
         headers: {
@@ -80,11 +80,20 @@ export const updateReview = (review)=> async dispatch =>{
     }
 }
 
+export const deleteReview = (review)=> async dispatch=> {
+    const res = await csrfFetch(`/api/hikes/${review.hike_id}/reviews/${review.id}`,{
+        method: "DELETE"
+    })
+    if(res.ok){
+        dispatch(removeReview(review.id))
+    }
+}
+
 const reviewsReducer = (state={}, action)=>{
     const newState = {...state}
     switch(action.type){
         case RECEIVE_HIKE:
-            return {...newState, ...action.payload.reviews}
+            return {...action.payload.reviews}
         case RECEIVE_REVIEWS:
             return {...action.reviews}
         case RECEIVE_REVIEW:
