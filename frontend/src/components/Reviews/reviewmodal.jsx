@@ -37,9 +37,9 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                 id: review.id,
                 user_id: user.id,
                 hike_id: hike.id,
-                stars: 5,
-                content: "edit worked :)",
-                activity_type: "hiking"
+                stars,
+                content,
+                activity_type: activityType
             }
             dispatch(updateReview(data))
         }
