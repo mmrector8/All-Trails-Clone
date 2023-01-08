@@ -51,9 +51,8 @@ const ReviewIndexItem = ({review, currentUser}) =>{
         if (currentUser && currentUser.id === review.userId){
             return (
                 <div className='review-buttons'>
-                 
-                 <ReviewModalContainer hike={hike} isEdit={true} review={review}/>
-                <button onClick={handleDeleteClick} className="delete-review-button">Delete Review</button>
+                    <ReviewModalContainer hike={hike} isEdit={true} review={review}/>
+                    <button onClick={handleDeleteClick} className="delete-review-button">Delete Review</button>
                 </div>
             )
         }
@@ -68,7 +67,7 @@ const ReviewIndexItem = ({review, currentUser}) =>{
                         <i className="fa-solid fa-tree dropdown-icon review-icon" ></i>
                     </div>
                     <div className = "review-header">
-                        <h1>{review.userId}</h1>
+                        <h1>{review.username}</h1>
                         <p>{convertDate()} • {review.activityType}</p>
                     </div>
                 </div>
