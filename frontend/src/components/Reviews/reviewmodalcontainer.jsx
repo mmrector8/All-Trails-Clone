@@ -8,7 +8,7 @@ const ReviewModalContainer = ({hike, isEdit, review}) =>{
     return (
         <>
             <div className= 'review-button-container'>
-                <button className={isEdit ? "edit-review-button": "write-review-button" }onClick={()=> setIsOpen(true)} >{isEdit ? "Edit Review" : "Write Review"}</button>
+                <button className={isEdit ? "edit-review-button": "write-review-button" }onClick={()=> setIsOpen(true)} >{isEdit ? "Edit" : "Write Review"}</button>
             </div>
             <div className= 'write-review-modal'>
                 <ReviewModal hike={hike} open={isOpen} review={review} onClose={(()=> setIsOpen(false))} />

@@ -15,6 +15,11 @@ const ReviewIndexItem = ({review, currentUser}) =>{
         return <div>No reviews yet!</div>
     }
 
+    const reviewConditions = (review)=>{
+        const conditionsArr = review.conditions.split(",").filter(condition=> condition.length> 2)
+        return conditionsArr;
+    }
+
     const months = {
         1: "January",
         2: "February",
@@ -52,13 +57,14 @@ const ReviewIndexItem = ({review, currentUser}) =>{
         if (currentUser && currentUser.id === review.userId){
             return (
                 <div className='review-buttons'>
+                    <button onClick={handleDeleteClick} className="delete-review-button">Delete</button>
                     <ReviewModalContainer hike={hike} isEdit={true} review={review}/>
-                    <button onClick={handleDeleteClick} className="delete-review-button">Delete Review</button>
                 </div>
             )
         }
         return null
     }
+
 
     return (
         <>
@@ -76,7 +82,13 @@ const ReviewIndexItem = ({review, currentUser}) =>{
                     <StarIndex numStars={review.stars}/>
                     <p>{review.content}</p>
                 </div>
+                <div className="conditions-on-show-page">
+                    <ul className="listy"> <h1 className="conditions-list-title">Conditions:</h1>
+                        {reviewConditions(review).map((condition, i) => <li key={i} className="condition-list-item">{ i=== reviewConditions(review).length-1 ? `${condition}` : `${condition},`}</li>)}
+                    </ul>
+                </div>
                 {checkCurrentUser()}
+                
             </div>
         </>
         

@@ -136,6 +136,7 @@
     padding: 6px;
     margin-right: 3%;
     margin-left: 3%;
+    border-bottom: 1px solid rgb(177, 177, 177);
 }
 
 .tags{
@@ -247,19 +248,48 @@
 
 
 .conditions-container{
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-bottom: 1px solid rgb(177, 177, 177);
     padding-bottom: 20px;
 }
 
-.conditions-title{
+.conditions-title, .conditions-list-title{
     padding-top: 20px;
     margin-left: 25px;
     font-family: "Manrope", sans-serif;
     font-size: 16px;
 }
 
+
+.scroll-to-write-a-review{
+    cursor: pointer;
+    border: none;
+    text-decoration: underline;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    background-color: white;
+}
+
+.listy{
+    display: flex;
+}
+.large-conditions-title{
+    font-weight: bold;
+}
+
+.conditions-list-title{
+    padding-top: 5px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.condition-list-item{
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    margin-left: 5px;
+    text-decoration: none;
+    padding-top: 5px;
+}
 
 
 @media (max-width: 700px){
