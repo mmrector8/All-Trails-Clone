@@ -56,6 +56,8 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
         
     }
 
+    const activities = ['backpacking', 'bird watching', 'bike touring', 'camping', 'fishing', 'hiking', 'horseback riding', 'mountain biking', 'road biking', 'rock climbing', 'skiing', 'running', 'walking']
+
     return (
         <>
             <div className="overlay"></div>
@@ -95,16 +97,15 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                     <div className="activity-type-dropdown">
                             <p className="activity-type-label">Activity Type</p>
                             <select value ={activityType} onChange={(e => setActivityType(e.target.value))}>
-                                <option value="hiking">Hiking</option>
-                                <option value="walking">Walking</option>
+                                {activities?.map((activity, i)=> <option value={activity} key={i}>{activity}</option>)}
+                                {/* <option value="hiking">Hiking</option>
+                                <option value="walking">Walking</option> */}
                             </select>
                             
                     </div>
                     {/* <label>Trail Conditions 
-                        <select value={conditions} onChange={(e => setConditions(e.target.value))}>
-                            <option value="Great!">Great!</option>
-                            <option value="No shade">No shade</option>
-                        </select>
+                        {conditions.map((condition, i)=> (<input type="radio" value=`${condition}` key={i} onChange={(e => setConditions(e.target.value))}> <label htmlFor=`$conditions{i}` className="conditions-label">{condition}<label>))}
+
                         <input type="radio"value='Great!' id="conditions1" onChange={(e => setConditions(e.target.value))} />
                         <label htmlFor="conditions1" className="conditions-label"> Great!</label>
                         
