@@ -10,7 +10,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
     const [stars, setStars] = useState(0)
     const [content, setContent] = useState('')
     const [activityType, setActivityType] = useState('hiking')
-    const [conditions, setConditions] = useState('Great!') 
+    const [conditions, setConditions] = useState([]) 
     const [isEdit, setIsEdit] = useState(false);
 
     useEffect(()=>{
@@ -19,9 +19,16 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
             setStars(review.stars)
             setContent(review.content)
             setActivityType(review.activityType)
+            setConditions(review.conditions.split(","))
             dispatch(fetchReview(review.id, hike.id))            
         }
     }, [dispatch, review, hike.id])
+
+    useEffect(()=>{
+        if(review){
+            setConditions(review.conditions.split(","))
+        } 
+    }, [open])
 
     if (!open){
         return null;
@@ -38,7 +45,8 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                 hike_id: hike.id,
                 stars,
                 content,
-                activity_type: activityType
+                activity_type: activityType,
+                conditions: conditions.toString()
             }
             dispatch(updateReview(data))
         }
@@ -49,15 +57,24 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                 stars,
                 content,
                 activity_type: activityType,
-                conditions
+                conditions: conditions.toString()
             }
             dispatch(createReview(data))
         }
         
     }
 
-    const activities = ['backpacking', 'bird watching', 'bike touring', 'camping', 'fishing', 'hiking', 'horseback riding', 'mountain biking', 'road biking', 'rock climbing', 'skiing', 'running', 'walking']
+    const handleRadioChange = (e) =>{
+        if(!conditions.includes(e.target.value)){
+            setConditions((prevConditions) => [...prevConditions].concat(e.target.value))
+        }else{
+            let idx= conditions.indexOf(e.target.value)
+            setConditions(prevConditions=> prevConditions.slice(0, idx).concat(prevConditions.slice(idx+1, prevConditions.length)))
+        }     
+    }
 
+    const activities = ['backpacking', 'bird watching', 'bike touring', 'camping', 'fishing', 'hiking', 'horseback riding', 'mountain biking', 'road biking', 'rock climbing', 'skiing', 'running', 'walking']
+    const conditionOptions = ['Great!', 'Blowdown', 'Bridge out', 'Bugs']
     return (
         <>
             <div className="overlay"></div>
@@ -98,25 +115,14 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                             <p className="activity-type-label">Activity Type</p>
                             <select value ={activityType} onChange={(e => setActivityType(e.target.value))}>
                                 {activities?.map((activity, i)=> <option value={activity} key={i}>{activity}</option>)}
-                                {/* <option value="hiking">Hiking</option>
-                                <option value="walking">Walking</option> */}
                             </select>
                             
                     </div>
-                    {/* <label>Trail Conditions 
-                        {conditions.map((condition, i)=> (<input type="radio" value=`${condition}` key={i} onChange={(e => setConditions(e.target.value))}> <label htmlFor=`$conditions{i}` className="conditions-label">{condition}<label>))}
-
-                        <input type="radio"value='Great!' id="conditions1" onChange={(e => setConditions(e.target.value))} />
-                        <label htmlFor="conditions1" className="conditions-label"> Great!</label>
-                        
-                        <input type="radio"  value='Bridge out' id="conditions2" onChange={(e => setConditions(e.target.value))} />
-                        <label htmlFor="conditions2" className="conditions-label">Bridge out</label>
-                        
-                        <input type="radio" value='Closed' id="conditions3" onChange={(e => setConditions(e.target.value))} />
-                        <label htmlFor="conditions3" className="conditions-label">Closed</label>
-
-                    </label> */}
-                    
+                        <label>Trail Conditions  </label>
+                        <div className="conditions-options">
+                            {console.log(conditions)}
+                            {conditionOptions.map((condition, i) => <div className="radio-conditions" key={`${i}radioconditions`}> <input type="radio" value={condition} key={i} id={`conditions${i}`} onChange={handleRadioChange} checked={conditions.includes(condition) ? "checked" : ""} className="conditions-radio-buttons"></input> <label htmlFor={`conditions${i}`} className="conditions-label" key={condition}> {document.getElementById(`conditions${i}`).checked && conditions.includes(condition)? `✓ ${condition}` : condition} </label> </div>)}
+                        </div>
                     </div>
                     <div className="button-container">
                         <button type="submit" className='post-review-button'>{isEdit ? "Edit" : "Post"}</button>

@@ -151,6 +151,43 @@ select {
     cursor: pointer;
     text-decoration: underline;
 }
+
+ .star-rating>input[type="radio"] {
+     display: none;
+ }
+
+ .radio-conditions > input[type="radio"]{
+    display: none;
+ }
+
+ .radio-conditions {
+    margin: 10px;
+ }
+
+ .conditions-options{
+    display: flex;
+ }
+
+ 
+
+ .conditions-label{
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    color: #2c5601;
+    cursor: pointer;
+ }
+input[type="radio"]:checked~.conditions-label{
+    background-color: #2c5601;
+    color: white;
+}
+
+
+/* .conditions-radio-buttons{
+
+} */
 /* 
 .conditions1{
     border: 1px solid black;

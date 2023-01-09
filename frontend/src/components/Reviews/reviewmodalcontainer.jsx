@@ -3,7 +3,6 @@ import ReviewModal from './reviewmodal'
 import * as reviewmodalcss from "./reviewmodal.css"
 
 const ReviewModalContainer = ({hike, isEdit, review}) =>{
-    console.log(review)
     const [isOpen, setIsOpen] = useState(false)
 
     return (
