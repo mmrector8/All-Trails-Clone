@@ -65,7 +65,7 @@ const ReviewIndexItem = ({review, currentUser}) =>{
             <div className= 'review-index-item'>
                 <div className= "review-header-container">
                     <div className="user-icon">
-                        <i class="fa-solid fa-person-hiking review-icon-reviews"></i>
+                        <i className="fa-solid fa-person-hiking review-icon-reviews"></i>
                     </div>
                     <div className = "review-header">
                         <h1>{review.fname} {review.lname}</h1>

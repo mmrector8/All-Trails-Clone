@@ -34,7 +34,7 @@ const ReviewIndex = ({hike}) =>{
         let right=[]
         let pivot = reviews[0]
 
-        for(let i =0; i < reviews.length-1; i ++){
+        for(let i =1; i < reviews.length; i ++){
             if(reviews[i].updatedAt < pivot.updatedAt){
                 left.push(reviews[i])
             }else{
@@ -44,16 +44,52 @@ const ReviewIndex = ({hike}) =>{
         return right.concat(pivot).concat(left);
     }
 
+    const styleBar = (reviews, numReviews) =>{
+        let reviewLength = reviews.length
+        let rating = 0;
+
+        for(let i=0; i < reviews.length; i ++){
+            if (reviews[i].stars == numReviews){
+                rating +=1
+            }
+        }
+        rating = (rating / reviewLength)*100;
+
+        return {
+            width: `${rating}%`
+        }
+    }
+
     return (
         <>
             <h1 className='reviews-title'>Reviews ({reviews.length})</h1>
                 <div className= "review-top-bucket">
                     <div className='review-avg-rating-bar'>
-                        <p>5 <i className="fa-sharp fa-solid fa-star star-rating-icon"></i> </p>
-                        <p>4 <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>------</p>
-                        <p>3 <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>------</p>
-                        <p>2 <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>------</p>
-                        <p>1<i className="fa-sharp fa-solid fa-star star-rating-icon"></i>------</p>
+                        <div className="stars-slider-container">
+                            <p className="icon-holder">5 </p>
+                            <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>
+                            <div className='five-star-bar' style={styleBar(reviews, 5)}> </div>
+                        </div>
+                        <div className="stars-slider-container">
+                            <p>4</p>
+                            <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>
+                            <div className='five-star-bar' style={styleBar(reviews, 4)} > </div>
+                        </div>
+                        <div className="stars-slider-container">
+                            <p>3</p>
+                            <i className="fa-sharp fa-solid fa-star star-rating-icon"></i> 
+                            <div className='five-star-bar' style={styleBar(reviews, 3)}> </div>
+                        </div>
+                         <div className="stars-slider-container">
+                            <p>2</p>
+                            <i className="fa-sharp fa-solid fa-star star-rating-icon"></i> 
+                            <div className='five-star-bar' style={styleBar(reviews, 2)}> </div>
+                         </div>
+                        <div className="stars-slider-container">
+                            <p>1 </p>
+                            <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>
+                            <div className='five-star-bar' style={styleBar(reviews, 1)} > </div>
+                        </div>
                     </div>
                     <div className="avg-reviews">
                          <h1 className='avg-stars'>{averageStars()}</h1>
@@ -64,9 +100,8 @@ const ReviewIndex = ({hike}) =>{
                      
                     <ReviewModalContainer hike={hike}/>
                 </div>
-            {sortReviews(reviews)?.map((review, i)=><ReviewIndexItem review={review} key={i} currentUser={currentUser}/>)}
+            {sortReviews(reviews).map((review, i)=><ReviewIndexItem review={review} key={i} currentUser={currentUser}/>)}
         </>
     )
-
-}
+    }
 export default ReviewIndex;
