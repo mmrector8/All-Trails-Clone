@@ -16,7 +16,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
     useEffect(()=>{
         if(review){
             setIsEdit(true)
-            setStars(parseInt(review.stars))
+            setStars(review.stars)
             setContent(review.content)
             setActivityType(review.activityType)
             dispatch(fetchReview(review.id, hike.id))            
@@ -32,7 +32,6 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
 
     const handleSubmit = async (e) =>{
         if(review){
-            console.log('hitting handle submit')
             const data ={
                 id: review.id,
                 user_id: user.id,
@@ -65,28 +64,28 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                 <h1 className="review-hike-title">{hike.name}</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="review-form">
-                    <div className="star-rating">
-                        <input id="5" type="radio" name="rating" value={5} onChange={(e => setStars(e.target.value))} />
-                        <label htmlFor="5" title="5 stars" className="star-label">
-                            <i className="active fa fa-star" aria-hidden="true"></i>
-                        </label>
-                        <input id="4" type="radio" name="rating" value={4} onChange={(e => setStars(e.target.value))} />
-                        <label htmlFor="4" title="4 stars" className="star-label">
-                            <i className="active fa fa-star" aria-hidden="true"></i>
-                        </label>
-                        <input id="3" type="radio" name="rating" value={3} onChange={(e => setStars(e.target.value))} />
-                        <label htmlFor="3" title="3 stars" className="star-label">
-                            <i className="active fa fa-star" aria-hidden="true"></i>
-                        </label>
-                        <input id="2" type="radio" name="rating" value={2} onChange={(e => setStars(e.target.value))} />
-                        <label htmlFor="2" title="2 stars" className="star-label">
-                            <i className="active fa fa-star" aria-hidden="true"></i>
-                        </label>
-                        <input id="1" type="radio" name="rating" value={1} onChange={(e => setStars(e.target.value))} />
-                        <label htmlFor="1" title="1 star" className="star-label">
-                            <i className="active fa fa-star" aria-hidden="true"></i>
-                        </label>
-                    </div>
+                        <div className="star-rating">
+                            <input id="5" type="radio" name="rating" value={5} onChange={(e => setStars(e.target.value))} checked={stars == 5 ? "checked" : ""}/>
+                            <label htmlFor="5" title="5 stars" className="star-label">
+                                <i className="active fa fa-star" aria-hidden="true"></i>
+                            </label>
+                            <input id="4" type="radio" name="rating" value={4} onChange={(e => setStars(e.target.value))} checked={stars == 4 ? "checked" : ""}/>
+                            <label htmlFor="4" title="4 stars" className="star-label">
+                                <i className="active fa fa-star" aria-hidden="true"></i>
+                            </label>
+                            <input id="3" type="radio" name="rating" value={3} onChange={(e => setStars(e.target.value))} checked={stars == 3 ? "checked" : ""} />
+                            <label htmlFor="3" title="3 stars" className="star-label">
+                                <i className="active fa fa-star" aria-hidden="true"></i>
+                            </label>
+                            <input id="2" type="radio" name="rating" value={2} onChange={(e => setStars(e.target.value))} checked={stars == 2 ? "checked" : ""} />
+                            <label htmlFor="2" title="2 stars" className="star-label">
+                                <i className="active fa fa-star" aria-hidden="true"></i>
+                            </label>
+                            <input id="1" type="radio" name="rating" value={1} onChange={(e => setStars(e.target.value))} checked={stars == 1 ? "checked" : ""} />
+                            <label htmlFor="1" title="1 star" className="star-label">
+                                <i className="active fa fa-star" aria-hidden="true"></i>
+                            </label>
+                        </div>
                     <div className="review-content">
                         <label className="review-content-label">Review</label>
                         <textarea value={content} onChange={(e => setContent(e.target.value))} className='textarea'/> 
