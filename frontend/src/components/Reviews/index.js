@@ -38,10 +38,11 @@ const ReviewIndex = ({hike}) =>{
             if(reviews[i].updatedAt < pivot.updatedAt){
                 left.push(reviews[i])
             }else{
+
                 right.push(reviews[i])
             }
         }
-        return right.concat(pivot).concat(left);
+        return left.concat(pivot).concat(right).reverse();
     }
 
     const styleBar = (reviews, numReviews) =>{
@@ -71,22 +72,22 @@ const ReviewIndex = ({hike}) =>{
                             <div className='five-star-bar' style={styleBar(reviews, 5)}> </div>
                         </div>
                         <div className="stars-slider-container">
-                            <p>4</p>
+                            <p className="icon-holder">4</p>
                             <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>
                             <div className='five-star-bar' style={styleBar(reviews, 4)} > </div>
                         </div>
                         <div className="stars-slider-container">
-                            <p>3</p>
+                            <p className="icon-holder">3</p>
                             <i className="fa-sharp fa-solid fa-star star-rating-icon"></i> 
                             <div className='five-star-bar' style={styleBar(reviews, 3)}> </div>
                         </div>
                          <div className="stars-slider-container">
-                            <p>2</p>
+                            <p className="icon-holder">2</p>
                             <i className="fa-sharp fa-solid fa-star star-rating-icon"></i> 
                             <div className='five-star-bar' style={styleBar(reviews, 2)}> </div>
                          </div>
                         <div className="stars-slider-container">
-                            <p>1 </p>
+                             <p className="icon-holder">1 </p>
                             <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>
                             <div className='five-star-bar' style={styleBar(reviews, 1)} > </div>
                         </div>

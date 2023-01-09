@@ -118,10 +118,9 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                             </select>
                             
                     </div>
-                        <label>Trail Conditions  </label>
+                        <label className="trail-conditions-label">Trail Conditions  </label>
                         <div className="conditions-options">
-                            {console.log(conditions)}
-                            {conditionOptions.map((condition, i) => <div className="radio-conditions" key={`${i}radioconditions`}> <input type="radio" value={condition} key={i} id={`conditions${i}`} onChange={handleRadioChange} checked={conditions.includes(condition) ? "checked" : ""} className="conditions-radio-buttons"></input> <label htmlFor={`conditions${i}`} className="conditions-label" key={condition}> {document.getElementById(`conditions${i}`).checked && conditions.includes(condition)? `✓ ${condition}` : condition} </label> </div>)}
+                            {conditionOptions.map((condition, i) => <div className="radio-conditions" key={`${i}radioconditions`}> <input type="radio" value={condition} key={i} id={`conditions${i}`} onChange={handleRadioChange} checked={conditions.includes(condition) ? "checked" : ""} className="conditions-radio-buttons"></input> <label htmlFor={`conditions${i}`} className="conditions-label" key={condition}> {document.getElementById(`conditions${i}`)?.checked && conditions.includes(condition)? `✓ ${condition}` : condition} </label> </div>)}
                         </div>
                     </div>
                     <div className="button-container">

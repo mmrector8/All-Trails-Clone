@@ -83,3 +83,9 @@
     height: 6px;
     border-radius: 20px;
 }
+
+.icon-holder{
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    padding-right: 4px;
+}
