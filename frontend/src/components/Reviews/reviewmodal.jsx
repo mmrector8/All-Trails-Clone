@@ -21,7 +21,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
             setActivityType(review.activityType)
             dispatch(fetchReview(review.id, hike.id))            
         }
-    }, [dispatch, review])
+    }, [dispatch, review, hike.id])
 
     if (!open){
         return null;
@@ -66,12 +66,12 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                     <div className="review-form">
                         <div className="star-rating">
                             <input id="5" type="radio" name="rating" value={5} onChange={(e => setStars(e.target.value))} checked={stars == 5 ? "checked" : ""} />
-                            
+
                             <label htmlFor="5" title="5 stars" className="star-label">
                                 <i className="active fa fa-star" aria-hidden="true"></i>
                             </label>
                             <input id="4" type="radio" name="rating" value={4} onChange={(e => setStars(e.target.value))} checked={stars == 4 ? "checked" : ""} />
-                            
+
                             <label htmlFor="4" title="4 stars" className="star-label">
                                 <i className="active fa fa-star" aria-hidden="true"></i>
                             </label>
@@ -88,11 +88,10 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                                 <i className="active fa fa-star" aria-hidden="true"></i>
                             </label>
                         </div>
-                    <div className="review-content">
-                        <label className="review-content-label">Review</label>
-                        <textarea value={content} onChange={(e => setContent(e.target.value))} className='textarea'/> 
-                    
-                    </div>
+                        <div className="review-content">
+                            <label className="review-content-label">Review</label>
+                            <textarea value={content} onChange={(e => setContent(e.target.value))} className='textarea' />
+                        </div>
                     <div className="activity-type-dropdown">
                             <p className="activity-type-label">Activity Type</p>
                             <select value ={activityType} onChange={(e => setActivityType(e.target.value))}>

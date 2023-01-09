@@ -26,12 +26,30 @@ const ReviewIndex = ({hike}) =>{
         return (count/reviews.length).toFixed(1)
     }
 
+    const sortReviews = (reviews) =>{
+        if(reviews.length < 2){
+            return reviews;
+        }
+        let left = []
+        let right=[]
+        let pivot = reviews[0]
+
+        for(let i =0; i < reviews.length-1; i ++){
+            if(reviews[i].updatedAt < pivot.updatedAt){
+                left.push(reviews[i])
+            }else{
+                right.push(reviews[i])
+            }
+        }
+        return right.concat(pivot).concat(left);
+    }
+
     return (
         <>
             <h1 className='reviews-title'>Reviews ({reviews.length})</h1>
                 <div className= "review-top-bucket">
                     <div className='review-avg-rating-bar'>
-                        <p>5 <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>------</p>
+                        <p>5 <i className="fa-sharp fa-solid fa-star star-rating-icon"></i> </p>
                         <p>4 <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>------</p>
                         <p>3 <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>------</p>
                         <p>2 <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>------</p>
@@ -46,7 +64,7 @@ const ReviewIndex = ({hike}) =>{
                      
                     <ReviewModalContainer hike={hike}/>
                 </div>
-            {reviews?.map((review, i)=><ReviewIndexItem review={review} key={i} currentUser={currentUser}/>)}
+            {sortReviews(reviews)?.map((review, i)=><ReviewIndexItem review={review} key={i} currentUser={currentUser}/>)}
         </>
     )
 
