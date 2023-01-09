@@ -13,13 +13,14 @@ const HikeShowPage = ()=>{
     const dispatch = useDispatch();
     const { hikeId } = useParams();
     let hike = useSelector(getHike(hikeId))
+    let reviews = useSelector(state=> state.reviews)
     
     useEffect(()=>{
         dispatch(fetchHike(hikeId))
     }, [dispatch, hikeId])
 
 
-    if (!hike || !hike.relatedHikes){
+    if (!hike || !hike.relatedHikes || !reviews){
         return null;
     }
 
@@ -32,6 +33,42 @@ const HikeShowPage = ()=>{
         }
        return filtered;
     }
+
+    const isDateLessThanOneWeekAgo = (date) =>{
+        const today = new Date();
+        const todaysDay = today.getDate();
+        const convertedDate = new Date(date)
+        const dateDay = convertedDate.getDate();
+
+        if((todaysDay - dateDay) < 7){
+            return true
+        }
+
+        return false;
+        // false;
+    }
+    const now = new Date();
+
+    // console.log(isDateGreaterThanOneWeekAgo(reviews[47].updatedAt))
+
+    const getAllTagsFromReviews = (reviews)=>{
+        const reviewArray = Object.values(reviews)
+        let filtered = []
+        let splitConditions;
+        for(let i=0; i < reviewArray.length; i++){
+            splitConditions = reviewArray[i].conditions.split(",")
+            if(isDateLessThanOneWeekAgo(reviewArray[i].updatedAt)){
+                for (let j = 0; j < splitConditions.length; j++) {
+                    if (!filtered.includes(splitConditions[j]) && splitConditions[j].length > 2) {
+                        filtered.push(splitConditions[j])
+                    }
+                }
+            }
+           
+        }
+        return filtered;
+    }
+
     return (
         <>
         <div className="whole-page">   
@@ -69,17 +106,11 @@ const HikeShowPage = ()=>{
                         {getAllRelatedHikes().map((hike, i)=> <HikeShowListItem key={i} hike={hike}/>)}
                     </div>
                 </div>
-                
-                <div className="tag-container">
-                    {/* <ul> */}
-                        <p className="tags"> Tag 1</p>
-                        <p className="tags"> Tag 2</p>
-                    {/* </ul> */}
-                </div>
-                <div className='conditions'>
-                    <ul>
-                        <li>Conditions from reviews will go here</li>
-                    </ul>
+                <div className="conditions-container">
+                <h1 className="conditions-title">{getAllTagsFromReviews(reviews).length ? "Conditions reported in the last 7 days:" : "No conditions in reported in the last 7 days"}</h1>
+                    <div className='conditions'>
+                        {getAllTagsFromReviews(reviews).map((condition) => <p className='tags'>{condition}</p>)}
+                    </div>
                 </div>
                 <div className='weather'>
                     <p> Weather modal here</p>

@@ -146,6 +146,7 @@
     border: 1px solid rgb(175, 175, 175);
     margin: 10px;
     border-radius: 5px;
+    width: auto;
 }
 
 .conditions {
@@ -155,6 +156,7 @@
     grid-column-start: 1;
     grid-column-end: 2;
     margin: 10px;
+    display: flex;
 }
 
 .weather {
@@ -172,7 +174,7 @@
     grid-row-end: 7;
     grid-column-start: 1;
     grid-column-end: 2;
-    margin: 10px;
+    padding: 10px;
 }
 .duration, .el-gain, .type{
     font-family: "Manrope", sans-serif;
@@ -243,6 +245,20 @@
     font-family: 'Manrope', sans-serif;
 }
 
+
+.conditions-container{
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 1px solid rgb(177, 177, 177);
+    padding-bottom: 20px;
+}
+
+.conditions-title{
+    padding-top: 20px;
+    margin-left: 25px;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+}
 
 
 
