@@ -35,14 +35,13 @@ const ReviewIndex = ({hike}) =>{
         let pivot = reviews[0]
 
         for(let i =1; i < reviews.length; i ++){
-            if(reviews[i].updatedAt < pivot.updatedAt){
+            if(reviews[i].updatedAt > pivot.updatedAt){
                 left.push(reviews[i])
             }else{
-
                 right.push(reviews[i])
             }
         }
-        return left.concat(pivot).concat(right).reverse();
+        return sortReviews(left).concat([pivot]).concat(sortReviews(right));
     }
 
     const styleBar = (reviews, numReviews) =>{
