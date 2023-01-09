@@ -120,11 +120,6 @@ select {
    justify-content: right;
 }
 
-.review-buttons{
-    display: flex;
-    margin-left: 10px;
-}
-
 .post-review-button{
     cursor: pointer;
     margin: 30px;

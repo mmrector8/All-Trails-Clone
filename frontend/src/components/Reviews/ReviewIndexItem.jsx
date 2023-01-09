@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { deleteReview } from "../../store/reviews";
 import ReviewModalContainer from "./reviewmodalcontainer";
 import { getHike } from "../../store/hikes";
+import StarIndex from "./starindex";
 
 const ReviewIndexItem = ({review, currentUser}) =>{
     const dispatch = useDispatch();
@@ -64,15 +65,15 @@ const ReviewIndexItem = ({review, currentUser}) =>{
             <div className= 'review-index-item'>
                 <div className= "review-header-container">
                     <div className="user-icon">
-                        <i className="fa-solid fa-tree dropdown-icon review-icon" ></i>
+                        <i class="fa-solid fa-person-hiking review-icon-reviews"></i>
                     </div>
                     <div className = "review-header">
-                        <h1>{review.username}</h1>
-                        <p>{convertDate()} • {review.activityType}</p>
+                        <h1>{review.fname} {review.lname}</h1>
+                        <p className="date-and-activity-type-review">{convertDate()} • {review.activityType}</p>
                     </div>
                 </div>
-                <div className="review-content">
-                    <p>{review.stars}</p>
+                <div className="review-content-review-index">
+                    <StarIndex numStars={review.stars}/>
                     <p>{review.content}</p>
                 </div>
                 {checkCurrentUser()}
