@@ -65,11 +65,13 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                 <form onSubmit={handleSubmit}>
                     <div className="review-form">
                         <div className="star-rating">
-                            <input id="5" type="radio" name="rating" value={5} onChange={(e => setStars(e.target.value))} checked={stars == 5 ? "checked" : ""}/>
+                            <input id="5" type="radio" name="rating" value={5} onChange={(e => setStars(e.target.value))} checked={stars == 5 ? "checked" : ""} />
+                            
                             <label htmlFor="5" title="5 stars" className="star-label">
                                 <i className="active fa fa-star" aria-hidden="true"></i>
                             </label>
-                            <input id="4" type="radio" name="rating" value={4} onChange={(e => setStars(e.target.value))} checked={stars == 4 ? "checked" : ""}/>
+                            <input id="4" type="radio" name="rating" value={4} onChange={(e => setStars(e.target.value))} checked={stars == 4 ? "checked" : ""} />
+                            
                             <label htmlFor="4" title="4 stars" className="star-label">
                                 <i className="active fa fa-star" aria-hidden="true"></i>
                             </label>

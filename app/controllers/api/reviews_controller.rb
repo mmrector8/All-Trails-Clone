@@ -4,7 +4,6 @@ class Api::ReviewsController < ApplicationController
         @review = Review.new(review_params)
          @user = User.find_by(id: @review.user_id)
         if @review.save!
-            debugger
             render :show
         else
             render json: {errors: @review.errors.full_messages}, status: :unprocessable_entity
