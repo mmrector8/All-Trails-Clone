@@ -119,7 +119,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                     
                     </div>
                     <div className="button-container">
-                        <button type="submit" className='post-review-button '>{isEdit ? "Edit Post" : "Post"}</button>
+                        <button type="submit" className='post-review-button'>{isEdit ? "Edit" : "Post"}</button>
                     </div>
                 </form> 
 
