@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux' 
 import {getHikes } from "../../store/hikes.js"
+import {getParks} from "../../store/parks.js"
 import { Link } from "react-router-dom";
 import * as searchbarcss from "./searchbar.css"
 import { useHistory } from 'react-router-dom';
@@ -11,22 +12,25 @@ const SearchBar = ({setSearchOpen, open}) =>{
     const [filteredData, setFilteredData] = useState([])
     const [searchQuery, setSearchQuery] = useState("")
     let hikes = useSelector(getHikes)
+    let parks = useSelector(getParks)
 
-    if (!hikes){
+    if (!hikes || !parks){
         return null;
     }
+
+    let parksAndHikes = hikes.concat(parks)
 
      const handleFilter = (e)=>{
             setSearchOpen(true)
             const searchedWord = e.target.value;
             setSearchQuery(searchedWord);
             
-            const filterQuery = hikes.filter((hike) => {
-                return hike.name.toLowerCase().includes(searchedWord.toLowerCase());
+         const filterQuery = parksAndHikes.filter((item) => {
+                return item.name.toLowerCase().includes(searchedWord.toLowerCase());
             })
 
             if (searchedWord === "") {
-                setFilteredData(hikes)
+                setFilteredData(parksAndHikes)
             } else {
                 setFilteredData(filterQuery);
             }  
@@ -60,10 +64,14 @@ const SearchBar = ({setSearchOpen, open}) =>{
                          <p className='searchbar-options'>Hikes</p>
                          <p className='searchbar-options'>Parks</p>
                      </div>
-                    {filteredData.map((hike, i)=>{
+                    {filteredData.map((item, i)=>{
                         return (
                             <div className='search-results' key={i}>
-                                <Link to={`hikes/${hike.id}`} className="search-results-link"><p className='searchbar-hike-name'>{hike.name}</p> <p className="searchbar-park-name" id="searchbar-park-name">{hike.parkName}</p></Link>
+                                {item.parkId === undefined ? 
+                                    <Link to={`parks/${item.id}`} className="search-results-link" onClick={() => window.scrollTo({ top: 0, left: 0 })}><p className='searchbar-hike-name'>{item.name}</p></Link>
+                                    : <Link to={`hikes/${item.id}`} className="search-results-link" onClick={() => window.scrollTo({ top: 0, left: 0 })}><p className='searchbar-hike-name'>{item.name}</p> <p className="searchbar-park-name" id="searchbar-park-name">{item.parkName}</p></Link>
+                                }
+                               
                             </div>
                         );
                    })}

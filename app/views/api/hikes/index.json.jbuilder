@@ -8,3 +8,10 @@ json.hikes do
         end
     end
 end
+json.parks do 
+    @parks.each do |park|
+        json.set! park.id do
+            json.extract! park, :id, :name
+        end
+    end
+end

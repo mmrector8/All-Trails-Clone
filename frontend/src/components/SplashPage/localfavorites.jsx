@@ -1,18 +1,13 @@
 import { Link, useHistory } from "react-router-dom";
 import Carousel from 'react-elastic-carousel'
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getHikes, fetchHikes } from "../../store/hikes"
 import HikeShowListItem from "../HikeShowPage/OtherHikesItem";
 
 const LocalFavorites = () =>{
-    const dispatch = useDispatch();
     const hikes = useSelector(getHikes)
     const history = useHistory();
-
-    useEffect(() => {
-      dispatch(fetchHikes())
-    }, [dispatch])
 
     if(!hikes){
         return null;

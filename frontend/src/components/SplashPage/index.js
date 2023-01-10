@@ -1,5 +1,7 @@
 import {Link, useHistory} from "react-router-dom"
 import { useEffect, useState } from "react"
+import { fetchHikes } from "../../store/hikes";
+import { useDispatch, useSelector } from "react-redux";
 import * as Splashcss from "./splashpage.css"
 import LocalFavorites from "./localfavorites";
 import Activities from "./activities";
@@ -11,11 +13,19 @@ import ReasonsToSignUp from "./reasonssignup.jsx";
 import AdventureAnywhere from "./adventureanywhere";
 import ForPlanet from "./planet";
 import SearchBar from "../Searchbar";
+import { fetchParks, getParks } from "../../store/parks";
 
 
 const SplashPage = ()=>{
     const [currentImgIdx, setCurrentImgIdx] = useState(0)
     const[searchOpen, setSearchOpen] = useState(false);
+    const dispatch = useDispatch();
+   
+
+    useEffect(() => {
+        dispatch(fetchHikes())
+        dispatch(fetchParks())
+    }, [dispatch])
 
     const images = [
         julia,
@@ -33,7 +43,7 @@ const SplashPage = ()=>{
         }, 3000) 
         return ()=> clearInterval(backgroundInterval)
     }, [currentImgIdx])
-    
+
 
     const handleClickAway =(e)=>{
         e.preventDefault();

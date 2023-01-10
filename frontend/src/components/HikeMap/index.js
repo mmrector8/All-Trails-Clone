@@ -36,7 +36,7 @@ export const HikeMap = ({hikes}) =>{
     return (
         <>
         <GoogleMap zoom={10} center={center} mapContainerClassName='map-container'>
-            {hikes?.map((hike) => <Marker position={{ lat: hike.latitude, lng: hike.longitude }} icon={image} mapContainerClassName='marker'/>)} 
+            {hikes?.map((hike, i) => <Marker position={{ lat: hike.latitude, lng: hike.longitude }} icon={image} mapContainerClassName='marker' key={i}/>)} 
         </GoogleMap>
         </>
     )
