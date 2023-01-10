@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 import * as searchbarcss from "./searchbar.css"
 import { useHistory } from 'react-router-dom';
 
-const SearchBar = () =>{
+const SearchBar = ({setSearchOpen, open}) =>{
+
     const history = useHistory();
     const [filteredData, setFilteredData] = useState([])
     const [searchQuery, setSearchQuery] = useState("")
-    const [open, setIsOpen] = useState(false)
     let hikes = useSelector(getHikes)
 
     if (!hikes){
@@ -17,6 +17,7 @@ const SearchBar = () =>{
     }
 
      const handleFilter = (e)=>{
+            setSearchOpen(true)
             const searchedWord = e.target.value;
             setSearchQuery(searchedWord);
             
@@ -49,7 +50,7 @@ const SearchBar = () =>{
                     <i className="fa-solid fa-magnifying-glass search-icon"></i>
                 <button className="go-to-show-page" onClick={handleGreenArrowClick}><i className="fa-solid fa-arrow-right"></i></button>
             </div>
-                {filteredData.length !== 0 && (
+                {filteredData.length !== 0 && open === true &&  (
                  <div className="search-results-container">
                      <div className="options">
                          <p className='searchbar-options'>All</p>
