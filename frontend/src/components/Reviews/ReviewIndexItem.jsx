@@ -36,7 +36,7 @@ const ReviewIndexItem = ({review, currentUser}) =>{
     }
 
     const convertDate = () =>{
-        const date = review.updatedAt.toString();
+        const date = review.createdAt.toString();
         const year = date.slice(0,4)
         const month = parseInt(date.slice(5,7))
         let day;

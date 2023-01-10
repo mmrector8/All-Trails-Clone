@@ -35,7 +35,7 @@ const ReviewIndex = ({hike}) =>{
         let pivot = reviews[0]
 
         for(let i =1; i < reviews.length; i ++){
-            if(reviews[i].updatedAt > pivot.updatedAt){
+            if(reviews[i].createdAt > pivot.createdAt){
                 left.push(reviews[i])
             }else{
                 right.push(reviews[i])
