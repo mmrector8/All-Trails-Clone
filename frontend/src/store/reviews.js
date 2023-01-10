@@ -47,14 +47,6 @@ export const fetchReviews = (hikeId)=> async (dispatch) =>{
     }
 }
 
-export const fetchReview = (review)=> async dispatch=>{
-    const res = await csrfFetch(`/api/hikes/${review.hikeId}/reviews/${review.id}`)
-    if(res.ok){
-        const review = await res.json();
-        dispatch(receiveReview(review))
-    }
-}
-
 export const createReview = (review)=> async dispatch => {
     const res = await csrfFetch(`/api/hikes/${review.hikeId}/reviews`, {
         method: "POST",
