@@ -22,16 +22,16 @@ const SplashPage = ()=>{
         alexbackground
     ]
 
-    // useEffect(()=>{
-    //     const backgroundInterval = setInterval(()=>{
-    //         if (currentImgIdx < images.length - 1) {
-    //             setCurrentImgIdx(currentImgIdx + 1)
-    //         } else {
-    //             setCurrentImgIdx(0)
-    //         }
-    //     }, 3000) 
-    //     return ()=> clearInterval(backgroundInterval)
-    // }, [currentImgIdx])
+    useEffect(()=>{
+        const backgroundInterval = setInterval(()=>{
+            if (currentImgIdx < images.length - 1) {
+                setCurrentImgIdx(currentImgIdx + 1)
+            } else {
+                setCurrentImgIdx(0)
+            }
+        }, 3000) 
+        return ()=> clearInterval(backgroundInterval)
+    }, [currentImgIdx])
     
 
     return (

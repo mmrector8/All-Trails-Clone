@@ -8,6 +8,7 @@
     border-radius: 40px;
     border:none;
     z-index: 10;
+    box-shadow: 0 30px 40px rgba(0, 0, 0, .2);
 }
 
 .search-input-bar:focus{
@@ -35,7 +36,7 @@
     background-color: white;
     font-family: "Manrope", sans-serif;
     overflow-y: auto;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 654px;
     border-radius: 30px;
     margin-top: -53px;
@@ -53,7 +54,7 @@
 }
 .go-to-show-page{
     z-index: 1000;
-    width: 50px;
+    width: 48px;
     position: absolute;
     font-size: 25px;
     color: white;

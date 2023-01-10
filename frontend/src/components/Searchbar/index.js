@@ -9,6 +9,7 @@ const SearchBar = () =>{
     const history = useHistory();
     const [filteredData, setFilteredData] = useState([])
     const [searchQuery, setSearchQuery] = useState("")
+    const [open, setIsOpen] = useState(false)
     let hikes = useSelector(getHikes)
 
     if (!hikes){
@@ -16,20 +17,20 @@ const SearchBar = () =>{
     }
 
      const handleFilter = (e)=>{
-        const searchedWord = e.target.value;
-        setSearchQuery(searchedWord);
+            const searchedWord = e.target.value;
+            setSearchQuery(searchedWord);
+            
+            const filterQuery = hikes.filter((hike) => {
+                return hike.name.toLowerCase().includes(searchedWord.toLowerCase());
+            })
 
-        const filterQuery = hikes.filter((hike)=>{
-            return hike.name.toLowerCase().includes(searchedWord.toLowerCase());
-        })
-
-        if(searchedWord === ""){
-            setFilteredData([])
-        }else{
-            setFilteredData(filterQuery);
+            if (searchedWord === "") {
+                setFilteredData(hikes)
+            } else {
+                setFilteredData(filterQuery);
+            }  
         }
-     }
-    
+
      const clearSearchBarFields = ()=>{
         setFilteredData([]);
         setSearchQuery("")
@@ -44,12 +45,11 @@ const SearchBar = () =>{
         <div className="search-container">
             <div className="search-input">
                  
-                <input type='text' value={searchQuery} placeholder="Search by hike or park name" onChange={handleFilter} className="search-input-bar"/>
-                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                 <button className="go-to-show-page" onClick={handleGreenArrowClick}><i class="fa-solid fa-arrow-right"></i></button>
+                <input type='text' value={searchQuery} placeholder="Search by hike or park name" onChange={handleFilter} onClick={handleFilter} className="search-input-bar"/>
+                    <i className="fa-solid fa-magnifying-glass search-icon"></i>
+                <button className="go-to-show-page" onClick={handleGreenArrowClick}><i className="fa-solid fa-arrow-right"></i></button>
             </div>
-
-                {filteredData.length && (
+                {filteredData.length !== 0 && (
                  <div className="search-results-container">
                      <div className="options">
                          <p className='searchbar-options'>All</p>
@@ -58,14 +58,13 @@ const SearchBar = () =>{
                      </div>
                     {filteredData.slice(0,5).map((hike, i)=>{
                         return (
-                            <div className='search-results'>
+                            <div className='search-results' key={i}>
                                 <Link to={`hikes/${hike.id}`} className="search-results-link"><p className='searchbar-hike-name'>{hike.name}</p> <p className="searchbar-park-name" id="searchbar-park-name">{hike.parkName}</p></Link>
                             </div>
                         );
                    })}
                  </div>
                 )}
-             
         </div>
 
      )
