@@ -75,9 +75,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
     }
 
     const activities = ['backpacking', 'bird watching', 'bike touring', 'camping', 'fishing', 'hiking', 'horseback riding', 'mountain biking', 'road biking', 'rock climbing', 'skiing', 'running', 'walking']
-    const conditionOptions = ['Great!', 'Blowdown', 'Bridge out', 'Bugs']
-
-
+    const conditionOptions = ['Great!', 'Blowdown', 'Bridge out', 'Bugs', 'Closed', 'Fee', 'Flooded', 'Muddy', 'No shade', 'Off trail', 'Overgrown', 'Rocky', 'Washed out']
 
 
     return (
@@ -88,7 +86,9 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                 <h1 className="review-hike-title">{hike.name}</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="review-form">
-                        {pageNum === 1 ? <> <div className="star-rating">
+                        {pageNum === 1 ? <> 
+                            <span className='page-num'>Page 1 of 2</span>
+                            <div className="star-rating">   
                             {[5, 4, 3, 2, 1].map((star, i) => <><input id={`${star}`} type="radio" name="rating" value={star} onChange={(e => setStars(e.target.value))} checked={stars == star ? "checked" : ""} />
                                 <label htmlFor={`${star}`} title={`${star} stars`} className="star-label">
                                     <i className="active fa fa-star" aria-hidden="true"></i>
@@ -98,8 +98,11 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                                 <label className="review-content-label">Review</label>
                                 <textarea value={content} onChange={(e => setContent(e.target.value))} className='textarea' />
                             </div>
-                            <button onClick={()=> setPageNum(2)} className="next-page-modal-button">Next Page</button>
+                            <div className='button-container'>
+                                <button onClick={()=> setPageNum(2)} className="next-page-modal-button" id="next-page-modal-button">Next Page</button>
+                            </div>
                         </> : <> 
+                        <span className='page-num'>Page 2 of 2</span>
                         <div className="activity-type-dropdown">
                             <p className="activity-type-label">Activity Type</p>
                             <select value={activityType} onChange={(e => setActivityType(e.target.value))}>
@@ -111,7 +114,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                                 {conditionOptions.map((condition, i) => <div className="radio-conditions" key={`${i}radioconditions`}> <input type="radio" value={condition} key={i} id={`conditions${i}`} onChange={handleRadioChange} checked={conditions.includes(condition) ? "checked" : ""} className="conditions-radio-buttons"></input> <label htmlFor={`conditions${i}`} className="conditions-label" key={condition}> {document.getElementById(`conditions${i}`)?.checked && conditions.includes(condition) ? `✓ ${condition}` : condition} </label> </div>)}
                                 </div> 
                             <div className="button-container">
-                                <button onClick={(()=>setPageNum(1))} className="go-back-button">Go Back</button>
+                                    <button onClick={(() => setPageNum(1))} className="go-back-button" id="go-back-button">Go Back</button>
                                 <button type="submit" className='post-review-button'>{isEdit ? "Edit" : "Post"}</button>
                             </div> </>}
                      

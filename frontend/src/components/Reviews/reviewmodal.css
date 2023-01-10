@@ -9,13 +9,15 @@
     width: 550px;
     border-radius: 20px;
 }
+
 .star-rating {
     direction: rtl;
     padding: 20px;
     cursor: default;
     display: flex;
     justify-content: left;
-    margin-top: -10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
  .star-rating > input[type="radio"] {
@@ -38,6 +40,8 @@
     align-items: left;
     justify-content: left;
     padding: 10px;
+    margin-top: 30px;
+    height: 450px;
 }
 .exit-modal{
     cursor: pointer;
@@ -78,6 +82,7 @@
  .review-content{
     margin-top: -20px;
     padding: 20px;
+    margin-bottom: 35px;
  }
 
  .review-content-label, .trail-conditions-label{
@@ -86,18 +91,19 @@
     margin-bottom: 10px;
  }
 
+
 textarea{
     border-radius: 10px;
     min-width: 450px;
     max-width: 450px;
-    min-height: 100px;
-    max-height: 100px;
+    min-height: 140px;
+    max-height: 140px;
     padding: 10px;
     resize: none;
 }
 
 .activity-type-dropdown{
-    margin-top: -20px;
+    /* margin-top: -10px; */
     font-family: "Manrope", sans-serif;
     padding: 20px;
 }
@@ -118,25 +124,46 @@ select {
 .button-container{
    display: flex;
    justify-content: right;
+   margin-top: 20px;
+   border-top: 1px solid rgb(169, 169, 169);
 }
 
-.post-review-button{
+.post-review-button, .go-back-button, .next-page-modal-button{
     cursor: pointer;
     margin: 30px;
     background-color: #2c5601;
-    padding: 15px;
+    padding: 10px;
     width: 100px;
     border-radius: 30px;
     font-family: "Manrope", sans-serif;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     border: 1px solid #244801;
 }
 
 
-.post-review-button:hover{
+.post-review-button:hover, .next-page-modal-button:hover{
     background-color: #1e3c00;
+}
+
+#go-back-button{
+    background-color: white;
+    color:#1e3c00;
+    border: none;
+}
+
+#go-back-button:hover{
+    background-color: rgb(226, 226, 226);
+    border: 1px solid rgb(226, 226, 226);
+}
+
+.page-num{
+    margin-top: -10px;
+    font-family: "Manrope", sans-serif;
+    margin-left: 20px;
+    font-size: 14px;
+    color: grey;
 }
 
 .edit-review-button, .delete-review-button {
@@ -166,8 +193,12 @@ select {
 
  .conditions-options{
     padding-top: 10px;
-    display: flex;
     padding-left: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
  }
 
  
