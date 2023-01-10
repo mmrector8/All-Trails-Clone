@@ -66,9 +66,12 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
 
     const handleRadioChange = (e) =>{
         if(!conditions.includes(e.target.value)){
+            console.log('hitting set ')
             setConditions((prevConditions) => [...prevConditions].concat(e.target.value))
         }else{
+            console.log('hitting remove')
             let idx= conditions.indexOf(e.target.value)
+            console.log(idx, 'index to remove')
             setConditions(prevConditions=> prevConditions.slice(0, idx).concat(prevConditions.slice(idx+1, prevConditions.length)))
         }     
     }
@@ -87,12 +90,28 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                     <div className="review-form">
                         {pageNum === 1 ? <> 
                             <span className='page-num'>Page 1 of 2</span>
-                            <div className="star-rating">   
-                            {[5, 4, 3, 2, 1].map((star, i) => <><input id={`${star}`} type="radio" name="rating" value={star} onChange={(e => setStars(e.target.value))} checked={stars == star ? "checked" : ""} key={i}/>
-                                <label htmlFor={`${star}`} title={`${star} stars`} className="star-label" key={i}>
-                                    <i className="active fa fa-star" aria-hidden="true" key={i}></i>
-                                </label></>)}
-                        </div>
+                            <div className="star-rating">
+                                <input id="5" type="radio" name="rating" value={5} onChange={(e => setStars(e.target.value))} checked={stars == 5 ? "checked" : ""} />
+                                    <label htmlFor="5" title="5 stars" className="star-label" >
+                                    <i className="active fa fa-star" aria-hidden="true"></i>
+                                </label>
+                                <input id="4" type="radio" name="rating" value={4} onChange={(e => setStars(e.target.value))} checked={stars == 4 ? "checked" : ""} />
+                                <label htmlFor="4" title="4 stars" className="star-label" >
+                                    <i className="active fa fa-star" aria-hidden="true"></i>
+                                </label>
+                                <input id="3" type="radio" name="rating" value={3} onChange={(e => setStars(e.target.value))} checked={stars == 3 ? "checked" : ""} />
+                                <label htmlFor="3" title="3 stars" className="star-label" >
+                                    <i className="active fa fa-star" aria-hidden="true"></i>
+                                </label>
+                                <input id="2" type="radio" name="rating" value={2} onChange={(e => setStars(e.target.value))} checked={stars == 2 ? "checked" : ""} />
+                                <label htmlFor="2" title="2 stars" className="star-label" >
+                                    <i className="active fa fa-star" aria-hidden="true"></i>
+                                </label>
+                                <input id="1" type="radio" name="rating" value={1} onChange={(e => setStars(e.target.value))} checked={stars ===1 ? "checked" : ""} />
+                                <label htmlFor="1" title="1 stars" className="star-label" >
+                                    <i className="active fa fa-star" aria-hidden="true"></i>
+                                </label>
+                            </div>
                             <div className="review-content">
                                 <label className="review-content-label">Review</label>
                                 <textarea value={content} onChange={(e => setContent(e.target.value))} className='textarea' />
@@ -110,7 +129,12 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                         </div> 
                             <label className="trail-conditions-label">Trail Conditions  </label>
                             <div className="conditions-options">
-                                {conditionOptions.map((condition, i) => <div className="radio-conditions" key={`${i}radioconditions`}> <input type="radio" value={condition} key={i} id={`conditions${i}`} onChange={handleRadioChange} checked={conditions.includes(condition) ? "checked" : ""} className="conditions-radio-buttons"></input> <label htmlFor={`conditions${i}`} className="conditions-label" key={condition}> {document.getElementById(`conditions${i}`)?.checked && conditions.includes(condition) ? `✓ ${condition}` : condition} </label> </div>)}
+                                {conditionOptions.map((condition, i) => 
+                                    <div className="radio-conditions" key={`${i}radioconditions`}> 
+                                        <input type="radio" value={condition} key={i} id={`conditions${i}`} onChange={handleRadioChange} checked={conditions.includes(condition) ? "checked" : ""} className="conditions-radio-buttons" />
+                                        <label htmlFor={`conditions${i}`} className="conditions-label" key={condition}> {document.getElementById(`conditions${i}`)?.checked && conditions.includes(condition) ? `✓ ${condition}` : condition} 
+                                        </label>
+                                    </div>)}
                                 </div> 
                             <div className="button-container">
                                     <button onClick={(() => setPageNum(1))} className="go-back-button" id="go-back-button">Go Back</button>
