@@ -41,6 +41,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
+        setPageNum(1);
         if(review){
             const data ={
                 id: review.id,
@@ -53,6 +54,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
             }
             dispatch(updateReview(data))
             onClose();
+           
         }
         else{
             const data = {
@@ -65,6 +67,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
             }
             dispatch(createReview(data))
             onClose(); 
+            setPageNum(1);
         }
         
     }

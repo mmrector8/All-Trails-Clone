@@ -37,7 +37,6 @@ const LoginFormPage = ()=>{
     }
 
     const demoUser = (e)=> {
-        // e.preventDefault()
         return dispatch(sessionActions.login({ credential:'demo-user@demo.com', password:'demopassword'}))
             .then(()=> history.push('/'))
     }

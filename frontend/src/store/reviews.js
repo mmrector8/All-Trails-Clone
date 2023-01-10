@@ -5,7 +5,7 @@ export const RECEIVE_REVIEW = 'reviews/RECEIVE_REVIEW'
 export const REMOVE_REVIEW = 'reviews/REMOVE_REVIEW'
 
 export const receiveReview = (review)=> {
-    console.log('hitting receive review')
+    console.log(review, 'hitting receive review')
     return {
         type: RECEIVE_REVIEW,
         review
@@ -73,7 +73,7 @@ export const updateReview = (review)=> async dispatch =>{
     })
     if(res.ok){
         const review = await res.json();
-        dispatch(receiveReview(review.review))
+        dispatch(receiveReview(review))
     }
 }
 
