@@ -66,18 +66,17 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
 
     const handleRadioChange = (e) =>{
         if(!conditions.includes(e.target.value)){
-            console.log('hitting set ')
             setConditions((prevConditions) => [...prevConditions].concat(e.target.value))
         }else{
-            console.log('hitting remove')
             let idx= conditions.indexOf(e.target.value)
-            console.log(idx, 'index to remove')
             setConditions(prevConditions=> prevConditions.slice(0, idx).concat(prevConditions.slice(idx+1, prevConditions.length)))
         }     
     }
 
+
     const activities = ['backpacking', 'bird watching', 'bike touring', 'camping', 'fishing', 'hiking', 'horseback riding', 'mountain biking', 'road biking', 'rock climbing', 'skiing', 'running', 'walking']
     const conditionOptions = ['Great!', 'Blowdown', 'Bridge out', 'Bugs', 'Closed', 'Fee', 'Flooded', 'Muddy', 'No shade', 'Off trail', 'Overgrown', 'Rocky', 'Washed out']
+
 
 
     return (
@@ -131,9 +130,8 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                             <div className="conditions-options">
                                 {conditionOptions.map((condition, i) => 
                                     <div className="radio-conditions" key={`${i}radioconditions`}> 
-                                        <input type="radio" value={condition} key={i} id={`conditions${i}`} onChange={handleRadioChange} checked={conditions.includes(condition) ? "checked" : ""} className="conditions-radio-buttons" />
-                                        <label htmlFor={`conditions${i}`} className="conditions-label" key={condition}> {document.getElementById(`conditions${i}`)?.checked && conditions.includes(condition) ? `✓ ${condition}` : condition} 
-                                        </label>
+                                        <input type="radio" value={condition} key={i} id={`conditions${i}`} onChange={()=> {}} onClick={handleRadioChange}checked={conditions.includes(condition) ? "checked" : ""} className="conditions-radio-buttons"/>
+                                        <label htmlFor={`conditions${i}`} className="conditions-label" key={condition}> {conditions.includes(condition) ? `✓ ${condition}` : condition}  </label>
                                     </div>)}
                                 </div> 
                             <div className="button-container">
