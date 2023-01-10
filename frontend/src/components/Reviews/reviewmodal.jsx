@@ -88,54 +88,35 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                 <h1 className="review-hike-title">{hike.name}</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="review-form">
-                        <div className="star-rating">
+                        {pageNum === 1 ? <> <div className="star-rating">
                             {[5, 4, 3, 2, 1].map((star, i) => <><input id={`${star}`} type="radio" name="rating" value={star} onChange={(e => setStars(e.target.value))} checked={stars == star ? "checked" : ""} />
                                 <label htmlFor={`${star}`} title={`${star} stars`} className="star-label">
                                     <i className="active fa fa-star" aria-hidden="true"></i>
                                 </label></>)}
-{/* 
-                            <input id="5" type="radio" name="rating" value={5} onChange={(e => setStars(e.target.value))} checked={stars == 5 ? "checked" : ""} />
-
-                            <label htmlFor="5" title="5 stars" className="star-label">
-                                <i className="active fa fa-star" aria-hidden="true"></i>
-                            </label>
-                            <input id="4" type="radio" name="rating" value={4} onChange={(e => setStars(e.target.value))} checked={stars == 4 ? "checked" : ""} />
-
-                            <label htmlFor="4" title="4 stars" className="star-label">
-                                <i className="active fa fa-star" aria-hidden="true"></i>
-                            </label>
-                            <input id="3" type="radio" name="rating" value={3} onChange={(e => setStars(e.target.value))} checked={stars == 3 ? "checked" : ""} />
-                            <label htmlFor="3" title="3 stars" className="star-label">
-                                <i className="active fa fa-star" aria-hidden="true"></i>
-                            </label>
-                            <input id="2" type="radio" name="rating" value={2} onChange={(e => setStars(e.target.value))} checked={stars == 2 ? "checked" : ""} />
-                            <label htmlFor="2" title="2 stars" className="star-label">
-                                <i className="active fa fa-star" aria-hidden="true"></i>
-                            </label>
-                            <input id="1" type="radio" name="rating" value={1} onChange={(e => setStars(e.target.value))} checked={stars == 1 ? "checked" : ""} />
-                            <label htmlFor="1" title="1 star" className="star-label">
-                                <i className="active fa fa-star" aria-hidden="true"></i>
-                            </label> */}
                         </div>
-                        <div className="review-content">
-                            <label className="review-content-label">Review</label>
-                            <textarea value={content} onChange={(e => setContent(e.target.value))} className='textarea' />
-                        </div>
-                    <div className="activity-type-dropdown">
+                            <div className="review-content">
+                                <label className="review-content-label">Review</label>
+                                <textarea value={content} onChange={(e => setContent(e.target.value))} className='textarea' />
+                            </div>
+                            <button onClick={()=> setPageNum(2)} className="next-page-modal-button">Next Page</button>
+                        </> : <> 
+                        <div className="activity-type-dropdown">
                             <p className="activity-type-label">Activity Type</p>
-                            <select value ={activityType} onChange={(e => setActivityType(e.target.value))}>
-                                {activities?.map((activity, i)=> <option value={activity} key={i}>{activity}</option>)}
+                            <select value={activityType} onChange={(e => setActivityType(e.target.value))}>
+                                {activities?.map((activity, i) => <option value={activity} key={i}>{activity}</option>)}
                             </select>
-                            
+                        </div> 
+                            <label className="trail-conditions-label">Trail Conditions  </label>
+                            <div className="conditions-options">
+                                {conditionOptions.map((condition, i) => <div className="radio-conditions" key={`${i}radioconditions`}> <input type="radio" value={condition} key={i} id={`conditions${i}`} onChange={handleRadioChange} checked={conditions.includes(condition) ? "checked" : ""} className="conditions-radio-buttons"></input> <label htmlFor={`conditions${i}`} className="conditions-label" key={condition}> {document.getElementById(`conditions${i}`)?.checked && conditions.includes(condition) ? `✓ ${condition}` : condition} </label> </div>)}
+                                </div> 
+                            <div className="button-container">
+                                <button onClick={(()=>setPageNum(1))} className="go-back-button">Go Back</button>
+                                <button type="submit" className='post-review-button'>{isEdit ? "Edit" : "Post"}</button>
+                            </div> </>}
+                     
                     </div>
-                        <label className="trail-conditions-label">Trail Conditions  </label>
-                        <div className="conditions-options">
-                            {conditionOptions.map((condition, i) => <div className="radio-conditions" key={`${i}radioconditions`}> <input type="radio" value={condition} key={i} id={`conditions${i}`} onChange={handleRadioChange} checked={conditions.includes(condition) ? "checked" : ""} className="conditions-radio-buttons"></input> <label htmlFor={`conditions${i}`} className="conditions-label" key={condition}> {document.getElementById(`conditions${i}`)?.checked && conditions.includes(condition)? `✓ ${condition}` : condition} </label> </div>)}
-                        </div>
-                    </div>
-                    <div className="button-container">
-                        <button type="submit" className='post-review-button'>{isEdit ? "Edit" : "Post"}</button>
-                    </div>
+                    
                 </form> 
             </div>
         </>
