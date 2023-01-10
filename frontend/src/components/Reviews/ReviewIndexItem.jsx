@@ -81,10 +81,11 @@ const ReviewIndexItem = ({review, currentUser}) =>{
                 <div className="review-content-review-index">
                     <StarIndex numStars={review.stars}/>
                     <p>{review.content}</p>
+
                 </div>
-                <div className="conditions-on-show-page">
+                <div className={reviewConditions(review).length ? "conditions-on-show-page" : "hide-title"}>
                     <ul className="listy"> <h1 className="conditions-list-title">Conditions:</h1>
-                        {reviewConditions(review).map((condition, i) => <li key={i} className="condition-list-item">{ i=== reviewConditions(review).length-1 ? `${condition}` : `${condition},`}</li>)}
+                        {reviewConditions(review).map((condition, i) => <li key={i} className="condition-list-item">{i === reviewConditions(review).length - 1 ? `${condition}` : `${condition},`}</li>)}
                     </ul>
                 </div>
                 {checkCurrentUser()}
