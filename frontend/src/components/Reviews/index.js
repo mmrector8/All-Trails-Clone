@@ -65,17 +65,16 @@ const ReviewIndex = ({hike}) =>{
             <h1 className='reviews-title'>Reviews ({reviews.length})</h1>
                 <div className= "review-top-bucket">
                     <div className='review-avg-rating-bar'>
-                    {[5, 4, 3, 2, 1].map((num, i) => <div className="stars-slider-container" key={i}>
-                        <p className="icon-holder">{num} </p>
-                        <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>
-                        <div className='five-star-bar' style={styleBar(reviews, num)}> </div>
-                    </div> )}
+                        {[5, 4, 3, 2, 1].map((num, i) => <div className="stars-slider-container" key={i}>
+                            <p className="icon-holder">{num} </p>
+                            <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>
+                            <div className='five-star-bar' style={styleBar(reviews, num)}> </div>
+                        </div> )}
                     </div>
                     <div className="avg-reviews">
                          <h1 className='avg-stars'>{averageStars()}</h1>
-                        <p><i className="fa-sharp fa-solid fa-star star-rating-icon"></i><i className="fa-sharp fa-solid fa-star star-rating-icon"></i><i className="fa-sharp fa-solid fa-star star-rating-icon"></i><i className="fa-sharp fa-solid fa-starstar-rating-icon"></i><i className="fa-sharp fa-solid fa-star star-rating-icon"></i><i className="fa-sharp fa-solid fa-star star-rating-icon"></i><i className="fa-sharp fa-solid fa-starstar-rating-icon"></i></p>
-                        <p>{reviews.length} reviews</p>
-                        
+                         <p><i className="fa-sharp fa-solid fa-star star-rating-icon"></i><i className="fa-sharp fa-solid fa-star star-rating-icon"></i><i className="fa-sharp fa-solid fa-star star-rating-icon"></i><i className="fa-sharp fa-solid fa-starstar-rating-icon"></i><i className="fa-sharp fa-solid fa-star star-rating-icon"></i><i className="fa-sharp fa-solid fa-star star-rating-icon"></i><i className="fa-sharp fa-solid fa-starstar-rating-icon"></i></p>
+                         <p>{reviews.length} reviews</p>
                     </div>
                      
                     <ReviewModalContainer hike={hike}/>

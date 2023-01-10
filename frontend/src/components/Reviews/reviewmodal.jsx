@@ -12,6 +12,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
     const [activityType, setActivityType] = useState('hiking')
     const [conditions, setConditions] = useState([]) 
     const [isEdit, setIsEdit] = useState(false);
+    const [pageNum, setPageNum] = useState(1)
 
     useEffect(()=>{
         if(review){
@@ -75,6 +76,10 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
 
     const activities = ['backpacking', 'bird watching', 'bike touring', 'camping', 'fishing', 'hiking', 'horseback riding', 'mountain biking', 'road biking', 'rock climbing', 'skiing', 'running', 'walking']
     const conditionOptions = ['Great!', 'Blowdown', 'Bridge out', 'Bugs']
+
+
+
+
     return (
         <>
             <div className="overlay"></div>
@@ -84,6 +89,11 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                 <form onSubmit={handleSubmit}>
                     <div className="review-form">
                         <div className="star-rating">
+                            {[5, 4, 3, 2, 1].map((star, i) => <><input id={`${star}`} type="radio" name="rating" value={star} onChange={(e => setStars(e.target.value))} checked={stars == star ? "checked" : ""} />
+                                <label htmlFor={`${star}`} title={`${star} stars`} className="star-label">
+                                    <i className="active fa fa-star" aria-hidden="true"></i>
+                                </label></>)}
+{/* 
                             <input id="5" type="radio" name="rating" value={5} onChange={(e => setStars(e.target.value))} checked={stars == 5 ? "checked" : ""} />
 
                             <label htmlFor="5" title="5 stars" className="star-label">
@@ -105,7 +115,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                             <input id="1" type="radio" name="rating" value={1} onChange={(e => setStars(e.target.value))} checked={stars == 1 ? "checked" : ""} />
                             <label htmlFor="1" title="1 star" className="star-label">
                                 <i className="active fa fa-star" aria-hidden="true"></i>
-                            </label>
+                            </label> */}
                         </div>
                         <div className="review-content">
                             <label className="review-content-label">Review</label>
@@ -127,7 +137,6 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                         <button type="submit" className='post-review-button'>{isEdit ? "Edit" : "Post"}</button>
                     </div>
                 </form> 
-
             </div>
         </>
     )
