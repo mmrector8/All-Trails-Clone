@@ -56,7 +56,7 @@ const HikeShowPage = ()=>{
         let splitConditions;
         for(let i=0; i < reviewArray.length; i++){
             splitConditions = reviewArray[i].conditions.split(",")
-            if(isDateLessThanOneWeekAgo(reviewArray[i].updatedAt)){
+            if(isDateLessThanOneWeekAgo(reviewArray[i].createdAt)){
                 for (let j = 0; j < splitConditions.length; j++) {
                     if (!filtered.includes(splitConditions[j]) && splitConditions[j].length > 2) {
                         filtered.push(splitConditions[j])
