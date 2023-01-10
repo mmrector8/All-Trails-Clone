@@ -38,8 +38,11 @@ const SearchBar = ({setSearchOpen, open}) =>{
      }
 
      const handleGreenArrowClick = ()=>{
-        const firstItem = filteredData[0];
-       return history.push(`/hikes/${firstItem.id}`)
+        if(open){
+            const firstItem = filteredData[0];
+            return history.push(`/hikes/${firstItem.id}`)
+        }
+       
      }
 
      return (
@@ -57,7 +60,7 @@ const SearchBar = ({setSearchOpen, open}) =>{
                          <p className='searchbar-options'>Hikes</p>
                          <p className='searchbar-options'>Parks</p>
                      </div>
-                    {filteredData.slice(0,5).map((hike, i)=>{
+                    {filteredData.map((hike, i)=>{
                         return (
                             <div className='search-results' key={i}>
                                 <Link to={`hikes/${hike.id}`} className="search-results-link"><p className='searchbar-hike-name'>{hike.name}</p> <p className="searchbar-park-name" id="searchbar-park-name">{hike.parkName}</p></Link>

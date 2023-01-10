@@ -38,6 +38,7 @@
     overflow-y: auto;
     /* overflow: hidden; */
     width: 654px;
+    max-height: 385px;
     border-radius: 30px;
     margin-top: -53px;
     padding-top: 53px;
