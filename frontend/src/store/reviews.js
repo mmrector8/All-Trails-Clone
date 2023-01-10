@@ -47,8 +47,8 @@ export const fetchReviews = (hikeId)=> async (dispatch) =>{
     }
 }
 
-export const fetchReview = (reviewId, hikeId)=> async dispatch=>{
-    const res = await csrfFetch(`/api/hikes/${hikeId}/reviews/${reviewId}`)
+export const fetchReview = (review)=> async dispatch=>{
+    const res = await csrfFetch(`/api/hikes/${review.hikeId}/reviews/${review.id}`)
     if(res.ok){
         const review = await res.json();
         dispatch(receiveReview(review))

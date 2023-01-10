@@ -20,8 +20,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
             setStars(review.stars)
             setContent(review.content)
             setActivityType(review.activityType)
-            setConditions(review.conditions.split(","))
-            dispatch(fetchReview(review.id, hike.id))            
+            setConditions(review.conditions.split(","))          
         }
     }, [dispatch, review, hike.id])
 
@@ -89,9 +88,9 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                         {pageNum === 1 ? <> 
                             <span className='page-num'>Page 1 of 2</span>
                             <div className="star-rating">   
-                            {[5, 4, 3, 2, 1].map((star, i) => <><input id={`${star}`} type="radio" name="rating" value={star} onChange={(e => setStars(e.target.value))} checked={stars == star ? "checked" : ""} />
-                                <label htmlFor={`${star}`} title={`${star} stars`} className="star-label">
-                                    <i className="active fa fa-star" aria-hidden="true"></i>
+                            {[5, 4, 3, 2, 1].map((star, i) => <><input id={`${star}`} type="radio" name="rating" value={star} onChange={(e => setStars(e.target.value))} checked={stars == star ? "checked" : ""} key={i}/>
+                                <label htmlFor={`${star}`} title={`${star} stars`} className="star-label" key={i}>
+                                    <i className="active fa fa-star" aria-hidden="true" key={i}></i>
                                 </label></>)}
                         </div>
                             <div className="review-content">
