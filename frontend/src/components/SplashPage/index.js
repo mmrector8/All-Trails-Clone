@@ -10,6 +10,7 @@ import splashresized from "../../assets/splashresized.jpg"
 import ReasonsToSignUp from "./reasonssignup.jsx";
 import AdventureAnywhere from "./adventureanywhere";
 import ForPlanet from "./planet";
+import SearchBar from "../Searchbar";
 
 
 const SplashPage = ()=>{
@@ -40,9 +41,7 @@ const SplashPage = ()=>{
                 <div className="splash-search-bar">
                     
                     <h1 className='splash-title'>Find your outdoors</h1>
-                    <div className='search-bar'>
-                        <p className='search-bar-text'>Search by park or trail name</p>
-                    </div>
+                    <SearchBar />
                     <Link to={'/hikes'} onClick={()=>window.scrollTo({ top: 0, left: 0 })}className='explore-link'>Explore trails in the Bay</Link>
                 </div>    
             </div>

@@ -1,0 +1,99 @@
+.search-input-bar{
+    position: relative;
+    width: 650px;
+    height: 70px;
+    font-family: "Manrope", sans-serif;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 40px;
+    border:none;
+    z-index: 10;
+}
+
+.search-input-bar:focus{
+    outline: none;
+    box-shadow: 0 30px 40px rgba(0, 0, 0, .2);
+}
+
+.options{
+    display: flex;
+    align-items: center;
+    font-family: "Manrope", sans-serif;
+    border-bottom: 1px solid rgb(185, 185, 185);
+    padding: 20px;
+    background-color: white;
+}
+
+.searchbar-options{
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.search-results-container{
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    font-family: "Manrope", sans-serif;
+    overflow-y: auto;
+    overflow: hidden;
+    width: 654px;
+    border-radius: 30px;
+    margin-top: -53px;
+    padding-top: 53px;
+    box-shadow: 0 30px 40px rgba(0, 0, 0, .1);
+}
+
+.search-icon{
+    color: rgb(24, 24, 24);
+    font-size: 25px;
+    position: absolute;
+    margin-left: -630px;
+    margin-top: 22px;
+    z-index: 1000;
+}
+.go-to-show-page{
+    z-index: 1000;
+    width: 50px;
+    position: absolute;
+    font-size: 25px;
+    color: white;
+    background-color: #2c5601;
+    padding: 8px;
+    border-radius: 50%;
+    border: none;
+    margin-left: -70px;
+    margin-top: 13px;
+    cursor: pointer;
+}
+
+.go-to-show-page:hover{
+    background-color: #244702;
+}
+.search-results{
+    display: flex;
+    padding: 15px;
+    line-height: 24px;
+}
+
+.search-results:hover{
+     background-color: #f2f2f2;
+}
+.search-results-link{
+    cursor: pointer;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.searchbar-hike-name{
+    font-size: 20px;
+}
+
+.searchbar-hike-name, .searchbar-park-name{
+    font-family: "Manrope", sans-serif;
+    
+    color: black;
+}
+
+#seachbar-park-name{
+    font-size: 12px;
+}
