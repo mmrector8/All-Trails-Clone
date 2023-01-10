@@ -14,8 +14,6 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
     const [isEdit, setIsEdit] = useState(false);
     const [pageNum, setPageNum] = useState(1)
 
-    
-
     useEffect(()=>{
         if(review){
             setIsEdit(true)
