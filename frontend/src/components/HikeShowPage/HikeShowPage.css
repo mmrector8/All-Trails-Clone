@@ -3,7 +3,9 @@
     padding-bottom: 30px;
     background-color: rgb(238, 238, 238);
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .hike-show-page {
@@ -291,7 +293,19 @@
     padding-top: 5px;
 }
 
+.hike-show-page-top-banner{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 1010px;
+}
 
+.city-state-town{
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    margin-left: 7px;
+}
 @media (max-width: 700px){
 
     .grid-elements{

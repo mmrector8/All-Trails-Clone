@@ -46,11 +46,9 @@ const HikeShowPage = ()=>{
         }
 
         return false;
-        // false;
     }
     const now = new Date();
 
-    // console.log(isDateGreaterThanOneWeekAgo(reviews[47].updatedAt))
 
     const getAllTagsFromReviews = (reviews)=>{
         const reviewArray = Object.values(reviews)
@@ -76,7 +74,13 @@ const HikeShowPage = ()=>{
 
     return (
         <>
-        <div className="whole-page">   
+        
+        <div className="whole-page">  
+                <div className="hike-show-page-top-banner">
+                    <p className='city-state-town'>California {"> "}</p>
+                    <p className='city-state-town'>{hike.city +  " > "}</p>
+                    <p className='city-state-town'> {hike.parkName ? `${hike.parkName} > ${hike.name}` :  `${hike.name}`}</p>
+                </div> 
         <div className="hike-show-page">
             <div className="descriptors-with-background-image">
                 <h1 className="main-descriptors hike-title">{hike.name}</h1>

@@ -65,31 +65,11 @@ const ReviewIndex = ({hike}) =>{
             <h1 className='reviews-title'>Reviews ({reviews.length})</h1>
                 <div className= "review-top-bucket">
                     <div className='review-avg-rating-bar'>
-                        <div className="stars-slider-container">
-                            <p className="icon-holder">5 </p>
-                            <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>
-                            <div className='five-star-bar' style={styleBar(reviews, 5)}> </div>
-                        </div>
-                        <div className="stars-slider-container">
-                            <p className="icon-holder">4</p>
-                            <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>
-                            <div className='five-star-bar' style={styleBar(reviews, 4)} > </div>
-                        </div>
-                        <div className="stars-slider-container">
-                            <p className="icon-holder">3</p>
-                            <i className="fa-sharp fa-solid fa-star star-rating-icon"></i> 
-                            <div className='five-star-bar' style={styleBar(reviews, 3)}> </div>
-                        </div>
-                         <div className="stars-slider-container">
-                            <p className="icon-holder">2</p>
-                            <i className="fa-sharp fa-solid fa-star star-rating-icon"></i> 
-                            <div className='five-star-bar' style={styleBar(reviews, 2)}> </div>
-                         </div>
-                        <div className="stars-slider-container">
-                             <p className="icon-holder">1 </p>
-                            <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>
-                            <div className='five-star-bar' style={styleBar(reviews, 1)} > </div>
-                        </div>
+                    {[5, 4, 3, 2, 1].map((num, i) => <div className="stars-slider-container" key={i}>
+                        <p className="icon-holder">{num} </p>
+                        <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>
+                        <div className='five-star-bar' style={styleBar(reviews, num)}> </div>
+                    </div> )}
                     </div>
                     <div className="avg-reviews">
                          <h1 className='avg-stars'>{averageStars()}</h1>
