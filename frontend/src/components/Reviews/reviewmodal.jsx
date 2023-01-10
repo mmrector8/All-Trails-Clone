@@ -14,6 +14,8 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
     const [isEdit, setIsEdit] = useState(false);
     const [pageNum, setPageNum] = useState(1)
 
+    
+
     useEffect(()=>{
         if(review){
             setIsEdit(true)
@@ -38,6 +40,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
     }
 
     const handleSubmit = async (e) =>{
+        e.preventDefault();
         if(review){
             const data ={
                 id: review.id,
@@ -49,6 +52,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                 conditions: conditions.toString()
             }
             dispatch(updateReview(data))
+            onClose();
         }
         else{
             const data = {
@@ -60,6 +64,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                 conditions: conditions.toString()
             }
             dispatch(createReview(data))
+            onClose(); 
         }
         
     }
