@@ -1,10 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import * as footercss from "./footer.css"
+import logo from "../../assets/logo.png"
 const Footer = () =>{
     return (
         <>
             <div className='footer'>
-                <NavLink to="/" className='footer-logo' onClick={()=>window.scroll({top:0, left:0})}><i className="fa-solid fa-mountain-city footer-icon"></i>BayAreaTrails</NavLink>
+                <NavLink to="/" className='footer-logo' onClick={()=>window.scroll({top:0, left:0})}><img src={logo} id="logo-session-sign-up"></img>  BayAreaTrails</NavLink>
                 
                 <div className='footer-item-container'>
                     <div className='footer-sections'>

@@ -1,4 +1,5 @@
 .footer {
+    padding-top: 20px;
     background-color: #142800;
     color: white;
 }
@@ -20,16 +21,10 @@
     line-height: 50px;
 }
 
-.footer-icon{
-    margin-top: 40px;
-    margin-left: 30px;
-    font-size: 40px;
-    color: #5de372;
-}
 
 .footer-logo{
     padding: 20px;
-   
+    padding-top: 04px;
     color: white;
     text-decoration: none;
     font-family: "Manrope", sans-serif;
