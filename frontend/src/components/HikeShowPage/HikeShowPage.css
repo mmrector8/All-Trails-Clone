@@ -138,7 +138,6 @@
     padding: 6px;
     margin-right: 3%;
     margin-left: 3%;
-    border-bottom: 1px solid rgb(177, 177, 177);
 }
 
 .tags{
@@ -305,6 +304,36 @@
     font-family: "Manrope", sans-serif;
     font-size: 13px;
     margin-left: 7px;
+}
+
+.all-tags{
+    display: grid;
+    grid-template-columns: repeat(5, 110px);
+    grid-template-rows: 1fr 1fr;
+    row-gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.hike-show-page-tags{
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    border: 1px solid grey;
+    font-family: "Manrope", sans-serif;
+    border-radius: 5px;
+    text-align: center;
+}
+.conditions-big-title{
+    margin-left: 18px;
+    margin-right: 18px;
+    padding: 5px;
+    /* padding-left: 20px; */
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+border-bottom: 1px solid rgb(177, 177, 177);
 }
 @media (max-width: 700px){
 

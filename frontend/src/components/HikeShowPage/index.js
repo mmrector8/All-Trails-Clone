@@ -72,6 +72,8 @@ const HikeShowPage = ()=>{
         window.scrollTo({top: 900, left: 100, behavior: "smooth"})
     }
 
+    const tags = ["Running", "Hiking", "Bird watching", "Walking", "Forest", "Views", "Wildflowers", "Wildlife"]
+
     return (
         <>
         
@@ -116,10 +118,15 @@ const HikeShowPage = ()=>{
                     </div>
                 </div>
                 <div className="tag-container">
-                    <p>Example tag 1</p>
+                    <div className="all-tags">
+                        {tags.map((tag, i)=>{
+                            return  <p className='hike-show-page-tags' key={i}>{tag}</p>
+                        })}
+                     </div>
                 </div>
 
                 <div className="conditions-container">
+                    <h1 className='conditions-big-title'>Conditions</h1>
                     {getAllTagsFromReviews(reviews).length ? <div className="conditions-inner-container"><h1 className='conditions-title'>Conditions reported in the last 7 days: </h1> <div className="conditions">{getAllTagsFromReviews(reviews).map((condition, i) => <p className='tags' key={i}>{condition}</p>)}</div></div> : <div><h1 className="conditions-title large-conditions-title"> No conditions in reported in the last 7 days </h1> <p className='conditions-title'>Want to report conditions for this trail?<button onClick={scrollToReviewButton} className='scroll-to-write-a-review'>Write a review below</button>to inform other visitors!</p></div>}
                 </div>
                 <div className='weather'>

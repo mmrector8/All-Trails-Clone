@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom'
 import './LoginForm.css'
 
 
-const LoginFormPage = ()=>{
+const LoginFormPage = ({modal})=>{
+    let modalVal = modal
+    console.log(modalVal)
     const dispatch = useDispatch()
     const [credential, setCredential ] = useState('')
     const [password, setPassword] = useState('')
@@ -42,10 +44,12 @@ const LoginFormPage = ()=>{
             .then(()=> history.goBack())
     }
 
+
+
     return (
-        <> 
-            <div className='background-image-container-login'>
-                <div className='login-form'>
+        <>
+            <div className={modal ? "background-image-container-login hidden-background" : "background-image-container-login"}>
+                <div className={modal ? "login-form hidden": "login-form"}>
                     <div className='login-header'>
                         <i className="fa-solid fa-mountain-city" id='logo'></i>
                     </div>

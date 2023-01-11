@@ -35,7 +35,7 @@ function App() {
             <ReviewModalContainer />
         </Route>
         < Route exact path='/login'>
-          <LoginFormPage />
+          <LoginFormPage modal={false}/>
         </Route>
         <Route component={ComponentError} />
         </Switch>
