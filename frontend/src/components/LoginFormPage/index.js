@@ -16,8 +16,6 @@ const LoginFormPage = ()=>{
 
     if (sessionUser) return <Redirect to ="/" />
 
-    console.log(history)
-
     const handleSubmit = (e) => {
 
         e.preventDefault();

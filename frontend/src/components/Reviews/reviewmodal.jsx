@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createReview, getReview, fetchReview, updateReview } from "../../store/reviews";
 import { useParams } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 const ReviewModal = ({open, onClose, hike, review}) =>{
     const user = useSelector((state)=> state.session.user)
@@ -13,6 +14,8 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
     const [conditions, setConditions] = useState([]) 
     const [isEdit, setIsEdit] = useState(false);
     const [pageNum, setPageNum] = useState(1)
+
+    console.log(user === null)
 
     useEffect(()=>{
         if(review){
@@ -83,7 +86,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
     const activities = ['backpacking', 'bird watching', 'bike touring', 'camping', 'fishing', 'hiking', 'horseback riding', 'mountain biking', 'road biking', 'rock climbing', 'skiing', 'running', 'walking']
     const conditionOptions = ['Great!', 'Blowdown', 'Bridge out', 'Bugs', 'Closed', 'Fee', 'Flooded', 'Muddy', 'No shade', 'Off trail', 'Overgrown', 'Rocky', 'Washed out']
 
-
+  
 
     return (
         <>
