@@ -9,7 +9,6 @@ import logo from "../../assets/logo.png"
 
 const LoginFormPage = ({modal, closeModal})=>{
     let modalVal = modal
-    console.log(modalVal)
     const dispatch = useDispatch()
     const [credential, setCredential ] = useState('')
     const [password, setPassword] = useState('')
@@ -88,7 +87,7 @@ const LoginFormPage = ({modal, closeModal})=>{
                                         <li key={error}>{error}</li>
                                     ))}
                                 </ul>
-                                    <input type ='text' value={credential} onChange={((e)=> setCredential(e.target.value))} placeholder="Username or email" className='input-value'></input>
+                                <input type ='text' value={credential} onChange={((e)=> setCredential(e.target.value))} placeholder="Username or email" className='input-value'></input>
                                 <input type='password' value={password} onChange={((e) => setPassword(e.target.value))} placeholder="Password" className='input-value'></input>
                                 <button type='submit' className='login-form-buttons'>Log in</button>
                                 </div>

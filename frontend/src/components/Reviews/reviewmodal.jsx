@@ -5,7 +5,7 @@ import { createReview, getReview, fetchReview, updateReview } from "../../store/
 import { useParams } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 
-const ReviewModal = ({open, onClose, hike, review}) =>{
+const ReviewModal = ({open, setIsOpen, hike, review}) =>{
     const user = useSelector((state)=> state.session.user)
     const dispatch = useDispatch();
     const [stars, setStars] = useState(0)
@@ -14,8 +14,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
     const [conditions, setConditions] = useState([]) 
     const [isEdit, setIsEdit] = useState(false);
     const [pageNum, setPageNum] = useState(1)
-
-    console.log(user === null)
+    const [errors, setErrors] = useState([])
 
     useEffect(()=>{
         if(review){
@@ -42,7 +41,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        setPageNum(1);
+        // setPageNum(1);
         if(review){
             const data ={
                 id: review.id,
@@ -53,9 +52,21 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                 activity_type: activityType,
                 conditions: conditions.toString()
             }
-            dispatch(updateReview(data))
-            onClose();
            
+          return dispatch(updateReview(data))
+                .then(()=> setIsOpen(false))
+                .catch(async (res) => {
+                  let data;
+                  try {
+
+                      data = await res.clone().json();
+                  } catch {
+                      data = await res.text();
+                  }
+                  if (data?.errors) setErrors(data.errors);
+                  else if (data) setErrors([data]);
+                  else setErrors([res.statusText]);
+              });;
         }
         else{
             const data = {
@@ -66,9 +77,24 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                 activity_type: activityType,
                 conditions: conditions.toString()
             }
-            dispatch(createReview(data))
-            onClose(); 
-            setPageNum(1);
+            
+           return dispatch(createReview(data))
+                .then(()=> setIsOpen(false))
+                .then(()=> setPageNum(1))
+               .catch(async (res) => {
+                   let data;
+                   try {
+
+                       data = await res.clone().json();
+                   } catch {
+                       data = await res.text();
+                   }
+                   if (data?.errors) setErrors(data.errors);
+                   else if (data) setErrors([data]);
+                   else setErrors([res.statusText]);
+               });;
+            // setIsOpen(false);
+            // setPageNum(1);
         }
         
     }
@@ -87,12 +113,24 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
     const conditionOptions = ['Great!', 'Blowdown', 'Bridge out', 'Bugs', 'Closed', 'Fee', 'Flooded', 'Muddy', 'No shade', 'Off trail', 'Overgrown', 'Rocky', 'Washed out']
 
   
+    const closeModal = ()=>{
+        setIsOpen(false)
+        if(isEdit){
+            return;
+        }else{
+            setStars(0)
+            setContent("")
+            setActivityType("")
+            setConditions("")
+        }
+    }
+
 
     return (
         <>
             <div className="overlay"></div>
             <div className='modal-content'>
-                <button onClick={onClose} className="exit-modal">X</button>
+                <button onClick={closeModal} className="exit-modal">X</button>
                 <h1 className="review-hike-title">{hike.name}</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="review-form">
@@ -122,7 +160,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                             </div>
                             <div className="review-content">
                                 <label className="review-content-label">Review</label>
-                                <textarea value={content} onChange={(e => setContent(e.target.value))} className='textarea' />
+                                <textarea value={content} onChange={(e => setContent(e.target.value))} className='textarea' required/>
                             </div>
                             <div className='button-container'>
                                 <button onClick={()=> setPageNum(2)} className="next-page-modal-button" id="next-page-modal-button">Next Page</button>
@@ -132,7 +170,7 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                         <div className="activity-type-dropdown">
                             <p className="activity-type-label">Activity Type</p>
                             <select value={activityType} onChange={(e => setActivityType(e.target.value))}>
-                                {activities?.map((activity, i) => <option value={activity} key={i}>{activity}</option>)}
+                                {activities?.map((activity, i) => <option value={activity} key={i} required>{activity}</option>)}
                             </select>
                         </div> 
                             <label className="trail-conditions-label">Trail Conditions  </label>
@@ -143,7 +181,15 @@ const ReviewModal = ({open, onClose, hike, review}) =>{
                                         <label htmlFor={`conditions${i}`} className="conditions-label" key={condition}> {conditions.includes(condition) ? `✓ ${condition}` : condition}  </label>
                                     </div>)}
                                 </div> 
+                                
                             <div className="button-container">
+                                    <div className="errors">
+                                        <ul>
+                                            {errors.map((error) => (
+                                                <li key={error}>{error}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
                                     <button onClick={(() => setPageNum(1))} className="go-back-button" id="go-back-button">Go Back</button>
                                 <button type="submit" className='post-review-button'>{isEdit ? "Edit" : "Post"}</button>
                             </div> </>}
