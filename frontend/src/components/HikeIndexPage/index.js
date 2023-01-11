@@ -40,7 +40,7 @@ const HikeIndexPage = ()=>{
                         <img src={treesrectangle} className="SF-hike-images" alt="tree-grove"></img>
                     </div>
                     <div className="title-and-description">
-                        <h1 className="title">San Francisco Hikes</h1>
+                        <h1 className="title">Bay Area Hikes</h1>
                         <p className="description">Looking for the best hiking trails in San Francisco? Whether you're getting ready to hike, bike, trail run, or explore other outdoor activities, BayAreaTrails has scenic trails in the San Francisco area. Enjoy hand-curated trail maps, along with reviews and photos from nature lovers like you. Check out some trails with historic sights or adventure through the nature areas surrounding San Francisco that are perfect for hikers and outdoor enthusiasts at any skill level.</p>
                         <HikeMapWrapper hikes={hikes}/>
                      </div>
