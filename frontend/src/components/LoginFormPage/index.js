@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import './LoginForm.css'
 
 
-const LoginFormPage = ({modal})=>{
+const LoginFormPage = ({modal, closeModal})=>{
     let modalVal = modal
     console.log(modalVal)
     const dispatch = useDispatch()
@@ -16,14 +16,24 @@ const LoginFormPage = ({modal})=>{
     const history = useHistory()
     const sessionUser = useSelector(state => state.session.user)
 
-    if (sessionUser) return <Redirect to ="/" />
+    if(!modalVal){
+        if (sessionUser) return <Redirect to="/" />
+    }
+
+    
 
     const handleSubmit = (e) => {
 
         e.preventDefault();
         setErrors([]);
         return dispatch(sessionActions.login({ credential, password }))
-            .then(()=> history.goBack())
+            .then(() => {
+                if (!modalVal) {
+                    history.goBack()
+                } else {
+                    closeModal();
+                }
+            })
             .catch(async (res) => {
                 let data;
                 try {
@@ -41,7 +51,14 @@ const LoginFormPage = ({modal})=>{
 
     const demoUser = (e)=> {
         return dispatch(sessionActions.login({ credential:'demo-user@demo.com', password:'demopassword'}))
-            .then(()=> history.goBack())
+            .then(() => {
+                if(!modalVal){
+                    history.goBack()
+                }else{
+                    closeModal();
+                }
+            }
+        ) 
     }
 
 
@@ -54,8 +71,9 @@ const LoginFormPage = ({modal})=>{
                         <i className="fa-solid fa-mountain-city" id='logo'></i>
                     </div>
                     <div className='login-title'>
-                        <h1 className='login-form-title'>Welcome back. <br></br>Log in and start exploring.</h1>
+                        {modal ? <div className="must-be-logged-in"> You must be logged in to write a review! <br></br><br></br> Login Below</div> : <h1 className='login-form-title'>Welcome back. <br></br>Log in and start exploring.</h1>}
                     </div>
+                    
                     <div className='login-body'>
                             <form onSubmit={handleSubmit}>
                                 <div className='form-elements'>

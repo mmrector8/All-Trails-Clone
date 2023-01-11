@@ -114,6 +114,30 @@
     height: 0px;
 }
 
+.must-be-logged-in {
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: -10px;
+}
+
+.exit-modal-button{
+    cursor: pointer;
+    left: 0;
+    top: 0;
+    margin-left: 450px;
+    margin-top: 95px;
+    position: fixed;
+    z-index: 100000;
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    padding: 5px;
+}
+.exit-modal-button:hover{
+    background-color: rgb(221, 221, 221);
+    border-radius: 20px;
+}
+
 @media(max-width: 700px){
     .background-image-container-login {
         background-image: url("../../assets/hiker.jpg");
