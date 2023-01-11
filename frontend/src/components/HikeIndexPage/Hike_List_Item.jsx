@@ -7,18 +7,8 @@ import { useHistory } from 'react-router-dom';
 
 const HikeListItem = ({hike }) =>{
     const dispatch = useDispatch();
-    // const navigate = useNavigate();
     const history = useHistory();
-    // const park = useSelector(getPark(hike.parkId))
 
-
-    // useEffect(() => {
-    //     dispatch(fetchPark(hike.parkId))
-    // }, [dispatch, hike.parkId])
-
-    // if (!park) {
-    //         return null;
-    // }
     const routeChange = ()=>{
         let path = `/hikes/${hike.id}`
         history.push(path)

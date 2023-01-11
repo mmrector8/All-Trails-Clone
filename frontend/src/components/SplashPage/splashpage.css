@@ -298,9 +298,15 @@
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(4, 250px);
-    grid-template-rows: repeat(4, 100px);
+    grid-template-rows: repeat(3, 100px);
     grid-column-gap: 60px;
-    grid-row-gap: 40px;
+    grid-row-gap: 20px;
+}
+.adventure-parks-list-small-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .park-image{
@@ -404,6 +410,34 @@
     padding: 20px;
     border-radius: 10px;
 }
+
+.small-index-photos-aws{
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.small-index-photos-aws:hover{
+    width: 82px;
+    height: 82px;
+}
+
+.small-hike-info{
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+}
+
+.small-hike-name{
+    margin-right: -20px;
+    padding-bottom: 8px; 
+    color: #2b381f;
+}
+
+.small-miles-and-hours{
+    color: #656e5e;
+}
+
 
 @media (min-width: 1420px){
 
