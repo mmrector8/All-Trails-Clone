@@ -72,6 +72,7 @@ const LoginFormPage = ({modal, closeModal})=>{
         <>
             <div className={modal ? "background-image-container-login hidden-background" : "background-image-container-login"}>
                 <div className={modal ? "login-form hidden": "login-form"}>
+                    {modal ? <p className='exit-modal-button' onClick={closeModal}>X</p> : ""}
                     <div className='login-header'>
                         <img src={logo} id="logo-session"></img>
                     </div>

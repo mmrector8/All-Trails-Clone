@@ -47,7 +47,6 @@ const SignUpForm = () => {
             <div className='sign-up-form'>
                 <div className='sign-up-header'>
                     <img src={logo} id="logo-session-sign-up"></img>
-                    {/* <i className="fa-solid fa-mountain-city" id='logo'></i> */}
                 </div>
                 <div className='sign-up-title'>
                     <h1 className='formTitle'>Sign up today to start planning your next adventure</h1>
