@@ -25,6 +25,7 @@ const SignUpForm = () => {
         if (password === confirmPassword) {
             setErrors([]);
             return dispatch(sessionActions.signUp({ email, fname, lname, username, password }))
+                .then(()=> history.goBack())
                 .catch(async (res) => {
                     let data;
                     try {
@@ -43,9 +44,6 @@ const SignUpForm = () => {
     return (
         <>
             <div className='background-image-container'>
-                {/* <img src={goldengate} className='background-image-signup'></img> */}
-                {/* <img src={marinocean} className='background-image-signup first-image'></img>
-                <img src={marinhike} className='background-image-signup second-image'></img> */}
             <div className='sign-up-form'>
                 <div className='sign-up-header'>
                     <i className="fa-solid fa-mountain-city" id='logo'></i>

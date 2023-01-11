@@ -61,6 +61,10 @@ const LoginFormPage = ({modal, closeModal})=>{
         ) 
     }
 
+    const openSignUpModal=()=>{
+        closeModal();
+
+    }
 
 
     return (
@@ -89,7 +93,8 @@ const LoginFormPage = ({modal, closeModal})=>{
                             </form>
                                 <div className ='form-elements'>
                                     <button onClick={demoUser} className ='login-form-buttons'>Demo Login</button>
-                                    <p id='link-to-sign-up-form'>Don't have an account? <Link to="/login" className='signup-link'>Sign up for free</Link></p>
+                                    <p id='link-to-sign-up-form'>Don't have an account?</p>
+                                <Link to="/signup" className='signup-link' onClick={(() => window.scrollTo({ top: 0 }))}>Sign up for free</Link>
                                 </div>
                         </div>
                  </div>

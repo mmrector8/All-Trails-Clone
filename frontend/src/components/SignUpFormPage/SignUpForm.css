@@ -10,9 +10,9 @@
     transform: translate(-50%, -50%);
     border: 2px solid rgba(0, 0, 0, 0.165);
     padding: 24px;
-    width: 500px;
-    max-width: 80%;
-    height: 720px;
+    width: 400px;
+    max-width: 70%;
+    height: 680px;
     /* max-height: 90%; */
     z-index: 10;
     border-radius: 25px;
@@ -24,7 +24,7 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 25px;
-    padding-top: 20px;
+    padding-top: 5px;
     align-items: center;
 }
 
@@ -34,6 +34,8 @@
     align-items: center;
     padding-bottom: 25px;
     align-items: center;
+    width: 400px;
+   margin-left: 65px;
 }
 
 .formTitle {
@@ -69,7 +71,7 @@
 }
 
 .input-value{
-    width: 90%;
+    width: 80%;
     margin: 10px;
     font-size: 16px;
     padding: 10px;
