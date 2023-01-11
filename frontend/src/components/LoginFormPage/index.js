@@ -16,11 +16,14 @@ const LoginFormPage = ()=>{
 
     if (sessionUser) return <Redirect to ="/" />
 
+    console.log(history)
+
     const handleSubmit = (e) => {
+
         e.preventDefault();
         setErrors([]);
         return dispatch(sessionActions.login({ credential, password }))
-            .then(()=> history.push('/'))
+            .then(()=> history.goBack())
             .catch(async (res) => {
                 let data;
                 try {
@@ -38,7 +41,7 @@ const LoginFormPage = ()=>{
 
     const demoUser = (e)=> {
         return dispatch(sessionActions.login({ credential:'demo-user@demo.com', password:'demopassword'}))
-            .then(()=> history.push('/'))
+            .then(()=> history.goBack())
     }
 
     return (
