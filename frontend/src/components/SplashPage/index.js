@@ -53,6 +53,7 @@ const SplashPage = ()=>{
     }
 
     return (
+        <div className='splash-page'>
         <div onClick={handleClickAway}>
             <div className="searchbar-container" >
                 <img src={images[currentImgIdx]} id="background-image"></img>
@@ -69,6 +70,7 @@ const SplashPage = ()=>{
             <ReasonsToSignUp />
             <AdventureAnywhere />
             <ForPlanet />
+        </div>
         </div>
     )
 }

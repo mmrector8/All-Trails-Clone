@@ -1,17 +1,14 @@
 .searchbar-container {
-    /* background-image: url("../../assets/splash.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; */
     height: 535px;
     width: 100%;
-    /* padding-top: 2.65%; */
-    /* resize: both;
-    overflow: scroll; */
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.splash-page{
+    overflow-x: hidden;
 }
 
 #background-image{
@@ -20,6 +17,7 @@
     transform: translate(-50%, -50%);
     height: 100%;
     width: auto;
+    overflow-x: hidden;
     z-index: -1;
     position: absolute;
 }
@@ -209,6 +207,7 @@
     width: 100%;
     resize: both;
     overflow: scroll;
+    overflow-x: hidden;
     display: flex;
     align-items: left;
     justify-content: center;
