@@ -30,9 +30,7 @@ const ProfileButton = ({user}) => {
     return (
         <>
             <div className='dropdown-menu' onMouseOver={((e) => setShowMenu(true))} onMouseLeave={(e) => setShowMenu(false)}>
-                <button className='dropdown-button' onMouseOver={openMenu}>
-                    <i className="fa-solid fa-tree dropdown-icon" ></i>
-                </button>
+                    <i className="fa-solid fa-mountain-sun dropdown-icon" onMouseOver={openMenu}></i>
                 {showMenu && (
                     <ul className='dropdown' onMouseOver={openMenu} onMouseLeave={(e) => setShowMenu(false)}>
                         <li className='nav-item'>{user.fname}'s Profile</li>

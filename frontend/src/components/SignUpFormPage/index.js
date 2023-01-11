@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import * as sessionActions from '../../store/session'
 import { Redirect, useHistory } from 'react-router-dom'
 import './SignUpForm.css'
-
+import logo from "../../assets/logo.png"
 
 const SignUpForm = () => {
     const [username, setUsername] = useState("")
@@ -46,7 +46,8 @@ const SignUpForm = () => {
             <div className='background-image-container'>
             <div className='sign-up-form'>
                 <div className='sign-up-header'>
-                    <i className="fa-solid fa-mountain-city" id='logo'></i>
+                    <img src={logo} id="logo-session-sign-up"></img>
+                    {/* <i className="fa-solid fa-mountain-city" id='logo'></i> */}
                 </div>
                 <div className='sign-up-title'>
                     <h1 className='formTitle'>Sign up today to start planning your next adventure</h1>

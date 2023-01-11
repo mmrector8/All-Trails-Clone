@@ -87,17 +87,8 @@
     width: 100%;
     resize: both;
     overflow: scroll;
-    /* display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-columns: 50% 50%;
-    align-items: center; */
-    /* flex-direction: column; */
 } 
 
-/* .background-image-signup { */
-    /* width: 100%;
-    height: auto; */
-/* } */
 
 .login-link {
     font-weight: bold;
@@ -107,6 +98,14 @@
 #link-to-login-form{
     font-family: 'Manrope', sans-serif;
     font-size: 16px;
+}
+
+#logo-session-sign-up{
+    background-color: rgb(77, 255, 77);
+    border-radius: 50%;
+    height: 35px;
+    padding: 5px;
+    margin-bottom: -15px;
 }
 
 @media(max-width: 700px){

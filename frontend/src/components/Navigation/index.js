@@ -1,11 +1,18 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import ProfileButton from "./ProfileButton";
 import *  as NavCSS from './Navigation.css'
+import logo from "../../assets/logo.png"
 
 const Navigation = () =>{
     const sessionUser = useSelector(state=> state.session.user)
+    const history = useHistory();
+
+    const goHome = () =>{
+        history.push("/")
+        window.scrollTo({top: 0})
+    }
 
     let sessionLinks;
     if(sessionUser){
@@ -25,7 +32,8 @@ const Navigation = () =>{
             <nav> 
                 <div className="links">
                     <div className='logo-area'>
-                        <NavLink to="/" id='logo-text'><i className="fa-solid fa-mountain-city" id='logo'></i>BayAreaTrails</NavLink>
+                        <img src={logo} id="logo" onClick={goHome}></img>
+                        <NavLink to="/" id='logo-text'> BayAreaTrails</NavLink>
                     </div>
                 {sessionLinks}
                 </div>

@@ -4,6 +4,7 @@ import * as sessionActions from '../../store/session'
 import { Redirect, useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import './LoginForm.css'
+import logo from "../../assets/logo.png"
 
 
 const LoginFormPage = ({modal, closeModal})=>{
@@ -72,7 +73,7 @@ const LoginFormPage = ({modal, closeModal})=>{
             <div className={modal ? "background-image-container-login hidden-background" : "background-image-container-login"}>
                 <div className={modal ? "login-form hidden": "login-form"}>
                     <div className='login-header'>
-                        <i className="fa-solid fa-mountain-city" id='logo'></i>
+                        <img src={logo} id="logo-session"></img>
                     </div>
                     <div className='login-title'>
                         {modal ? <div className="must-be-logged-in"> You must be logged in to write a review! <br></br><br></br> Login Below</div> : <h1 className='login-form-title'>Welcome back. <br></br>Log in and start exploring.</h1>}
