@@ -57,14 +57,14 @@ const SearchBar = ({setSearchOpen, open}) =>{
                     <i className="fa-solid fa-magnifying-glass search-icon"></i>
                 <button className="go-to-show-page" onClick={handleGreenArrowClick}><i className="fa-solid fa-arrow-right"></i></button>
             </div>
-                {filteredData.length !== 0 && open === true &&  (
+                {open === true &&  (
                  <div className="search-results-container">
                      <div className="options">
                          <p className='searchbar-options'>All</p>
                          <p className='searchbar-options'>Hikes</p>
                          <p className='searchbar-options'>Parks</p>
                      </div>
-                    {filteredData.map((item, i)=>{
+                     {filteredData.length !== 0 ? filteredData.map((item, i)=>{
                         return (
                             <div className='search-results' key={i}>
                                 {item.parkId === undefined ? 
@@ -74,7 +74,10 @@ const SearchBar = ({setSearchOpen, open}) =>{
                                
                             </div>
                         );
-                   })}
+                   }) :  <div className='no-search-results'>
+                            <p className='searchbar-no-results-message'>Sorry, no results found!</p>
+                             <Link to="/hikes" onClick={() => window.scrollTo({ top: 0, left: 0 })} className='no-results-link'><p className='see-bay-area-hikes'>See Bay Area Hikes</p></Link>
+                        </div>}
                  </div>
                 )}
         </div>

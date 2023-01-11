@@ -32,7 +32,7 @@ const HikeIndexPage = ()=>{
                         <p className="arrow">{">"}</p>
                         <p className="State">California</p>
                         <p className="arrow">{">"}</p>
-                        <p className="State">City</p>
+                        <p className="State">Bay Area</p>
                     </div>
                     <div className="SF-photos">
                         <img src={walkinggirl} alt="Person hiking"className="SF-hike-images"></img>
