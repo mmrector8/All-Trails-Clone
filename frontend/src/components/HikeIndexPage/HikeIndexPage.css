@@ -15,10 +15,12 @@
     align-items: center;
     justify-content: left;
     height: 30px;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
 }
 
 .arrow, .Country, .State {
-    padding-left: 15px;
+    padding-left: 8px;
 }
 .trail-list {
     padding-top: 50px;
