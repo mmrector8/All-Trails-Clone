@@ -8,6 +8,7 @@ import HikeShowListItem from "./OtherHikesItem";
 import HikeMapWrapper, {HikeMap} from "../HikeMap";
 import HikeBigMapWrapper from "../HikeBigMap";
 import ReviewIndex from "../Reviews";
+import WeatherIndex from "../Weather";
 import { Link } from "react-router-dom";
 
 const HikeShowPage = ()=>{
@@ -132,7 +133,8 @@ const HikeShowPage = ()=>{
                     {getAllTagsFromReviews(reviews).length ? <div className="conditions-inner-container"><h1 className='conditions-title'>Conditions reported in the last 7 days: </h1> <div className="conditions">{getAllTagsFromReviews(reviews).map((condition, i) => <p className='tags' key={i}>{condition}</p>)}</div></div> : <div><h1 className="conditions-title large-conditions-title"> No conditions in reported in the last 7 days </h1> <p className='conditions-title'>Want to report conditions for this trail?<button onClick={scrollToReviewButton} className='scroll-to-write-a-review'>Write a review below</button>to inform other visitors!</p></div>}
                 </div>
                 <div className='weather'>
-                    <p> Weather modal here</p>
+                    <WeatherIndex />
+
                 </div>
                
                 <div className="reviews">
