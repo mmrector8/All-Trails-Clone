@@ -129,3 +129,14 @@
 .searchbar-park-name{
     padding-top: 5px;
 }
+
+@media(max-width: 700px){
+
+    .search-input-bar{
+        width: 450px;
+    }
+
+    .search-results-container{
+        width: 450px;
+    }
+}
