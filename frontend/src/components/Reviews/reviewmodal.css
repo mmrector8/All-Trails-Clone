@@ -241,7 +241,7 @@ input[type="radio"]:checked~.conditions-label {
     margin-top: 20px;
     left: 0;
     position: absolute;
-    margin-left: 20px;
+    margin-left: 30px;
     width: 250px;
 }
 

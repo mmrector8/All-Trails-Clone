@@ -146,7 +146,7 @@
     padding: 10px;
     font-size: 16px;
     font-family: "Manrope", sans-serif;
-    border: 1px solid rgb(175, 175, 175);
+    border: 1px solid rgb(103, 103, 103);
     margin: 10px;
     border-radius: 5px;
     width: auto;
@@ -250,6 +250,7 @@
 
 
 .conditions-container{
+    color: rgb(77, 77, 77);
     margin-left: 5px;
     margin-right: 5px;
     border-bottom: 1px solid rgb(177, 177, 177);
@@ -308,6 +309,7 @@
 }
 
 .all-tags{
+    color: rgb(79, 78, 78);
     display: grid;
     grid-template-columns: repeat(5, 110px);
     grid-template-rows: 1fr 1fr;

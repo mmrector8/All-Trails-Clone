@@ -469,6 +469,12 @@
 
 
 @media (min-width: 1420px) {
+    .adventure-parks-list {
+            grid-template-columns: repeat(5, 250px);
+            grid-template-rows: repeat(3, 100px);
+        }
+
+
     .searchbar-container {
         padding-top: 9.65%;
     }
@@ -485,9 +491,6 @@
         grid-template-rows: repeat(4, 100px);
     }
 
-    /* .adventure-anywhere-container {
-        background-color: blue;
-    } */
 }
 
 @media(max-width: 1200px) {
