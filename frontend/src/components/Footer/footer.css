@@ -38,6 +38,21 @@
 }
 
 .morgan-links{
+    width: auto;
     color: white;
     cursor: pointer;
+    width: 120px;
+}
+
+.morgan-link-icon{
+    font-size: 26px;
+    padding: 10px;
+}
+
+.thanks{
+    font-size: 20px;
+}
+
+.check-it-out{
+    font-size: 22px;
 }
