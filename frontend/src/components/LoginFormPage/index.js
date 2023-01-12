@@ -82,9 +82,9 @@ const LoginFormPage = ({modal, closeModal})=>{
                     <div className='login-body'>
                             <form onSubmit={handleSubmit}>
                                 <div className='form-elements'>
-                                <ul>
+                                <ul className='error-container-sign-in'>
                                     {errors.map((error) => (
-                                        <li key={error}>{error}</li>
+                                        <li key={error} className='sign-in-errors'>{error}</li>
                                     ))}
                                 </ul>
                                 <input type ='text' value={credential} onChange={((e)=> setCredential(e.target.value))} placeholder="Username or email" className='input-value'></input>

@@ -143,6 +143,21 @@
     border-radius: 50%;
 }
 
+.error-container-sign-in {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 195px;
+    top: 0;
+}
+
+.sign-in-errors {
+    text-align: center;
+    font-family: sans-serif;
+    color: red;
+    font-size: 18px;
+}
+
 @media(max-width: 700px){
     .background-image-container-login {
         background-image: url("../../assets/hiker.jpg");
