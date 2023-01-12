@@ -56,6 +56,7 @@ const ReviewModal = ({open, setIsOpen, hike, review}) =>{
            
           return dispatch(updateReview(data))
                 .then(()=> setIsOpen(false))
+                .then(()=> setPageNum(1))
                 .catch(async (res) => {
                   let data;
                   try {
@@ -188,7 +189,7 @@ const ReviewModal = ({open, setIsOpen, hike, review}) =>{
                         <div className="activity-type-dropdown">
                             <p className="activity-type-label">Activity Type</p>
                             <select value={activityType} onChange={(e => setActivityType(e.target.value))}>
-                                <option selected>Select</option>
+                                <option default>Select</option>
                                 {activities?.map((activity, i) => <option value={activity} key={i}>{activity}</option>)}
                             </select>
                         </div> 
