@@ -9,9 +9,9 @@ const Footer = () =>{
                 
                 <div className='footer-item-container'>
                     <div className='footer-sections'>
-                        <p className="footer-first-section">An app for the outdoors</p>
-                        <p className="footer-first-section">Members for the planet</p>
-                        <p className="footer-first-section">Connect with yourself</p>
+                        <p className="footer-first-section"><i className="fa-solid fa-earth-americas"></i>An app for the outdoors</p>
+                        <p className="footer-first-section"><i className="fa-solid fa-earth-americas"></i>Members for the planet</p>
+                        <p className="footer-first-section"><i className="fa-solid fa-earth-americas"></i>Connect with yourself</p>
                     </div>
                     <div className="morgan-links-container">
                         <p className="thanks">Thanks for visiting!</p>

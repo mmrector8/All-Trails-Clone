@@ -56,3 +56,65 @@
 .check-it-out{
     font-size: 22px;
 }
+
+.fa-earth-americas{
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+
+
+@media(max-width: 1200px){
+    .footer-item-container{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+@media(max-width: 920px){
+
+    .footer-item-container {
+            padding-left: 75px;
+            padding-right: 75px;
+        }
+        .footer-sections,
+        .morgan-links-container {
+            line-height: 30px;
+            padding: 20px;
+        }
+}
+
+@media(max-width: 800px){
+
+
+    .footer-item-container {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .footer-sections{
+            line-height: 20px;
+        }
+}
+
+@media(max-width: 680px) {
+
+
+    .footer-item-container {
+        background-color: pink;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .footer-sections {
+        line-height: 20px;
+    }
+
+    .footer-first-section{
+        line-height: 20px;
+    }
+
+        .fa-earth-americas {
+            display: none;
+        }
+}
