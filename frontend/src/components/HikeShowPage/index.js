@@ -111,8 +111,8 @@ const HikeShowPage = ()=>{
                 </div>
                 <div className='sidebar'>
                     <div className='sidebar-map-container'>
-                        {/* <HikeMapWrapper hikes={[hike]} isShow={isShow}/> */}
-                        <img src={placeholdermap} alt="map" className="sidebar-map"></img>
+                        <HikeMapWrapper hikes={[hike]} isShow={isShow} disableDefaultUI={true}/>
+                        {/* <img src={placeholdermap} alt="map" className="sidebar-map"></img> */}
                     </div>
                     <div className="other-hikes">
                             <h1 className='nearby-trails'>Nearby trails</h1>

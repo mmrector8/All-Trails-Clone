@@ -18,8 +18,8 @@ const SearchBar = ({setSearchOpen, open}) =>{
         return null;
     }
 
-    let parksAndHikes = hikes.concat(parks)
-
+    let parksAndHikes = ([parks[0]]).concat([hikes[0]]).concat([parks[1]]).concat(hikes.slice(1, hikes.length)).concat(parks.slice(2, parks.length))
+   
      const handleFilter = (e)=>{
             setSearchOpen(true)
             const searchedWord = e.target.value;
@@ -68,8 +68,8 @@ const SearchBar = ({setSearchOpen, open}) =>{
                         return (
                             <div className='search-results' key={i}>
                                 {item.parkId === undefined ? 
-                                    <Link to={`parks/${item.id}`} className="search-results-link" onClick={() => window.scrollTo({ top: 0, left: 0 })}><p className='searchbar-hike-name'>{item.name}</p></Link>
-                                    : <Link to={`hikes/${item.id}`} className="search-results-link" onClick={() => window.scrollTo({ top: 0, left: 0 })}><p className='searchbar-hike-name'>{item.name}</p> <p className="searchbar-park-name" id="searchbar-park-name">{item.parkName}</p></Link>
+                                    <Link to={`parks/${item.id}`} className="search-results-link" onClick={() => window.scrollTo({ top: 0, left: 0 })}> <i className="fa-solid fa-tree searchbar-icon tree-searchbar"></i><p className='searchbar-hike-name searchbar-park-name'>{item.name}</p></Link>
+                                    : <Link to={`hikes/${item.id}`} className="search-results-link" onClick={() => window.scrollTo({ top: 0, left: 0 })}><i className="fa-solid fa-location-dot searchbar-icon"></i><div><p className='searchbar-hike-name'>{item.name}</p> <p className="searchbar-park-name" id="searchbar-park-name">{item.parkName}</p></div></Link>
                                 }
                                
                             </div>

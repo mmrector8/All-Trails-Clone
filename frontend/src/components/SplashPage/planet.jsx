@@ -3,8 +3,6 @@ import { useSelector } from 'react-redux';
 
 const ForPlanet = ({currentUser})=>{
 
-    // const sessionUser = useSelector(state => state.session.user)
-
     const history = useHistory();
 
     const handleClick = () =>{

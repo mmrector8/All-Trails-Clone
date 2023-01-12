@@ -291,6 +291,7 @@
     padding-bottom: 80px;
 }
 .parks-worth-look{
+    width: 175vh;
     font-size: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid rgb(203, 203, 203);
@@ -441,86 +442,6 @@
 }
 
 
-@media (min-width: 1420px){
-
-
-    .searchbar-container{
-        padding-top: 9.65%;
-    }
-
-    .splash-search-bar {
-        margin-top: -200px;
-    }
-
-}
-
-@media (max-width: 1050px){
-
-    .give-back-link-container{
-        padding-top: 40px;
-    }
-}
-
-@media (max-width: 950px) {
-
-   .for-planet-section-title{
-    font-size: 20px;
-   }
-
-   .para-planet{
-        font-size: 16px;
-        margin-bottom: 40px;
-   }
-
-   .p-for-planet,.trees, .no-trace{
-        padding: 30px;
-   }
-
-}
-
-@media (max-width: 800px){
-
-    .p-for-planet, .trees, .no-trace {
-        line-height: 20px;
-    }
-    
-     .para-planet {
-        font-size: 18px;
-        margin-bottom: 40px;
-        line-height: 30px;
-    }
-}
-
- @media (max-width: 700px) {
-
-     .p-for-planet,
-     .trees,
-     .no-trace {
-         line-height: 20px;
-     }
-
-     .para-planet {
-         font-size: 16px;
-         margin-bottom: 40px;
-         line-height: 20px;
-     }
- }
-
-@media (max-width: 400px) {
-
-    .p-for-planet,
-    .trees,
-    .no-trace {
-        line-height: 30px;
-    }
-
-    .para-planet {
-        font-size: 16px;
-        margin-bottom: 40px;
-        line-height: 26px;
-    }
-}
-
 .rec.rec-arrow {
     border-radius: 50%;
     background-color: white;
@@ -540,54 +461,187 @@
     background-color: rgb(177, 177, 177);
 }
 
-@media(max-width: 1200px){
-    .splash-container-2{
+
+
+
+
+@media (min-width: 1420px) {
+    .searchbar-container {
+        padding-top: 9.65%;
+    }
+
+    .splash-search-bar {
+        margin-top: -200px;
+    }
+
+}
+
+@media(max-width: 1300px) {
+    .adventure-parks-list {
+        grid-template-columns: repeat(3, 250px);
+        grid-template-rows: repeat(4, 100px);
+    }
+
+    /* .adventure-anywhere-container {
+        background-color: blue;
+    } */
+}
+
+@media(max-width: 1200px) {
+
+    .splash-container-2 {
         padding-right: 50px;
     }
 }
 
+
+
+@media (max-width: 1050px) {
+    .give-back-link-container {
+        padding-top: 40px;
+    }
+
+
+}
+
 @media(max-width: 950px) {
+    .for-planet-section-title {
+        font-size: 20px;
+    }
+
+    .para-planet {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .p-for-planet,
+    .trees,
+    .no-trace {
+        padding: 30px;
+    }
+
     .activity-images {
-      
+
         margin-top: -50px;
         width: 500px;
         grid-template-columns: repeat(2, 120px);
         grid-template-rows: repeat(4, 120px);
     }
 
-    .trails-that-fit-nature{
+    .trails-that-fit-nature {
         font-size: 30px;
     }
 
-    .pushing-limits{
+    .pushing-limits {
         font-size: 16px;
     }
 
-    .splash-container-2{
+    .splash-container-2 {
         padding-left: -10px;
         padding-right: 20px;
     }
 
-    .splash-container-2-description{
-        width:600px;
+    .splash-container-2-description {
+        width: 600px;
         margin-left: 38px;
     }
+
     .local-bay-activity-images {
         height: 140px;
         width: 140px;
     }
 
-    .local-bay-activity-images:hover{
+    .local-bay-activity-images:hover {
         height: 141px;
         width: 142px;
     }
 
     .inspiring-image-title,
-        .inspiring-image-description {
-            padding-left: 50px;
-        }
+    .inspiring-image-description {
+        padding-left: 50px;
+    }
 
-    .inspiring-image-description{
+    .inspiring-image-description {
         width: 400px;
+    }
+
+    .adventure-parks-list {
+        grid-template-columns: repeat(2, 250px);
+        grid-template-rows: repeat(5, 100px);
+    }
+
+    /* .adventure-anywhere-container {
+        margin-left: 30px;
+    } */
+}
+
+
+
+@media (max-width: 800px) {
+
+    .p-for-planet,
+    .trees,
+    .no-trace {
+        line-height: 20px;
+    }
+
+    .para-planet {
+        font-size: 18px;
+        margin-bottom: 40px;
+        line-height: 30px;
+    }
+
+    .reasons-to-sign-up {
+        flex-direction: column;
+    }
+
+    .adventure-parks-list-small-container {
+        width: 200px;
+    }
+
+    .adventure-parks-list {
+        row-gap: 10px;
+        column-gap: 5px;
+    }
+
+    .small-index-photos-aws {
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+    }
+
+     .adventure-anywhere-container {
+            margin-left: 20px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .p-for-planet,
+    .trees,
+    .no-trace {
+        line-height: 20px;
+    }
+
+    .para-planet {
+        font-size: 16px;
+        margin-bottom: 40px;
+        line-height: 20px;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .p-for-planet,
+    .trees,
+    .no-trace {
+        line-height: 30px;
+    }
+
+    .para-planet {
+        font-size: 16px;
+        margin-bottom: 40px;
+        line-height: 26px;
     }
 }

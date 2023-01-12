@@ -3,10 +3,13 @@
     height: 35vh;
     border-radius: 30px;
 }
+button{
+    border-radius: 20px;
+}
 
-/* .small-map{
-    width: 75%;
-    height: 30vh;
+.small-map{
+    width: 250px;
+    height: 220px;
     margin-left: 37px;
     margin-bottom: 20px;
-} */
+}

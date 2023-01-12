@@ -9,7 +9,8 @@
 }
 
 .hike-show-page {
-    width: 1010px;
+    max-width: 1010px;
+    margin-left: 20px;
    background-color: white;
    border: 1px solid rgb(177, 177, 177);
    border-radius: 16px;
@@ -308,8 +309,7 @@
 
 .all-tags{
     display: grid;
-    grid-template-columns: repeat(5, 110px);
-    grid-template-rows: 1fr 1fr;
+    
     row-gap: 10px;
     padding-top: 10px;
     padding-bottom: 20px;
@@ -335,11 +335,32 @@
     font-size: 18px;
 border-bottom: 1px solid rgb(177, 177, 177);
 }
-@media (max-width: 700px){
+@media (max-width: 800px){
 
     .grid-elements{
         width: 100%;
         display: flex;
         flex-direction: column;
+    }
+}
+
+@media(max-width: 530px){
+    .long-description, .body-descriptors{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .small-map{
+        margin-left: 120px;
+    }
+
+    .other-hikes{
+        margin-left: 80px;
+    }
+
+
+    .all-tags{
+        grid-template-columns: repeat(4, 110px);
+            grid-template-rows: 1fr 1fr 1fr;
     }
 }

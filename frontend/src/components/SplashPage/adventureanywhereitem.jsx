@@ -8,7 +8,7 @@ const AdventureAnywhereItem = ({hike})=>{
     }
 
     const handleClick = () => {
-        let path = `/hikes${hike.id}`
+        let path = `/hikes/${hike.id}`
         history.push(path)
         window.scrollTo({ top: 0, left: 0 })
     }

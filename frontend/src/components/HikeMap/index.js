@@ -2,7 +2,7 @@ import * as mapcss from "./hike-map.css"
 import {useMemo} from 'react'
 import {GoogleMap, useLoadScript, Marker} from "@react-google-maps/api"
 import treeicon from "../../assets/treeicon.png"
-const HikeMapWrapper = ({hikes, isShow}) =>{
+const HikeMapWrapper = ({hikes, isShow, disableDefaultUI}) =>{
     const {isLoaded} =  useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_MAPS_API_KEY,
     })
@@ -15,16 +15,23 @@ const HikeMapWrapper = ({hikes, isShow}) =>{
     return (
         <>
             <div className="hike-map-wrapper">
-                <HikeMap hikes={hikes} isShow={isShow}/>
+                <HikeMap hikes={hikes} isShow={isShow} disableDefaultUI={disableDefaultUI}/>
             </div>
         </>
     )
 }
 export default HikeMapWrapper;
 
-export const HikeMap = ({hikes, isShow}) =>{
+export const HikeMap = ({hikes, isShow, disableDefaultUI}) =>{
     const image ={
         url: treeicon,
+    }
+
+    const options={
+        disableDefaultUI: disableDefaultUI,
+        mapTypeId: "terrain",
+        zoomControl: true,
+        rotateControl: true
     }
     if(!hikes[0]){
         return null;
@@ -35,7 +42,7 @@ export const HikeMap = ({hikes, isShow}) =>{
     // const center = useMemo(()=>({lat: latitude, lng: longitude }),[])
     return (
         <>
-        <GoogleMap zoom={isShow ? 14 : 10} center={center} mapContainerClassName={isShow ? 'small-map map-container' :'map-container'}>
+            <GoogleMap zoom={isShow ? 12 : 10} center={center} mapContainerClassName={isShow ? 'small-map map-container' : 'map-container'} options={options}>
             {hikes?.map((hike, i) => <Marker position={{ lat: hike.latitude, lng: hike.longitude }} icon={image} mapContainerClassName='marker' key={i}/>)} 
         </GoogleMap>
         </>
