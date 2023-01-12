@@ -154,6 +154,11 @@ select {
     background-color: #1e3c00;
 }
 
+.next-page-modal-button:disabled{
+    background-color: grey;
+    border: grey;
+}
+
 #go-back-button {
     background-color: white;
     color: #1e3c00;
@@ -231,14 +236,16 @@ input[type="radio"]:checked~.conditions-label {
     font-size: 16px;
 }
 
-/* .conditions-radio-buttons{
-} */
-/* 
-.conditions1{
-    border: 1px solid black;
+.errors{
+    margin-top: 20px;
+    left: 0;
+    position: absolute;
+    margin-left: 20px;
+    width: 250px;
 }
- .conditions-label:hover,
- .conditions-label:hover~label,
- input[type="radio"]:checked~.conditions-label {
-     color: #5de372;
- } */
+
+.review-errors{
+    font-family: sans-serif;
+    color: red;
+    margin-top: 5px;
+}

@@ -109,7 +109,7 @@ const ReviewModal = ({open, setIsOpen, hike, review}) =>{
     }
 
 
-    const activities = ['backpacking', 'bird watching', 'bike touring', 'camping', 'fishing', 'hiking', 'horseback riding', 'mountain biking', 'road biking', 'rock climbing', 'skiing', 'running', 'walking']
+    const activities = ['hiking', 'backpacking', 'bird watching', 'bike touring', 'camping', 'fishing', 'horseback riding', 'mountain biking', 'road biking', 'rock climbing', 'skiing', 'running', 'walking']
     const conditionOptions = ['Great!', 'Blowdown', 'Bridge out', 'Bugs', 'Closed', 'Fee', 'Flooded', 'Muddy', 'No shade', 'Off trail', 'Overgrown', 'Rocky', 'Washed out']
 
   
@@ -118,10 +118,12 @@ const ReviewModal = ({open, setIsOpen, hike, review}) =>{
         if(isEdit){
             return;
         }else{
+            setPageNum(1)
             setStars(0)
             setContent("")
             setActivityType("")
             setConditions("")
+            setErrors([])
         }
     }
 
@@ -163,14 +165,15 @@ const ReviewModal = ({open, setIsOpen, hike, review}) =>{
                                 <textarea value={content} onChange={(e => setContent(e.target.value))} className='textarea' required/>
                             </div>
                             <div className='button-container'>
-                                <button onClick={()=> setPageNum(2)} className="next-page-modal-button" id="next-page-modal-button">Next Page</button>
+                                <button onClick={()=> setPageNum(2)} className="next-page-modal-button" id="next-page-modal-button" disabled={stars >=1 ? false : true}>Next Page</button>
                             </div>
                         </> : <> 
                         <span className='page-num'>Page 2 of 2</span>
                         <div className="activity-type-dropdown">
                             <p className="activity-type-label">Activity Type</p>
                             <select value={activityType} onChange={(e => setActivityType(e.target.value))}>
-                                {activities?.map((activity, i) => <option value={activity} key={i} required>{activity}</option>)}
+                                <option selected>Select</option>
+                                {activities?.map((activity, i) => <option value={activity} key={i}>{activity}</option>)}
                             </select>
                         </div> 
                             <label className="trail-conditions-label">Trail Conditions  </label>
@@ -184,11 +187,11 @@ const ReviewModal = ({open, setIsOpen, hike, review}) =>{
                                 
                             <div className="button-container">
                                     <div className="errors">
-                                        <ul>
+                                        <ol className='error-list'>
                                             {errors.map((error) => (
-                                                <li key={error}>{error}</li>
+                                                <li key={error} className='review-errors'>{error}</li>
                                             ))}
-                                        </ul>
+                                        </ol>
                                     </div>
                                     <button onClick={(() => setPageNum(1))} className="go-back-button" id="go-back-button">Go Back</button>
                                 <button type="submit" className='post-review-button'>{isEdit ? "Edit" : "Post"}</button>

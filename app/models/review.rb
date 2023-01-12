@@ -15,9 +15,9 @@
 class Review < ApplicationRecord
 
     validates :user_id, :hike_id, presence: true
-    validates :content, presence: true,  length: {in: 3...250, message: "Your review must be between 2 and 250 characters"}
-    validates :stars, inclusion: {in: 1..5, message: "You must select a star rating"}
-    validates :activity_type, inclusion: {in: ['backpacking', 'bird watching', 'bike touring', 'camping', 'fishing', 'hiking', 'horseback riding', 'mountain biking', 'road biking', 'rock climbing', 'skiing', 'running', 'walking'], message: "You must select an activity type"}
+    validates :content, presence: true,  length: {in: 3...250, message: "must be between 2 and 250 characters"}
+    validates :stars, inclusion: {in: 1..5, message: "must be selected"}
+    validates :activity_type, inclusion: {in: ['backpacking', 'bird watching', 'bike touring', 'camping', 'fishing', 'hiking', 'horseback riding', 'mountain biking', 'road biking', 'rock climbing', 'skiing', 'running', 'walking'], message: "must be selected"}
 
 
     belongs_to :user
