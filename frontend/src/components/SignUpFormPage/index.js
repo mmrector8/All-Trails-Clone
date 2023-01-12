@@ -54,9 +54,9 @@ const SignUpForm = () => {
                 <div className='sign-up-body'>
                     <form onSubmit={handleSubmit}>
                         <div className="form-elements">
-                            <ul>
+                            <ul className='error-container'>
                                 {errors.map((error) => (
-                                    <li key={error}>{error}</li>
+                                    <li key={error} className='sign-up-errors'>{error}</li>
                                 ))}
                             </ul>
                             <input type="text" className='input-value' value={fname} onChange={((e) => setFname(e.target.value))} placeholder='First Name' required />

@@ -12,7 +12,7 @@
     padding: 24px;
     width: 400px;
     max-width: 70%;
-    height: 680px;
+    height: 690px;
     /* max-height: 90%; */
     z-index: 10;
     border-radius: 25px;
@@ -39,13 +39,14 @@
 }
 
 .formTitle {
-    font-size: 28px;
+    font-size: 25px;
     font-family: 'Manrope', sans-serif;
     text-align: center;
 }
 
 
 .form-elements {
+    margin-top: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,6 +107,21 @@
     height: 35px;
     padding: 5px;
     margin-bottom: -15px;
+}
+
+.error-container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 143px;
+    top: 0;
+}
+
+.sign-up-errors{
+    text-align: center;
+    font-family: sans-serif;
+    color: red;
+    font-size: 18px;
 }
 
 @media(max-width: 700px){
