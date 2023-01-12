@@ -7,7 +7,6 @@ import LocalFavorites from "./localfavorites";
 import Activities from "./activities";
 import InspiringImage from "./inspiringimage";
 import julia from "../../assets/julia.jpg"
-import walkinggirl from "../../assets/walkinggirl.jpg"
 import alexbackground from "../../assets/alexbackground.png"
 import splashresized from "../../assets/splashresized.jpg"
 import singlesplash from "../../assets/singlesplash.jpg"
@@ -36,9 +35,9 @@ const SplashPage = ()=>{
     ]
 
     const smallerImages = [
-        splashresized,
         singlesplash,
-        walkinggirl
+        splashresized,
+        singlesplash
     ]
 
     useEffect(()=>{
@@ -64,7 +63,7 @@ const SplashPage = ()=>{
         <div onClick={handleClickAway}>
             <div className="searchbar-container" >
                 <img src={images[currentImgIdx]} id="background-image"></img>
-                <img src={images[currentImgIdx]} id="small-background-image"></img>
+                <img src={smallerImages[currentImgIdx]} id="small-background-image"></img>
                 <div className="splash-search-bar">
                     
                     <h1 className='splash-title'>{currentUser ? `Ready to do this, ${currentUser.fname}?`: "Find your outdoors"}</h1>

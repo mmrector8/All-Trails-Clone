@@ -580,13 +580,20 @@
 
 
 
+
 @media (max-width: 800px) {
 
-    /* #background-image{
-        display: none;
-    } */
+    .splash-title {
+            font-size: 50px;
+            text-align: center;
+        }
 
-    /* #small-background-image{
+    #background-image {
+        display: none;
+    }
+
+    #small-background-image {
+        display: grid;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -595,10 +602,12 @@
         overflow-x: hidden;
         z-index: -1;
         position: absolute;
-    } */
+    }
+
 
     .splash-title {
         font-size: 50px;
+        text-align: center;
         }
 
     .p-for-planet,
@@ -637,9 +646,13 @@
     }
 }
 
+
+
 @media (max-width: 700px) {
 
-
+    .splash-title{
+        text-align: center;
+    }
 
     .p-for-planet,
     .trees,
