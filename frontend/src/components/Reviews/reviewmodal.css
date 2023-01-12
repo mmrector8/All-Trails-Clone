@@ -155,7 +155,8 @@ select {
 }
 
 .next-page-modal-button:disabled{
-    background-color: grey;
+    color: rgb(196, 196, 196);
+    background-color: rgb(162, 162, 162);
     border: grey;
 }
 

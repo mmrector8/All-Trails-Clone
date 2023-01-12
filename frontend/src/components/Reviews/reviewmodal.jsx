@@ -1,6 +1,6 @@
 import * as reviewmodalcss from "./reviewmodal.css"
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import { createReview, getReview, fetchReview, updateReview } from "../../store/reviews";
 import { useParams } from "react-router-dom";
 import { Redirect } from "react-router-dom";
@@ -9,6 +9,7 @@ const ReviewModal = ({open, setIsOpen, hike, review}) =>{
     const user = useSelector((state)=> state.session.user)
     const dispatch = useDispatch();
     const [stars, setStars] = useState(0)
+    const [starChecked, setStarChecked] = useState(false)
     const [content, setContent] = useState('')
     const [activityType, setActivityType] = useState('hiking')
     const [conditions, setConditions] = useState([]) 
@@ -127,6 +128,20 @@ const ReviewModal = ({open, setIsOpen, hike, review}) =>{
         }
     }
 
+    const starValue = (e)=>{
+        if(stars !== e.target.value){
+            setStars(e.target.value)
+        }else if(e.target.value === 1 && starChecked === false) {
+            setStars(e.target.value)
+            setStarChecked(true)
+        }else if(e.target.value===1 % starChecked === true){
+            setStars(0)
+            setStarChecked(false)
+        }else{
+            setStars(0)
+        }
+    }
+
 
     return (
         <>
@@ -139,33 +154,34 @@ const ReviewModal = ({open, setIsOpen, hike, review}) =>{
                         {pageNum === 1 ? <> 
                             <span className='page-num'>Page 1 of 2</span>
                             <div className="star-rating">
-                                <input id="5" type="radio" name="rating" value={5} onChange={(e => setStars(e.target.value))} checked={stars == 5 ? "checked" : ""} />
+                                <input id="5" type="radio" name="rating" value={5} onChange={starValue} checked={stars == 5 ? "checked" : ""} />
                                     <label htmlFor="5" title="5 stars" className="star-label" >
                                     <i className="active fa fa-star" aria-hidden="true"></i>
                                 </label>
-                                <input id="4" type="radio" name="rating" value={4} onChange={(e => setStars(e.target.value))} checked={stars == 4 ? "checked" : ""} />
+                                <input id="4" type="radio" name="rating" value={4} onChange={starValue} checked={stars == 4 ? "checked" : ""} />
                                 <label htmlFor="4" title="4 stars" className="star-label" >
                                     <i className="active fa fa-star" aria-hidden="true"></i>
                                 </label>
-                                <input id="3" type="radio" name="rating" value={3} onChange={(e => setStars(e.target.value))} checked={stars == 3 ? "checked" : ""} />
+                                <input id="3" type="radio" name="rating" value={3} onChange={starValue} checked={stars == 3 ? "checked" : ""} />
                                 <label htmlFor="3" title="3 stars" className="star-label" >
                                     <i className="active fa fa-star" aria-hidden="true"></i>
                                 </label>
-                                <input id="2" type="radio" name="rating" value={2} onChange={(e => setStars(e.target.value))} checked={stars == 2 ? "checked" : ""} />
+                                <input id="2" type="radio" name="rating" value={2} onChange={starValue} checked={stars == 2 ? "checked" : ""} />
                                 <label htmlFor="2" title="2 stars" className="star-label" >
                                     <i className="active fa fa-star" aria-hidden="true"></i>
                                 </label>
-                                <input id="1" type="radio" name="rating" value={1} onChange={(e => setStars(e.target.value))} checked={stars ===1 ? "checked" : ""} />
+                                <input id="1" type="radio" name="rating" value={1} onChange={starValue} checked={stars == 1 ? "checked" : ""} />
                                 <label htmlFor="1" title="1 stars" className="star-label" >
                                     <i className="active fa fa-star" aria-hidden="true"></i>
                                 </label>
+
                             </div>
                             <div className="review-content">
                                 <label className="review-content-label">Review</label>
                                 <textarea value={content} onChange={(e => setContent(e.target.value))} className='textarea' required/>
                             </div>
                             <div className='button-container'>
-                                <button onClick={()=> setPageNum(2)} className="next-page-modal-button" id="next-page-modal-button" disabled={stars >=1 ? false : true}>Next Page</button>
+                                <button onClick={()=> setPageNum(2)} className="next-page-modal-button" id="next-page-modal-button" disabled={stars >=1 && content.length >= 3 ? false : true} >Next Page</button>
                             </div>
                         </> : <> 
                         <span className='page-num'>Page 2 of 2</span>
