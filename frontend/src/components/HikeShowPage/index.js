@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getHike, fetchHike} from "../../store/hikes";
 import placeholdermap from "../../assets/placeholdermap.png"
 import * as HikeShowCss from "./HikeShowPage.css"
@@ -11,6 +11,7 @@ import ReviewIndex from "../Reviews";
 import { Link } from "react-router-dom";
 
 const HikeShowPage = ()=>{
+    const [isShow, setIsShow] = useState(true);
     const dispatch = useDispatch();
     const { hikeId } = useParams();
     let hike = useSelector(getHike(hikeId))
@@ -110,6 +111,7 @@ const HikeShowPage = ()=>{
                 </div>
                 <div className='sidebar'>
                     <div className='sidebar-map-container'>
+                        {/* <HikeMapWrapper hikes={[hike]} isShow={isShow}/> */}
                         <img src={placeholdermap} alt="map" className="sidebar-map"></img>
                     </div>
                     <div className="other-hikes">

@@ -44,11 +44,6 @@ const SplashPage = ()=>{
         return ()=> clearInterval(backgroundInterval)
     }, [currentImgIdx])
 
-
-    // if (!currentUser) {
-    //     return null;
-    // }
-
     const handleClickAway =(e)=>{
         e.preventDefault();
         if(searchOpen){

@@ -2,7 +2,7 @@ import * as mapcss from "./hike-map.css"
 import {useMemo} from 'react'
 import {GoogleMap, useLoadScript, Marker} from "@react-google-maps/api"
 import treeicon from "../../assets/treeicon.png"
-const HikeMapWrapper = ({hikes}) =>{
+const HikeMapWrapper = ({hikes, isShow}) =>{
     const {isLoaded} =  useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_MAPS_API_KEY,
     })
@@ -15,14 +15,14 @@ const HikeMapWrapper = ({hikes}) =>{
     return (
         <>
             <div className="hike-map-wrapper">
-                <HikeMap hikes={hikes}/>
+                <HikeMap hikes={hikes} isShow={isShow}/>
             </div>
         </>
     )
 }
 export default HikeMapWrapper;
 
-export const HikeMap = ({hikes}) =>{
+export const HikeMap = ({hikes, isShow}) =>{
     const image ={
         url: treeicon,
     }
@@ -35,7 +35,7 @@ export const HikeMap = ({hikes}) =>{
     // const center = useMemo(()=>({lat: latitude, lng: longitude }),[])
     return (
         <>
-        <GoogleMap zoom={10} center={center} mapContainerClassName='map-container'>
+        <GoogleMap zoom={isShow ? 14 : 10} center={center} mapContainerClassName={isShow ? 'small-map map-container' :'map-container'}>
             {hikes?.map((hike, i) => <Marker position={{ lat: hike.latitude, lng: hike.longitude }} icon={image} mapContainerClassName='marker' key={i}/>)} 
         </GoogleMap>
         </>
