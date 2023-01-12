@@ -81,7 +81,7 @@ const LoginFormPage = ({modal, closeModal})=>{
                     
                     <div className='login-body'>
                             <form onSubmit={handleSubmit}>
-                                <div className='form-elements'>
+                                <div className='sign-in-form-elements'>
                                 <ul className='error-container-sign-in'>
                                     {errors.map((error) => (
                                         <li key={error} className='sign-in-errors'>{error}</li>
@@ -92,7 +92,7 @@ const LoginFormPage = ({modal, closeModal})=>{
                                 <button type='submit' className='login-form-buttons'>Log in</button>
                                 </div>
                             </form>
-                                <div className ='form-elements'>
+                                <div className ='sign-in-form-elements'>
                                     <button onClick={demoUser} className ='login-form-buttons'>Demo Login</button>
                                     <p id='link-to-sign-up-form'>Don't have an account?</p>
                                 <Link to="/signup" className='signup-link' onClick={(() => window.scrollTo({ top: 0 }))}>Sign up for free</Link>
