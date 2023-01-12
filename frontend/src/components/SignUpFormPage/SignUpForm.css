@@ -11,7 +11,7 @@
     border: 2px solid rgba(0, 0, 0, 0.165);
     padding: 24px;
     width: 400px;
-    max-width: 70%;
+    /* max-width: 70%;x */
     height: 690px;
     /* max-height: 90%; */
     z-index: 10;

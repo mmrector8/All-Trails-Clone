@@ -309,7 +309,8 @@
 
 .all-tags{
     display: grid;
-    
+    grid-template-columns: repeat(5, 110px);
+    grid-template-rows: 1fr 1fr;
     row-gap: 10px;
     padding-top: 10px;
     padding-bottom: 20px;
