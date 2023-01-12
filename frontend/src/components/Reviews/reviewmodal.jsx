@@ -146,7 +146,7 @@ const ReviewModal = ({open, setIsOpen, hike, review}) =>{
 
     return (
         <>
-            <div className="overlay"></div>
+            <div className="overlay" onClick={closeModal}></div>
             <div className='modal-content'>
                 <button onClick={closeModal} className="exit-modal">X</button>
                 <h1 className="review-hike-title">{hike.name}</h1>
