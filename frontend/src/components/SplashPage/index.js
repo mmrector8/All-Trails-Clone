@@ -19,8 +19,8 @@ import { fetchParks, getParks } from "../../store/parks";
 const SplashPage = ()=>{
     const [currentImgIdx, setCurrentImgIdx] = useState(0)
     const[searchOpen, setSearchOpen] = useState(false);
+    const currentUser = useSelector((state)=> state.session.user)
     const dispatch = useDispatch();
-   
 
     useEffect(() => {
         dispatch(fetchHikes())
@@ -45,6 +45,10 @@ const SplashPage = ()=>{
     }, [currentImgIdx])
 
 
+    // if (!currentUser) {
+    //     return null;
+    // }
+
     const handleClickAway =(e)=>{
         e.preventDefault();
         if(searchOpen){
@@ -59,7 +63,7 @@ const SplashPage = ()=>{
                 <img src={images[currentImgIdx]} id="background-image"></img>
                 <div className="splash-search-bar">
                     
-                    <h1 className='splash-title'>Find your outdoors</h1>
+                    <h1 className='splash-title'>{currentUser ? `Ready to do this, ${currentUser.fname}?`: "Find your outdoors"}</h1>
                     <SearchBar setSearchOpen={setSearchOpen} open={searchOpen}/>
                     <Link to={'/hikes'} onClick={()=>window.scrollTo({ top: 0, left: 0 })}className='explore-link'>Explore trails in the Bay</Link>
                 </div>    
@@ -69,7 +73,7 @@ const SplashPage = ()=>{
             <InspiringImage /> 
             <ReasonsToSignUp />
             <AdventureAnywhere />
-            <ForPlanet />
+            <ForPlanet currentUser={currentUser}/>
         </div>
         </div>
     )

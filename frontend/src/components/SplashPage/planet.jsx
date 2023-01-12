@@ -1,9 +1,9 @@
 import {Link, Redirect, useHistory} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-const ForPlanet = ()=>{
+const ForPlanet = ({currentUser})=>{
 
-    const sessionUser = useSelector(state => state.session.user)
+    // const sessionUser = useSelector(state => state.session.user)
 
     const history = useHistory();
 
@@ -33,7 +33,7 @@ const ForPlanet = ()=>{
                     <p className="para-planet">As a Leave No Trace partner, we’re committed to keeping outdoor spaces clean, safe, and kind.</p>
                 </div>
                 <div className='give-back-link-container'>
-                    {!sessionUser ? <button onClick={handleClick} className="give-back-link">Sign up for BayAreaTrails</button> : <p className="thanks-for-being-member">Thanks for being a member!</p>}
+                    {!currentUser ? <button onClick={handleClick} className="give-back-link">Sign up for BayAreaTrails</button> : <p className="thanks-for-being-member">Thanks for being a member!</p>}
                     
                 </div>
             </div>
