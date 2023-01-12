@@ -63,7 +63,7 @@ const SplashPage = ()=>{
                     <Link to={'/hikes'} onClick={()=>window.scrollTo({ top: 0, left: 0 })}className='explore-link'>Explore trails in the Bay</Link>
                 </div>    
             </div>
-            <LocalFavorites />
+            {/* <LocalFavorites /> */}
             <Activities />
             <InspiringImage /> 
             <ReasonsToSignUp />

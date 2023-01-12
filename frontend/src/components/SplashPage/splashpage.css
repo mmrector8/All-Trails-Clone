@@ -119,6 +119,8 @@
     grid-row-gap: 25px;
 }
 
+
+
 .local-bay-activity-images{
     margin-top: 70px;
     height: 170px;
@@ -536,4 +538,39 @@
 
 .rec.rec-arrow:focus:enabled {
     background-color: rgb(177, 177, 177);
+}
+
+@media(max-width: 1200px){
+    .splash-container-2{
+        padding-right: 50px;
+    }
+}
+
+@media(max-width: 950px) {
+    .activity-images {
+      
+        margin-top: -50px;
+        width: 500px;
+        grid-template-columns: repeat(2, 120px);
+        grid-template-rows: repeat(4, 120px);
+    }
+
+    .splash-container-2{
+        padding-left: -10px;
+        padding-right: 20px;
+    }
+
+    .splash-container-2-description{
+        width:600px;
+        margin-left: 38px;
+    }
+    .local-bay-activity-images {
+        height: 140px;
+        width: 140px;
+    }
+
+    .local-bay-activity-images:hover{
+        height: 141px;
+        width: 142px;
+    }
 }
