@@ -17,8 +17,7 @@ const LocalFavorites = () =>{
         { width: 1, itemsToShow: 1 },
         { width: 600, itemsToShow: 2 },
         { width: 860, itemsToShow: 3 },
-        { width: 1120, itemsToShow: 4 },
-        {width: 1400, itemsToShow: 5}
+        { width: 1120, itemsToShow: 4 }
     ];
 
     const handleClick = ()=>{

@@ -134,7 +134,7 @@ const HikeShowPage = ()=>{
                 </div>
                 <div className='weather'>
                      <h1 className='local-weather'>Local Weather</h1>
-                    <WeatherIndex />
+                    <WeatherIndex lat={hike.latitude} lon={hike.longitude}/>
 
                 </div>
                

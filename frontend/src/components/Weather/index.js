@@ -12,11 +12,9 @@ const weekdays = [
     "Saturday"
 ]
 
-const WeatherIndex = ()=>{
+const WeatherIndex = ({ lat, lon })=>{
     const [currentDay, setCurrentDay] = useState(new Date().getDay())
     const [weather, setWeather] = useState("")
-    const lat = 37.801275
-    const lon =  -122.442734
 
     const weatherAPIKey = process.env.REACT_APP_WEATHER_API_KEY;
 
@@ -43,8 +41,6 @@ const WeatherIndex = ()=>{
         return null
     }
 
-    // const weatherList = weather.list
-
     const getWeatherList = ()=>{
         let weatherList = []
 
@@ -62,7 +58,7 @@ const WeatherIndex = ()=>{
                return (
                 <div className='weather-items' key={i}>
                     <p className="day-of-week">{weekdays[(currentDay + i) % weekdays.length]}</p>
-                    <img src={`http://openweathermap.org/img/wn/${weatherItem.weather[0].icon}.png`} className="weather-icon"></img>
+                    <img src={`http://openweathermap.org/img/wn/${weatherItem.weather[0].icon}.png`} className="weather-icon" alt="weather-icon"></img>
                     <p className="forecast">{weatherItem.weather[0].main}</p>
                     <p className="temps">{weatherItem.main.temp_min}°/ {weatherItem.main.temp_max}°F</p>
                 </div>

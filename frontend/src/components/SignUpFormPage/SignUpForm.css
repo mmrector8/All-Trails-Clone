@@ -10,10 +10,10 @@
     transform: translate(-50%, -50%);
     border: 2px solid rgba(0, 0, 0, 0.165);
     padding: 24px;
-    width: 400px;
-    /* max-width: 70%;x */
+    width: 500px;
+    max-width: 70%;
     height: 690px;
-    /* max-height: 90%; */
+    max-height: 90%;
     z-index: 10;
     border-radius: 25px;
     margin-top: 50px;
@@ -35,7 +35,7 @@
     padding-bottom: 25px;
     align-items: center;
     width: 400px;
-   margin-left: 65px;
+   margin-left: 5px;
 }
 
 .formTitle {
@@ -140,6 +140,8 @@
 
     .formTitle {
         font-size: 20px;
+        width:250px;
+        margin-left: -100px;
     }
 
     .input-value{

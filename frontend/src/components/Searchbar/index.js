@@ -61,8 +61,8 @@ const SearchBar = ({setSearchOpen, open}) =>{
                  <div className="search-results-container">
                      <div className="options">
                          <p className='searchbar-options'>All</p>
-                         <p className='searchbar-options'>Hikes</p>
-                         <p className='searchbar-options'>Parks</p>
+                         {/* <p className='searchbar-options'>Hikes</p>
+                         <p className='searchbar-options'>Parks</p> */}
                      </div>
                      {filteredData.length !== 0 ? filteredData.map((item, i)=>{
                         return (
