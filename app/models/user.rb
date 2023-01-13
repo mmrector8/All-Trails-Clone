@@ -24,7 +24,7 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
 
   has_many :reviews,
-  dependnet: :destroy
+  dependent: :destroy
 
 def self.find_by_credentials(credential, password)
     if (URI::MailTo::EMAIL_REGEXP).match(credential)

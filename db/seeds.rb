@@ -13,6 +13,7 @@ require "open-uri"
   User.destroy_all
   Hike.destroy_all
   Park.destroy_all
+  Review.destroy_all
   
 
   puts "Resetting primary keys..."
