@@ -465,14 +465,16 @@
 }
 
 
-
-
-
 @media (min-width: 1600px) {
     .adventure-parks-list {
-            grid-template-columns: repeat(5, 250px);
-            grid-template-rows: repeat(3, 100px);
-        }
+        grid-template-columns: repeat(5, 250px);
+        grid-template-rows: repeat(3, 100px);
+    }
+}
+
+
+
+@media (min-width: 1420px) {
 
 
     .searchbar-container {
