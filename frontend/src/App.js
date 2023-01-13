@@ -34,7 +34,7 @@ function App() {
         <Route exact path="/hikes/:hikeId/reviews/reviewId">
             <ReviewModalContainer />
         </Route>
-        < Route exact path='/login'>
+        <Route exact path='/login'>
           <LoginFormPage modal={false}/>
         </Route>
         <Route component={ComponentError} />

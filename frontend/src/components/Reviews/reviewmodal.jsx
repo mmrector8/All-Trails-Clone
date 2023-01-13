@@ -57,6 +57,7 @@ const ReviewModal = ({open, setIsOpen, hike, review}) =>{
           return dispatch(updateReview(data))
                 .then(()=> setIsOpen(false))
                 .then(()=> setPageNum(1))
+                .then(()=> closeModal())
                 .catch(async (res) => {
                   let data;
                   try {
@@ -83,6 +84,7 @@ const ReviewModal = ({open, setIsOpen, hike, review}) =>{
            return dispatch(createReview(data))
                 .then(()=> setIsOpen(false))
                 .then(()=> setPageNum(1))
+                .then(()=> closeModal())
                .catch(async (res) => {
                    let data;
                    try {
@@ -95,8 +97,6 @@ const ReviewModal = ({open, setIsOpen, hike, review}) =>{
                    else if (data) setErrors([data]);
                    else setErrors([res.statusText]);
                });;
-            // setIsOpen(false);
-            // setPageNum(1);
         }
         
     }
