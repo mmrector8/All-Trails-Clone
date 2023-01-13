@@ -468,7 +468,7 @@
 
 
 
-@media (min-width: 1420px) {
+@media (min-width: 1600px) {
     .adventure-parks-list {
             grid-template-columns: repeat(5, 250px);
             grid-template-rows: repeat(3, 100px);
@@ -483,6 +483,13 @@
         margin-top: -200px;
     }
 
+
+    .parks-worth-look {
+            width: 220vh;
+            font-size: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgb(203, 203, 203);
+    }
 }
 
 @media(max-width: 1300px) {
