@@ -1,5 +1,51 @@
 .weather-container{
+    padding-left: 10px;
     display: flex;
-    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
 
+.local-weather{
+    color: rgb(77, 77, 77);
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(177, 177, 177);
+}
+
+.weather-items{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(77, 77, 77);
+}
+
+.day-of-week{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.day-of-week, .forecast{
+    font-family: "Manrope", sans-serif;
+    margin-bottom: 5px;
+}
+
+.forecast{
+    font-size: 14px;
+}
+
+.weather-icon{
+    height: 60px;
+    background-color: rgba(21, 232, 255, 0.605);
+    border-radius: 30px;
+    padding: 8px;
+    margin: 5px;
+}
+
+.temps{
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    text-align: center;
 }

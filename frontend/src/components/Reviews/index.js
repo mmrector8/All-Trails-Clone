@@ -66,8 +66,10 @@ const ReviewIndex = ({hike}) =>{
                 <div className= "review-top-bucket">
                     <div className='review-avg-rating-bar'>
                         {[5, 4, 3, 2, 1].map((num, i) => <div className="stars-slider-container" key={i}>
-                            <p className="icon-holder">{num} </p>
-                            <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>
+                            <div className="icon-and-number">
+                                <p className="icon-holder">{num}</p>
+                                <i className="fa-sharp fa-solid fa-star star-rating-icon"></i>
+                            </div>
                             <div className='five-star-bar' style={styleBar(reviews, num)}> </div>
                         </div> )}
                     </div>

@@ -22,3 +22,5 @@ services:
         sync: false
       - key: REACT_APP_MAPS_API_KEY
         sync: false
+      - key: REACT_APP_WEATHER_API_KEY
+        sync: false
