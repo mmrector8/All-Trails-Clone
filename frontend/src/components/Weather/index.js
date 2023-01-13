@@ -2,8 +2,20 @@ import { useState } from "react"
 import { useEffect } from "react"
 import * as weatherCss from "./weather.css"
 
-const WeatherIndex = ()=>{
+const weekdays = [
+   "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+]
 
+
+
+const WeatherIndex = ()=>{
+    const [currentDay, setCurrentDay] = useState(new Date().getDay())
     const [weather, setWeather] = useState("")
     const lat = 37.801275
     const lon =  -122.442734
@@ -52,7 +64,8 @@ const WeatherIndex = ()=>{
         <div className='weather-container'>
             {getWeatherList().map((weatherItem, i)=>{
                return (
-                <div className='weather-items'>
+                <div className='weather-items' key={i}>
+                       <p>{weekdays[(currentDay + i) % weekdays.length]}</p>
                     <p>{weatherItem.weather[0].main}</p>
                     <img src={`http://openweathermap.org/img/wn/${weatherItem.weather[0].icon}.png`}></img>
                     <p>{weatherItem.main.temp_min}  °F min / {weatherItem.main.temp_max}  °F max</p>
