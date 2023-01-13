@@ -30,7 +30,7 @@ const ParkShowPage = () =>{
                         <p className="arrow">{">"}</p>
                         <p className="State">California</p>
                         <p className="arrow">{">"}</p>
-                        <p className="State">City</p>
+                        <p className="State">{park.city}</p>
                     </div>
                     <div className="SF-photos">
                         <img src={walkinggirl} className="SF-hike-images"></img>
