@@ -16,6 +16,10 @@
 #
 class Park < ApplicationRecord
     validates :name, :county, :city, :latitude, :longitude, :zipcode, :state, :description, presence: true
-    has_many :hikes
-    has_many_attached :photos
+    has_many :hikes,
+    dependent: :destroy
+    
+    has_many_attached :photos,
+    dependent: :destroy
+
 end
