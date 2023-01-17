@@ -2,12 +2,13 @@
 
 ## BayAreaTrails
 ![Search](https://user-images.githubusercontent.com/100038201/212813698-36db7925-ab98-42e5-87e6-16bbfc19b787.gif)
+![searchbar](https://user-images.githubusercontent.com/100038201/212814170-3bf0f113-6577-41bc-9d6c-ae68dde58d47.gif)
 
 ![park show](https://user-images.githubusercontent.com/100038201/212813370-f9e3ff55-a309-4af3-9ea9-cdcd6555d29e.gif)
 
 ![showpage](https://user-images.githubusercontent.com/100038201/212813362-4c09b3e0-4157-48e8-b48f-06160ff220bd.gif)
 
-![Reviews](https://user-images.githubusercontent.com/100038201/212813379-d31f5b80-4829-46ca-bb22-9787ab6d6b33.gif)
+![reviews](https://user-images.githubusercontent.com/100038201/212814189-1f46bccb-8559-4599-9e02-8bc27a6640c8.gif)
 
 ## Overview
 
