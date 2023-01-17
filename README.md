@@ -2,10 +2,12 @@
 
 ## BayAreaTrails
 
-Gif will go here
 ![Search gif](https://user-images.githubusercontent.com/100038201/212813338-b0f9247b-3431-4d42-a08d-0adb8acd066b.gif)
+
 ![park show](https://user-images.githubusercontent.com/100038201/212813370-f9e3ff55-a309-4af3-9ea9-cdcd6555d29e.gif)
+
 ![showpage](https://user-images.githubusercontent.com/100038201/212813362-4c09b3e0-4157-48e8-b48f-06160ff220bd.gif)
+
 ![Reviews](https://user-images.githubusercontent.com/100038201/212813379-d31f5b80-4829-46ca-bb22-9787ab6d6b33.gif)
 
 ## Overview
