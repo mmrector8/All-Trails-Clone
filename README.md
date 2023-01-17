@@ -1,10 +1,12 @@
 # README
 
 ## BayAreaTrails
+![search](https://user-images.githubusercontent.com/100038201/212814783-58f5d306-bc0c-46c1-94c3-5e6bf211c54c.gif)
 
 ![park show](https://user-images.githubusercontent.com/100038201/212813370-f9e3ff55-a309-4af3-9ea9-cdcd6555d29e.gif)
 
-![reviews](https://user-images.githubusercontent.com/100038201/212814189-1f46bccb-8559-4599-9e02-8bc27a6640c8.gif)
+![reviews](https://user-images.githubusercontent.com/100038201/212815231-74c334ee-e47d-4f40-ad50-7a7ab3ba5b79.gif)
+
 
 ## Overview
 
