@@ -3,7 +3,7 @@ json.user do
 end
 
 json.reviews do
-    @user.reviews.each do |review|
+    @user.reviews.slice(0,1).each do |review|
         json.set! review.id do
             json.extract! review, :id, :user_id, :hike_id, :content, :stars, :updated_at, :created_at
         end

@@ -14,11 +14,15 @@ const UserShow = ()=>{
     }, [dispatch, userId])
 
     if(!user){
-        return null;
+        return <LoadingSpinner />;
     }
 
     return (
-        <p> I am the User Show page</p>
+        <div className="user-show-page-container">
+            <div className="member-header">
+                
+            </div>
+        </div>
     )
 }
 export default UserShow;

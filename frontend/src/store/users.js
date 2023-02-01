@@ -18,8 +18,8 @@ export const fetchUser = (userId)=> async dispatch=> {
 }
 
 export const getUser = (userId) => (state) => {
-    if (state.users) {
-        return state.users[userId]
+    if (state.user) {
+        return state.user[userId]
     }
     return null
 }
