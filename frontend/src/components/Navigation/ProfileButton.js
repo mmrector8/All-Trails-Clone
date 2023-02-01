@@ -33,8 +33,8 @@ const ProfileButton = ({user}) => {
                     <i className="fa-solid fa-mountain-sun dropdown-icon" onMouseOver={openMenu}></i>
                 {showMenu && (
                     <ul className='dropdown' onMouseOver={openMenu} onMouseLeave={(e) => setShowMenu(false)}>
-                        <li className='nav-item'>{user.fname}'s Profile</li>
-                        <li className='nav-item'>Reviews</li>
+                        {/* <li className='nav-item'>{user.fname}'s Profile</li>
+                        <li className='nav-item'>Reviews</li> */}
                         <li><button onClick={logout} className=' nav-item logout-button'>Logout</button></li>
                     </ul>
                 )}
