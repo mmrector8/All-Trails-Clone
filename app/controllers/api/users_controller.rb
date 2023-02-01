@@ -14,7 +14,7 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    if @user
+    if logged_in? && @user == current_user
       render :userShow
     else
       render json: { user: nil}
