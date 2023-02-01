@@ -1,5 +1,6 @@
 import csrfFetch from "./csrf"
 import { RECEIVE_HIKE } from "./hikes"
+import { RECEIVE_USER } from "./users"
 export const RECEIVE_REVIEWS = 'reviews/RECEIVE_REVIEWS'
 export const RECEIVE_REVIEW = 'reviews/RECEIVE_REVIEW'
 export const REMOVE_REVIEW = 'reviews/REMOVE_REVIEW'
@@ -88,6 +89,8 @@ export const deleteReview = (review)=> async dispatch=> {
 const reviewsReducer = (state={}, action)=>{
     const newState = {...state}
     switch(action.type){
+        case RECEIVE_USER:
+            return { ...action.payload.reviews }
         case RECEIVE_HIKE:
             return {...action.payload.reviews}
         case RECEIVE_REVIEWS:

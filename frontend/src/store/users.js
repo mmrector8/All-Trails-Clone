@@ -6,24 +6,30 @@ export const RECEIVE_REVIEWS= "users/RECEIVE_REVIEWS"
 
 export const receiveUser = (user) => ({
     type: RECEIVE_USER,
-    user
+    payload: user
 })
 
 export const fetchUser = (userId)=> async dispatch=> {
-    const res = await csrfFetch(`api/users/${userId}`)
+    const res = await csrfFetch(`/api/users/${userId}`)
     if(res.ok){
         const user = await res.json();
         dispatch(receiveUser(user))
     }
 }
 
+export const getUser = (userId) => (state) => {
+    if (state.users) {
+        return state.users[userId]
+    }
+    return null
+}
+
 const usersReducer = (state={}, action)=>{
     const newState = {...state}
     switch(action.type){
         case RECEIVE_USER:
-            return {...action.user}
-        case RECEIVE_REVIEWS:
-            return {...action.reviews}
+            newState[action.payload.user.id] = action.payload.user
+            return newState;
         default:
             return state;
     }

@@ -7,7 +7,7 @@ import ParkShowPage from "./components/ParkShowPage"
 import ComponentError from "./components/ComponentError"
 import SplashPage from "./components/SplashPage";
 import Footer from "./components/Footer";
-import UserShow from "./components/UserShowPage"
+import UserShow from "./components/UserShowPage";
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import ReviewModalContainer from "./components/Reviews/reviewmodalcontainer";
@@ -29,11 +29,11 @@ function App() {
         <Route exact path={`/hikes/:hikeId`}>
           <HikeShowPage />
         </Route>
+        < Route exact path={`/users/:userId`}>
+          <UserShow />
+        </Route>
         < Route exact path='/signup'>
           <SignUpForm />
-        </Route>
-        < Route exact path={`users/:userId`}>
-          <UserShow />
         </Route>
         <Route exact path="/hikes/:hikeId/reviews/reviewId">
             <ReviewModalContainer />

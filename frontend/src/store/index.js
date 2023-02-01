@@ -4,12 +4,14 @@ import sessionReducer from './session';
 import hikesReducer from './hikes';
 import parksReducer from './parks';
 import reviewsReducer from './reviews';
+import usersReducer from './users';
 
 const rootReducer = combineReducers({
     session: sessionReducer,
     hikes: hikesReducer,
     parks: parksReducer,
-    reviews: reviewsReducer
+    reviews: reviewsReducer,
+    user: usersReducer
 })
 
 let enhancer;
