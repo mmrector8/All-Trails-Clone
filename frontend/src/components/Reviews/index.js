@@ -5,13 +5,17 @@ import {useDispatch, useSelector} from 'react-redux'
 import {getReviews } from "../../store/reviews"
 import { useParams } from "react-router-dom";
 import ReviewModalContainer from "./reviewmodalcontainer";
+import LoadingSpinner from "../LoadingSpinner";
 
 const ReviewIndex = ({hike}) =>{
     const [reviewsPresent, setReviewsPresent] = useState(false)
     const reviews = useSelector(getReviews)
     const currentUser = useSelector(state=> state.session.user)
 
-    if(!hike || !reviews){
+    if(!hike){
+        return <LoadingSpinner />;
+    }
+    if (!reviews){
         return null;
     }
 

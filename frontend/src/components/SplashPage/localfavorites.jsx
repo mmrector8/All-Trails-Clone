@@ -1,5 +1,6 @@
 import { Link, useHistory } from "react-router-dom";
 import Carousel from 'react-elastic-carousel'
+import LoadingSpinner from "../LoadingSpinner";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getHikes, fetchHikes } from "../../store/hikes"
@@ -10,7 +11,7 @@ const LocalFavorites = () =>{
     const history = useHistory();
 
     if(!hikes){
-        return null;
+        return <LoadingSpinner />;
     } 
 
     const breakPoints = [
@@ -40,7 +41,7 @@ const LocalFavorites = () =>{
         <div className='local-favorites'>
             <h1 className="local-favorites-links">Local favorites in the <Link to={'/hikes'} onClick={()=>window.scrollTo({ top: 0, left: 0 })} className="local-fave-link">Bay Area</Link></h1>
             <Carousel breakPoints={breakPoints} enableMouseSwipe={true} itemsToScroll={3} outerSpacing={0}>
-                {filteredLocalFavorites().map((hike, i)=> <HikeShowListItem key={i} hike={hike}/>)}
+                {filteredLocalFavorites() ? filteredLocalFavorites()?.map((hike, i)=> <HikeShowListItem key={i} hike={hike}/>) : <LoadingSpinner />}
                 <div className='local-favorites-show-more' onClick={handleClick}>
                     <p className="carousel-show-more-link">Show more</p>
                 </div>

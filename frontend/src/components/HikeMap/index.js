@@ -2,15 +2,16 @@ import * as mapcss from "./hike-map.css"
 import {useMemo} from 'react'
 import {GoogleMap, useLoadScript, Marker} from "@react-google-maps/api"
 import treeicon from "../../assets/treeicon.png"
+import LoadingSpinner from "../LoadingSpinner"
 const HikeMapWrapper = ({hikes, isShow, disableDefaultUI}) =>{
     const {isLoaded} =  useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_MAPS_API_KEY,
     })
     if (!hikes) {
-        return null;
+        return <LoadingSpinner />;
     }
     if(!isLoaded){
-        return <div>Loading...</div>
+        return <LoadingSpinner />
     }
     return (
         <>

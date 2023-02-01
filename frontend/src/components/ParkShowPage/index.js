@@ -7,6 +7,7 @@ import hikersrectangle from "../../assets/hikersrectangle.jpg"
 import treesrectangle from "../../assets/treesrectangle.jpg"
 import ParkListItem from "./ParkListItem"
 import HikeMapWrapper from "../HikeMap"
+import LoadingSpinner from "../LoadingSpinner"
 
 const ParkShowPage = () =>{
     const {parkId} = useParams();
@@ -18,7 +19,7 @@ const ParkShowPage = () =>{
     }, [dispatch, parkId])
 
     if (!park || !park.hikes){
-        return null;
+        return <LoadingSpinner />;
     } 
     const numOfHikes = park.hikes.length
     return (

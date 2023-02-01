@@ -8,6 +8,7 @@ import hikersrectangle from "../../assets/hikersrectangle.jpg"
 import treesrectangle from "../../assets/treesrectangle.jpg"
 import * as HikeIndexCss from "./HikeIndexPage.css"
 import HikeMapWrapper from "../HikeMap"
+import LoadingSpinner from "../LoadingSpinner"
 
 const HikeIndexPage = ()=>{
     const dispatch = useDispatch()
@@ -20,7 +21,7 @@ const HikeIndexPage = ()=>{
     const numOfHikes = hikes.length
 
     if (!hikes){
-        return null;
+        return <LoadingSpinner />;
     }
 
     return (

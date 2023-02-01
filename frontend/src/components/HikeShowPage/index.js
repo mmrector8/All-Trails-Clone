@@ -10,6 +10,7 @@ import HikeBigMapWrapper from "../HikeBigMap";
 import ReviewIndex from "../Reviews";
 import WeatherIndex from "../Weather";
 import { Link } from "react-router-dom";
+import LoadingSpinner from "../LoadingSpinner";
 
 const HikeShowPage = ()=>{
     const [isShow, setIsShow] = useState(true);
@@ -24,7 +25,7 @@ const HikeShowPage = ()=>{
 
 
     if (!hike || !hike.relatedHikes || !reviews){
-        return null;
+        return <LoadingSpinner />;
     }
 
     const getAllRelatedHikes = ()=>{
