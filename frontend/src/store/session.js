@@ -20,12 +20,15 @@ export const login = (user) => async dispatch => {
     const { credential, password } = user;
     const res = await csrfFetch('/api/session', {
         method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: JSON.stringify({
             // credential: user.credential,
             // password: user.password
             credential,
             password
-        })
+        }),
     })
     if(res.ok){
         let data = await res.json();
