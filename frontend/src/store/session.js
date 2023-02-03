@@ -2,8 +2,8 @@ import LoginFormPage from "../components/LoginFormPage";
 import csrfFetch, { storeCSRFToken } from "./csrf";
 
 //ACTION TYPES
-const SET_USER = 'users/SET_USER';
-const REMOVE_USER = 'users/REMOVE_USER';
+const SET_USER = 'session/SET_USER';
+const REMOVE_USER = 'session/REMOVE_USER';
 
 //ACTION CREATORS
 export const loginUser = user => ({
@@ -74,7 +74,7 @@ export const logout = ()=> async dispatch => {
 }
 
 const storeCurrentUser = (user)=>{
-    const currentUser = JSON.stringify(user)
+    let currentUser = JSON.stringify(user)
     if (user){
         sessionStorage.setItem('currentUser', currentUser)
     }else{
