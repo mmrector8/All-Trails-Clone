@@ -23,6 +23,7 @@ const Search = ({ setSearchOpen, open }) => {
 
     const handleSearch = (e) => {
         e.preventDefault()
+        setSearchOpen(true)
         history.push({
             pathname: '/search',
             state: { searchQuery }
@@ -30,8 +31,9 @@ const Search = ({ setSearchOpen, open }) => {
         setSearchQuery('')
     }
 
-    const clearSearchBarFields = () => {
-        setSearchQuery("")
+    const searchBar = (e) => {
+        setSearchQuery(e.target.value);
+        setSearchOpen(true)
     }
 
     
@@ -40,7 +42,7 @@ const Search = ({ setSearchOpen, open }) => {
         <div className="search-container">
             <div className="search-input">
                 <form onSubmit={handleSearch}>
-                    <input type='text' value={searchQuery} placeholder="Search by hike or park name" onChange={(e)=> setSearchQuery(e.target.value)} className="search-input-bar" />
+                    <input type='text' value={searchQuery} placeholder="Search by hike or park name" onChange={searchBar}  className="search-input-bar" />
                     <i className="fa-solid fa-magnifying-glass search-icon"></i>
                     <button className="go-to-show-page"> <i className="fa-solid fa-arrow-right"></i></button>
                 </form>
@@ -51,7 +53,7 @@ const Search = ({ setSearchOpen, open }) => {
                         <p className='searchbar-options'>All</p>
                     </div>
                         <div className='search-results'>
-                              <p>hello</p>
+                        {hikes.map((item, i) => <Link to={`hikes/${item.id}`} className="search-results-link" onClick={() => window.scrollTo({ top: 0, left: 0 })}><i className="fa-solid fa-location-dot searchbar-icon"></i><div><p className='searchbar-hike-name'>{item.name}</p> <p className="searchbar-park-name" id="searchbar-park-name">{item.parkName}</p></div></Link>)}
                         </div>
                     {/* <div className='no-search-results'>
                         <p className='searchbar-no-results-message'>Sorry, no results found!</p>
