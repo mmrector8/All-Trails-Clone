@@ -7,7 +7,7 @@ class Api::SearchesController < ApplicationController
             word[0] = word[0].upcase
         end
         newQuery = query.join(" ")
-        @hikes = Hike.where("name LIKE ?", newQuery).limit(10)
+        @hikes = Hike.where("hikes.name LIKE ?" , '%{newQuery}%').limit(10)
         @parks = Park.all
         render 'api/hikes/index'
     end

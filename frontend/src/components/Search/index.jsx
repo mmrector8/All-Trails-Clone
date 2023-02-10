@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchSearchFilterListings, getHikes } from "../../store/hikes.js"
+import { fetchSearchFilterListings, getHikes, removeHikes } from "../../store/hikes.js"
 import { getParks } from "../../store/parks.js"
 import { Link } from "react-router-dom";
 import * as searchbarcss from "../Searchbar/searchbar.css"
@@ -15,6 +15,7 @@ const Search = ({ setSearchOpen, open }) => {
 
     useEffect(()=>{
         dispatch(fetchSearchFilterListings(searchQuery))
+        return ()=> dispatch(removeHikes())
     }, [ searchQuery])
 
     if (!hikes || !parks) {
@@ -50,11 +51,11 @@ const Search = ({ setSearchOpen, open }) => {
             {open && (
                 <div className="search-results-container">
                     <div className="options">
-                        <p className='searchbar-options'>All</p>
+                        <p className='searchbar-options'>Parks and Hikes</p>
                     </div>
                     {hikes.length ? 
                         <div className='search-results'>
-                        {hikes.map((item, i) => <Link to={`hikes/${item.id}`} className="search-results-link" onClick={() => window.scrollTo({ top: 0, left: 0 })}><i className="fa-solid fa-location-dot searchbar-icon"></i><div><p className='searchbar-hike-name'>{item.name}</p> <p className="searchbar-park-name" id="searchbar-park-name">{item.parkName}</p></div></Link>)}
+                            {hikes.map((item, i) => <Link to={`hikes/${item.id}`} className="search-results-link" onClick={() => window.scrollTo({ top: 0, left: 0 })}><i className="fa-solid fa-location-dot searchbar-icon"></i><div><p className='searchbar-hike-name'>{item.name}</p> <p className="searchbar-park-name" id="searchbar-park-name">{item.parkName}</p></div></Link>)}
                         </div>
                         :
                         <div className='no-search-results'>
