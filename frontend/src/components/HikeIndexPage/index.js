@@ -1,4 +1,4 @@
-import { getHikes, fetchHikes } from "../../store/hikes"
+import { getHikes, fetchHikes, removeHikes } from "../../store/hikes"
 import { useSelector } from "react-redux"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
@@ -15,6 +15,7 @@ const HikeIndexPage = ()=>{
     
     useEffect(()=>{
         dispatch(fetchHikes())
+        return () => dispatch(removeHikes())
     }, [dispatch])
 
     const numOfHikes = hikes.length

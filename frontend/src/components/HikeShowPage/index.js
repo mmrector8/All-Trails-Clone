@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { getHike, fetchHike} from "../../store/hikes";
+import { getHike, fetchHike, removeHikes} from "../../store/hikes";
 import placeholdermap from "../../assets/placeholdermap.png"
 import * as HikeShowCss from "./HikeShowPage.css"
 import HikeShowListItem from "./OtherHikesItem";
@@ -20,6 +20,7 @@ const HikeShowPage = ()=>{
     
     useEffect(()=>{
         dispatch(fetchHike(hikeId))
+        return () => dispatch(removeHikes())
     }, [dispatch, hikeId])
 
 

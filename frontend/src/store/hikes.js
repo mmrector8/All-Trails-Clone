@@ -4,6 +4,7 @@ import { receiveParks } from "./parks";
 export const RECEIVE_HIKE = 'hikes/RECEIVE_HIKE';
 export const RECEIVE_HIKES = 'hikes/RECEIVE_HIKES';
 export const RECEIVE_PARKS = "parks/RECEIVE_PARKS";
+export const REMOVE_HIKES = "hikes/REMOVE_HIKES";
 
 export const receiveHike = hike =>({
     type: RECEIVE_HIKE,
@@ -15,6 +16,9 @@ export const receiveHikes = (hikes)=>({
     payload: hikes.hikes
 })
 
+export const removeHikes = () => ({
+    type: REMOVE_HIKES
+})
 
 export const getHike = (hikeId)=>(state)=>{
     if(state.hikes){
@@ -65,6 +69,8 @@ const hikesReducer = (state={}, action) => {
         //    return {...newState, ...action.hike}
         case RECEIVE_HIKES:
             return {...newState, ...action.payload}
+        case REMOVE_HIKES:
+            return {};
         default:
             return state;
     }
