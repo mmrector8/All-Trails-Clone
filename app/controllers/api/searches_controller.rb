@@ -2,12 +2,12 @@ class Api::SearchesController < ApplicationController
 
     def search_filter
         query = params[:query]
-        query = query.split(" ")
-        query.each do |word|
-            word[0] = word[0].upcase
+        query = query.downcase.split(" ") if params[:query]
+        newHikes =[]
+        query.each do |item|
+            newHikes << Hike.where("LOWER(name) LIKE ?", "%#{item}%")
         end
-        newQuery = query.join(" ")
-        @hikes = Hike.where("hikes.name LIKE ?" , '%{newQuery}%').limit(10)
+        @hikes = newHikes.reduce(:and)
         @parks = Park.all
         render 'api/hikes/index'
     end
