@@ -24,10 +24,10 @@ const SplashPage = ()=>{
     const currentUser = useSelector((state)=> state.session.user)
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(fetchHikes())
-        dispatch(fetchParks())
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch(fetchHikes())
+    //     dispatch(fetchParks())
+    // }, [dispatch])
 
     const images = [
         julia,
@@ -73,11 +73,11 @@ const SplashPage = ()=>{
                     <Link to={'/hikes'} onClick={()=>window.scrollTo({ top: 0, left: 0 })}className='explore-link'>Explore trails in the Bay</Link>
                 </div>    
             </div>
-            <LocalFavorites />
+            {/* <LocalFavorites /> */}
             <Activities />
             <InspiringImage /> 
             <ReasonsToSignUp />
-            <AdventureAnywhere />
+            {/* <AdventureAnywhere /> */}
             <ForPlanet currentUser={currentUser}/>
         </div>
         </div>

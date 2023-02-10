@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { getHikes } from "../../store/hikes.js"
+import { fetchSearchFilterListings, getHikes } from "../../store/hikes.js"
 import { getParks } from "../../store/parks.js"
 import { Link } from "react-router-dom";
 import * as searchbarcss from "../Searchbar/searchbar.css"
@@ -8,9 +8,14 @@ import { useHistory } from 'react-router-dom';
 
 const Search = ({ setSearchOpen, open }) => {
     const history = useHistory();
+    const dispatch = useDispatch();
     const [searchQuery, setSearchQuery] = useState("")
     let hikes = useSelector(getHikes)
     let parks = useSelector(getParks)
+
+    useEffect(()=>{
+        dispatch(fetchSearchFilterListings(searchQuery))
+    }, [dispatch, searchQuery])
 
     if (!hikes || !parks) {
         return null;
@@ -19,11 +24,12 @@ const Search = ({ setSearchOpen, open }) => {
     let parksAndHikes = ([parks[0]]).concat([hikes[0]]).concat([parks[1]]).concat(hikes.slice(1, hikes.length)).concat(parks.slice(2, parks.length))
 
     const handleSearch = (e) => {
-     e.preventDefault();
-     history.push({
-        pathname: "/search",
-        state: {searchQuery}
-     })
+        e.preventDefault()
+        history.push({
+            pathname: '/search',
+            state: { searchQuery }
+        })
+        setSearchQuery('')
     }
 
     const clearSearchBarFields = () => {
@@ -35,9 +41,11 @@ const Search = ({ setSearchOpen, open }) => {
     return (
         <div className="search-container">
             <div className="search-input">
-                <input type='text' value={searchQuery} placeholder="Search by hike or park name" onChange={handleSearch} className="search-input-bar" />
-                <i className="fa-solid fa-magnifying-glass search-icon"></i>
-                <button className="go-to-show-page"> <i className="fa-solid fa-arrow-right"></i></button>
+                <form onSubmit={handleSearch}>
+                    <input type='text' value={searchQuery} placeholder="Search by hike or park name" onChange={(e)=> setSearchQuery(e.target.value)} className="search-input-bar" />
+                    <i className="fa-solid fa-magnifying-glass search-icon"></i>
+                    <button className="go-to-show-page"> <i className="fa-solid fa-arrow-right"></i></button>
+                </form>
             </div>
             {open && (
                 <div className="search-results-container">
