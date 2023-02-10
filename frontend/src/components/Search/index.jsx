@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchSearchFilterListings, getHikes, removeHikes } from "../../store/hikes.js"
+import { clearSearchHikes, fetchSearchFilterListings, getSearchHikes } from "../../store/search.js"
 import { getParks } from "../../store/parks.js"
 import { Link } from "react-router-dom";
 import * as searchbarcss from "../Searchbar/searchbar.css"
@@ -10,12 +10,15 @@ const Search = ({ setSearchOpen, open }) => {
     const history = useHistory();
     const dispatch = useDispatch();
     const [searchQuery, setSearchQuery] = useState("")
-    let hikes = useSelector(getHikes)
+    let hikes = useSelector(getSearchHikes)
     let parks = useSelector(getParks)
 
     useEffect(()=>{
-        dispatch(fetchSearchFilterListings(searchQuery))
-        return ()=> dispatch(removeHikes())
+        if(searchQuery.length){
+            dispatch(fetchSearchFilterListings(searchQuery))
+        }
+        
+        return ()=> dispatch(clearSearchHikes())
     }, [ searchQuery])
 
     if (!hikes || !parks) {
