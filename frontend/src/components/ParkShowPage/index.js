@@ -1,4 +1,4 @@
-import {getPark, fetchPark} from "../../store/parks"
+import {getPark, fetchPark, removeParks} from "../../store/parks"
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from "react"
 import { useParams } from "react-router-dom"
@@ -15,6 +15,7 @@ const ParkShowPage = () =>{
 
     useEffect(()=>{
         dispatch(fetchPark(parkId))
+        return ()=> dispatch(removeParks())
     }, [dispatch, parkId])
 
     if (!park || !park.hikes){

@@ -1,7 +1,8 @@
 import csrfFetch from "./csrf";
 
 const RECEIVE_PARK = 'parks/RECEIVE_PARK';
-const RECEIVE_PARKS ='parks/RECEIVE_PARKS'
+const RECEIVE_PARKS ='parks/RECEIVE_PARKS';
+const REMOVE_PARKS = 'parks/REMOVE_PARKS';
 
 export const receivePark = park => ({
     type: RECEIVE_PARK,
@@ -13,7 +14,9 @@ export const receiveParks = (parks) => ({
     payload: parks.parks
 })
 
-
+export const removeParks = ()=>({
+    type: REMOVE_PARKS
+})
 export const getPark = (parkId) => (state) => {
     if (state.parks) {
         return state.parks[parkId]
@@ -53,6 +56,8 @@ const parksReducer = (state = {}, action) => {
             return newState;
         case RECEIVE_PARKS:
             return {...newState, ...action.payload}
+        case REMOVE_PARKS:
+            return {};
         default:
             return state;
     }
