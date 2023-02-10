@@ -38,6 +38,15 @@ export const fetchHikes = () => async dispatch =>{
     }
 }
 
+export const fetchSearchFilterListings = (searchValue) => async (dispatch) => {
+    const res = await csrfFetch(`/api/search?query=${searchValue}`)
+    if (res.ok) {
+        const hikes = await res.json();
+        dispatch(receiveHikes(hikes));
+        return hikes;
+    }
+}
+
 export const fetchHike = (hikeId) => async dispatch => {
     const res = await csrfFetch(`/api/hikes/${hikeId}`)
     if (res.ok){

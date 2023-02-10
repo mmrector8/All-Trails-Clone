@@ -12,6 +12,7 @@ Rails.application.routes.draw do
         resources :reviews, only: [:create, :update, :destroy]
       end
       resource :session, only: [:show, :create, :destroy]
+      get '/search', to: 'searches#search_filter'
   end
 
   get '*path', to: 'static_pages#frontend'
