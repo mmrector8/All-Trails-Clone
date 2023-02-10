@@ -15,13 +15,11 @@ const Search = ({ setSearchOpen, open }) => {
 
     useEffect(()=>{
         dispatch(fetchSearchFilterListings(searchQuery))
-    }, [dispatch, searchQuery])
+    }, [searchQuery])
 
     if (!hikes || !parks) {
         return null;
     }
-
-    let parksAndHikes = ([parks[0]]).concat([hikes[0]]).concat([parks[1]]).concat(hikes.slice(1, hikes.length)).concat(parks.slice(2, parks.length))
 
     const handleSearch = (e) => {
         e.preventDefault()

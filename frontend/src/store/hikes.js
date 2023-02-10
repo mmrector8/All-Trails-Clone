@@ -3,7 +3,7 @@ import { receiveParks } from "./parks";
 
 export const RECEIVE_HIKE = 'hikes/RECEIVE_HIKE';
 export const RECEIVE_HIKES = 'hikes/RECEIVE_HIKES';
-export const RECEIVE_PARKS = "parks/RECEIVE_PARKS"
+export const RECEIVE_PARKS = "parks/RECEIVE_PARKS";
 
 export const receiveHike = hike =>({
     type: RECEIVE_HIKE,
