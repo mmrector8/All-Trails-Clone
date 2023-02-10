@@ -53,16 +53,20 @@ const Search = ({ setSearchOpen, open }) => {
                     <div className="options">
                         <p className='searchbar-options'>Parks and Hikes</p>
                     </div>
-                    {hikes.length ? 
-                        <div className='search-results'>
-                            {hikes.map((item, i) => <Link to={`hikes/${item.id}`} className="search-results-link" onClick={() => window.scrollTo({ top: 0, left: 0 })}><i className="fa-solid fa-location-dot searchbar-icon"></i><div><p className='searchbar-hike-name'>{item.name}</p> <p className="searchbar-park-name" id="searchbar-park-name">{item.parkName}</p></div></Link>)}
-                        </div>
-                        :
-                        <div className='no-search-results'>
-                            <p className='searchbar-no-results-message'>Sorry, no results found!</p>
-                            <Link to="/hikes" onClick={() => window.scrollTo({ top: 0, left: 0 })} className='no-results-link'><p className='see-bay-area-hikes'>See Bay Area Hikes</p></Link>
-                        </div>
-                        }
+                    {hikes.length ? hikes?.map((item, i) => {
+                        return (
+                            <div className='search-results' key={i}>
+                                {item.parkId === undefined ?
+                                    <Link to={`parks/${item.id}`} className="search-results-link" onClick={() => window.scrollTo({ top: 0, left: 0 })}> <i className="fa-solid fa-tree searchbar-icon tree-searchbar"></i><p className='searchbar-hike-name searchbar-park-name'>{item.name}</p></Link>
+                                    : <Link to={`hikes/${item.id}`} className="search-results-link" onClick={() => window.scrollTo({ top: 0, left: 0 })}><i className="fa-solid fa-location-dot searchbar-icon"></i><div><p className='searchbar-hike-name'>{item.name}</p> <p className="searchbar-park-name" id="searchbar-park-name">{item.parkName}</p></div></Link>
+                                }
+
+                            </div>
+                        );
+                    }) : <div className='no-search-results'>
+                        <p className='searchbar-no-results-message'>Sorry, no results found!</p>
+                        <Link to="/hikes" onClick={() => window.scrollTo({ top: 0, left: 0 })} className='no-results-link'><p className='see-bay-area-hikes'>See Bay Area Hikes</p></Link>
+                    </div>}
                 </div>
             )}
         </div>
