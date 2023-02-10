@@ -15,7 +15,7 @@ const Search = ({ setSearchOpen, open }) => {
 
     useEffect(()=>{
         dispatch(fetchSearchFilterListings(searchQuery))
-    }, [searchQuery])
+    }, [ searchQuery])
 
     if (!hikes || !parks) {
         return null;
