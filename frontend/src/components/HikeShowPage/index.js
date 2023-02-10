@@ -10,6 +10,7 @@ import HikeBigMapWrapper from "../HikeBigMap";
 import ReviewIndex from "../Reviews";
 import WeatherIndex from "../Weather";
 import { Link } from "react-router-dom";
+import { clearReviews } from "../../store/reviews";
 
 const HikeShowPage = ()=>{
     const [isShow, setIsShow] = useState(true);
@@ -21,6 +22,10 @@ const HikeShowPage = ()=>{
     useEffect(()=>{
         dispatch(fetchHike(hikeId))
         return () => dispatch(removeHikes())
+    }, [dispatch, hikeId])
+
+    useEffect(() => {
+        return () => dispatch(clearReviews())
     }, [dispatch, hikeId])
 
 

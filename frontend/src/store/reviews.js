@@ -3,6 +3,7 @@ import { RECEIVE_HIKE } from "./hikes"
 export const RECEIVE_REVIEWS = 'reviews/RECEIVE_REVIEWS'
 export const RECEIVE_REVIEW = 'reviews/RECEIVE_REVIEW'
 export const REMOVE_REVIEW = 'reviews/REMOVE_REVIEW'
+export const CLEAR_REVIEWS = 'reviews/CLEAR_REVIEWS'
 
 export const receiveReview = (review)=> {
     console.log(review, 'hitting receive review')
@@ -25,6 +26,10 @@ export const removeReview = (reviewId) =>{
         reviewId
     }
 }
+
+export const clearReviews = ()=>({
+    type: CLEAR_REVIEWS
+})
 
 export const getReviews = (store={})=>{
     if(store.reviews){
@@ -99,6 +104,8 @@ const reviewsReducer = (state={}, action)=>{
         case REMOVE_REVIEW:
             delete newState[action.reviewId]
                 return newState;
+        case CLEAR_REVIEWS:
+            return {};
         default:
             return state;
     }
