@@ -25,6 +25,7 @@ const Search = ({ setSearchOpen, open }) => {
     useEffect(()=>{
         if (debounced !== ""){
             if (searchQuery.length) {
+                dispatch(clearSearchHikes())
                 dispatch(fetchSearchFilterListings(searchQuery))
             }
         }else{
@@ -62,7 +63,7 @@ const Search = ({ setSearchOpen, open }) => {
                     <button className="go-to-show-page"> <i className="fa-solid fa-arrow-right"></i></button>
                 </form>
             </div>
-            {open && (
+            {focused && (
                 <div className="search-results-container">
                     <div className="options">
                         <p className='searchbar-options'>Parks and Hikes</p>
