@@ -24,9 +24,9 @@ const HikeShowPage = ()=>{
         return () => dispatch(removeHikes())
     }, [dispatch, hikeId])
 
-    useEffect(() => {
-        return () => dispatch(clearReviews())
-    }, [dispatch, hikeId])
+    // useEffect(() => {
+    //     return () => dispatch(clearReviews())
+    // }, [dispatch, hikeId])
 
 
     if (!hike || !hike.relatedHikes || !reviews){

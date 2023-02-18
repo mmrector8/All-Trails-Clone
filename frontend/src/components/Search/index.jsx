@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { clearSearchHikes, fetchSearchFilterListings, getSearchHikes } from "../../store/search.js"
 import { getParks } from "../../store/parks.js"
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import useDebounce from "../../hooks/debounce";
 import * as searchbarcss from "../Searchbar/searchbar.css"
 import { useHistory } from 'react-router-dom';
 
@@ -10,16 +11,25 @@ const Search = ({ setSearchOpen, open }) => {
     const history = useHistory();
     const dispatch = useDispatch();
     const [searchQuery, setSearchQuery] = useState("")
+    const location = useLocation();
     let hikes = useSelector(getSearchHikes)
     let parks = useSelector(getParks)
 
+    const debounced = useDebounce(searchQuery, 500);
+
+    useEffect(() => {
+        setSearchQuery("");
+    }, [dispatch]);
+
     useEffect(()=>{
-        if(searchQuery.length){
-            dispatch(fetchSearchFilterListings(searchQuery))
+        if (debounced !== ""){
+            if (searchQuery.length) {
+                dispatch(fetchSearchFilterListings(searchQuery))
+            }
+        }else{
+            dispatch(clearSearchHikes())
         }
-        
-        return ()=> dispatch(clearSearchHikes())
-    }, [ searchQuery])
+    }, [searchQuery, debounced])
 
     if (!hikes || !parks) {
         return null;
@@ -40,7 +50,6 @@ const Search = ({ setSearchOpen, open }) => {
         setSearchOpen(true)
     }
 
-    
 
     return (
         <div className="search-container">
