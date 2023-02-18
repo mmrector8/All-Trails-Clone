@@ -11,6 +11,7 @@ const Search = ({ setSearchOpen, open }) => {
     const history = useHistory();
     const dispatch = useDispatch();
     const [searchQuery, setSearchQuery] = useState("")
+    const [focused, setFocused] = useState(false)
     const location = useLocation();
     let hikes = useSelector(getSearchHikes)
     let parks = useSelector(getParks)
@@ -29,6 +30,7 @@ const Search = ({ setSearchOpen, open }) => {
         }else{
             dispatch(clearSearchHikes())
         }
+
     }, [searchQuery, debounced])
 
     if (!hikes || !parks) {
@@ -54,7 +56,7 @@ const Search = ({ setSearchOpen, open }) => {
     return (
         <div className="search-container">
             <div className="search-input">
-                <form onSubmit={handleSearch}>
+                <form onSubmit={handleSearch} onFocus={()=> setFocused(true)}>
                     <input type='text' value={searchQuery} placeholder="Search by hike or park name" onChange={searchBar}  className="search-input-bar" />
                     <i className="fa-solid fa-magnifying-glass search-icon"></i>
                     <button className="go-to-show-page"> <i className="fa-solid fa-arrow-right"></i></button>
