@@ -63,10 +63,10 @@ const Search = ({ setSearchOpen, open }) => {
                     <button className="go-to-show-page"> <i className="fa-solid fa-arrow-right"></i></button>
                 </form>
             </div>
-            {focused && (
+            {focused && open && (
                 <div className="search-results-container">
                     <div className="options">
-                        <p className='searchbar-options'>Parks and Hikes</p>
+                        <p className='searchbar-options'> Hikes</p>
                     </div>
                     {hikes.length ? hikes?.map((item, i) => {
                         return (
