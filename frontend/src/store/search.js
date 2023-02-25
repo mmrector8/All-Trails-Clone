@@ -8,6 +8,11 @@ export const receiveSearchHikes = (hikes) => ({
     payload: hikes.hikes
 })
 
+export const receiveSearchParks = (parks)=>({
+    type: RECEIVE_SEARCH_HIKES,
+    payload: parks.parks
+})
+
 export const clearSearchHikes = ()=>({
     type: CLEAR_SEARCH_HIKES
 })
@@ -16,6 +21,7 @@ export const fetchSearchFilterListings = (searchValue) => async (dispatch) => {
     if (res.ok) {
         const hikes = await res.json();
         dispatch(receiveSearchHikes(hikes));
+        dispatch(receiveSearchParks(hikes))
         return hikes;
     }
 }
