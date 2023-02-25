@@ -81,6 +81,7 @@
      background-color: #f2f2f2;
 }
 .search-results-link{
+    height: 40px;
     cursor: pointer;
     margin-left: 20px;
     text-decoration: none;
@@ -94,6 +95,7 @@
 .searchbar-hike-name, .searchbar-park-name{
     font-family: "Manrope", sans-serif;
     width: 600px;
+    height: 70px;
     color: black;
 }
 

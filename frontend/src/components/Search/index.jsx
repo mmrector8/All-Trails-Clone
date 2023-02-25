@@ -70,8 +70,7 @@ const Search = ({ setSearchOpen, open }) => {
                                     <Link to={`parks/${item.id}`} className="search-results-link" onClick={() => window.scrollTo({ top: 0, left: 0 })}> <i className="fa-solid fa-tree searchbar-icon tree-searchbar"></i><p className='searchbar-hike-name searchbar-park-name'>{item.name}</p></Link>
                                     : <Link to={`hikes/${item.id}`} className="search-results-link" onClick={() => window.scrollTo({ top: 0, left: 0 })}><i className="fa-solid fa-location-dot searchbar-icon"></i><div><p className='searchbar-hike-name'>{item.name}</p></div></Link>
                                 }
-
-                            </div>
+                         </div>
                         );
                     }) : <div className='no-search-results'>
                         <p className='searchbar-no-results-message'>Sorry, no results found!</p>
