@@ -61,14 +61,14 @@ const Search = ({ setSearchOpen, open }) => {
             {focused && open && (
                 <div className="search-results-container">
                     <div className="options">
-                        <p className='searchbar-options'> Hikes</p>
+                        <p className='searchbar-options'> Hikes and Parks</p>
                     </div>
                     {hikes.length && searchQuery !== "" ? hikes?.map((item, i) => {
                         return (
-                            <div className='search-results' key={i}>
+                            <div className='search-results' key={i} >
                                 {item.parkId === undefined ?
                                     <Link to={`parks/${item.id}`} className="search-results-link" onClick={() => window.scrollTo({ top: 0, left: 0 })}> <i className="fa-solid fa-tree searchbar-icon tree-searchbar"></i><p className='searchbar-hike-name searchbar-park-name'>{item.name}</p></Link>
-                                    : <Link to={`hikes/${item.id}`} className="search-results-link" onClick={() => window.scrollTo({ top: 0, left: 0 })}><i className="fa-solid fa-location-dot searchbar-icon"></i><div><p className='searchbar-hike-name'>{item.name}</p> <p className="searchbar-park-name" id="searchbar-park-name">{item.parkName}</p></div></Link>
+                                    : <Link to={`hikes/${item.id}`} className="search-results-link" onClick={() => window.scrollTo({ top: 0, left: 0 })}><i className="fa-solid fa-location-dot searchbar-icon"></i><div><p className='searchbar-hike-name'>{item.name}</p></div></Link>
                                 }
 
                             </div>

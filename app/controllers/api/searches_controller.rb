@@ -11,9 +11,6 @@ class Api::SearchesController < ApplicationController
             parks << Park.where("LOWER(name) LIKE ?", "%#{item}%")
         end
         @hikes = newHikes.reduce(:and)
-        # @hikes.each do |hike|
-        #     parks << Park.where("id = ?", hike.park_id)
-        # end
         @parks = parks.reduce(:and)
         render :index
     end
