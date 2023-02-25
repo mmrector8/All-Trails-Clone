@@ -20,19 +20,14 @@ const Search = ({ setSearchOpen, open }) => {
 
     useEffect(() => {
         setSearchQuery("");
-    }, [dispatch]);
+    }, [location.pathname]);
 
     useEffect(()=>{
         if (debounced !== ""){
-            if (searchQuery.length) {
-                dispatch(clearSearchHikes())
-                dispatch(fetchSearchFilterListings(searchQuery))
-            }
-        }else{
-            dispatch(clearSearchHikes())
+            dispatch(fetchSearchFilterListings(searchQuery))
         }
-
-    }, [searchQuery, debounced])
+        return () => dispatch(clearSearchHikes())
+    }, [debounced])
 
     if (!hikes || !parks) {
         return null;
@@ -40,12 +35,12 @@ const Search = ({ setSearchOpen, open }) => {
 
     const handleSearch = (e) => {
         e.preventDefault()
-        setSearchOpen(true)
+        // setSearchOpen(true)
         history.push({
             pathname: '/search',
             state: { searchQuery }
         })
-        setSearchQuery('')
+        // setSearchQuery('')
     }
 
     const searchBar = (e) => {
@@ -58,7 +53,7 @@ const Search = ({ setSearchOpen, open }) => {
         <div className="search-container">
             <div className="search-input">
                 <form onSubmit={handleSearch} onFocus={()=> setFocused(true)}>
-                    <input type='text' value={searchQuery} placeholder="Search by hike or park name" onChange={searchBar}  className="search-input-bar" />
+                    <input type='text' value={searchQuery} placeholder="Search by hike name" onChange={searchBar}  className="search-input-bar" />
                     <i className="fa-solid fa-magnifying-glass search-icon"></i>
                     <button className="go-to-show-page"> <i className="fa-solid fa-arrow-right"></i></button>
                 </form>
@@ -68,7 +63,7 @@ const Search = ({ setSearchOpen, open }) => {
                     <div className="options">
                         <p className='searchbar-options'> Hikes</p>
                     </div>
-                    {hikes.length ? hikes?.map((item, i) => {
+                    {hikes.length && searchQuery !== "" ? hikes?.map((item, i) => {
                         return (
                             <div className='search-results' key={i}>
                                 {item.parkId === undefined ?
