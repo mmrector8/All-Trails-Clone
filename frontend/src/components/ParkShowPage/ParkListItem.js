@@ -17,7 +17,7 @@ const ParkListItem = ({ hike, parkName}) => {
                         <div className="top-list-items">
                             <p className="hike-list-item hike-name">{hike.name}</p>
                             <p className="hike-list-item park-name-trails">{parkName}</p>
-                            <p className="hike-list-item hike-duration-and-estimated-time">Length: {hike.duration} {"•"} Est. {hike.estimated_time}</p>
+                            <p className="hike-list-item hike-duration-and-estimated-time">Length: {hike.duration} {"•"} Est. {hike.estimatedTime}</p>
                         </div>
                         <div className="description-container">
                             <p className="hike-list-item hike-description">
