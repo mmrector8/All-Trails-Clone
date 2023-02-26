@@ -16,7 +16,7 @@ const Search = ({ setSearchOpen, open }) => {
     let hikes = useSelector(getSearchHikes)
     let parks = useSelector(getParks)
 
-    const debounced = useDebounce(searchQuery, 500);
+    const debounced = useDebounce(searchQuery, 400);
 
     useEffect(() => {
         setSearchQuery("");
@@ -53,17 +53,17 @@ const Search = ({ setSearchOpen, open }) => {
         <div className="search-container">
             <div className="search-input">
                 <form onSubmit={handleSearch} onFocus={()=> setFocused(true)}>
-                    <input type='text' value={searchQuery} placeholder="Search by hike name" onChange={searchBar}  className="search-input-bar" />
+                    <input type='text' value={searchQuery} placeholder="Search by hike or park name" onChange={searchBar}  className="search-input-bar" />
                     <i className="fa-solid fa-magnifying-glass search-icon"></i>
                     <button className="go-to-show-page"> <i className="fa-solid fa-arrow-right"></i></button>
                 </form>
             </div>
-            {focused && open && (
+            {focused && open && searchQuery.length > 0 && (
                 <div className="search-results-container">
                     <div className="options">
-                        <p className='searchbar-options'> Hikes and Parks</p>
+                        {/* <p className='searchbar-options'> Hikes and Parks</p> */}
                     </div>
-                    {hikes.length && searchQuery !== "" ? hikes?.map((item, i) => {
+                    {hikes.length && searchQuery.length > 0 ? hikes?.map((item, i) => {
                         return (
                             <div className='search-results' key={i} >
                                 {item.parkId === undefined ?
