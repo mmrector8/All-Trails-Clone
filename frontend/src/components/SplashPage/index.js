@@ -13,7 +13,7 @@ import singlesplash from "../../assets/singlesplash.jpg"
 import ReasonsToSignUp from "./reasonssignup.jsx";
 import AdventureAnywhere from "./adventureanywhere";
 import ForPlanet from "./planet";
-import SearchBar from "../Searchbar";
+import SearchBar from "../Searchbar_Inactive";
 import Search from "../Search";
 import { fetchParks, getParks } from "../../store/parks";
 

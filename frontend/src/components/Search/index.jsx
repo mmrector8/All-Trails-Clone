@@ -4,7 +4,7 @@ import { clearSearchHikes, fetchSearchFilterListings, getSearchHikes } from "../
 import { getParks } from "../../store/parks.js"
 import { Link, useLocation } from "react-router-dom";
 import useDebounce from "../../hooks/debounce";
-import * as searchbarcss from "../Searchbar/searchbar.css"
+import * as searchbarcss from "../Searchbar_Inactive/searchbar.css"
 import { useHistory } from 'react-router-dom';
 
 const Search = ({ setSearchOpen, open }) => {
