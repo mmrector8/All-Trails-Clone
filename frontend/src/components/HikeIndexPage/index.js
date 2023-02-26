@@ -15,7 +15,7 @@ const HikeIndexPage = ()=>{
     
     useEffect(()=>{
         dispatch(fetchHikes())
-        return () => dispatch(removeHikes())
+        // return () => dispatch(removeHikes())
     }, [dispatch])
 
     const numOfHikes = hikes.length

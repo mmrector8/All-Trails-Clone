@@ -16,7 +16,7 @@ const Footer = () =>{
                     <div className="morgan-links-container">
                         <p className="thanks">Thanks for visiting!</p>
                         <p className="check-it-out">Check out my GitHub and LinkedIn!</p>
-                        <Link to={{ pathname: "https://github.com/mmrector8?tab=repositories" }} target="_blank" className="morgan-links"> <i className="fa-brands fa-github icon-large morgan-link-icon"></i>Github</Link>
+                        <Link to={{ pathname: "https://github.com/mmrector8" }} target="_blank" className="morgan-links"> <i className="fa-brands fa-github icon-large morgan-link-icon"></i>Github</Link>
                         <Link to={{ pathname: "https://www.linkedin.com/in/morgan-marie-rector/" }} target="_blank" className="morgan-links"> <i className="fa-brands fa-linkedin icon-large morgan-link-icon"></i>LinkedIn</Link>
                     </div>
                 </div>

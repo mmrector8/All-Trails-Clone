@@ -21,7 +21,7 @@ const HikeShowPage = ()=>{
     
     useEffect(()=>{
         dispatch(fetchHike(hikeId))
-        return () => dispatch(removeHikes())
+        // return () => dispatch(removeHikes())
     }, [dispatch, hikeId])
 
     // useEffect(() => {
@@ -63,7 +63,7 @@ const HikeShowPage = ()=>{
         let filtered = []
         let splitConditions;
         for(let i=0; i < reviewArray.length; i++){
-            splitConditions = reviewArray[i].conditions.split(",")
+            splitConditions = reviewArray[i]?.conditions?.split(",")
             if(isDateLessThanOneWeekAgo(reviewArray[i].createdAt)){
                 for (let j = 0; j < splitConditions.length; j++) {
                     if (!filtered.includes(splitConditions[j]) && splitConditions[j].length > 2) {
@@ -88,29 +88,29 @@ const HikeShowPage = ()=>{
         <div className="whole-page">  
                 <div className="hike-show-page-top-banner">
                     <p className='city-state-town'>California {"> "}</p>
-                    <p className='city-state-town'>{hike.city +  " > "}</p>
-                    <p className='city-state-town'> {hike.parkName ? `${hike.parkName} > ${hike.name}` :  `${hike.name}`}</p>
+                    <p className='city-state-town'>{hike?.city +  " > "}</p>
+                    <p className='city-state-town'> {hike?.parkName ? `${hike.parkName} > ${hike.name}` :  `${hike.name}`}</p>
                 </div> 
         <div className="hike-show-page">
             <div className="descriptors-with-background-image">
-                <h1 className="main-descriptors hike-title">{hike.name}</h1>
-                <p className="main-descriptors hike-difficulty">{hike.difficulty}</p>
-                <p className="main-descriptors park-name">{hike.parkName}</p>
-                <img src={hike.photoUrls[0]} alt="hello" className="hike-show-photo" />
+                <h1 className="main-descriptors hike-title">{hike?.name}</h1>
+                <p className="main-descriptors hike-difficulty">{hike?.difficulty}</p>
+                <p className="main-descriptors park-name">{hike?.parkName}</p>
+                <img src={hike?.photoUrls[0]} alt="hello" className="hike-show-photo" />
             </div>
             <div className="grid-elements">
                 <div className="body-descriptors">
                     <div className="duration-items">
                         <p className='body-items'>Length:</p>
-                        <p className="body-items duration">{hike.duration}</p>
+                        <p className="body-items duration">{hike?.duration}</p>
                     </div>
                     <div className="elevation-gain-items">
                         <p className='body-items'>Elevation Gain:</p>
-                        <p className="el-gain">{hike.elevationGain} ft.</p>
+                        <p className="el-gain">{hike?.elevationGain} ft.</p>
                     </div>
                     <div className="route-type-items">
                         <p className='body-items'>Route Type:</p>
-                        <p className="type">{hike.routeType[0].toUpperCase() + hike.routeType.slice(1, hike.routeType.length)}</p>
+                        <p className="type">{hike?.routeType[0].toUpperCase() + hike?.routeType.slice(1, hike.routeType.length)}</p>
                     </div>
                 </div>
                 <div className="long-description">
@@ -123,7 +123,7 @@ const HikeShowPage = ()=>{
                     </div>
                     <div className="other-hikes">
                             <h1 className='nearby-trails'>Nearby trails</h1>
-                        {getAllRelatedHikes().map((hike, i)=> <HikeShowListItem key={i} hike={hike}/>)}
+                        {getAllRelatedHikes()?.map((hike, i)=> <HikeShowListItem key={i} hike={hike}/>)}
                     </div>
                 </div>
                 <div className="tag-container">
@@ -136,7 +136,8 @@ const HikeShowPage = ()=>{
 
                 <div className="conditions-container">
                     <h1 className='conditions-big-title'>Conditions</h1>
-                    {getAllTagsFromReviews(reviews).length ? <div className="conditions-inner-container"><h1 className='conditions-title'>Conditions reported in the last 7 days: </h1> <div className="conditions">{getAllTagsFromReviews(reviews).map((condition, i) => <p className='tags' key={i}>{condition}</p>)}</div></div> : <div><h1 className="conditions-title large-conditions-title"> No conditions in reported in the last 7 days </h1> <p className='conditions-title'>Want to report conditions for this trail?<button onClick={scrollToReviewButton} className='scroll-to-write-a-review'>Write a review below</button>to inform other visitors!</p></div>}
+                            {reviews.length ? getAllTagsFromReviews(reviews)?.length ? <div className="conditions-inner-container"><h1 className='conditions-title'>Conditions reported in the last 7 days: </h1> <div className="conditions">{getAllTagsFromReviews(reviews).map((condition, i) => <p className='tags' key={i}>{condition}</p>)}</div></div> : <div><h1 className="conditions-title large-conditions-title"> No conditions in reported in the last 7 days </h1> <p className='conditions-title'>Want to report conditions for this trail?<button onClick={scrollToReviewButton} className='scroll-to-write-a-review'>Write a review below</button>to inform other visitors!</p></div> : ""}
+                
                 </div>
                 <div className='weather'>
                      <h1 className='local-weather'>Local Weather</h1>

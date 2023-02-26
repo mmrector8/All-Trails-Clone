@@ -26,7 +26,7 @@ const SplashPage = ()=>{
 
     useEffect(() => {
         dispatch(fetchHikes())
-        dispatch(fetchParks())
+        // dispatch(fetchParks())
     }, [dispatch])
 
     const images = [

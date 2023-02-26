@@ -20,16 +20,16 @@ const ReviewModal = ({open, setIsOpen, hike, review}) =>{
     useEffect(()=>{
         if(review){
             setIsEdit(true)
-            setStars(review.stars)
-            setContent(review.content)
-            setActivityType(review.activityType)
-            setConditions(review.conditions.split(","))          
+            setStars(review?.stars)
+            setContent(review?.content)
+            setActivityType(review?.activityType)
+            setConditions(review?.conditions?.split(","))          
         }
     }, [dispatch, review, hike.id])
 
     useEffect(()=>{
         if(review){
-            setConditions(review.conditions.split(","))
+            setConditions(review?.conditions?.split(","))
         } 
     }, [open])
 
@@ -195,7 +195,7 @@ const ReviewModal = ({open, setIsOpen, hike, review}) =>{
                         </div> 
                             <label className="trail-conditions-label">Trail Conditions  </label>
                             <div className="conditions-options">
-                                {conditionOptions.map((condition, i) => 
+                                {conditionOptions?.map((condition, i) => 
                                     <div className="radio-conditions" key={`${i}radioconditions`}> 
                                         <input type="radio" value={condition} key={i} id={`conditions${i}`} onChange={()=> {}} onClick={handleRadioChange}checked={conditions.includes(condition) ? "checked" : ""} className="conditions-radio-buttons"/>
                                         <label htmlFor={`conditions${i}`} className="conditions-label" key={condition}> {conditions.includes(condition) ? `✓ ${condition}` : condition}  </label>
@@ -205,7 +205,7 @@ const ReviewModal = ({open, setIsOpen, hike, review}) =>{
                             <div className="button-container">
                                     <div className="errors">
                                         <ol className='error-list'>
-                                            {errors.map((error) => (
+                                            {errors?.map((error) => (
                                                 <li key={error} className='review-errors'>{error}</li>
                                             ))}
                                         </ol>

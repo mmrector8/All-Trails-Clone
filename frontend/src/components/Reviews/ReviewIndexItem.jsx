@@ -16,7 +16,7 @@ const ReviewIndexItem = ({review, currentUser}) =>{
     }
 
     const reviewConditions = (review)=>{
-        const conditionsArr = review.conditions.split(",").filter(condition=> condition.length> 2)
+        const conditionsArr = review?.conditions?.split(",").filter(condition=> condition.length> 2)
         return conditionsArr;
     }
 
@@ -74,18 +74,18 @@ const ReviewIndexItem = ({review, currentUser}) =>{
                         <i className="fa-solid fa-person-hiking review-icon-reviews"></i>
                     </div>
                     <div className = "review-header">
-                        <h1>{review.fname} {review.lname}</h1>
-                        <p className="date-and-activity-type-review">{convertDate()} • {review.activityType}</p>
+                        <h1>{review?.fname} {review?.lname}</h1>
+                        <p className="date-and-activity-type-review">{convertDate()} • {review?.activityType}</p>
                     </div>
                 </div>
                 <div className="review-content-review-index">
-                    <StarIndex numStars={review.stars}/>
-                    <p>{review.content}</p>
+                    <StarIndex numStars={review?.stars}/>
+                    <p>{review?.content}</p>
 
                 </div>
-                <div className={reviewConditions(review).length ? "conditions-on-show-page" : "hide-title"}>
+                <div className={reviewConditions(review)?.length ? "conditions-on-show-page" : "hide-title"}>
                     <ul className="listy"> <h1 className="conditions-list-title">Conditions:</h1>
-                        {reviewConditions(review).map((condition, i) => <li key={i} className="condition-list-item">{i === reviewConditions(review).length - 1 ? `${condition}` : `${condition},`}</li>)}
+                        {reviewConditions(review)?.map((condition, i) => <li key={i} className="condition-list-item">{i === reviewConditions(review).length - 1 ? `${condition}` : `${condition},`}</li>)}
                     </ul>
                 </div>
                 {checkCurrentUser()}
