@@ -84,7 +84,7 @@ const LoginFormPage = ({modal, closeModal})=>{
                                 <div className='sign-in-form-elements'>
                                 <ul className='error-container-sign-in'>
                                     {errors.map((error) => (
-                                        <li key={error} className='sign-in-errors'>{error}</li>
+                                        <li key={error} className={modalVal ? 'sign-in-errors review-errors' : 'sign-in-errors'}>{error}</li>
                                     ))}
                                 </ul>
                                 <input type ='text' value={credential} onChange={((e)=> setCredential(e.target.value))} placeholder="Username or email" className='input-value'></input>
