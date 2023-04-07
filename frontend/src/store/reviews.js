@@ -6,7 +6,6 @@ export const REMOVE_REVIEW = 'reviews/REMOVE_REVIEW'
 export const CLEAR_REVIEWS = 'reviews/CLEAR_REVIEWS'
 
 export const receiveReview = (review)=> {
-    console.log(review, 'hitting receive review')
     return {
         type: RECEIVE_REVIEW,
         review

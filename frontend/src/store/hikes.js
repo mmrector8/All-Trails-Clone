@@ -28,7 +28,6 @@ export const getHike = (hikeId)=>(state)=>{
 }
 
 export const getHikes = (store={})=>{
-    console.log('getting called')
     if (store.hikes){
         return Object.values(store.hikes)
     }

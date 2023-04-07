@@ -6,10 +6,6 @@ import { useEffect } from "react";
 const AdventureAnywhere = () =>{
     let hikes = useSelector((state)=> state.hikes.hikes)
 
-    useEffect(()=> {
-        console.log('re-rendering a anywhere')
-    })
-
     if(!hikes){
         return null;
     }
