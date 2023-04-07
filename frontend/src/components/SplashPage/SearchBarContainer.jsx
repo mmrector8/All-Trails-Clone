@@ -1,11 +1,7 @@
 import { useState, useEffect } from "react";
 import Search from "../Search";
-import { Link, useHistory } from "react-router-dom"
+import { Link } from "react-router-dom"
 import * as Splashcss from "./splashpage.css"
-import julia from "../../assets/julia.jpg"
-import alexbackground from "../../assets/alexbackground.png"
-import splashresized from "../../assets/splashresized.jpg"
-import singlesplash from "../../assets/singlesplash.jpg"
 import BackgroundImage from "./BackgroundImage";
 
 const SearchBarContainer = ({ currentUser})=> {

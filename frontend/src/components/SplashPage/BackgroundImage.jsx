@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import Search from "../Search";
-import { Link, useHistory } from "react-router-dom"
 import * as Splashcss from "./splashpage.css"
 import julia from "../../assets/julia.jpg"
 import alexbackground from "../../assets/alexbackground.png"
@@ -9,7 +7,7 @@ import singlesplash from "../../assets/singlesplash.jpg"
 
 const BackgroundImage = () => {
     const [currentImgIdx, setCurrentImgIdx] = useState(0)
-    
+
     const images = [
         julia,
         splashresized,
