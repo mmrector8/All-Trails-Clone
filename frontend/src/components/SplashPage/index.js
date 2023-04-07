@@ -21,14 +21,6 @@ const SplashPage = ()=>{
         dispatch(fetchHikes())
     }, [dispatch])
 
-    useEffect(() => {
-        console.log('re-rendering parent')
-        // dispatch(fetchParks())
-    }, )
-
-
-
-
     return (
         <div className='splash-page'>
             <SearchBarContainer currentUser={currentUser}/>

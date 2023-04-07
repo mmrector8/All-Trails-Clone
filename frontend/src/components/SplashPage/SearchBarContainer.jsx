@@ -7,10 +7,6 @@ import BackgroundImage from "./BackgroundImage";
 const SearchBarContainer = ({ currentUser})=> {
     const [searchOpen, setSearchOpen] = useState(false);
 
-    useEffect(()=> {
-        console.log('re-rendering search bar container')
-    })
-
     const handleClickAway =(e)=>{
         e.preventDefault();
         if(searchOpen){
