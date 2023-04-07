@@ -1,13 +1,17 @@
 import { Link, useHistory } from "react-router-dom";
 import Carousel from 'react-elastic-carousel'
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, memo } from "react";
 import { getHikes, fetchHikes } from "../../store/hikes"
 import HikeShowListItem from "../HikeShowPage/OtherHikesItem";
 
 const LocalFavorites = () =>{
     const hikes = useSelector(getHikes)
     const history = useHistory();
+
+    useEffect(()=> {
+        console.log('re-rendering local favorites')
+    })
 
     if(!hikes){
         return null;
@@ -48,4 +52,4 @@ const LocalFavorites = () =>{
         </div>
     )
 }
-export default LocalFavorites;
+export default memo(LocalFavorites);

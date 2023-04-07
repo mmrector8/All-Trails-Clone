@@ -26,8 +26,12 @@ const SplashPage = ()=>{
 
     useEffect(() => {
         dispatch(fetchHikes())
-        // dispatch(fetchParks())
     }, [dispatch])
+
+    useEffect(() => {
+        console.log('re-rendering parent')
+        // dispatch(fetchParks())
+    }, )
 
     const images = [
         julia,
