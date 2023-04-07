@@ -1,9 +1,14 @@
 import { getHikes } from "../../store/hikes"
-import { useSelector } from "react-redux";
+import { shallowEqual, useSelector } from "react-redux";
 import AdventureAnywhereItem from "./adventureanywhereitem.jsx"
+import { useEffect } from "react";
 
 const AdventureAnywhere = () =>{
-    let hikes = useSelector(getHikes)
+    let hikes = useSelector((state)=> state.hikes.hikes)
+
+    useEffect(()=> {
+        console.log('re-rendering a anywhere')
+    })
 
     if(!hikes){
         return null;
@@ -14,7 +19,7 @@ const AdventureAnywhere = () =>{
             <h1 className="adventure-anywhere">Adventure anywhere</h1>
             <p className="parks-worth-look">Trending Trails</p>
             <div className="adventure-parks-list">
-                {hikes.slice(0,8).map((hike, i)=>{
+                {hikes?.slice(0,8).map((hike, i)=>{
                    return <AdventureAnywhereItem hike={hike} key={i}/>})}
             </div>
         </div>

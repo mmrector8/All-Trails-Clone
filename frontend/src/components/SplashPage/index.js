@@ -9,7 +9,6 @@ import InspiringImage from "./inspiringimage";
 import ReasonsToSignUp from "./reasonssignup.jsx";
 import AdventureAnywhere from "./adventureanywhere";
 import ForPlanet from "./planet";
-import { fetchParks, getParks } from "../../store/parks";
 import SearchBarContainer from "./SearchBarContainer";
 
 

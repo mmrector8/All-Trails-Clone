@@ -1,4 +1,4 @@
-import {memo, useEffect} from "react"
+import { useEffect} from "react"
 import { useHistory } from "react-router-dom"
 
 const Activities =()=>{
@@ -28,4 +28,4 @@ const Activities =()=>{
         </div>
     )
 }
-export default memo(Activities);
+export default Activities;

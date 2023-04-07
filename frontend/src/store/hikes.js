@@ -28,6 +28,7 @@ export const getHike = (hikeId)=>(state)=>{
 }
 
 export const getHikes = (store={})=>{
+    console.log('getting called')
     if (store.hikes){
         return Object.values(store.hikes)
     }
@@ -63,10 +64,8 @@ const hikesReducer = (state={}, action) => {
     const newState ={...state}
     switch(action.type){
         case RECEIVE_HIKE:
-            // return { [action.hike.id]: action.hike }
             newState[action.payload.hike.id] = action.payload.hike;
             return newState;
-        //    return {...newState, ...action.hike}
         case RECEIVE_HIKES:
             return {...newState, ...action.payload}
         case REMOVE_HIKES:

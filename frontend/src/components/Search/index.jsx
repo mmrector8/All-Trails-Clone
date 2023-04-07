@@ -14,7 +14,6 @@ const Search = ({ setSearchOpen, open }) => {
     const [focused, setFocused] = useState(false)
     const location = useLocation();
     let hikes = useSelector(getSearchHikes)
-    let parks = useSelector(getParks)
 
     const debounced = useDebounce(searchQuery, 500);
 
@@ -29,7 +28,7 @@ const Search = ({ setSearchOpen, open }) => {
         return () => dispatch(clearSearchHikes())
     }, [debounced])
 
-    if (!hikes || !parks) {
+    if (!hikes ) {
         return null;
     }
 

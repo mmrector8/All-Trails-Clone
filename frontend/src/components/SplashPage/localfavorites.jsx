@@ -6,7 +6,7 @@ import { getHikes, fetchHikes } from "../../store/hikes"
 import HikeShowListItem from "../HikeShowPage/OtherHikesItem";
 
 const LocalFavorites = () =>{
-    const hikes = useSelector(getHikes)
+    const hikes = useSelector((state) => state.hikes.hikes)
     const history = useHistory();
 
     if(!hikes){
