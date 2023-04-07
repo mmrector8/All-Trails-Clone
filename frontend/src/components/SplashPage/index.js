@@ -6,21 +6,15 @@ import * as Splashcss from "./splashpage.css"
 import LocalFavorites from "./localfavorites";
 import Activities from "./activities";
 import InspiringImage from "./inspiringimage";
-import julia from "../../assets/julia.jpg"
-import alexbackground from "../../assets/alexbackground.png"
-import splashresized from "../../assets/splashresized.jpg"
-import singlesplash from "../../assets/singlesplash.jpg"
 import ReasonsToSignUp from "./reasonssignup.jsx";
 import AdventureAnywhere from "./adventureanywhere";
 import ForPlanet from "./planet";
-import SearchBar from "../Searchbar_Inactive";
-import Search from "../Search";
 import { fetchParks, getParks } from "../../store/parks";
+import SearchBarContainer from "./SearchBarContainer";
 
 
 const SplashPage = ()=>{
-    const [currentImgIdx, setCurrentImgIdx] = useState(0)
-    const[searchOpen, setSearchOpen] = useState(false);
+    const [searchOpen, setSearchOpen] = useState(false);
     const currentUser = useSelector((state)=> state.session.user)
     const dispatch = useDispatch();
 
@@ -33,28 +27,6 @@ const SplashPage = ()=>{
         // dispatch(fetchParks())
     }, )
 
-    const images = [
-        julia,
-        splashresized,
-        alexbackground
-    ]
-
-    const smallerImages = [
-        singlesplash,
-        splashresized,
-        singlesplash
-    ]
-
-    useEffect(()=>{
-        const backgroundInterval = setInterval(()=>{
-            if (currentImgIdx < images.length - 1) {
-                setCurrentImgIdx(currentImgIdx + 1)
-            } else {
-                setCurrentImgIdx(0)
-            }
-        }, 3000) 
-        return ()=> clearInterval(backgroundInterval)
-    }, [currentImgIdx])
 
     const handleClickAway =(e)=>{
         e.preventDefault();
@@ -66,24 +38,14 @@ const SplashPage = ()=>{
     return (
         <div className='splash-page'>
         <div onClick={handleClickAway}>
-            <div className="searchbar-container" >
-                <img src={images[currentImgIdx]} id="background-image"></img>
-                <img src={smallerImages[currentImgIdx]} id="small-background-image"></img>
-                <div className="splash-search-bar">
-                    
-                    <h1 className='splash-title'>{currentUser ? `Ready to do this, ${currentUser.fname}?`: "Find your outdoors"}</h1>
-                    {/* <SearchBar setSearchOpen={setSearchOpen} open={searchOpen}/> */}
-                    <Search setSearchOpen={setSearchOpen} open={searchOpen} />
-                    <Link to={'/hikes'} onClick={()=>window.scrollTo({ top: 0, left: 0 })}className='explore-link'>Explore trails in the Bay</Link>
-                </div>    
-            </div>
+            <SearchBarContainer searchOpen={searchOpen} setSearchOpen={setSearchOpen} currentUser={currentUser}/>
             <LocalFavorites />
             <Activities />
             <InspiringImage /> 
             <ReasonsToSignUp />
             <AdventureAnywhere />
             <ForPlanet currentUser={currentUser}/>
-        </div>
+            </div>
         </div>
     )
 }
