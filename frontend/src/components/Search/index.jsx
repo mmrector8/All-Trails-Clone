@@ -54,7 +54,7 @@ const Search = ({ setSearchOpen, open }) => {
                 <form onSubmit={handleSearch} onFocus={()=> setFocused(true)}>
                     <input type='text' value={searchQuery} placeholder="Search by hike or park name" onChange={searchBar}  className="search-input-bar" />
                     <i className="fa-solid fa-magnifying-glass search-icon"></i>
-                    <button className="go-to-show-page"> <i className="fa-solid fa-arrow-right"></i></button>
+                    <button className="go-to-show-page" type="submit"> <i className="fa-solid fa-arrow-right"></i></button>
                 </form>
             </div>
             {focused && open && searchQuery.length > 0 && (
