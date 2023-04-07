@@ -9,9 +9,15 @@ const LocalFavorites = () =>{
     const hikes = useSelector(getHikes)
     const history = useHistory();
 
+    useEffect(() => {
+        console.log('rendering local faves')
+    })
+
     if(!hikes){
         return null;
     } 
+
+
 
     const breakPoints = [
         { width: 1, itemsToShow: 1 },
@@ -48,4 +54,4 @@ const LocalFavorites = () =>{
         </div>
     )
 }
-export default memo(LocalFavorites);
+export default LocalFavorites;

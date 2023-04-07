@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { clearSearchHikes, fetchSearchFilterListings, getSearchHikes } from "../../store/search.js"
 import { getParks } from "../../store/parks.js"
@@ -16,7 +16,7 @@ const Search = ({ setSearchOpen, open }) => {
     let hikes = useSelector(getSearchHikes)
     let parks = useSelector(getParks)
 
-    const debounced = useDebounce(searchQuery, 400);
+    const debounced = useDebounce(searchQuery, 500);
 
     useEffect(() => {
         setSearchQuery("");
@@ -83,4 +83,4 @@ const Search = ({ setSearchOpen, open }) => {
     )
 
 }
-export default Search;
+export default memo(Search);

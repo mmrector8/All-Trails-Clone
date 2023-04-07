@@ -14,7 +14,6 @@ import SearchBarContainer from "./SearchBarContainer";
 
 
 const SplashPage = ()=>{
-    const [searchOpen, setSearchOpen] = useState(false);
     const currentUser = useSelector((state)=> state.session.user)
     const dispatch = useDispatch();
 
@@ -28,24 +27,24 @@ const SplashPage = ()=>{
     }, )
 
 
-    const handleClickAway =(e)=>{
-        e.preventDefault();
-        if(searchOpen){
-            setSearchOpen(false)
-        }
-    }
+    // const handleClickAway =(e)=>{
+    //     e.preventDefault();
+    //     if(searchOpen){
+    //         setSearchOpen(false)
+    //     }
+    // }
 
     return (
         <div className='splash-page'>
-        <div onClick={handleClickAway}>
-            <SearchBarContainer searchOpen={searchOpen} setSearchOpen={setSearchOpen} currentUser={currentUser}/>
+        {/* <div onClick={handleClickAway}> */}
+            <SearchBarContainer currentUser={currentUser}/>
             <LocalFavorites />
             <Activities />
             <InspiringImage /> 
             <ReasonsToSignUp />
             <AdventureAnywhere />
             <ForPlanet currentUser={currentUser}/>
-            </div>
+            {/* </div> */}
         </div>
     )
 }
