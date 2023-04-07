@@ -9,10 +9,6 @@ const LocalFavorites = () =>{
     const hikes = useSelector(getHikes)
     const history = useHistory();
 
-    useEffect(()=> {
-        console.log('re-rendering local favorites')
-    })
-
     if(!hikes){
         return null;
     } 
