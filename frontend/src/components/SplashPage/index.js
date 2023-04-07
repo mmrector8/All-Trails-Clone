@@ -27,16 +27,10 @@ const SplashPage = ()=>{
     }, )
 
 
-    // const handleClickAway =(e)=>{
-    //     e.preventDefault();
-    //     if(searchOpen){
-    //         setSearchOpen(false)
-    //     }
-    // }
+
 
     return (
         <div className='splash-page'>
-        {/* <div onClick={handleClickAway}> */}
             <SearchBarContainer currentUser={currentUser}/>
             <LocalFavorites />
             <Activities />
@@ -44,7 +38,6 @@ const SplashPage = ()=>{
             <ReasonsToSignUp />
             <AdventureAnywhere />
             <ForPlanet currentUser={currentUser}/>
-            {/* </div> */}
         </div>
     )
 }

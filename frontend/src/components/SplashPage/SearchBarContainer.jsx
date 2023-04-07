@@ -11,9 +11,15 @@ const SearchBarContainer = ({ currentUser})=> {
         console.log('re-rendering search bar container')
     })
 
+    const handleClickAway =(e)=>{
+        e.preventDefault();
+        if(searchOpen){
+            setSearchOpen(false)
+        }
+    }
 
     return (
-        <div className="searchbar-container" >
+        <div className="searchbar-container" onClick={handleClickAway}>
             <BackgroundImage />
             <div className="splash-search-bar">
 
