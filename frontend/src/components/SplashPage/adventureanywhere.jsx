@@ -4,7 +4,8 @@ import AdventureAnywhereItem from "./adventureanywhereitem.jsx"
 import { useEffect } from "react";
 
 const AdventureAnywhere = () =>{
-    let hikes = useSelector((state)=> state.hikes.hikes)
+    const stateHikes = useSelector(state => state.hikes)
+    const hikes = Object.values(stateHikes)
 
     if(!hikes){
         return null;
