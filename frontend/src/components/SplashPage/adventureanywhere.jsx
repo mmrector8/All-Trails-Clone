@@ -6,10 +6,6 @@ import { useEffect, useMemo } from "react";
 const AdventureAnywhere = () =>{
     const hikes = useSelector(getHikes, shallowEqual)
 
-    useEffect(()=>{
-        console.log("re-render adventureanywhere")
-    })
-
     if(!hikes){
         return null;
     }
