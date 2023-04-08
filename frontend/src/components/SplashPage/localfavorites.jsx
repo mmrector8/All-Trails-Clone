@@ -9,10 +9,6 @@ const LocalFavorites = () =>{
     const hikes = useSelector(getHikes, shallowEqual)
     const history = useHistory();
 
-    useEffect(()=> {
-        console.log('rerendering local faves')
-    })
-
     if(!hikes){
         return null;
     } 
