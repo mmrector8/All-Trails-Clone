@@ -1,14 +1,17 @@
 import { Link, useHistory } from "react-router-dom";
 import Carousel from 'react-elastic-carousel'
-import { useSelector } from "react-redux";
+import { useSelector, shallowEqual } from "react-redux";
 import { useEffect, memo } from "react";
 import { getHikes, fetchHikes } from "../../store/hikes"
 import HikeShowListItem from "../HikeShowPage/OtherHikesItem";
 
 const LocalFavorites = () =>{
-    const stateHikes = useSelector(state=> state.hikes)
-    const hikes = Object.values(stateHikes)
+    const hikes = useSelector(getHikes, shallowEqual)
     const history = useHistory();
+
+    useEffect(()=> {
+        console.log('rerendering local faves')
+    })
 
     if(!hikes){
         return null;

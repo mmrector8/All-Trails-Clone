@@ -1,11 +1,14 @@
 import { getHikes } from "../../store/hikes"
 import { shallowEqual, useSelector } from "react-redux";
 import AdventureAnywhereItem from "./adventureanywhereitem.jsx"
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 
 const AdventureAnywhere = () =>{
-    const stateHikes = useSelector(state => state.hikes)
-    const hikes = Object.values(stateHikes)
+    const hikes = useSelector(getHikes, shallowEqual)
+
+    useEffect(()=>{
+        console.log("re-render adventureanywhere")
+    })
 
     if(!hikes){
         return null;
