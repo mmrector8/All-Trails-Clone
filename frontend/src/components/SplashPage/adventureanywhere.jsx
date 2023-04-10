@@ -1,6 +1,6 @@
 import { getHikes } from "../../store/hikes"
 import { shallowEqual, useSelector } from "react-redux";
-import AdventureAnywhereItem from "./adventureanywhereitem.jsx"
+import AdventureAnywhereItem from "./AdventureAnywhereItem.jsx"
 import { useEffect, useMemo } from "react";
 
 const AdventureAnywhere = () =>{

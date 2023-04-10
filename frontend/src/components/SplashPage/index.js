@@ -3,12 +3,12 @@ import { useEffect, useState } from "react"
 import { fetchHikes } from "../../store/hikes";
 import { useDispatch, useSelector } from "react-redux";
 import * as Splashcss from "./splashpage.css"
-import LocalFavorites from "./localfavorites";
-import Activities from "./activities";
-import InspiringImage from "./inspiringimage";
-import ReasonsToSignUp from "./reasonssignup.jsx";
-import AdventureAnywhere from "./adventureanywhere";
-import ForPlanet from "./planet";
+import LocalFavorites from "./LocalFavorites";
+import Activities from "./Activities";
+import InspiringImage from "./InspiringImage";
+import ReasonsToSignUp from "./ReasonsSignUp";
+import AdventureAnywhere from "./AdventureAnywhere";
+import ForPlanet from "./Planet";
 import SearchBarContainer from "./SearchBarContainer";
 
 
