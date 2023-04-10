@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import { useSelector } from 'react-redux'
-import ReviewModal from './reviewmodal'
+import ReviewModal from './ReviewModal'
 import LoginFormPage from '../LoginFormPage'
 import * as reviewmodalcss from "./reviewmodal.css"
 

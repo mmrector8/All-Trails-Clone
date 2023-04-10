@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import React, { useState } from 'react'
 import * as sessionActions from '../../store/session'
 import { Redirect, useHistory } from 'react-router-dom'
-import './SignUpForm.css'
+import './signupform.css'
 import logo from "../../assets/logo.png"
 
 const SignUpForm = () => {

@@ -3,9 +3,9 @@ import * as reviewindexcss from "./reviewindexitem.css"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux";
 import { deleteReview } from "../../store/reviews";
-import ReviewModalContainer from "./reviewmodalcontainer";
+import ReviewModalContainer from "./ReviewModalContainer";
 import { getHike } from "../../store/hikes";
-import StarIndex from "./starindex";
+import StarIndex from "./StarIndex";
 
 const ReviewIndexItem = ({review, currentUser}) =>{
     const dispatch = useDispatch();
