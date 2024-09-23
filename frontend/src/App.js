@@ -9,7 +9,7 @@ import SplashPage from "./components/SplashPage";
 import Footer from "./components/Footer";
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'; 
-import ReviewModalContainer from "./components/Reviews/ReviewModalContainer";
+import ReviewModalContainer from "./components/Reviews/reviewmodalcontainer";
 
 function App() {
   return (

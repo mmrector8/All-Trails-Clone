@@ -4,7 +4,7 @@ import {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux' 
 import {getReviews } from "../../store/reviews"
 import { useParams } from "react-router-dom";
-import ReviewModalContainer from "./ReviewModalContainer";
+import ReviewModalContainer from "./reviewmodalcontainer";
 
 const ReviewIndex = ({hike}) =>{
     const [reviewsPresent, setReviewsPresent] = useState(false)

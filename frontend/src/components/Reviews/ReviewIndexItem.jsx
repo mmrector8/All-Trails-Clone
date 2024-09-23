@@ -3,7 +3,7 @@ import * as reviewindexcss from "./reviewindexitem.css"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux";
 import { deleteReview } from "../../store/reviews";
-import ReviewModalContainer from "./ReviewModalContainer";
+import ReviewModalContainer from "./reviewmodalcontainer";
 import { getHike } from "../../store/hikes";
 import StarIndex from "./StarIndex";
 
