@@ -8,7 +8,7 @@ import ComponentError from "./components/ComponentError"
 import SplashPage from "./components/SplashPage";
 import Footer from "./components/Footer";
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom'; 
 import ReviewModalContainer from "./components/Reviews/ReviewModalContainer";
 
 function App() {

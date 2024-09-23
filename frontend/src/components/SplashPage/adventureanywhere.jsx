@@ -1,4 +1,4 @@
-import { getHikes } from "../../store/hikes"
+import { getHikes } from "../../store/hikes.js"
 import { shallowEqual, useSelector } from "react-redux";
 import AdventureAnywhereItem from "./AdventureAnywhereItem.jsx"
 import { useEffect, useMemo } from "react";
