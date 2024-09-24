@@ -8,7 +8,7 @@ import InspiringImage from "./inspiringimage";
 import ReasonsToSignUp from "./reasonssignup";
 import AdventureAnywhere from "./adventureanywhere";
 import ForPlanet from "./planet";
-import SearchBarContainer from "./searchbarcontainer";
+import SearchBarContainer from "./SearchBarContainer";
 import LocalFavorites from "./localfavorites";
 
 
