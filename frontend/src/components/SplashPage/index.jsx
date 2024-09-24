@@ -4,7 +4,7 @@ import { fetchHikes } from "../../store/hikes";
 import { useDispatch, useSelector } from "react-redux";
 import * as Splashcss from "./splashpage.css"
 import Activities from "./activities";
-import InspiringImage from "./InspiringImage";
+import InspiringImage from "./inspiringimage";
 import ReasonsToSignUp from "./reasonssignup";
 import AdventureAnywhere from "./adventureanywhere";
 import ForPlanet from "./planet";
