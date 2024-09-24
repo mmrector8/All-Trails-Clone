@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Search from "../Search";
 import { Link } from "react-router-dom"
 import * as Splashcss from "./splashpage.css"
-import BackgroundImage from "./BackgroundImage";
+import BackgroundImage from "./backgroundimage";
 
 const SearchBarContainer = ({ currentUser})=> {
     const [searchOpen, setSearchOpen] = useState(false);

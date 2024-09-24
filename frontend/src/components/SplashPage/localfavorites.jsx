@@ -5,13 +5,13 @@ import { useEffect, memo } from "react";
 import { getHikes, fetchHikes } from "../../store/hikes"
 import HikeShowListItem from "../HikeShowPage/OtherHikesItem";
 
-const LocalFavorites = () =>{
+const LocalFavorites = () => {
     const hikes = useSelector(getHikes, shallowEqual)
     const history = useHistory();
 
-    if(!hikes){
+    if (!hikes) {
         return null;
-    } 
+    }
 
     const breakPoints = [
         { width: 1, itemsToShow: 1 },
@@ -20,16 +20,16 @@ const LocalFavorites = () =>{
         { width: 1120, itemsToShow: 4 }
     ];
 
-    const handleClick = ()=>{
+    const handleClick = () => {
         let path = `/hikes`
         history.push(path)
         window.scrollTo({ top: 0, left: 0 })
     }
 
-    const filteredLocalFavorites = () =>{
+    const filteredLocalFavorites = () => {
         let filtered = []
-        for(let i=0; i < hikes.length; i++){
-            if(i % 3 === 0){
+        for (let i = 0; i < hikes.length; i++) {
+            if (i % 3 === 0) {
                 filtered.push(hikes[i])
             }
         }
@@ -38,13 +38,13 @@ const LocalFavorites = () =>{
 
     return (
         <div className='local-favorites'>
-            <h1 className="local-favorites-links">Local favorites in the <Link to={'/hikes'} onClick={()=>window.scrollTo({ top: 0, left: 0 })} className="local-fave-link">Bay Area</Link></h1>
+            <h1 className="local-favorites-links">Local favorites in the <Link to={'/hikes'} onClick={() => window.scrollTo({ top: 0, left: 0 })} className="local-fave-link">Bay Area</Link></h1>
             <Carousel breakPoints={breakPoints} enableMouseSwipe={true} itemsToScroll={3} outerSpacing={0}>
-                {filteredLocalFavorites().map((hike, i)=> <HikeShowListItem key={i} hike={hike}/>)}
+                {filteredLocalFavorites().map((hike, i) => <HikeShowListItem key={i} hike={hike} />)}
                 <div className='local-favorites-show-more' onClick={handleClick}>
                     <p className="carousel-show-more-link">Show more</p>
                 </div>
-             </Carousel>
+            </Carousel>
         </div>
     )
 }

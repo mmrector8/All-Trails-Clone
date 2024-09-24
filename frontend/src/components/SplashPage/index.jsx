@@ -3,13 +3,13 @@ import { useEffect, useState } from "react"
 import { fetchHikes } from "../../store/hikes";
 import { useDispatch, useSelector } from "react-redux";
 import * as Splashcss from "./splashpage.css"
-import LocalFavorites from "./LocalFavorites";
 import Activities from "./Activities";
 import InspiringImage from "./InspiringImage";
 import ReasonsToSignUp from "./ReasonsSignUp";
 import AdventureAnywhere from "./AdventureAnywhere";
 import ForPlanet from "./Planet";
 import SearchBarContainer from "./SearchBarContainer";
+import LocalFavorites from "./localfavorites";
 
 
 const SplashPage = ()=>{
