@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { fetchHikes } from "../../store/hikes";
 import { useDispatch, useSelector } from "react-redux";
 import * as Splashcss from "./splashpage.css"
-import Activities from "./Activities";
+import Activities from "./activities";
 import InspiringImage from "./InspiringImage";
 import ReasonsToSignUp from "./ReasonsSignUp";
 import AdventureAnywhere from "./AdventureAnywhere";
