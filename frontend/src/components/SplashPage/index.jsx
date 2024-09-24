@@ -17,7 +17,7 @@ const SplashPage = ()=>{
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchHikes())
+        dispatch(fetchHikes());
     }, [dispatch])
 
     return (
