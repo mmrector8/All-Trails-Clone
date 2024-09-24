@@ -12,7 +12,7 @@ import SearchBarContainer from "./searchbarcontainer";
 import LocalFavorites from "./localfavorites";
 
 
-const SplashPage = ()=>{
+const SplashPage = () => {
     const currentUser = useSelector((state)=> state.session.user)
     const dispatch = useDispatch();
 
