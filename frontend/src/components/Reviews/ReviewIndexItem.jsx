@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { deleteReview } from "../../store/reviews";
 import ReviewModalContainer from "./reviewmodalcontainer";
 import { getHike } from "../../store/hikes";
-import StarIndex from "./StarIndex";
+import StarIndex from "./starindex";
 
 const ReviewIndexItem = ({review, currentUser}) =>{
     const dispatch = useDispatch();
